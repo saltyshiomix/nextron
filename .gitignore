@@ -57,3 +57,6 @@ typings/
 # dotenv environment variables file
 .env
 
+# nextron
+.DS_Store
+dist
