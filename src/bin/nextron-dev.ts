@@ -1,6 +1,8 @@
+#!/usr/bin/env node
+
 import { join } from 'path'
+import { exec } from 'child_process'
 import * as program from 'commander'
-import dev from './dev'
 
 const pkg = require(join(__dirname, '../../package.json'))
 
@@ -8,4 +10,4 @@ program
   .version(pkg.version)
   .parse(process.argv)
 
-dev()
+exec('node node_modules/nextron/build/start.js', { cwd: process.cwd() })

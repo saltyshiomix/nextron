@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import { join } from 'path'
 import * as program from 'commander'
 

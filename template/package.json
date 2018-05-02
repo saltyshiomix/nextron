@@ -1,19 +1,28 @@
 {
   "private": true,
-  "name": "my-app",
   "version": "1.0.0",
-  "main": "main/index.js",
+  "name": "my-nextron-app",
+  "description": "",
+  "main": "dist/main/index.js",
+  "build": {
+    "productName": "My Nextron App",
+    "appId": "com.example.nextron",
+    "files": [
+      "dist/main/**/*",
+      "dist/renderer/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "static"
+    },
+    "publish": null
+  },
   "scripts": {
     "dev": "nextron",
     "build": "nextron build"
   },
   "dependencies": {
     "nextron": "latest"
-  },
-  "devDependencies": {
-    "electron": "^1.7.12",
-    "next": "^5.0.0",
-    "react": "^16.2.0",
-    "react-dom": "^16.2.0"
   }
 }
