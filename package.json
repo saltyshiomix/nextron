@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Fully next.js electron app.",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
