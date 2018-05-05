@@ -5,8 +5,9 @@
   "description": "",
   "main": "dist/main/index.js",
   "build": {
-    "productName": "My Nextron App",
     "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © year ${author}",
     "files": [
       "dist/main/**/*",
       "dist/renderer/**/*",

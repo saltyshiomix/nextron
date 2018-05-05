@@ -22,3 +22,9 @@ $ cd <YOUR-APP-NAME>
 $ yarn dev # for development
 $ yarn build # for packaging the electron app
 ```
+
+## Build Configuration
+
+Edit `package.json#build` properties for custom configuration.
+
+For more information, please see [electron-builder configuration documents](https://github.com/electron-userland/electron-builder/blob/master/docs/configuration/configuration.md).
