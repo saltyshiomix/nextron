@@ -91,7 +91,7 @@ async function installDependencies(cwd: string, cmd: string = 'yarn'): Promise<s
 }
 
 async function init(name: string): Promise<void> {
-  const templatePath = join(__dirname, '../../template')
+  const templatePath = join(__dirname, '../../template/javascript')
   const targetPath = join(process.cwd(), name)
 
   await existsPath(targetPath, name)
