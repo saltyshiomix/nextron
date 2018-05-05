@@ -5,6 +5,18 @@
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
   "license": "MIT",
+  "homepage": "https://github.com/saltyshiomix/nextron",
+  "keywords": [
+    "electron",
+    "nextjs",
+    "next",
+    "react",
+    "reactjs"
+  ],
+  "bugs": {
+    "url": "https://github.com/saltyshiomix/nextron/issues",
+    "email": "shiono.yoshihide@gmail.com"
+  },
   "main": "dist/main.js",
   "bin": {
     "nextron": "dist/bin/nextron.js"
