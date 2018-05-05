@@ -1,0 +1,29 @@
+{
+  "private": true,
+  "version": "1.0.0",
+  "name": "my-nextron-app",
+  "description": "My application description",
+  "main": "dist/main/index.js",
+  "build": {
+    "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © year ${author}",
+    "files": [
+      "dist/main/**/*",
+      "dist/renderer/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "buildResources": "static"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "nextron-ts",
+    "build": "nextron-ts build"
+  },
+  "dependencies": {
+    "nextron": "latest"
+  }
+}

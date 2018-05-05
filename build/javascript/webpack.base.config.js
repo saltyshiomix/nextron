@@ -4,7 +4,6 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 module.exports = env => {
   return {
-    mode: env,
     target: 'node',
     node: {
       __dirname: false,
@@ -12,16 +11,18 @@ module.exports = env => {
     },
     externals: [nodeExternals()],
     devtool: 'source-map',
+    resolve: {
+      extensions: ['.js']
+    },
     module: {
       rules: [
         {
           test: /\.js$/,
+          use: ['babel-loader'],
           exclude: [
             /node_modules/,
-            path.join(process.cwd(), 'common'),
-            path.join(process.cwd(), 'main')
-          ],
-          use: ['babel-loader']
+            path.join(process.cwd(), 'renderer')
+          ]
         },
         {
           test: /\.css$/,

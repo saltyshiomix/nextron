@@ -22,7 +22,7 @@ async function build() {
     await fs.remove(join(cwd, 'dist'))
 
     spinner.create('Building main process')
-    await exec('npx webpack --config=node_modules/nextron/build/javascript/webpack.app.config.js --env=production', { cwd })
+    await exec('npx webpack --config=node_modules/nextron/build/typescript/webpack.app.config.js --env=production', { cwd })
 
     spinner.create('Building renderer process')
     await exec('npx next build renderer', { cwd })

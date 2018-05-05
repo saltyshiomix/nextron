@@ -10,4 +10,4 @@ program
   .version(pkg.version)
   .parse(process.argv)
 
-exec('node node_modules/nextron/build/javascript/start.js', { cwd: process.cwd() })
+exec('node node_modules/nextron/build/typescript/start.js', { cwd: process.cwd() })

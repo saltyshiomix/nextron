@@ -1,20 +1,18 @@
-'use strict'
-
-const path = require('path')
-const { format } = require('url')
-const { app, BrowserWindow } = require('electron')
-const { isDev, prepareNextRenderer } = require('nextron')
+import * as path from 'path'
+import { format } from 'url'
+import { app, BrowserWindow } from 'electron'
+import { isDev, prepareNextRenderer } from 'nextron'
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
-let mainWindow
+let mainWindow: BrowserWindow
 
-async function createMainWindow() {
+async function createMainWindow(): Promise<BrowserWindow> {
   isDev && await prepareNextRenderer('./renderer')
 
-  const window = new BrowserWindow()
+  const window: BrowserWindow = new BrowserWindow()
   isDev && window.webContents.openDevTools()
 
-  const url = isDev ? 'http://localhost:8000/home' : format({
+  const url: string = isDev ? 'http://localhost:8000/home' : format({
     pathname: path.join(__dirname, '../renderer/home/index.html'),
     protocol: 'file',
     slashes: true
@@ -42,12 +40,12 @@ app.on('window-all-closed', () => {
   }
 })
 
-app.on('activate', () => {
+app.on('activate', async () => {
   if (mainWindow === null) {
-    mainWindow = createMainWindow()
+    mainWindow = await createMainWindow()
   }
 })
 
-app.on('ready', () => {
-  mainWindow = createMainWindow()
+app.on('ready', async () => {
+  mainWindow = await createMainWindow()
 })
