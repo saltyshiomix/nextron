@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.1.23",
+  "version": "0.1.29",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -47,5 +47,9 @@
     "@types/react": "^16.3.13",
     "@types/react-dom": "^16.0.5",
     "typescript": "^2.8.3"
+  },
+  "engines": {
+    "node": ">=8.2.0",
+    "npm": ">=5.2.0"
   }
 }
