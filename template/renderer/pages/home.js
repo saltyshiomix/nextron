@@ -1,3 +1,3 @@
 export default () => (
-  <span>Electron + Next.js</span>
+  <span>⚡ Electron + Next.js ⚡</span>
 )
