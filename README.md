@@ -1,4 +1,5 @@
-# Nextron
+[![npm](https://img.shields.io/npm/v/nextron.svg)](https://www.npmjs.com/package/nextron)
+[![downloads](https://img.shields.io/npm/dt/nextron.svg)](https://www.npmjs.com/package/nextron)
 
 Build the [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
 
