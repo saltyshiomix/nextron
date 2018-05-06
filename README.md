@@ -23,6 +23,15 @@ $ yarn dev # for development
 $ yarn build # for packaging the electron app
 ```
 
+## Usage for TypeScript
+
+```bash
+$ nextron-ts init <YOUR-APP-NAME>
+$ cd <YOUR-APP-NAME>
+$ yarn dev # for development
+$ yarn build # for packaging the electron app
+```
+
 ## Build Configuration
 
 Edit `package.json#build` properties for custom configuration.
