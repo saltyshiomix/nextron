@@ -1,8 +1,8 @@
 {
   "private": true,
-  "version": "1.0.0",
   "name": "my-nextron-app",
-  "description": "",
+  "description": "My application description",
+  "version": "1.0.0",
   "main": "dist/main/index.js",
   "build": {
     "appId": "com.example.nextron",
