@@ -21,11 +21,11 @@ program
 program.parse(process.argv)
 
 if (typeof appName === 'undefined') {
-  appName = 'my-nextron-app'
+  appName = 'my-nextron-typescript-app'
 }
 
 async function init(name: string): Promise<void> {
-  const templatePath = join(__dirname, '../../template/javascript')
+  const templatePath = join(__dirname, '../../template/typescript')
   const targetPath = join(process.cwd(), name)
 
   await existsPath(targetPath, name)

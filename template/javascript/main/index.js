@@ -9,7 +9,7 @@ const { isDev, prepareNextRenderer } = require('nextron')
 let mainWindow
 
 async function createMainWindow() {
-  await prepareNextRenderer('./renderer')
+  isDev && await prepareNextRenderer('./renderer')
 
   const window = new BrowserWindow()
   isDev && window.webContents.openDevTools()
