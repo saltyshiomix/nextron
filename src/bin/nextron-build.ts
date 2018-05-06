@@ -31,7 +31,7 @@ async function build() {
     await fs.remove(join(cwd, 'renderer/out'))
 
     spinner.create('Packaging - please wait a moment')
-    await exec('npx electron-builder', { cwd })
+    await exec('npx electron-builder -mwl', { cwd })
 
     spinner.clear('See `dist` directory')
   } catch (err) {
