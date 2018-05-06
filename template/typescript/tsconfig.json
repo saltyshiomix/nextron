@@ -24,6 +24,8 @@
     ]
   },
   "include": [
+    "common/**/*",
+    "main/**/*",
     "renderer/**/*"
   ]
 }
