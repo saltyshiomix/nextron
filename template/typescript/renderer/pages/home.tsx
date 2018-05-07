@@ -1,4 +1,4 @@
-import { resolve } from 'nextron'
+import resolve from '../../utils/resolve'
 
 export default () =>
   <div>
