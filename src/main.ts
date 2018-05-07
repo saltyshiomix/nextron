@@ -8,7 +8,7 @@ export async function prepareNextRenderer(rendererRelativePath: string): Promise
 }
 
 export function resolve(pathname: string): string {
-  if (isDev) {
+  if (process.env.NODE_ENV !== 'production') {
     return '/' + pathname
   }
 
