@@ -7,6 +7,15 @@ export async function prepareNextRenderer(rendererRelativePath: string): Promise
   return await prepareNext(rendererRelativePath)
 }
 
+export function resolve(pathname: string): string {
+  if (isDev) {
+    return '/' + pathname
+  }
+
+  const { sep } = require('path')
+  return `..${sep}${pathname}${sep}index.html`
+}
+
 export function withTypeScript(nextConfig: any = {}) {
   if (!nextConfig.pageExtensions) {
     nextConfig.pageExtensions = ['jsx', 'js']
