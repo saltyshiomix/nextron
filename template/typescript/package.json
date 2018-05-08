@@ -15,7 +15,7 @@
       "package.json"
     ],
     "directories": {
-      "buildResources": "static"
+      "buildResources": "resources"
     },
     "publish": null
   },
