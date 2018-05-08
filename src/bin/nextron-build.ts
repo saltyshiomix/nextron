@@ -22,16 +22,16 @@ async function build() {
     await fs.remove(join(cwd, 'dist'))
 
     spinner.create('Building main process')
-    await exec('npx webpack --config=node_modules/nextron/build/javascript/webpack.app.config.js --env=production', { cwd })
+    await exec('node_modules/.bin/webpack --config=node_modules/nextron/build/javascript/webpack.app.config.js --env=production', { cwd })
 
     spinner.create('Building renderer process')
-    await exec('npx next build renderer', { cwd })
-    await exec('npx next export renderer', { cwd })
+    await exec('node_modules/.bin/next build renderer', { cwd })
+    await exec('node_modules/.bin/next export renderer', { cwd })
     await fs.copy(join(cwd, 'renderer/out'), join(cwd, 'dist/renderer'))
     await fs.remove(join(cwd, 'renderer/out'))
 
     spinner.create('Packaging - please wait a moment')
-    await exec('npx electron-builder -mwl', { cwd })
+    await exec('node_modules/.bin/electron-builder -mwl', { cwd })
 
     spinner.clear('See `dist` directory')
   } catch (err) {
