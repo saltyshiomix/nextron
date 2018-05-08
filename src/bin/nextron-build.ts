@@ -31,7 +31,7 @@ async function build() {
     await fs.remove(join(cwd, 'renderer/out'))
 
     spinner.create('Packaging - please wait a moment')
-    await exec(`node_modules${sep}.bin${sep}electron-builder -mwl`, { cwd })
+    await exec(`node_modules${sep}.bin${sep}electron-builder`, { cwd })
 
     spinner.clear('See `dist` directory')
   } catch (err) {
