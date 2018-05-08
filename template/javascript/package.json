@@ -7,7 +7,7 @@
   "build": {
     "appId": "com.example.nextron",
     "productName": "My Nextron App",
-    "copyright": "Copyright © year ${author}",
+    "copyright": "Copyright © ${year} ${author}",
     "files": [
       "dist/main/**/*",
       "dist/renderer/**/*",
