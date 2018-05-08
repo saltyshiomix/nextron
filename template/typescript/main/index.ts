@@ -1,13 +1,14 @@
 import * as path from 'path'
 import { format } from 'url'
 import { app, BrowserWindow } from 'electron'
-import { isDev, prepareNextRenderer } from 'nextron'
+import * as isDev from 'electron-is-dev'
+import * as prepareNext from 'electron-next'
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow: BrowserWindow
 
 async function createMainWindow(): Promise<BrowserWindow> {
-  isDev && await prepareNextRenderer('./renderer')
+  isDev && await prepareNext('./renderer')
 
   const window: BrowserWindow = new BrowserWindow()
   isDev && window.webContents.openDevTools()
