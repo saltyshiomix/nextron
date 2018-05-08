@@ -1,6 +1,6 @@
 #!/usr/bin/env node
 
-import { join } from 'path'
+import { join, sep } from 'path'
 import { promisify } from 'util'
 import { exec as defaultExec } from 'child_process'
 import * as fs from 'fs-extra'
@@ -22,16 +22,16 @@ async function build() {
     await fs.remove(join(cwd, 'dist'))
 
     spinner.create('Building main process')
-    await exec('node_modules/.bin/webpack --config=node_modules/nextron/build/javascript/webpack.app.config.js --env=production', { cwd })
+    await exec(`node_modules${sep}.bin${sep}webpack --config=node_modules${sep}nextron${sep}build${sep}javascript${sep}webpack.app.config.js --env=production`, { cwd })
 
     spinner.create('Building renderer process')
-    await exec('node_modules/.bin/next build renderer', { cwd })
-    await exec('node_modules/.bin/next export renderer', { cwd })
+    await exec(`node_modules${sep}.bin${sep}next build renderer`, { cwd })
+    await exec(`node_modules${sep}.bin${sep}next export renderer`, { cwd })
     await fs.copy(join(cwd, 'renderer/out'), join(cwd, 'dist/renderer'))
     await fs.remove(join(cwd, 'renderer/out'))
 
     spinner.create('Packaging - please wait a moment')
-    await exec('node_modules/.bin/electron-builder -mwl', { cwd })
+    await exec(`node_modules${sep}.bin${sep}electron-builder -mwl`, { cwd })
 
     spinner.clear('See `dist` directory')
   } catch (err) {
