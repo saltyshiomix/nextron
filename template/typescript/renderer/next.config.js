@@ -1,6 +1,7 @@
-const { withTypeScript } = require('nextron')
-module.exports = withTypeScript()
-
-exports.webpack = config => Object.assign(config, {
-  target: 'electron-renderer'
+const withTypescript = require('@zeit/next-typescript')
+module.exports = withTypescript({
+  webpack: (config, options) => {
+    confit.target = 'electron-renderer'
+    return config
+  }
 })
