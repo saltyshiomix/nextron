@@ -24,7 +24,9 @@
   },
   "scripts": {
     "build": "rimraf dist && tsc && chmod +x dist/bin/nextron*.js",
-    "prepublishOnly": "npm run build"
+    "prepublishOnly": "npm run build",
+    "test:init": "dist/bin/nextron-init.js test_nextron",
+    "test:init:ts": "dist/bin/nextron-ts-init.js test_nextron_ts"
   },
   "dependencies": {
     "@types/node": "^10.0.4",
