@@ -21,7 +21,6 @@
     "publish": null
   },
   "scripts": {
-    "postinstall": "electron-builder install-app-deps",
     "dev": "nextron",
     "build": "nextron build"
   },
