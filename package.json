@@ -19,14 +19,14 @@
   },
   "main": "dist/main.js",
   "bin": {
-    "nextron": "dist/bin/nextron.js",
-    "nextron-ts": "dist/bin/nextron-ts.js"
+    "nextron": "dist/cli/nextron.js",
+    "nextron-ts": "dist/cli/nextron-ts.js"
   },
   "scripts": {
-    "build": "rimraf dist && tsc && chmod +x dist/bin/nextron*.js",
+    "build": "rimraf dist && tsc && chmod +x dist/cli/nextron*.js",
     "prepublishOnly": "npm run build",
-    "test:init": "dist/bin/nextron-init.js test_nextron",
-    "test:init:ts": "dist/bin/nextron-ts-init.js test_nextron_ts"
+    "test:init": "dist/cli/nextron-init.js test_nextron",
+    "test:init:ts": "dist/cli/nextron-ts-init.js test_nextron_ts"
   },
   "dependencies": {
     "@types/node": "^10.0.4",
