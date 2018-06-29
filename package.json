@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.3.8",
+  "version": "0.4.0",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -11,57 +11,57 @@
     "nextjs",
     "next",
     "react",
-    "reactjs"
+    "reactjs",
+    "nextron"
   ],
   "bugs": {
     "url": "https://github.com/saltyshiomix/nextron/issues",
     "email": "shiono.yoshihide@gmail.com"
   },
-  "main": "dist/main.js",
+  "main": "dist/index.js",
   "bin": {
-    "nextron": "dist/bin/nextron.js",
-    "nextron-ts": "dist/bin/nextron-ts.js"
+    "nextron": "dist/cli/nextron.js"
   },
   "scripts": {
-    "build": "rimraf dist && tsc && chmod +x dist/bin/nextron*.js",
-    "prepublishOnly": "npm run build",
-    "test:init": "dist/bin/nextron-init.js test_nextron",
-    "test:init:ts": "dist/bin/nextron-ts-init.js test_nextron_ts"
+    "clean": "rimraf dist workspace",
+    "prebuild": "npm run clean",
+    "build": "tsc && chmod +x dist/cli/nextron*.js",
+    "predev": "npm run build",
+    "dev": "ts-node scripts/dev.ts",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "@types/node": "^10.0.4",
-    "@types/react": "^16.3.13",
-    "@types/react-dom": "^16.0.5",
-    "@zeit/next-typescript": "^0.1.1",
-    "babel-loader": "^8.0.0-beta.2",
+    "@babel/core": "7.0.0-beta.42",
+    "@zeit/next-typescript": "^1.1.0",
+    "babel-core": "6.*",
+    "babel-loader": "7.*",
     "chalk": "^2.4.1",
-    "commander": "^2.15.1",
+    "cross-spawn": "^6.0.5",
     "css-loader": "^0.28.11",
-    "electron": "^1.7.14",
-    "electron-builder": "^20.11.1",
+    "electron": "2.0.3",
+    "electron-builder": "20.18.0",
     "electron-is-dev": "^0.3.0",
     "electron-next": "^3.1.4",
     "friendly-errors-webpack-plugin": "^1.7.0",
-    "fs-extra": "^6.0.0",
-    "inquirer": "^5.2.0",
-    "next": "^6.0.0",
+    "fs-extra": "^6.0.1",
+    "minimist": "^1.2.0",
+    "next": "6.1.1",
     "ora": "^2.1.0",
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
     "style-loader": "^0.21.0",
-    "ts-loader": "3.3.1",
-    "typescript": "^2.8.3",
+    "ts-loader": "3.*",
+    "typescript": "^2.9.2",
     "webpack": "3.10.0",
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.2",
-    "@types/inquirer": "^0.0.41",
-    "@types/ora": "^1.3.4"
-  },
-  "engines": {
-    "node": ">=8.2.0",
-    "npm": ">=5.2.0"
+    "@types/node": "^10.5.1",
+    "@types/ora": "^1.3.4",
+    "@types/react": "^16.4.5",
+    "@types/react-dom": "^16.0.6",
+    "ts-node": "^7.0.0"
   }
 }

@@ -1,4 +1,2 @@
-.gitignore
-src
-test_nextron
-test_nextron_ts
+/src
+/workspace
