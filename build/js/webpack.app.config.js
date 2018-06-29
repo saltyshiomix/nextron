@@ -9,7 +9,7 @@ module.exports = env => {
     },
     output: {
       filename: '[name].js',
-      path: path.resolve(process.cwd(), 'dist/main')
+      path: path.resolve(process.cwd(), 'app/main')
     }
   })
 }

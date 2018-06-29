@@ -3,8 +3,7 @@
 const path = require('path')
 const { format } = require('url')
 const { app, BrowserWindow } = require('electron')
-const isDev = require('electron-is-dev')
-const prepareNext = require('electron-next')
+const { isDev, prepareNext } = require('nextron')
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow

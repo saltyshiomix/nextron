@@ -1,36 +1,60 @@
 #!/usr/bin/env node
 
-import { join } from 'path'
-import * as program from 'commander'
+import { existsSync } from 'fs'
+import { resolve } from 'path'
+import chalk from 'chalk'
+import * as parseArgs from 'minimist'
 import * as spinner from '../spinner'
-import existsPath from './init/exists-path'
 import copyTemplate from './init/copy-template'
-import setAppName from './init/set-app-name'
+import setMetaInformation from './init/set-meta-information'
 import installDependencies from './init/install-dependencies'
 
-let appName
-const pkg = require(join(__dirname, '../../package.json'))
+const argv = parseArgs(process.argv.slice(2), {
+  alias: {
+    h: 'help',
+    t: 'template'
+  },
+  boolean: ['h'],
+  string: ['t'],
+  default: {
+    t: 'with-javascript'
+  }
+})
 
-program
-  .version(pkg.version)
-  .arguments('<name>')
-  .action(function(name) {
-    appName = name
-  })
+if (argv.help) {
+  console.log(`
+    Description
+      Create the nextron application
 
-program.parse(process.argv)
+    Usage
+      $ nextron init <name> -t <template name>
 
-if (typeof appName === 'undefined') {
-  appName = 'my-nextron-app'
+    <name> represents your application name (default to 'my-nextron-app').
+    <template name> is listed on examples/* folder.
+
+    Options
+      --template, -t  Which example to use as default template
+      --help, -h      Displays this message
+  `)
+  process.exit(0)
+}
+
+const rootDir: string = resolve(__dirname, '../..')
+const appName: string = argv._[0] || 'my-nextron-app'
+const templateName: string = argv.template
+
+if (!existsSync(resolve(rootDir, `examples/${templateName}`))) {
+  console.log(chalk.red(`Not found examples/${templateName}`))
+  process.exit(1)
 }
 
 async function init(name: string): Promise<void> {
-  const templatePath = join(__dirname, '../../template/javascript')
-  const targetPath = join(process.cwd(), name)
+  const cwd = process.cwd()
+  const templatePath = resolve(__dirname, `../../examples/${templateName}`)
+  const targetPath = resolve(cwd, name)
 
-  await existsPath(targetPath, name)
   await copyTemplate(templatePath, targetPath)
-  await setAppName(targetPath, name)
+  await setMetaInformation(targetPath, name)
 
   const pm = await installDependencies(targetPath)
   const cmd = pm === 'yarn' ? 'yarn dev' : 'npm run dev'

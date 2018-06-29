@@ -1,14 +1,27 @@
 #!/usr/bin/env node
 
-import { join } from 'path'
-import * as program from 'commander'
-import ScriptType from '../ScriptType'
-import build from './build/perform-build'
+import * as parseArgs from 'minimist'
+import build from './build'
 
-const pkg = require(join(__dirname, '../../package.json'))
+const argv = parseArgs(process.argv.slice(2), {
+  alias: {
+    h: 'help'
+  },
+  boolean: ['h']
+})
 
-program
-  .version(pkg.version)
-  .parse(process.argv)
+if (argv.help) {
+  console.log(`
+    Description
+      Build and export the application for production deployment
 
-build(ScriptType.JavaScript)
+    Usage
+      $ nextron build
+
+    Options
+      --help, -h    list this help
+  `)
+  process.exit(0)
+}
+
+build()

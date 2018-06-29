@@ -60,5 +60,4 @@ typings/
 # nextron
 .DS_Store
 dist
-test_nextron
-test_nextron_ts
+workspace

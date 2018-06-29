@@ -3,23 +3,25 @@
   "name": "my-nextron-app",
   "description": "My application description",
   "version": "1.0.0",
-  "main": "dist/main/index.js",
+  "main": "app/main/index.js",
   "build": {
     "appId": "com.example.nextron",
     "productName": "My Nextron App",
     "copyright": "Copyright © ${year} ${author}",
     "files": [
-      "dist/main/**/*",
-      "dist/renderer/**/*",
+      "app/**/*",
       "node_modules/**/*",
       "package.json"
     ],
     "directories": {
+      "app": "app",
+      "output": "dist",
       "buildResources": "resources"
     },
     "publish": null
   },
   "scripts": {
+    "postinstall": "electron-builder install-app-deps",
     "dev": "nextron",
     "build": "nextron build"
   },

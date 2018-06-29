@@ -1,14 +1,27 @@
 #!/usr/bin/env node
 
-import { join } from 'path'
-import * as program from 'commander'
-import ScriptType from '../ScriptType'
-import dev from './dev/perform-dev'
+import * as parseArgs from 'minimist'
+import dev from './dev'
 
-const pkg = require(join(__dirname, '../../package.json'))
+const argv = parseArgs(process.argv.slice(2), {
+  alias: {
+    h: 'help'
+  },
+  boolean: ['h']
+})
 
-program
-  .version(pkg.version)
-  .parse(process.argv)
+if (argv.help) {
+  console.log(`
+    Description
+      Starts the nextron application in development mode
 
-dev(ScriptType.JavaScript)
+    Usage
+      $ nextron dev
+
+    Options
+      --help, -h  Displays this message
+  `)
+  process.exit(0)
+}
+
+dev()

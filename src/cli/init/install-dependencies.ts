@@ -6,7 +6,7 @@ import * as spinner from '../../spinner'
 
 export default async function installDependencies(cwd: string, cmd: string = 'yarn'): Promise<string> {
   if (cmd === 'yarn') {
-    spinner.create('Installing dependencies')
+    spinner.create('Install dependencies')
   }
 
   const exec = promisify(defaultExec)

@@ -1,8 +1,7 @@
 import * as path from 'path'
 import { format } from 'url'
 import { app, BrowserWindow } from 'electron'
-import * as isDev from 'electron-is-dev'
-import * as prepareNext from 'electron-next'
+import { isDev, prepareNext } from 'nextron'
 
 // global reference to mainWindow (necessary to prevent window from being garbage collected)
 let mainWindow: BrowserWindow
