@@ -18,13 +18,12 @@ if (3 <= process.argv.length) {
   templateName = newTemplate
 }
 
-execSync(resolve(rootDir, `dist/cli/nextron.js init workspace --template ${templateName}`), {
+execSync('node ' + resolve(rootDir, `dist/cli/nextron.js init workspace --template ${templateName}`), {
   cwd: rootDir,
   stdio: 'inherit'
 })
-execSync('pushd workspace')
+execSync('cd workspace')
 execSync('yarn dev', {
   cwd: resolve(rootDir, 'workspace'),
   stdio: 'inherit'
 })
-execSync('popd')

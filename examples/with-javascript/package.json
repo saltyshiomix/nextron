@@ -3,7 +3,8 @@
   "name": "my-nextron-app",
   "description": "My application description",
   "version": "1.0.0",
-  "main": "app/main/index.js",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
   "build": {
     "appId": "com.example.nextron",
     "productName": "My Nextron App",
@@ -14,7 +15,6 @@
       "package.json"
     ],
     "directories": {
-      "app": "app",
       "output": "dist",
       "buildResources": "resources"
     },

@@ -5,11 +5,11 @@ const base = require('./webpack.base.config')
 module.exports = env => {
   return merge(base(env), {
     entry: {
-      index: './main/index.ts'
+      background: './background.ts'
     },
     output: {
       filename: '[name].js',
-      path: path.resolve(process.cwd(), 'app/main')
+      path: path.resolve(process.cwd(), 'app')
     }
   })
 }
