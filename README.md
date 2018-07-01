@@ -5,7 +5,9 @@ Build the [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) a
 
 - electron@^2.0.3
 - electron-builder@^20.18.0
-- next@6.1.1
+- next@^6.1.1
+- react@^16.4.1
+- react-dom@^16.4.1
 
 ## Usage
 
