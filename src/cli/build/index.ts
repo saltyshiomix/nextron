@@ -2,7 +2,8 @@ import { join, sep } from 'path'
 import { execSync } from 'child_process'
 import * as fs from 'fs-extra'
 import detectScriptType from '../detect-script-type'
-import * as spinner from '../../spinner'
+import buildRenderer from '../../lib/next/build'
+import * as spinner from '../spinner'
 
 export default async function build() {
   const cwd = process.cwd()
@@ -13,14 +14,11 @@ export default async function build() {
     await fs.remove(join(cwd, 'app'))
     await fs.remove(join(cwd, 'dist'))
 
+    spinner.create('Building renderer process')
+    await buildRenderer('renderer')
+
     spinner.create('Building main process')
     execSync(`node_modules${sep}.bin${sep}webpack --config=node_modules${sep}nextron${sep}build${sep}${scriptType}${sep}webpack.app.config.js --env=production`, { cwd })
-
-    spinner.create('Building renderer process')
-    execSync(`node_modules${sep}.bin${sep}next build renderer`, { cwd })
-    execSync(`node_modules${sep}.bin${sep}next export renderer`, { cwd })
-    await fs.copy(join(cwd, 'renderer/out'), join(cwd, 'app/renderer'))
-    await fs.remove(join(cwd, 'renderer/out'))
 
     spinner.create('Packaging - please wait a moment')
     console.log('')

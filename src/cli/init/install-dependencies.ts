@@ -2,7 +2,7 @@ import { join } from 'path'
 import * as fs from 'fs-extra'
 import { promisify } from 'util'
 import { exec as defaultExec } from 'child_process'
-import * as spinner from '../../spinner'
+import * as spinner from '../spinner'
 
 export default async function installDependencies(cwd: string, cmd: string = 'yarn'): Promise<string> {
   if (cmd === 'yarn') {

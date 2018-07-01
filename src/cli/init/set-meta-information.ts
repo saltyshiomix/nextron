@@ -1,6 +1,6 @@
 import { resolve } from 'path'
 import * as fs from 'fs-extra'
-import * as spinner from '../../spinner'
+import * as spinner from '../spinner'
 
 export default async function setMetaInformation(targetPath: string, name: string): Promise<void> {
   spinner.create('Set meta information')

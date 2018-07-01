@@ -1,7 +1,10 @@
-const withTypescript = require('@zeit/next-typescript')
-module.exports = withTypescript({
-  webpack: (config, options) => {
+const withTypeScript = require('@zeit/next-typescript')
+const { detectExportPathMap } = require('nextron')
+
+module.exports = withTypeScript({
+  webpack: (config) => {
     config.target = 'electron-renderer'
     return config
-  }
+  },
+  exportPathMap: detectExportPathMap()
 })
