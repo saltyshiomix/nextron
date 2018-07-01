@@ -50,6 +50,7 @@
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
     "style-loader": "^0.21.0",
+    "ts-loader": "3.*",
     "webpack": "3.10.0",
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
