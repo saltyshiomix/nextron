@@ -2,7 +2,8 @@ import { join } from 'path'
 import { format } from 'url'
 import { app } from 'electron'
 import { createWindow } from 'nextron'
-import env from 'env'
+
+const env = require('env')
 
 app.on('ready', () => {
   const mainWindow = createWindow('main', {
