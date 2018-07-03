@@ -49,7 +49,7 @@ Run `npm run dev`, and nextron automatically launches the electron app.
 
 ### Production Build
 
-Run `npm run build`, and nextron outputs packaged e under `dist` folder.
+Run `npm run build`, and nextron outputs packaged bundles under the `dist` folder.
 
 ```json
 {
