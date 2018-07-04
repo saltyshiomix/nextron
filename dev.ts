@@ -5,12 +5,11 @@ import chalk from 'chalk'
 
 process.env.NODE_ENV = 'testing'
 
-const rootDir: string = resolve(__dirname, '..')
 const defaultTemplate: string = 'with-javascript'
 let templateName: string = defaultTemplate
 if (3 <= process.argv.length) {
   const newTemplate: string = process.argv[2]
-  if (!existsSync(resolve(rootDir, `examples/${newTemplate}`))) {
+  if (!existsSync(resolve(__dirname, `examples/${newTemplate}`))) {
     console.log(chalk.red(`Not found examples/${newTemplate}`))
     console.log('')
     process.exit(1)
@@ -18,12 +17,12 @@ if (3 <= process.argv.length) {
   templateName = newTemplate
 }
 
-execSync('node ' + resolve(rootDir, `dist/cli/nextron.js init workspace --template ${templateName}`), {
-  cwd: rootDir,
+execSync('node ' + resolve(__dirname, `dist/cli/nextron.js init workspace --template ${templateName}`), {
+  cwd: __dirname,
   stdio: 'inherit'
 })
 execSync('cd workspace')
 execSync('yarn dev', {
-  cwd: resolve(rootDir, 'workspace'),
+  cwd: resolve(__dirname, 'workspace'),
   stdio: 'inherit'
 })

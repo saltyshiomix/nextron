@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -27,7 +27,7 @@
     "prebuild": "npm run clean",
     "build": "tsc && chmod +x dist/cli/nextron*.js",
     "predev": "npm run build",
-    "dev": "ts-node scripts/dev.ts",
+    "dev": "ts-node dev.ts",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
