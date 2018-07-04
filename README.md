@@ -3,11 +3,8 @@
 
 Build the [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
 
-- electron@^2.0.3
-- electron-builder@^20.18.0
+- electron@^2.0.4
 - next@6.1.1
-- react@^16.4.1
-- react-dom@^16.4.1
 
 ## Usage
 
