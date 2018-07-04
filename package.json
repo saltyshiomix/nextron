@@ -27,7 +27,7 @@
     "prebuild": "npm run clean",
     "build": "tsc && chmod +x dist/cli/nextron*.js",
     "predev": "npm run build",
-    "dev": "ts-node scripts/dev.ts",
+    "dev": "ts-node dev.ts",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
