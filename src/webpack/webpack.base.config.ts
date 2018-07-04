@@ -14,7 +14,7 @@ export default function config(env: string, ext: 'js'|'ts') {
     resolve: {
       extensions: ['.js'],
       alias: {
-        env: resolve(__dirname, `./env/${env}.json`)
+        env: resolve(process.cwd(), `env/${env}.json`)
       }
     },
     module: {
