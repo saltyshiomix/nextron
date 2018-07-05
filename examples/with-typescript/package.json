@@ -25,13 +25,14 @@
     "build": "nextron build"
   },
   "dependencies": {
+    "@zeit/next-typescript": "1.1.0",
     "nextron": "latest",
     "react": "^16.0.0",
     "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@babel/core": "7.0.0-beta.42",
-    "@zeit/next-typescript": "latest",
-    "typescript": "latest"
+    "@types/next": "6.*",
+    "@types/react": "^16.*"
   }
 }
