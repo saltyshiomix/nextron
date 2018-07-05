@@ -42,7 +42,7 @@ export default function config(env: string, ext: 'js'|'ts') {
     baseConfig.resolve.extensions.push('ts')
     baseConfig.module.rules.push({
       test: /\.tsx?$/,
-      use: ['awesome-typescript-loader'],
+      use: ['ts-loader'],
       exclude: [
         /node_modules/,
         resolve(process.cwd(), 'renderer')
