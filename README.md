@@ -60,7 +60,27 @@ Run `npm run build`, and nextron outputs packaged bundles under the `dist` folde
 
 Edit `package.json#build` properties for custom configuration.
 
-For more information, please see [electron-builder configuration documents](https://github.com/electron-userland/electron-builder/blob/master/docs/configuration/configuration.md).
+```json
+{
+  "build": {
+    "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © ${year} ${author}",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  }
+}
+```
+
+For more information, please check out [electron-builder configuration documents](https://github.com/electron-userland/electron-builder/blob/master/docs/configuration/configuration.md).
 
 ## Examples
 
