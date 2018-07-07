@@ -7,7 +7,7 @@ import * as parseArgs from 'minimist'
 import * as spinner from './spinner'
 import copyTemplate from './init/copy-template'
 import setMetaInformation from './init/set-meta-information'
-import installDependencies from './init/install-dependencies'
+import detectPM from '../lib/detect-pm'
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
@@ -56,8 +56,8 @@ async function init(name: string): Promise<void> {
   await copyTemplate(templatePath, targetPath)
   await setMetaInformation(targetPath, name)
 
-  const pm: 'yarn'|'npm' = await installDependencies(targetPath)
-  const cmd = pm === 'yarn' ? 'yarn dev' : 'npm run dev'
+  const pm: 'yarn'|'npm' = await detectPM()
+  const cmd = pm === 'yarn' ? 'yarn && yarn dev' : 'npm install && npm run dev'
   spinner.clear(`Run \`${cmd}\` inside of "${name}" to start the app`)
 }
 
