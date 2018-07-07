@@ -2,34 +2,33 @@ import { join } from 'path'
 import * as fs from 'fs-extra'
 import { promisify } from 'util'
 import { exec as defaultExec } from 'child_process'
+import detectPM from '../../lib/detect-pm'
 import * as spinner from '../spinner'
 
-export default async function installDependencies(cwd: string, cmd: string = 'yarn'): Promise<string> {
-  if (cmd === 'yarn') {
-    spinner.create('Install dependencies')
+export default async function installDependencies(cwd: string): Promise<'yarn'|'npm'> {
+  const pm: 'yarn'|'npm'|null = await detectPM()
+  if (pm === null) {
+    spinner.fail('No available package manager! (`yarn` or `npm` is available)')
+    process.exit(1)
   }
+
+  spinner.create('Install dependencies')
 
   const exec = promisify(defaultExec)
   let stderr
-
   try {
-    ({ stderr } = await exec(cmd, { cwd }))
+    ({ stderr } = await exec(`${pm} install`, { cwd }))
 
-    if (cmd === 'npm install') {
+    if (pm === 'npm') {
       await fs.remove(join(cwd, 'yarn.lock'))
     }
   } catch (err) {
-    if (cmd === 'yarn' && err.code === 127) {
-      return module.exports(cwd, 'npm install')
-    }
-
-    spinner.fail('Not able to install dependencies')
-    return
+    spinner.fail(`Not able to install dependencies: ${err}`)
+    process.exit(1)
   }
 
   let check = stderr.includes('warning')
-
-  if (cmd === 'npm install') {
+  if (pm === 'npm') {
     check = stderr.includes('npm WARN')
   }
 
@@ -37,5 +36,5 @@ export default async function installDependencies(cwd: string, cmd: string = 'ya
     spinner.fail(`An error occurred: ${stderr}`)
   }
 
-  return cmd
+  return pm
 }

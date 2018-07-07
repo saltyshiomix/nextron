@@ -25,9 +25,7 @@
     "build": "nextron build"
   },
   "dependencies": {
-    "nextron": "latest",
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
+    "nextron": "latest"
   },
   "devDependencies": {
     "@types/next": "6.*",
