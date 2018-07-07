@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.6.5",
+  "version": "0.6.6",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -27,7 +27,7 @@
     "prebuild": "npm run clean",
     "build": "tsc && chmod +x dist/cli/nextron*.js",
     "predev": "npm run build",
-    "dev": "ts-node dev.ts",
+    "dev": "ts-node src/dev/index.ts",
     "prepublishOnly": "npm run build"
   },
   "dependencies": {
@@ -45,15 +45,13 @@
     "minimist": "^1.2.0",
     "next": "6.1.1",
     "ora": "^2.1.0",
+    "react": "^16.0.0",
+    "react-dom": "^16.0.0",
     "style-loader": "^0.21.0",
     "ts-loader": "3.*",
     "webpack": "3.10.0",
     "webpack-merge": "^4.1.2",
     "webpack-node-externals": "^1.7.2"
-  },
-  "peerDependencies": {
-    "react": "^16.0.0",
-    "react-dom": "^16.0.0"
   },
   "devDependencies": {
     "@types/fs-extra": "^5.0.2",

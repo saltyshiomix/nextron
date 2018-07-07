@@ -1,7 +1,8 @@
-import { join, sep } from 'path'
-import { execSync } from 'child_process'
+import { join } from 'path'
 import * as fs from 'fs-extra'
-import buildRenderer from '../../lib/next/build'
+import buildMainProcess from '../../lib/build-main-process'
+import buildRendererProcess from '../../lib/build-renderer-process'
+import packageElectron from '../../lib/package-electron'
 import * as spinner from '../spinner'
 
 export default async function build() {
@@ -13,16 +14,14 @@ export default async function build() {
     await fs.remove(join(cwd, 'dist'))
 
     spinner.create('Building renderer process')
-    await buildRenderer('renderer')
+    await buildRendererProcess('renderer')
 
     spinner.create('Building main process')
-    execSync(`node_modules${sep}.bin${sep}webpack --config=node_modules${sep}nextron${sep}dist${sep}webpack${sep}webpack.app.config.js --env=production`, { cwd })
+    await buildMainProcess()
 
     spinner.create('Packaging - please wait a moment')
     console.log('')
-    execSync(`node_modules${sep}.bin${sep}electron-builder`, {
-      cwd, stdio: 'inherit'
-    })
+    await packageElectron()
 
     spinner.clear('See `dist` directory')
   } catch (err) {

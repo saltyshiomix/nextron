@@ -56,7 +56,7 @@ async function init(name: string): Promise<void> {
   await copyTemplate(templatePath, targetPath)
   await setMetaInformation(targetPath, name)
 
-  const pm = await installDependencies(targetPath)
+  const pm: 'yarn'|'npm' = await installDependencies(targetPath)
   const cmd = pm === 'yarn' ? 'yarn dev' : 'npm run dev'
   spinner.clear(`Run \`${cmd}\` inside of "${name}" to start the app`)
 }
