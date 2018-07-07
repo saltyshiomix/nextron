@@ -10,6 +10,11 @@ export default async function buildMainProcess(): Promise<void> {
   }
 
   const cwd: string = process.cwd()
-  const webpack: string = pm === 'yarn' ? `node_modules${sep}.bin${sep}webpack` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}webpack`
+  let webpack: string
+  if (process.env.NODE_ENV === 'testing') {
+    webpack = pm === 'yarn' ? `node_modules${sep}.bin${sep}webpack` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}webpack`
+  } else {
+    webpack = `node_modules${sep}.bin${sep}webpack`
+  }
   await execSync(`${webpack} --config=node_modules${sep}nextron${sep}dist${sep}webpack${sep}webpack.app.config.js --env=production`, { cwd })
 }

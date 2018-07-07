@@ -15,7 +15,13 @@ export default async function build(rendererDir: string): Promise<void> {
   const cwd: string = process.cwd()
   const outdir: string = join(cwd, rendererDir, 'out')
   const appdir: string = join(cwd, 'app')
-  const next: string = pm === 'yarn' ? `node_modules${sep}.bin${sep}next` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}next`
+
+  let next: string
+  if (process.env.NODE_ENV === 'testing') {
+    next = pm === 'yarn' ? `node_modules${sep}.bin${sep}next` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}next`
+  } else {
+    next = `node_modules${sep}.bin${sep}next`
+  }
   execSync(`${next} build ${rendererDir}`, { cwd })
   execSync(`${next} export ${rendererDir}`, { cwd })
   await copy(outdir, appdir)

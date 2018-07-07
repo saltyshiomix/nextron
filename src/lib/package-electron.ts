@@ -10,7 +10,12 @@ export default async function buildMainProcess(): Promise<void> {
   }
 
   const cwd: string = process.cwd()
-  const electronBuilder: string = pm === 'yarn' ? `node_modules${sep}.bin${sep}electron-builder` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}electron-builder`
+  let electronBuilder: string
+  if (process.env.NODE_ENV === 'testing') {
+    electronBuilder = pm === 'yarn' ? `node_modules${sep}.bin${sep}electron-builder` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}electron-builder`
+  } else {
+    electronBuilder = `node_modules${sep}.bin${sep}electron-builder`
+  }
   await execSync(electronBuilder, {
     cwd,
     stdio: 'inherit'

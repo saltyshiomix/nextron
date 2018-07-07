@@ -18,7 +18,12 @@ export default async function start() {
       electronStarted = true
 
       const pm: 'yarn'|'npm' = await detectPM()
-      const electron: string = pm === 'yarn' ? `node_modules${sep}.bin${sep}electron` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}electron`
+      let electron: string
+      if (process.env.NODE_ENV === 'testing') {
+        electron = pm === 'yarn' ? `node_modules${sep}.bin${sep}electron` : `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}electron`
+      } else {
+        electron = `node_modules${sep}.bin${sep}electron`
+      }
 
       spinner.clear('Nextron app started!')
       execSync(`${electron} app${sep}background.js`, {
