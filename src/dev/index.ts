@@ -27,7 +27,7 @@ async function dev(): Promise<void> {
   execSync('cd workspace')
 
   const pm: 'yarn'|'npm' = await detectPM()
-  const cmd: string = pm === 'yarn' ? 'yarn dev' : 'npm run dev'
+  const cmd: string = pm === 'yarn' ? 'yarn && yarn dev' : 'npm install && npm run dev'
   execSync(cmd, {
     cwd: resolve(rootPath, 'workspace'),
     stdio: 'inherit'
