@@ -1,9 +1,9 @@
 import { join, extname } from 'path'
 import * as fg from 'fast-glob'
 
-export default function getExportPathMaps() {
+export default function detectExportPathMap() {
   const cwd: string = process.cwd()
-  const pagesVirtualPath: string = 'src/cli'
+  const pagesVirtualPath: string = 'renderer/pages'
 
   let pages: string[] = fg.sync(join(cwd, pagesVirtualPath, '**/*'))
   const pagesDir: string = join(cwd, pagesVirtualPath).replace(/\\/g, '/')
@@ -11,7 +11,9 @@ export default function getExportPathMaps() {
 
   const maps = {}
   pages.forEach(page => {
-    maps[page] = { page: page }
+    if (!page.startsWith('/_')) {
+      maps[page] = { page: page }
+    }
   })
 
   return maps
