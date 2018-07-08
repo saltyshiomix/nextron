@@ -1,5 +1,9 @@
+<p align="center"><img src="./screenshots/with-javascript-material-ui/1.png"></p>
+
+<p align="center">
 [![npm](https://img.shields.io/npm/v/nextron.svg)](https://www.npmjs.com/package/nextron)
 [![downloads](https://img.shields.io/npm/dt/nextron.svg)](https://www.npmjs.com/package/nextron)
+</p>
 
 Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
 
