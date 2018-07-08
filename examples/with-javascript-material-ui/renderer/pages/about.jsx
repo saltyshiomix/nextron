@@ -7,7 +7,7 @@ import { resolve } from 'nextron'
 const styles = theme => ({
   root: {
     textAlign: 'center',
-    paddingTop: theme.spacing.unit * 2
+    paddingTop: theme.spacing.unit * 4
   }
 })
 
