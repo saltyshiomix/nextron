@@ -10,7 +10,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 - electron@^2.0.4
 - next@6.1.1
 
-(The screenshot above is a top page of [example/with-javascript-material-ui](./example/with-javascript-material-ui).)
+(The screenshot above is a top page of [examples/with-javascript-material-ui](./examples/with-javascript-material-ui).)
 
 ## Usage
 
