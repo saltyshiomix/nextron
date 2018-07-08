@@ -1,8 +1,8 @@
-<p align="center"><img src="./screenshots/with-javascript-material-ui/1.png"></p>
+<p align="center"><img src="https://i.imgur.com/hJttivx.png"></p>
 
 <p align="center">
-[![npm](https://img.shields.io/npm/v/nextron.svg)](https://www.npmjs.com/package/nextron)
-[![downloads](https://img.shields.io/npm/dt/nextron.svg)](https://www.npmjs.com/package/nextron)
+  <a href="https://www.npmjs.com/package/nextron"><img src="https://img.shields.io/npm/v/nextron.svg"></a>
+  <a href="https://www.npmjs.com/package/nextron"><img src="https://img.shields.io/npm/dt/nextron.svg"></a>
 </p>
 
 Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
