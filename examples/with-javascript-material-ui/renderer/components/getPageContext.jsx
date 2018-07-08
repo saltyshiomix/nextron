@@ -28,11 +28,11 @@ function createPageContext() {
 }
 
 export default function getPageContext() {
-  if (!process.browser) {
+  if (typeof window === 'undefined') {
     return createPageContext()
   }
-  if (!global.__INIT_MATERIAL_UI__) {
-    global.__INIT_MATERIAL_UI__ = createPageContext()
+  if (!window.__INIT_MATERIAL_UI__) {
+    window.__INIT_MATERIAL_UI__ = createPageContext()
   }
-  return global.__INIT_MATERIAL_UI__
+  return window.__INIT_MATERIAL_UI__
 }
