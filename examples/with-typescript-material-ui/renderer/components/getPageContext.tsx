@@ -27,6 +27,12 @@ function createPageContext() {
   }
 }
 
+interface Window {
+  __INIT_MATERIAL_UI__: any
+}
+
+declare var window: Window
+
 export default function getPageContext() {
   if (typeof window === 'undefined') {
     return createPageContext()

@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/hJttivx.png"></p>
+<p align="center"><img src="https://i.imgur.com/trvnMJ6.png"></p>
 
 <p align="center">
   <a href="https://www.npmjs.com/package/nextron"><img src="https://img.shields.io/npm/v/nextron.svg"></a>
@@ -10,7 +10,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 - electron@^2.0.4
 - next@6.1.1
 
-(The screenshot above is a top page of [example/with-javascript-material-ui](./example/with-javascript-material-ui).)
+(The screenshot above is a top page of [examples/with-javascript-material-ui](./examples/with-javascript-material-ui).)
 
 ## Usage
 
