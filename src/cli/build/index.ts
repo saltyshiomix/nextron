@@ -1,8 +1,8 @@
 import { join } from 'path'
 import * as fs from 'fs-extra'
-import buildMainProcess from '../../lib/build-main-process'
-import buildRendererProcess from '../../lib/build-renderer-process'
-import packageElectron from '../../lib/package-electron'
+import buildMainProcess from './build-main-process'
+import buildRendererProcess from './build-renderer-process'
+import packageElectron from './package-electron'
 import createBuilderArgs from './create-builder-args'
 import * as spinner from '../spinner'
 

@@ -7,7 +7,7 @@ import * as parseArgs from 'minimist'
 import * as spinner from './spinner'
 import copyTemplate from './init/copy-template'
 import setMetaInformation from './init/set-meta-information'
-import detectPM from '../lib/detect-pm'
+import detectPM from '../lib/util/detect-pm'
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {

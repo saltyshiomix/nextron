@@ -1,6 +1,6 @@
 import { sep } from 'path'
 import { execSync } from 'child_process'
-import detectPM from './detect-pm'
+import detectPM from '../../lib/util/detect-pm'
 
 export default async function packageElectron(args: string): Promise<void> {
   const pm: 'yarn'|'npm' = await detectPM()
