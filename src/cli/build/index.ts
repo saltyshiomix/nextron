@@ -3,9 +3,10 @@ import * as fs from 'fs-extra'
 import buildMainProcess from '../../lib/build-main-process'
 import buildRendererProcess from '../../lib/build-renderer-process'
 import packageElectron from '../../lib/package-electron'
+import createBuilderArgs from './create-builder-args'
 import * as spinner from '../spinner'
 
-export default async function build() {
+export default async function build(argv: any) {
   const cwd = process.cwd()
 
   try {
@@ -21,7 +22,7 @@ export default async function build() {
 
     spinner.create('Packaging - please wait a moment')
     console.log('')
-    await packageElectron()
+    await packageElectron(createBuilderArgs(argv))
 
     spinner.clear('See `dist` directory')
   } catch (err) {
