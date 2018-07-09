@@ -5,7 +5,7 @@ import * as fg from 'fast-glob'
 import resolveExportedPaths from './next/resolve-exported-paths'
 import detectPM from './detect-pm'
 
-export default async function build(rendererDir: string): Promise<void> {
+export default async function buildRendererProcess(rendererDir: string): Promise<void> {
   const pm: 'yarn'|'npm'|null = await detectPM()
   if (pm === null) {
     console.log('No available package manager! (`yarn` or `npm` is available)')

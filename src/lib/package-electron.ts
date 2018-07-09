@@ -2,7 +2,7 @@ import { sep } from 'path'
 import { execSync } from 'child_process'
 import detectPM from './detect-pm'
 
-export default async function buildMainProcess(): Promise<void> {
+export default async function packageElectron(): Promise<void> {
   const pm: 'yarn'|'npm'|null = await detectPM()
   if (pm === null) {
     console.log('No available package manager! (`yarn` or `npm` is available)')
