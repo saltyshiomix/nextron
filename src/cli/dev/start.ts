@@ -1,9 +1,9 @@
 import { sep } from 'path'
 import { execSync } from 'child_process'
 import * as webpack from 'webpack'
-import buildRendererProcess from '../../lib/build-renderer-process'
-import config from '../../webpack/webpack.app.config'
-import detectPM from '../../lib/detect-pm'
+import buildRendererProcess from '../build/build-renderer-process'
+import config from '../webpack/webpack.app.config'
+import detectPM from '../../lib/util/detect-pm'
 import * as spinner from '../spinner'
 
 export default async function start() {

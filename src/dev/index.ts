@@ -2,7 +2,7 @@ import { existsSync } from 'fs-extra'
 import { resolve } from 'path'
 import { execSync } from 'child_process'
 import chalk from 'chalk'
-import detectPM from '../lib/detect-pm'
+import detectPM from '../lib/util/detect-pm'
 
 async function dev(): Promise<void> {
   process.env.NODE_ENV = 'testing'

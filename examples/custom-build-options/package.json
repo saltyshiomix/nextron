@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "my-nextron-app",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © ${year} ${author}",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "nextron",
+    "build": "nextron build",
+    "build:all": "nextron build --all",
+    "build:win": "nextron build --win --ia32",
+    "build:mac": "nextron build --mac --x64",
+    "build:linux": "nextron build --linux"
+  },
+  "dependencies": {
+    "nextron": "latest"
+  }
+}

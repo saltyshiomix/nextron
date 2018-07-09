@@ -1,7 +1,7 @@
 import { resolve } from 'path'
 import * as merge from 'webpack-merge'
 import baseConfig from './webpack.base.config'
-import detectExt from '../lib/detect-ext'
+import detectExt from '../../lib/util/detect-ext'
 
 export default function config(env: string) {
   const ext: 'js'|'ts' = detectExt()

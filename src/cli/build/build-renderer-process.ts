@@ -2,16 +2,11 @@ import { execSync } from 'child_process'
 import { join, sep } from 'path'
 import { copy, remove, readFileSync, writeFileSync } from 'fs-extra'
 import * as fg from 'fast-glob'
-import resolveExportedPaths from './next/resolve-exported-paths'
-import detectPM from './detect-pm'
+import resolveExportedPaths from '../../lib/next/resolve-exported-paths'
+import detectPM from '../../lib/util/detect-pm'
 
-export default async function build(rendererDir: string): Promise<void> {
-  const pm: 'yarn'|'npm'|null = await detectPM()
-  if (pm === null) {
-    console.log('No available package manager! (`yarn` or `npm` is available)')
-    process.exit(1)
-  }
-
+export default async function buildRendererProcess(rendererDir: string): Promise<void> {
+  const pm: 'yarn'|'npm' = await detectPM()
   const cwd: string = process.cwd()
   const outdir: string = join(cwd, rendererDir, 'out')
   const appdir: string = join(cwd, 'app')

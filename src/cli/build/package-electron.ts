@@ -1,14 +1,9 @@
 import { sep } from 'path'
 import { execSync } from 'child_process'
-import detectPM from './detect-pm'
+import detectPM from '../../lib/util/detect-pm'
 
-export default async function buildMainProcess(): Promise<void> {
-  const pm: 'yarn'|'npm'|null = await detectPM()
-  if (pm === null) {
-    console.log('No available package manager! (`yarn` or `npm` is available)')
-    process.exit(1)
-  }
-
+export default async function packageElectron(args: string): Promise<void> {
+  const pm: 'yarn'|'npm' = await detectPM()
   const cwd: string = process.cwd()
   let electronBuilder: string
   if (process.env.NODE_ENV === 'testing') {
@@ -16,7 +11,7 @@ export default async function buildMainProcess(): Promise<void> {
   } else {
     electronBuilder = `node_modules${sep}.bin${sep}electron-builder`
   }
-  await execSync(electronBuilder, {
+  await execSync(`${electronBuilder} ${args}`, {
     cwd,
     stdio: 'inherit'
   })

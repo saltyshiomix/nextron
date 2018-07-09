@@ -10,7 +10,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 - electron@^2.0.4
 - next@6.1.1
 
-(The screenshot above is a top page of [examples/with-javascript-material-ui](./examples/with-javascript-material-ui).)
+(The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
 
 ## Usage
 
@@ -61,6 +61,25 @@ Run `npm run build`, and nextron outputs packaged bundles under the `dist` folde
   }
 }
 ```
+
+### Build Options
+
+To build Windows 32 bit version, run `npm run build:win32` like below:
+
+```json
+{
+  "scripts": {
+    "build": "nextron build",
+    "build:all": "nextron build --all",
+    "build:win32": "nextron build --win --ia32",
+    "build:win64": "nextron build --win --x64",
+    "build:mac": "nextron build --mac --x64",
+    "build:linux": "nextron build --linux"
+  }
+}
+```
+
+**CAUTION**: To build macOS binary, your host machine must be macOS!
 
 ### Build Configuration
 

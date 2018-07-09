@@ -5,9 +5,22 @@ import build from './build'
 
 const argv = parseArgs(process.argv.slice(2), {
   alias: {
+    w: 'win',
+    m: 'mac',
+    l: 'linux',
     h: 'help'
   },
-  boolean: ['h']
+  boolean: [
+    'w',
+    'm',
+    'l',
+    'all',
+    'x64',
+    'ia32',
+    'armv7l',
+    'arm64',
+    'h'
+  ]
 })
 
 if (argv.help) {
@@ -16,12 +29,20 @@ if (argv.help) {
       Build and export the application for production deployment
 
     Usage
-      $ nextron build
+      $ nextron build [options]
 
     Options
-      --help, -h    list this help
+      --all        Build for Windows, macOS and Linux
+      --win,   -w  Build for Windows, accepts target list (see https://goo.gl/jYsTEJ)
+      --mac,   -m  Build for macOS, accepts target list (see https://goo.gl/5uHuzj)
+      --linux, -l  Build for Linux, accepts target list (see https://goo.gl/4vwQad) 
+      --x64        Build for x64
+      --ia32       Build for ia32
+      --armv7l     Build for armv7l
+      --arm64      Build for arm64
+      --help,  -h  List this help
   `)
   process.exit(0)
 }
 
-build()
+build(argv)
