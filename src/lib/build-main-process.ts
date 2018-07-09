@@ -3,12 +3,7 @@ import { execSync } from 'child_process'
 import detectPM from './detect-pm'
 
 export default async function buildMainProcess(): Promise<void> {
-  const pm: 'yarn'|'npm'|null = await detectPM()
-  if (pm === null) {
-    console.log('No available package manager! (`yarn` or `npm` is available)')
-    process.exit(1)
-  }
-
+  const pm: 'yarn'|'npm' = await detectPM()
   const cwd: string = process.cwd()
   let webpack: string
   if (process.env.NODE_ENV === 'testing') {
