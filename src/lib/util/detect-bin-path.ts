@@ -1,15 +1,15 @@
 import { existsSync } from 'fs'
-import { sep } from 'path'
+import { resolve } from 'path'
 import chalk from 'chalk'
 
 export default function detectBinPath(name: string): string {
   const ext: string = process.platform === 'win32' ? '.cmd' : ''
-  let binPath: string = `node_modules${sep}.bin${sep}${name}`
+  let binPath: string = resolve(`node_modules/.bin/${name}`)
   if (existsSync(binPath)) {
     return binPath + ext
   }
 
-  binPath = `node_modules${sep}nextron${sep}node_modules${sep}.bin${sep}${name}`
+  binPath = resolve(`node_modules/nextron/node_modules/.bin/${name}`)
   if (existsSync(binPath)) {
     return binPath + ext
   }
