@@ -1,5 +1,6 @@
 import { promisify } from 'util'
 import { exec as defaultExec } from 'child_process'
+import chalk from 'chalk'
 
 export default async function detectPackageManager(): Promise<'yarn'|'npm'> {
   let pm: 'yarn'|'npm'|null = 'yarn'
@@ -19,7 +20,7 @@ export default async function detectPackageManager(): Promise<'yarn'|'npm'> {
   }
 
   if (pm === null) {
-    console.log('No available package manager! (`yarn` or `npm` is available)')
+    console.log(chalk.red('No available package manager! (`yarn` or `npm` is available)'))
     process.exit(1)
   }
 
