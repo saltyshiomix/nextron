@@ -3,7 +3,7 @@ function createArchArgs(argv: any): string {
   argv.x64 && (archArgs += '--x64 ')
   argv.ia32 && (archArgs += '--ia32 ')
   argv.armv7l && (archArgs += '--armv7l ')
-  argv.arm64 && (archArgs += '--arm64')
+  argv.arm64 && (archArgs += '--arm64 ')
   return archArgs
 }
 
