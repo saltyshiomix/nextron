@@ -35,7 +35,7 @@
     "cross-spawn": "^6.0.5",
     "css-loader": "^0.28.11",
     "electron": "^2.0.5",
-    "electron-builder": "^20.19.1",
+    "electron-builder": "^20.22.0",
     "fast-glob": "^2.2.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^6.0.1",
