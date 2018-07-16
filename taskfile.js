@@ -4,14 +4,23 @@ const fg = require('fast-glob')
 
 function convToUnixFormat() {
   const isWindows = /^win/.test(process.platform)
-  if (!isWindows) {
+  const isMac = process.platform === 'darwin'
+  if (!(isWindows || isMac)) {
     return
   }
 
   const cwd = process.cwd()
   const files = fg.sync('dist/**/*', { cwd })
   files.forEach(function(file) {
-    execSync(`.\\bin\\dos2unix.exe ${file}`, { cwd })
+    if (isWindows) {
+      execSync(`.\\bin\\dos2unix.exe ${file}`, { cwd })
+    } else if (isMac) {
+      try {
+        execSync(`dos2unix -c Mac ${file}`, { cwd })
+      } catch (ignore) {
+        console.log('Please install dos2unix by `brew install dos2unix`')
+      }
+    }
   })
 }
 
