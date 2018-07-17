@@ -50,8 +50,7 @@
     "style-loader": "^0.21.0",
     "ts-loader": "3.*",
     "webpack": "3.10.0",
-    "webpack-merge": "^4.1.2",
-    "webpack-node-externals": "^1.7.2"
+    "webpack-merge": "^4.1.2"
   },
   "devDependencies": {
     "@taskr/clear": "^1.1.0",

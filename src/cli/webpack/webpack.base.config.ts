@@ -1,6 +1,25 @@
-import { resolve } from 'path'
-import * as nodeExternals from 'webpack-node-externals'
+import { existsSync, readFileSync } from 'fs'
+import { join, resolve } from 'path'
+import * as webpack from 'webpack'
 import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
+
+const cwd: string = process.cwd()
+const externals: string[] = require(resolve(cwd, 'package.json')).dependencies
+const possibleExternals: string = require(resolve(__dirname, '../../../package.json')).dependencies
+
+function filterDepWithoutEntryPoints(dep: string): boolean {
+  try {
+    if (existsSync(join(__dirname, `node_modules/${dep}/index.js`))) {
+      return false
+    }
+    const pgkString = readFileSync(join(__dirname, `node_modules/${dep}/package.json`)).toString()
+    const pkg = JSON.parse(pgkString)
+    const fields = ['main', 'module', 'jsnext:main', 'browser']
+    return !fields.some(field => field in pkg)
+  } catch (_) {
+    return true
+  }
+}
 
 export default function config(env: string, ext: 'js'|'ts') {
   const baseConfig = {
@@ -9,22 +28,34 @@ export default function config(env: string, ext: 'js'|'ts') {
       __dirname: false,
       __filename: false
     },
-    externals: [nodeExternals()],
+    externals: [
+      ...Object.keys(externals || {}),
+      ...Object.keys(possibleExternals || {}).filter(filterDepWithoutEntryPoints)
+    ],
     devtool: 'source-map',
     resolve: {
-      extensions: ['.js'],
+      extensions: ['.js', '.jsx', '.json'],
       alias: {
-        env: resolve(process.cwd(), `env/${env}.json`)
-      }
+        env: resolve(cwd, `env/${env}.json`)
+      },
+      modules: [join(cwd, 'app'), 'node_modules']
+    },
+    output: {
+      libraryTarget: 'commonjs2'
     },
     module: {
       rules: [
         {
-          test: /\.js$/,
-          use: ['babel-loader'],
+          test: /\.jsx$/,
+          use: {
+            loader: 'babel-loader',
+            options: {
+              cacheDirectory: true
+            }
+          },
           exclude: [
             /node_modules/,
-            resolve(process.cwd(), 'renderer')
+            resolve(cwd, 'renderer')
           ]
         },
         {
@@ -34,15 +65,22 @@ export default function config(env: string, ext: 'js'|'ts') {
       ]
     },
     plugins: [
+      new webpack.EnvironmentPlugin({
+        NODE_ENV: 'production'
+      }),
+      new webpack.NamedModulesPlugin(),
       new FriendlyErrorsWebpackPlugin({ clearConsole: env === 'development' })
     ]
   }
 
   if (ext === 'ts') {
-    baseConfig.resolve.extensions.push('ts')
+    baseConfig.resolve.extensions.push('.ts', '.tsx')
     baseConfig.module.rules.push({
       test: /\.tsx?$/,
-      use: ['ts-loader'],
+      use: {
+        loader: 'ts-loader',
+        options: {}
+      },
       exclude: [
         /node_modules/,
         resolve(process.cwd(), 'renderer')
