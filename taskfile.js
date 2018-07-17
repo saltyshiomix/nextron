@@ -19,6 +19,7 @@ function convToUnixFormat() {
         execSync(`dos2unix -c Mac ${file}`, { cwd })
       } catch (ignore) {
         console.log('Please install dos2unix by `brew install dos2unix`')
+        process.exit(1)
       }
     }
   })
