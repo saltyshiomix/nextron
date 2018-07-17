@@ -29,7 +29,7 @@ $ nextron init <MY-APP>
 
 You can use `examples/*` sample apps as templating.
 
-To create the `example/with-typescript` app, run the command below:
+To create the `examples/with-typescript` app, run the command below:
 
 ```bash
 $ nextron init <MY-APP> --template with-typescript
