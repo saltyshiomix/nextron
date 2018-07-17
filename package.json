@@ -26,7 +26,7 @@
     "build": "taskr build",
     "predev": "taskr build",
     "dev": "ts-node src/dev/index.ts",
-    "prepublishOnly": "taskr release"
+    "prepublishOnly": "taskr build"
   },
   "peerDependencies": {
     "electron": "^2.0.0",
@@ -55,6 +55,7 @@
   },
   "devDependencies": {
     "@taskr/clear": "^1.1.0",
+    "@taskr/shell": "^1.1.0",
     "@taskr/typescript": "^1.1.0",
     "@types/fs-extra": "^5.0.2",
     "@types/node": "^10.5.1",
