@@ -27,17 +27,17 @@ $ nextron init <MY-APP>
 
 ### Create Application with Template
 
-You can use `examples/*` sample apps as templating.
+You can use `examples/*` apps as a template.
 
-To create the `example/with-typescript` app, run the command below:
+To create the `examples/with-typescript-material-ui` app, run the command below:
 
 ```bash
-$ nextron init <MY-APP> --template with-typescript
+$ nextron init <MY-APP> --template with-typescript-material-ui
 ```
 
 ### Run Electron with Development Mode
 
-Run `npm run dev`, and nextron automatically launches the electron app.
+Run `npm run dev`, and nextron automatically launches an electron app.
 
 ```json
 {
@@ -80,7 +80,7 @@ To build Windows 32 bit version, run `npm run build:win32` like below:
 
 ### Build Configuration
 
-Edit `package.json#build` properties for custom configuration.
+Edit `package.json#build` properties for custom build configuration.
 
 ```json
 {
