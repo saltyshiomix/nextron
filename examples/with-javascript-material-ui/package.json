@@ -31,5 +31,9 @@
     "react": "^16.3.0",
     "react-dom": "^16.3.0",
     "react-jss": "latest"
+  },
+  "devDependencies": {
+    "electron": "^2.0.5",
+    "electron-builder": "^20.22.0"
   }
 }

@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.8.6",
+  "version": "0.9.1",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -26,7 +26,11 @@
     "build": "taskr build",
     "predev": "taskr build",
     "dev": "ts-node src/dev/index.ts",
-    "prepublishOnly": "taskr release"
+    "prepublishOnly": "taskr build"
+  },
+  "peerDependencies": {
+    "electron": "^2.0.0",
+    "electron-builder": "^20.0.0"
   },
   "dependencies": {
     "@babel/core": "7.0.0-beta.42",
@@ -34,8 +38,6 @@
     "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
     "css-loader": "^0.28.11",
-    "electron": "^2.0.5",
-    "electron-builder": "^20.22.0",
     "fast-glob": "^2.2.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^6.0.1",
@@ -53,6 +55,7 @@
   },
   "devDependencies": {
     "@taskr/clear": "^1.1.0",
+    "@taskr/shell": "^1.1.0",
     "@taskr/typescript": "^1.1.0",
     "@types/fs-extra": "^5.0.2",
     "@types/node": "^10.5.1",

@@ -1,6 +1,6 @@
 # with-typescript-material-ui
 
-<p align="center"><img src="https://i.imgur.com/trvnMJ6.png"></p>
+<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
 
 ## Usage
 
