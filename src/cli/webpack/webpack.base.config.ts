@@ -4,8 +4,8 @@ import * as webpack from 'webpack'
 import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
 
 const cwd: string = process.cwd()
-const externals: string[] = require(resolve(cwd, 'package.json')).dependencies
-const possibleExternals: string = require(resolve(__dirname, '../../../package.json')).dependencies
+const externals: object = require(resolve(cwd, 'package.json')).dependencies
+const possibleExternals: object = require(resolve(__dirname, '../../../package.json')).dependencies
 
 function filterDepWithoutEntryPoints(dep: string): boolean {
   try {
