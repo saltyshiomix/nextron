@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "0.9.3",
+  "version": "0.9.4",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -49,6 +49,7 @@
     "react-dom": "^16.0.0",
     "style-loader": "^0.21.0",
     "ts-loader": "3.*",
+    "uglifyjs-webpack-plugin": "^1.2.7",
     "webpack": "3.10.0",
     "webpack-merge": "^4.1.2"
   },

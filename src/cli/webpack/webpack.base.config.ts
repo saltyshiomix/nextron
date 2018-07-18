@@ -1,6 +1,7 @@
 import { existsSync, readFileSync } from 'fs'
 import { join, resolve } from 'path'
 import * as webpack from 'webpack'
+import * as UglifyJSPlugin from 'uglifyjs-webpack-plugin'
 import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
 
 const cwd: string = process.cwd()
@@ -23,7 +24,7 @@ function filterDepWithoutEntryPoints(dep: string): boolean {
 
 export default function config(env: string, ext: 'js'|'ts') {
   const baseConfig = {
-    target: 'electron-renderer',
+    target: 'electron-main',
     node: {
       __dirname: false,
       __filename: false
@@ -66,7 +67,7 @@ export default function config(env: string, ext: 'js'|'ts') {
     },
     plugins: [
       new webpack.EnvironmentPlugin({
-        NODE_ENV: 'production'
+        NODE_ENV: env
       }),
       new webpack.NamedModulesPlugin(),
       new FriendlyErrorsWebpackPlugin({ clearConsole: env === 'development' })
@@ -86,6 +87,17 @@ export default function config(env: string, ext: 'js'|'ts') {
         resolve(process.cwd(), 'renderer')
       ]
     })
+  }
+
+  if (env === 'production') {
+    baseConfig.plugins.push(new UglifyJSPlugin({
+      parallel: true,
+      sourceMap: true
+    }))
+    baseConfig.plugins.push(new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production',
+      DEBUG_PROD: 'false'
+    }))
   }
 
   return baseConfig
