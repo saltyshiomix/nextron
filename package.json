@@ -28,10 +28,6 @@
     "dev": "ts-node src/dev/index.ts",
     "prepublishOnly": "taskr build"
   },
-  "peerDependencies": {
-    "electron": "^2.0.0",
-    "electron-builder": "^20.0.0"
-  },
   "dependencies": {
     "@babel/core": "7.0.0-beta.42",
     "@zeit/next-typescript": "1.1.0",
