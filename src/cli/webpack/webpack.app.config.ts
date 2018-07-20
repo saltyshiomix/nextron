@@ -1,5 +1,5 @@
 import { resolve } from 'path'
-import * as merge from 'webpack-merge'
+import { smart as merge } from 'webpack-merge'
 import baseConfig from './webpack.base.config'
 import detectExt from '../../lib/util/detect-ext'
 

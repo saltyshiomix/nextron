@@ -26,6 +26,7 @@
   },
   "dependencies": {
     "@material-ui/core": "1.4.0",
+    "@zeit/next-typescript": "1.1.0",
     "jss": "latest",
     "nextron": "latest",
     "react": "^16.3.0",
@@ -33,10 +34,11 @@
     "react-jss": "latest"
   },
   "devDependencies": {
+    "@babel/core": "7.0.0-beta.42",
     "@types/next": "6.*",
     "@types/react": "^16.*",
-    "electron": "^2.0.5",
-    "electron-builder": "^20.22.0",
+    "electron": "2.0.5",
+    "electron-builder": "20.23.1",
     "typescript": "^2.9.2"
   }
 }
