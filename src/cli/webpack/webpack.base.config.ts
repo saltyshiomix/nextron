@@ -24,6 +24,7 @@ function filterDepWithoutEntryPoints(dep: string): boolean {
 
 export default function config(env: string, ext: 'js'|'ts') {
   const baseConfig = {
+    mode: env,
     target: 'electron-main',
     node: {
       __dirname: false,
