@@ -73,4 +73,13 @@ const startProcess = () => {
   return proc
 }
 
-startProcess()
+const proc = startProcess()
+
+const wrapper = () => {
+  if (proc) {
+    proc.kill()
+  }
+}
+process.on('SIGINT', wrapper)
+process.on('SIGTERM', wrapper)
+process.on('exit', wrapper)
