@@ -2,7 +2,7 @@ import chalk from 'chalk'
 import { sleep } from 'sleep'
 
 export default async function waitRendererProcess() {
-  const MAX_RETRY_COUNT: number = 10
+  const MAX_RETRY_COUNT: number = 30
   let i
   for (i = 0; i < MAX_RETRY_COUNT; i++) {
     sleep(1)
