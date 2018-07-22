@@ -1,22 +1,22 @@
 import { sep } from 'path'
 import { execSync } from 'child_process'
-import * as fkill from 'fkill'
 import * as webpack from 'webpack'
 import config from '../webpack/webpack.app.config'
 import detectBinPath from '../../lib/util/detect-bin-path'
 import startRendererProcess from './start-renderer-process'
 import prepareRendererProcess from './prepare-renderer-process'
+import killPort from './kill-port'
 
 export default async function start() {
+  await killPort(8888)
+
   const rendererProc = startRendererProcess()
 
-  const killRendererProcess = () => {
+  const killRendererProcess = async () => {
     if (rendererProc) {
       rendererProc.kill()
     }
-    try {
-      fkill(8888)
-    } catch (_) {}
+    await killPort(8888)
   }
   process.on('SIGINT', killRendererProcess)
   process.on('SIGTERM', killRendererProcess)
@@ -26,7 +26,7 @@ export default async function start() {
 
   let electronStarted = false
   const compiler = webpack(config('development'))
-  const watching = compiler.watch({}, (err, stats) => {
+  const watching = compiler.watch({}, async (err, stats) => {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
 
@@ -35,7 +35,7 @@ export default async function start() {
         stdio: 'inherit'
       })
 
-      killRendererProcess()
+      await killRendererProcess()
       watching.close()
       process.exit(0)
     }
