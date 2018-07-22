@@ -15,7 +15,7 @@ export default async function start() {
       rendererProc.kill()
     }
     try {
-      fkill(':8888')
+      fkill(8888)
     } catch (_) {}
   }
   process.on('SIGINT', killRendererProcess)
