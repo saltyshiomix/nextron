@@ -1,5 +1,6 @@
 import { sep } from 'path'
 import { execSync } from 'child_process'
+import * as fkill from 'fkill'
 import * as webpack from 'webpack'
 import config from '../webpack/webpack.app.config'
 import detectBinPath from '../../lib/util/detect-bin-path'
@@ -9,14 +10,17 @@ import prepareRendererProcess from './prepare-renderer-process'
 export default async function start() {
   const rendererProc = startRendererProcess()
 
-  const wrapper = () => {
+  const killRendererProcess = () => {
     if (rendererProc) {
       rendererProc.kill()
     }
+    try {
+      fkill(':8888')
+    } catch (_) {}
   }
-  process.on('SIGINT', wrapper)
-  process.on('SIGTERM', wrapper)
-  process.on('exit', wrapper)
+  process.on('SIGINT', killRendererProcess)
+  process.on('SIGTERM', killRendererProcess)
+  process.on('exit', killRendererProcess)
 
   await prepareRendererProcess()
 
@@ -31,9 +35,9 @@ export default async function start() {
         stdio: 'inherit'
       })
 
-      if (rendererProc) {
-        rendererProc.kill()
-      }
+      killRendererProcess()
+      watching.close()
+      process.exit(0)
     }
   })
 }
