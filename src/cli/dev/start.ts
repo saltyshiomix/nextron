@@ -1,27 +1,39 @@
 import { sep } from 'path'
 import { execSync } from 'child_process'
 import * as webpack from 'webpack'
-import buildRendererProcess from '../build/build-renderer-process'
 import config from '../webpack/webpack.app.config'
 import detectBinPath from '../../lib/util/detect-bin-path'
-import * as spinner from '../spinner'
+import startRendererProcess from './start-renderer-process'
+import prepareRendererProcess from './prepare-renderer-process'
 
 export default async function start() {
-  spinner.create('Building renderer process')
-  await buildRendererProcess('renderer')
+  const rendererProc = startRendererProcess()
 
-  spinner.create('Building main process')
+  const wrapper = () => {
+    if (rendererProc) {
+      rendererProc.kill()
+    }
+  }
+  process.on('SIGINT', wrapper)
+  process.on('SIGTERM', wrapper)
+  process.on('exit', wrapper)
+
+  await prepareRendererProcess()
+
   let electronStarted = false
   const compiler = webpack(config('development'))
-  await compiler.run(async (err, stats) => {
+  const watching = compiler.watch({}, (err, stats) => {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
 
-      spinner.clear('Nextron app started!')
       execSync(`${detectBinPath('electron')} app${sep}background.js`, {
         cwd: process.cwd(),
         stdio: 'inherit'
       })
+
+      if (rendererProc) {
+        rendererProc.kill()
+      }
     }
   })
 }
