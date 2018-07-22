@@ -10,23 +10,28 @@ import killPort from './kill-port'
 export default async function start() {
   await killPort(8888)
 
+  let watching
   const rendererProc = startRendererProcess()
 
-  const killRendererProcess = async () => {
+  const killWholeProcess = async () => {
+    if (watching) {
+      watching.close()
+    }
     if (rendererProc) {
       rendererProc.kill()
     }
     await killPort(8888)
+    process.exit(0)
   }
-  process.on('SIGINT', killRendererProcess)
-  process.on('SIGTERM', killRendererProcess)
-  process.on('exit', killRendererProcess)
+  process.on('SIGINT', killWholeProcess)
+  process.on('SIGTERM', killWholeProcess)
+  process.on('exit', killWholeProcess)
 
   await prepareRendererProcess()
 
   let electronStarted = false
   const compiler = webpack(config('development'))
-  const watching = compiler.watch({}, async (err, stats) => {
+  watching = compiler.watch({}, async (err, stats) => {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
 
@@ -35,9 +40,7 @@ export default async function start() {
         stdio: 'inherit'
       })
 
-      await killRendererProcess()
-      watching.close()
-      process.exit(0)
+      await killWholeProcess()
     }
   })
 }
