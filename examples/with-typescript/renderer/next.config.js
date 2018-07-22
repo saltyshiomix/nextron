@@ -6,5 +6,5 @@ module.exports = withTypeScript({
     config.target = 'electron-renderer'
     return config
   },
-  exportPathMap: detectExportPathMap()
+  exportPathMap: detectExportPathMap
 })
