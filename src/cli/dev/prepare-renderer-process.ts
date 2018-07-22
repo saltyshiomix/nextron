@@ -1,17 +1,11 @@
 import chalk from 'chalk'
 import { sleep } from 'sleep'
-import * as fkill from 'fkill'
 
 export default async function waitRendererProcess() {
   const MAX_RETRY_COUNT: number = 10
   let i
   for (i = 0; i < MAX_RETRY_COUNT; i++) {
     sleep(1)
-    if (0 < process.stdout.toString().indexOf('Port 8888 is already in use')) {
-      try {
-        fkill(8888)
-      } catch (_) {}
-    }
     if (0 < process.stdout.toString().indexOf('> Ready on http://localhost:8888')) {
       break
     }
