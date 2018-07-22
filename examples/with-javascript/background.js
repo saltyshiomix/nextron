@@ -4,8 +4,9 @@ import { app } from 'electron'
 import { createWindow } from 'nextron'
 
 const env = require('env')
+const isProd = (env.name === 'production')
 
-if (env.name !== 'production') {
+if (!isProd) {
   const userDataPath = app.getPath('userData')
   app.setPath('userData', `${userDataPath} (${env.name})`)
 }
@@ -14,20 +15,20 @@ app.on('ready', () => {
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600
-  });
+  })
 
-  mainWindow.loadURL(
-    format({
-      pathname: join(__dirname, 'home/index.html'),
-      protocol: 'file:',
-      slashes: true
-    })
-  );
+  const homeUrl = isProd ? format({
+    pathname: join(__dirname, 'home/index.html'),
+    protocol: 'file:',
+    slashes: true
+  }) : 'http://localhost:8888/home'
 
-  if (env.name === 'development') {
-    mainWindow.openDevTools();
+  mainWindow.loadURL(homeUrl)
+
+  if (!isProd) {
+    mainWindow.openDevTools()
   }
-});
+})
 
 app.on('window-all-closed', () => {
   app.quit()

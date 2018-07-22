@@ -5,5 +5,5 @@ module.exports = {
     config.target = 'electron-renderer'
     return config
   },
-  exportPathMap: () => detectExportPathMap()
+  exportPathMap: detectExportPathMap
 }
