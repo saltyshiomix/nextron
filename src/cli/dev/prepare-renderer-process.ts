@@ -6,7 +6,7 @@ export default async function waitRendererProcess() {
   let i
   for (i = 0; i < MAX_RETRY_COUNT; i++) {
     sleep(1)
-    if (0 < process.stdout.toString().indexOf('> Ready on http://localhost:8888')) {
+    if (0 <= process.stdout.toString().indexOf('> Ready on http://localhost:8888')) {
       break
     }
   }
