@@ -9,6 +9,20 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 
 (The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
 
+## My Belief for Nextron
+
+1. Show a way of developing desktop apps only web knowledge
+1. Easy to use
+1. Open to OSS developers
+
+## Otherwise Specified
+
+- If you need performance with Electron, you should see these boilerplates
+  - [szwacz/electron-boilerplate](https://github.com/szwacz/electron-boilerplate)
+  - [chentsulin/electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
+- If you want to use Nextron as production, please take responsibility for your actions
+- But, if you have any troubles, questions or ideas, I'll support you, I promise
+
 ## Usage
 
 ### Install
