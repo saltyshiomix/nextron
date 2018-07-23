@@ -1,9 +1,9 @@
-import { execSync } from 'child_process'
+import { spawn } from 'cross-spawn'
 import { join } from 'path'
 import { copy, remove, readFileSync, writeFileSync } from 'fs-extra'
 import * as fg from 'fast-glob'
-import resolveExportedPaths from '../../lib/next/resolve-exported-paths'
 import detectBinPath from '../../lib/util/detect-bin-path'
+import resolveExportedPaths from '../../lib/next/resolve-exported-paths'
 
 export default async function buildRendererProcess(rendererDir: string): Promise<void> {
   const cwd: string = process.cwd()
@@ -11,8 +11,8 @@ export default async function buildRendererProcess(rendererDir: string): Promise
   const appdir: string = join(cwd, 'app')
 
   const next: string = detectBinPath('next')
-  execSync(`${next} build ${rendererDir}`, { cwd })
-  execSync(`${next} export ${rendererDir}`, { cwd })
+  spawn.sync(next, ['build', rendererDir], { cwd })
+  spawn.sync(next, ['export', rendererDir], { cwd })
   await copy(outdir, appdir)
   await remove(outdir)
 

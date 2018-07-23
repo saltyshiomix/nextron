@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "1.1.6",
+  "version": "1.1.7",
   "description": "Build the Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -32,6 +32,7 @@
     "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
     "css-loader": "1.0.0",
+    "delay": "^3.0.0",
     "detect-port": "^1.2.3",
     "fast-glob": "^2.2.2",
     "fkill-cli": "^5.0.0",
@@ -43,11 +44,10 @@
     "ora": "^2.1.0",
     "react": "^16.0.0",
     "react-dom": "^16.0.0",
-    "sleep": "^5.1.1",
     "style-loader": "0.21.0",
     "ts-loader": "4.4.2",
     "uglifyjs-webpack-plugin": "^1.2.7",
-    "webpack": "^4.16.1",
+    "webpack": "^4.16.2",
     "webpack-cli": "^3.1.0",
     "webpack-merge": "^4.1.3"
   },
