@@ -116,7 +116,7 @@ Edit `package.json#build` properties for custom build configuration.
 }
 ```
 
-For more information, please check out [electron-builder configuration documents](https://github.com/electron-userland/electron-builder/blob/master/docs/configuration/configuration.md).
+For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration/).
 
 ## Examples
 
