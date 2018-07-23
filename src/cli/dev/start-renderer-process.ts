@@ -9,7 +9,7 @@ export default async function startRendererProcess(): Promise<any> {
   })
 
   // TODO: wait for ready (renderer process)
-  await delay(15000)
+  await delay(10000)
 
   return proc
 }
