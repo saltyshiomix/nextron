@@ -1,21 +1,22 @@
-function createArchArgs(argv: any): string {
-  let archArgs: string = ''
-  argv.x64 && (archArgs += '--x64 ')
-  argv.ia32 && (archArgs += '--ia32 ')
-  argv.armv7l && (archArgs += '--armv7l ')
-  argv.arm64 && (archArgs += '--arm64 ')
+function createArchArgs(argv: any): string[] {
+  let archArgs: string[] = []
+  argv.x64 && (archArgs.push('--x64'))
+  argv.ia32 && (archArgs.push('--ia32'))
+  argv.armv7l && (archArgs.push('--armv7l'))
+  argv.arm64 && (archArgs.push('--arm64'))
   return archArgs
 }
 
-export default function createBuilderArgs(argv: any): string {
-  let args: string = ''
+export default function createBuilderArgs(argv: any): string[] {
+  let args: string[] = []
   if (argv.all) {
-    args += '-wml ' + createArchArgs(argv)
+    args.push('-wml')
+    args.push(...createArchArgs(argv))
   } else {
-    argv.win && (args += '--win ')
-    argv.mac && (args += '--mac ')
-    argv.linux && (args += '--linux ')
-    args += createArchArgs(argv)
+    argv.win && (args.push('--win'))
+    argv.mac && (args.push('--mac'))
+    argv.linux && (args.push('--linux'))
+    args.push(...createArchArgs(argv))
   }
   return args
 }

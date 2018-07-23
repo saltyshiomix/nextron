@@ -1,11 +1,10 @@
-import { sep } from 'path'
-import { execSync } from 'child_process'
+import { spawn } from 'cross-spawn'
 import * as webpack from 'webpack'
 import config from '../webpack/webpack.app.config'
-import detectBinPath from '../../lib/util/detect-bin-path'
 import startRendererProcess from './start-renderer-process'
 import prepareRendererProcess from './prepare-renderer-process'
 import killPort from './kill-port'
+import detectBinPath from '../../lib/util/detect-bin-path'
 
 export default async function start() {
   await killPort(8888)
@@ -35,7 +34,7 @@ export default async function start() {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
 
-      execSync(`${detectBinPath('electron')} app${sep}background.js`, {
+      spawn.sync(detectBinPath('electron'), ['.'], {
         cwd: process.cwd(),
         stdio: 'inherit'
       })
