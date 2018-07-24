@@ -1,9 +1,8 @@
-import { spawn } from 'cross-spawn'
+import npx from 'node-npx'
 import * as webpack from 'webpack'
 import config from '../webpack/webpack.app.config'
 import startRendererProcess from './start-renderer-process'
 import killPort from './kill-port'
-import detectBinPath from '../../lib/util/detect-bin-path'
 
 export default async function start() {
   await killPort(8888)
@@ -30,7 +29,7 @@ export default async function start() {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
 
-      spawn.sync(detectBinPath('electron'), ['.'], {
+      await npx('electron', ['.'], {
         cwd: process.cwd(),
         stdio: 'inherit'
       })
