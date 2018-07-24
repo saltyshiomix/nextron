@@ -1533,7 +1533,7 @@ cross-spawn@5.1.0, cross-spawn@^5.0.1:
     shebang-command "^1.2.0"
     which "^1.2.9"
 
-cross-spawn@^6.0.0, cross-spawn@^6.0.5:
+cross-spawn@6.0.5, cross-spawn@^6.0.0, cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
   dependencies:
@@ -3509,6 +3509,12 @@ node-libs-browser@^2.0.0:
     url "^0.11.0"
     util "^0.10.3"
     vm-browserify "0.0.4"
+
+node-npx@^0.0.5:
+  version "0.0.5"
+  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-0.0.5.tgz#ac7a0e2b9113048e01b7f4c29131b352e14d17f0"
+  dependencies:
+    cross-spawn "6.0.5"
 
 node-pre-gyp@^0.10.0:
   version "0.10.3"

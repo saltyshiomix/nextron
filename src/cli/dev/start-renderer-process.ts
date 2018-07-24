@@ -1,9 +1,8 @@
-import { spawn } from 'cross-spawn'
 import * as delay from 'delay'
-import detectBinPath from '../../lib/util/detect-bin-path'
+import { npxAsync as npx } from 'node-npx'
 
 export default async function startRendererProcess(): Promise<any> {
-  const proc = spawn(detectBinPath('next'), ['-p', '8888', 'renderer'], {
+  const proc = npx('next', ['-p', '8888', 'renderer'], {
     cwd: process.cwd(),
     stdio: 'inherit'
   })
