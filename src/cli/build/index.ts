@@ -21,7 +21,6 @@ export default async function build(argv: any) {
     await buildMainProcess()
 
     spinner.create('Packaging - please wait a moment')
-    console.log('')
     await packageElectron(createBuilderArgs(argv))
 
     spinner.clear('See `dist` directory')
