@@ -9,8 +9,8 @@ export default async function buildRendererProcess(rendererDir: string): Promise
   const outdir: string = join(cwd, rendererDir, 'out')
   const appdir: string = join(cwd, 'app')
 
-  npx('next', ['build', rendererDir], { cwd })
-  npx('next', ['export', rendererDir], { cwd })
+  await npx('next', ['build', rendererDir], { cwd })
+  await npx('next', ['export', rendererDir], { cwd })
   await copy(outdir, appdir)
   await remove(outdir)
 
