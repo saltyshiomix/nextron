@@ -1,12 +1,14 @@
 import { join } from 'path'
 import { format } from 'url'
 import { app } from 'electron'
-import { createWindow } from 'nextron'
+import { createWindow, enableHotReload } from 'nextron'
 
 const env = require('env')
 const isProd = (env.name === 'production')
 
 if (!isProd) {
+  enableHotReload()
+
   const userDataPath = app.getPath('userData')
   app.setPath('userData', `${userDataPath} (${env.name})`)
 }

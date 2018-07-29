@@ -42,7 +42,6 @@ export default async function dev(): Promise<void> {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
       await npx('electron', ['.'], { cwd, stdio: 'inherit' })
-      await killWholeProcess()
     }
   })
 }
