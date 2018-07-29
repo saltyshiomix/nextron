@@ -24,8 +24,7 @@
     ]
   },
   "include": [
-    "common/**/*",
-    "main/**/*",
-    "renderer/**/*"
+    "background.ts",
+    "renderer/**/*.ts"
   ]
 }
