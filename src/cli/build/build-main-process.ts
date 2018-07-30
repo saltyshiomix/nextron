@@ -1,5 +1,5 @@
 import { sep } from 'path'
-import npx from 'node-npx'
+import { npxSync as npx } from 'node-npx'
 
 export default async function buildMainProcess(): Promise<void> {
   const cwd: string = process.cwd()

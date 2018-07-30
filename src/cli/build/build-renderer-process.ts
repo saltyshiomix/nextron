@@ -1,6 +1,6 @@
 import { join } from 'path'
 import { copy, remove, readFileSync, writeFileSync } from 'fs-extra'
-import npx from 'node-npx'
+import { npxSync as npx } from 'node-npx'
 import * as fg from 'fast-glob'
 import resolveExportedPaths from '../../lib/next/resolve-exported-paths'
 
