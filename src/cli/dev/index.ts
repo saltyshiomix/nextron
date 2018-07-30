@@ -1,5 +1,5 @@
 import { spawn, ChildProcess } from 'child_process'
-import npx from 'node-npx'
+import { npxSync as npx } from 'node-npx'
 import bin from 'resolve-as-bin'
 import * as delay from 'delay'
 import * as webpack from 'webpack'

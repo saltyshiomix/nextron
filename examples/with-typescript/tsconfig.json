@@ -25,6 +25,6 @@
   },
   "include": [
     "background.ts",
-    "renderer/**/*.ts"
+    "renderer/**/*"
   ]
 }
