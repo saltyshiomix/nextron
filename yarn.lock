@@ -3196,9 +3196,9 @@ node-libs-browser@^2.0.0:
     util "^0.10.3"
     vm-browserify "0.0.4"
 
-node-npx@1.0.2:
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-1.0.2.tgz#8a551a780a42506131c303f9f28123373cdd681c"
+node-npx@1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-1.1.1.tgz#4b0fd9460df0303841d6b06b978e3e0e270c21d2"
   dependencies:
     cross-spawn "6.0.5"
     delay "3.0.0"
