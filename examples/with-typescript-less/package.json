@@ -1,0 +1,41 @@
+{
+  "private": true,
+  "name": "my-nextron-app",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © ${year} ${author}",
+    "files": [
+      "app/**/*",
+      "node_modules/**/*",
+      "package.json"
+    ],
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "nextron",
+    "build": "nextron build"
+  },
+  "dependencies": {
+    "@zeit/next-less": "0.3.0",
+    "@zeit/next-typescript": "1.1.0",
+    "nextron": "latest"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0-beta.42",
+    "@types/next": "6.*",
+    "@types/react": "^16.*",
+    "electron": "2.0.5",
+    "electron-builder": "20.23.1",
+    "less": "3.7.1",
+    "typescript": "^2.9.2"
+  }
+}

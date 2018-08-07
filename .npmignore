@@ -1,3 +1,6 @@
 /bin
 /src
 /workspace
+/.editorconfig
+/taskfile.js
+/yarn-error.log

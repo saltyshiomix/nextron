@@ -1,6 +1,5 @@
 import { spawn, ChildProcess } from 'child_process'
-import { npxSync as npx } from 'node-npx'
-import bin from 'resolve-as-bin'
+import { npx, npxSync } from 'node-npx'
 import * as delay from 'delay'
 import * as webpack from 'webpack'
 import config from '../webpack/webpack.app.config'
@@ -9,7 +8,7 @@ export default async function dev(): Promise<void> {
   const cwd: string = process.cwd()
 
   const startRendererProcess = (): ChildProcess => {
-    const child: ChildProcess = spawn(bin('next'), ['-p', '8888', 'renderer'], { cwd, stdio: 'inherit' })
+    const child: ChildProcess = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio: 'inherit' })
     child.on('close', () => {
       process.exit(0)
     })
@@ -41,7 +40,7 @@ export default async function dev(): Promise<void> {
   watching = compiler.watch({}, async (err, stats) => {
     if (!err && !stats.hasErrors() && !electronStarted) {
       electronStarted = true
-      await npx('electron', ['.'], { cwd, stdio: 'inherit' })
+      await npxSync('electron', ['.'], { cwd, stdio: 'inherit' })
     }
   })
 }
