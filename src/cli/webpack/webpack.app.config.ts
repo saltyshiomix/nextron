@@ -11,7 +11,7 @@ export default function config(env: string) {
       background: `./background.${ext}`
     },
     output: {
-      filename: resolve(process.cwd(), 'app/[name].js')
+      filename: 'app/[name].js'
     }
   })
 }
