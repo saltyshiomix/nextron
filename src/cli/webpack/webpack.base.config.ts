@@ -78,10 +78,7 @@ export default function config(env: string, ext: 'js'|'ts') {
     baseConfig.resolve.extensions.push('.ts', '.tsx')
     baseConfig.module.rules.push({
       test: /\.tsx?$/,
-      use: {
-        loader: 'ts-loader',
-        options: {}
-      },
+      use: 'ts-loader',
       exclude: [
         /node_modules/,
         resolve(process.cwd(), 'renderer')

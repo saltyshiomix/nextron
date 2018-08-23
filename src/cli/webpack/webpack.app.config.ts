@@ -1,4 +1,3 @@
-import { resolve } from 'path'
 import { smart as merge } from 'webpack-merge'
 import baseConfig from './webpack.base.config'
 import detectExt from '../../lib/util/detect-ext'
