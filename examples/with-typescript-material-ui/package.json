@@ -25,7 +25,7 @@
     "build": "nextron build"
   },
   "dependencies": {
-    "@material-ui/core": "1.5.1",
+    "@material-ui/core": "3.0.1",
     "@zeit/next-typescript": "1.1.0",
     "jss": "latest",
     "nextron": "latest",
