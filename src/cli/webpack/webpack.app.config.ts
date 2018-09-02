@@ -1,3 +1,4 @@
+import { resolve } from 'path'
 import { smart as merge } from 'webpack-merge'
 import baseConfig from './webpack.base.config'
 import detectExt from '../../lib/util/detect-ext'
@@ -10,7 +11,8 @@ export default function config(env: string) {
       background: `./background.${ext}`
     },
     output: {
-      filename: 'app/[name].js'
+      filename: '[name].js',
+      path: resolve(process.cwd(), 'app')
     }
   })
 }
