@@ -34,7 +34,8 @@
     "react-jss": "latest"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.42",
+    "@babel/core": "7.0.0",
+    "@babel/runtime": "7.0.0",
     "@types/next": "6.*",
     "@types/react": "^16.*",
     "electron": "2.0.8",

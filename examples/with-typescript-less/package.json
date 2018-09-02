@@ -25,12 +25,13 @@
     "build": "nextron build"
   },
   "dependencies": {
-    "@zeit/next-less": "0.3.0",
+    "@zeit/next-less": "0.3.1-canary.2",
     "@zeit/next-typescript": "1.1.0",
     "nextron": "latest"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0-beta.42",
+    "@babel/core": "7.0.0",
+    "@babel/runtime": "7.0.0",
     "@types/next": "6.*",
     "@types/react": "^16.*",
     "electron": "2.0.8",
