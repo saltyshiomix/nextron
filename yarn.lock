@@ -2915,9 +2915,9 @@ neo-async@^2.5.0:
   version "2.5.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.2.tgz#489105ce7bc54e709d736b195f82135048c50fcc"
 
-next@7.0.0-canary.8:
-  version "7.0.0-canary.8"
-  resolved "https://registry.yarnpkg.com/next/-/next-7.0.0-canary.8.tgz#33e520dc3c0c77bca6d32bedf511facd87f282d7"
+next@7.0.0-canary.10:
+  version "7.0.0-canary.10"
+  resolved "https://registry.yarnpkg.com/next/-/next-7.0.0-canary.10.tgz#3e947cf87717bf34083e33f047ad0a72bff89ddb"
   dependencies:
     "@babel/core" "7.0.0"
     "@babel/plugin-proposal-class-properties" "7.0.0"
