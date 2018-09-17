@@ -32,7 +32,7 @@
     "nextron": "latest"
   },
   "devDependencies": {
-    "electron": "2.0.8",
-    "electron-builder": "20.28.2"
+    "electron": "2.0.9",
+    "electron-builder": "20.28.4"
   }
 }
