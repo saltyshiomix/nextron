@@ -37,7 +37,7 @@
     "@babel/core": "7.0.0-beta.42",
     "@types/next": "6.*",
     "@types/react": "^16.*",
-    "electron": "2.0.9",
+    "electron": "3.0.0",
     "electron-builder": "20.28.4",
     "typescript": "^3.0.1"
   }
