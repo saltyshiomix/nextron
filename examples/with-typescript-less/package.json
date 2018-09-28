@@ -25,18 +25,18 @@
     "build": "nextron build"
   },
   "dependencies": {
-    "@zeit/next-less": "0.3.1-canary.2",
-    "@zeit/next-typescript": "1.1.0",
+    "@zeit/next-less": "1.0.1",
+    "@zeit/next-typescript": "1.1.1",
     "nextron": "latest"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/runtime": "7.0.0",
-    "@types/next": "6.*",
+    "@types/next": "7.*",
     "@types/react": "^16.*",
-    "electron": "3.0.0",
+    "electron": "3.0.2",
     "electron-builder": "20.28.4",
     "less": "3.7.1",
-    "typescript": "^3.0.1"
+    "typescript": "^3.1.1"
   }
 }

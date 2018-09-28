@@ -25,8 +25,8 @@
     "build": "nextron build"
   },
   "dependencies": {
-    "@material-ui/core": "3.1.0",
-    "@zeit/next-typescript": "1.1.0",
+    "@material-ui/core": "3.1.1",
+    "@zeit/next-typescript": "1.1.1",
     "jss": "latest",
     "nextron": "latest",
     "react": "^16.3.0",
@@ -36,10 +36,10 @@
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/runtime": "7.0.0",
-    "@types/next": "6.*",
+    "@types/next": "7.*",
     "@types/react": "^16.*",
-    "electron": "3.0.0",
+    "electron": "3.0.2",
     "electron-builder": "20.28.4",
-    "typescript": "^3.0.1"
+    "typescript": "^3.1.1"
   }
 }
