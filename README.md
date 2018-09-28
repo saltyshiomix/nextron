@@ -9,6 +9,13 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 
 (The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
 
+## Support
+
+| nextron | next |
+| --- | --- |
+| `v2.x` | `v7.x` |
+| `v1.x` | `v6.x` |
+
 ## My Belief for Nextron
 
 1. Show a way of developing desktop apps only web knowledge
