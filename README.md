@@ -109,11 +109,6 @@ Edit `package.json#build` properties for custom build configuration.
     "appId": "com.example.nextron",
     "productName": "My Nextron App",
     "copyright": "Copyright © ${year} ${author}",
-    "files": [
-      "app/**/*",
-      "node_modules/**/*",
-      "package.json"
-    ],
     "directories": {
       "output": "dist",
       "buildResources": "resources"
