@@ -24,7 +24,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 
 ## Otherwise Specified
 
-- If you need performance with Electron, you should see these boilerplates
+- If you need **more** performance with Electron, you should see these boilerplates
   - [szwacz/electron-boilerplate](https://github.com/szwacz/electron-boilerplate)
   - [chentsulin/electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
 - If you want to use Nextron as production, please take responsibility for your actions
