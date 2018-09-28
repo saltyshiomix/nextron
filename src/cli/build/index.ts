@@ -2,6 +2,7 @@ import { join } from 'path'
 import * as fs from 'fs-extra'
 import buildMainProcess from './build-main-process'
 import buildRendererProcess from './build-renderer-process'
+import fixBrokenPackageJson from './fix-broken-package-json'
 import packageElectron from './package-electron'
 import createBuilderArgs from './create-builder-args'
 import * as spinner from '../spinner'
@@ -21,6 +22,7 @@ export default async function build(argv: any) {
     await buildMainProcess()
 
     spinner.create('Packaging - please wait a moment')
+    await fixBrokenPackageJson()
     await packageElectron(createBuilderArgs(argv))
 
     spinner.clear('See `dist` directory')
