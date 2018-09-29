@@ -5001,10 +5001,10 @@ trim-right@^1.0.1:
   resolved "https://registry.yarnpkg.com/trim-right/-/trim-right-1.0.1.tgz#cb2e1203067e0c8de1f614094b9fe45704ea6003"
   integrity sha1-yy4SAwZ+DI3h9hQJS5/kVwTqYAM=
 
-ts-loader@4.5.0:
-  version "4.5.0"
-  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-4.5.0.tgz#a1ce70b2dc799941fb2197605f0d67874097859b"
-  integrity sha512-ihgVaSmgrX4crGV4n7yuoHPoCHbDzj9aepCZR9TgIx4SgJ9gdnB6xLHgUBb7bsFM/f0K6x9iXa65KY/Fu1Klkw==
+ts-loader@5.2.1:
+  version "5.2.1"
+  resolved "https://registry.yarnpkg.com/ts-loader/-/ts-loader-5.2.1.tgz#e6815c631dcafc24319ce8be6f8af94908749cf3"
+  integrity sha512-KC0cOvsFVyxBlg5h9jvaMlIL2tNsyQLvT2/OvIlO0AMUBJ4iXTtOfaDEqvmqv2lM/icekQfDsP2PsYBCDHpuOQ==
   dependencies:
     chalk "^2.3.0"
     enhanced-resolve "^4.0.0"
@@ -5012,7 +5012,7 @@ ts-loader@4.5.0:
     micromatch "^3.1.4"
     semver "^5.0.1"
 
-ts-node@^7.0.0:
+ts-node@^7.0.1:
   version "7.0.1"
   resolved "https://registry.yarnpkg.com/ts-node/-/ts-node-7.0.1.tgz#9562dc2d1e6d248d24bc55f773e3f614337d9baf"
   integrity sha512-BVwVbPJRspzNh2yfslyT1PSbl5uIk03EZlb493RKHN4qej/D06n1cEhjlOJG69oFsE7OT8XjpTUcYf6pKTLMhw==
@@ -5046,10 +5046,10 @@ typescript@^2.3.0:
   resolved "https://registry.yarnpkg.com/typescript/-/typescript-2.9.2.tgz#1cbf61d05d6b96269244eb6a3bce4bd914e0f00c"
   integrity sha512-Gr4p6nFNaoufRIY4NMdpQRNmgxVIGMs4Fcu/ujdYk3nAZqk7supzBE9idmvfZIlH/Cuj//dvi+019qEue9lV0w==
 
-typescript@^3.0.1:
-  version "3.0.3"
-  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.0.3.tgz#4853b3e275ecdaa27f78fda46dc273a7eb7fc1c8"
-  integrity sha512-kk80vLW9iGtjMnIv11qyxLqZm20UklzuR2tL0QAnDIygIUIemcZMxlMWudl9OOt76H3ntVzcTiddQ1/pAAJMYg==
+typescript@^3.1.1:
+  version "3.1.1"
+  resolved "https://registry.yarnpkg.com/typescript/-/typescript-3.1.1.tgz#3362ba9dd1e482ebb2355b02dfe8bcd19a2c7c96"
+  integrity sha512-Veu0w4dTc/9wlWNf2jeRInNodKlcdLgemvPsrNpfu5Pq39sgfFjvIIgTsvUHCoLBnMhPoUA+tFxsXjU6VexVRQ==
 
 uglify-es@^3.3.4:
   version "3.3.9"
