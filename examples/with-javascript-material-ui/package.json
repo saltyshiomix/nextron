@@ -21,11 +21,11 @@
   },
   "dependencies": {
     "@material-ui/core": "3.1.1",
-    "jss": "latest",
+    "jss": "^9.8.7",
     "nextron": "latest",
-    "react": "^16.3.0",
-    "react-dom": "^16.3.0",
-    "react-jss": "latest"
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2",
+    "react-jss": "^8.6.1"
   },
   "devDependencies": {
     "electron": "3.0.2",

@@ -22,7 +22,9 @@
   "dependencies": {
     "@zeit/next-less": "1.0.1",
     "@zeit/next-typescript": "1.1.1",
-    "nextron": "latest"
+    "nextron": "latest",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
