@@ -8,6 +8,9 @@ import createBuilderArgs from './create-builder-args'
 import * as spinner from '../spinner'
 
 export default async function build(argv: any) {
+  // nextron has peer dependencies like typescript by ts-loader
+  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = true
+
   const cwd = process.cwd()
 
   try {
