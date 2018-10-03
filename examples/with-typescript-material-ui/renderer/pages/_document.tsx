@@ -36,7 +36,6 @@ class MyDocument extends Document<Props> {
     return (
       <html lang="en" dir="ltr">
         <Head>
-          <title>Nextron</title>
           <meta charSet="utf-8" />
           <meta name="viewport" content={'user-scalable=0, initial-scale=1, minimum-scale=1, width=device-width, height=device-height'} />
           <meta name="theme-color" content={pageContext.theme.palette.primary.main} />
