@@ -1,13 +1,13 @@
-import { existsSync, readFileSync } from 'fs'
-import { join, resolve } from 'path'
-import * as webpack from 'webpack'
-import * as FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin'
+const { existsSync, readFileSync } = require('fs')
+const { join, resolve } = require('path')
+const webpack = require('webpack')
+const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
-const cwd: string = process.cwd()
-const externals: object = require(resolve(cwd, 'package.json')).dependencies
-const possibleExternals: object = require(resolve(__dirname, '../../../package.json')).dependencies
+const cwd = process.cwd()
+const externals = require(resolve(cwd, 'package.json')).dependencies
+const possibleExternals = require(resolve(__dirname, '../../../package.json')).dependencies
 
-function filterDepWithoutEntryPoints(dep: string): boolean {
+function filterDepWithoutEntryPoints(dep) {
   try {
     if (existsSync(join(__dirname, `node_modules/${dep}/index.js`))) {
       return false
@@ -21,7 +21,7 @@ function filterDepWithoutEntryPoints(dep: string): boolean {
   }
 }
 
-export default function config(env: string, ext: 'js'|'ts') {
+module.exports = (env, ext) => {
   const baseConfig = {
     mode: env,
     target: 'electron-main',
