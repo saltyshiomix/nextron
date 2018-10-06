@@ -20,6 +20,11 @@
     "url": "https://github.com/saltyshiomix/nextron/issues",
     "email": "shiono.yoshihide@gmail.com"
   },
+  "files": [
+    "build",
+    "dist",
+    "examples"
+  ],
   "main": "dist/lib/index.js",
   "bin": {
     "nextron": "dist/cli/nextron.js"
