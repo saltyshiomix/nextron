@@ -1,6 +1,6 @@
 import { ChildProcess } from 'child_process'
 import { npx, npxSync } from 'node-npx'
-import * as delay from 'delay'
+import delay from 'delay'
 import * as webpack from 'webpack'
 import * as config from '../../../build/webpack.main.config'
 
