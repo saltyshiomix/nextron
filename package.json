@@ -8,10 +8,12 @@
   "homepage": "https://github.com/saltyshiomix/nextron",
   "keywords": [
     "electron",
-    "nextjs",
     "next",
+    "nextjs",
+    "next.js",
     "react",
     "reactjs",
+    "react.js",
     "nextron"
   ],
   "bugs": {
