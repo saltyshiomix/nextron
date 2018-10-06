@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "2.1.1",
+  "version": "2.2.3",
   "description": "Build an Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -8,16 +8,23 @@
   "homepage": "https://github.com/saltyshiomix/nextron",
   "keywords": [
     "electron",
-    "nextjs",
     "next",
+    "nextjs",
+    "next.js",
     "react",
     "reactjs",
+    "react.js",
     "nextron"
   ],
   "bugs": {
     "url": "https://github.com/saltyshiomix/nextron/issues",
     "email": "shiono.yoshihide@gmail.com"
   },
+  "files": [
+    "build",
+    "dist",
+    "examples"
+  ],
   "main": "dist/lib/index.js",
   "bin": {
     "nextron": "dist/cli/nextron.js"
@@ -38,12 +45,11 @@
     "fs-jetpack": "2.1.1",
     "minimist": "1.2.0",
     "next": "7.0.1",
-    "node-npx": "1.2.0",
+    "node-npx": "1.3.1",
     "ora": "3.0.0",
     "style-loader": "0.23.0",
     "ts-loader": "5.2.1",
     "webpack": "4.20.2",
-    "webpack-cli": "3.1.2",
     "webpack-merge": "4.1.4"
   },
   "devDependencies": {

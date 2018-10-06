@@ -1,8 +1,8 @@
-import { spawn, ChildProcess } from 'child_process'
+import { ChildProcess } from 'child_process'
 import { npx, npxSync } from 'node-npx'
-import * as delay from 'delay'
+import delay from 'delay'
 import * as webpack from 'webpack'
-import config from '../webpack/webpack.app.config'
+import * as config from '../../../build/webpack.main.config'
 
 export default async function dev(): Promise<void> {
   const cwd: string = process.cwd()
