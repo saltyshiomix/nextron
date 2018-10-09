@@ -126,6 +126,46 @@ See [examples](./examples) folder for more information.
 
 Or you can start the example app by `nextron init <app-name> --template <example-dirname>`.
 
+### [examples/custom-build-options](./examples/custom-build-options)
+
+```bash
+$ nuxtron init my-app --template custom-build-options
+```
+
+### [examples/with-javascript](./examples/with-javascript)
+
+```bash
+$ nuxtron init my-app --template with-javascript
+```
+
+### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
+
+```bash
+$ nuxtron init my-app --template with-javascript-material-ui
+```
+
+<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
+
+### [examples/with-typescript](./examples/with-typescript)
+
+```bash
+$ nuxtron init my-app --template with-typescript
+```
+
+### [examples/with-typescript-less](./examples/with-typescript-less)
+
+```bash
+$ nuxtron init my-app --template with-typescript-less
+```
+
+### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
+
+```bash
+$ nuxtron init my-app --template with-typescript-material-ui
+```
+
+<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
+
 ## Develop
 
 ### Basic
