@@ -190,3 +190,8 @@ $ yarn dev # default is examples/with-javascript
 ```bash
 $ yarn dev <EXAMPLE-FOLDER-NAME>
 ```
+
+## Related
+
+- [saltyshiomix/nuxtron](https://github.com/saltyshiomix/nuxtron)
+  - ⚡ Electron + Nuxt.js ⚡
