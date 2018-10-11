@@ -193,5 +193,4 @@ $ yarn dev <EXAMPLE-FOLDER-NAME>
 
 ## Related
 
-- [saltyshiomix/nuxtron](https://github.com/saltyshiomix/nuxtron)
-  - ⚡ Electron + Nuxt.js ⚡
+- [saltyshiomix/nuxtron](https://github.com/saltyshiomix/nuxtron) - ⚡ Electron + Nuxt.js ⚡
