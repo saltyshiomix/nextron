@@ -138,6 +138,14 @@ $ nuxtron init my-app --template custom-build-options
 $ nuxtron init my-app --template with-javascript
 ```
 
+### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
+
+```bash
+$ nuxtron init my-app --template with-javascript-ant-design
+```
+
+<p align="center"><img src="https://i.imgur.com/PiEKeIZ.png"></p>
+
 ### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
 
 ```bash

@@ -1,0 +1,34 @@
+{
+  "private": true,
+  "name": "with-javascript-tailwindcss",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © ${year} ${author}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "nextron",
+    "build": "nextron build"
+  },
+  "dependencies": {
+    "@zeit/next-css": "^1.0.1",
+    "antd": "^3.10.0",
+    "babel-plugin-import": "^1.9.1",
+    "nextron": "latest",
+    "react": "^16.5.2",
+    "react-dom": "^16.5.2"
+  },
+  "devDependencies": {
+    "electron": "3.0.2",
+    "electron-builder": "20.28.4"
+  }
+}
