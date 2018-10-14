@@ -28,7 +28,7 @@ app.on('ready', () => {
   mainWindow.loadURL(homeUrl)
 
   if (!isProd) {
-    mainWindow.openDevTools()
+    mainWindow.webContents.openDevTools()
   }
 })
 
