@@ -21,6 +21,7 @@
     "email": "shiono.yoshihide@gmail.com"
   },
   "files": [
+    "bin",
     "build",
     "dist",
     "examples"
