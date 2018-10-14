@@ -1,0 +1,96 @@
+#!/usr/bin/env node
+
+const { existsSync, copy, readJSON, writeJSON } = require('fs-extra')
+const { resolve } = require('path')
+const arg = require('arg')
+const chalk = require('chalk')
+const spinner = require('./spinner')
+
+const args = arg({
+  '--help': Boolean,
+  '--version': Boolean,
+  '--template': String,
+  '-h': '--help',
+  '-v': '--version',
+  '-t': '--template'
+})
+
+if (args['--version']) {
+  const pkg = require(resolve(__dirname, '../package.json'))
+  console.log(`nextron v${pkg.version}`)
+  process.exit(0)
+}
+
+if (args['--help'] || (!args._[0])) {
+  console.log(chalk`
+    {bold.cyan nextron} - Build an Electron + Next.js app for speed ⚡
+
+    {bold USAGE}
+
+      {bold $} {cyan nextron init} --help
+      {bold $} {cyan nextron init} {underline my-app}
+      {bold $} {cyan nextron init} {underline my-app} [--template {underline example_folder_name}]
+
+    {bold OPTIONS}
+
+      --help, -h                          shows this help message
+      --version, -v                       displays the current version of nextron
+      --template, -t {underline example_folder_name}  sets the example as a template
+  `)
+  process.exit(0)
+}
+
+async function pm() {
+  const { promisify } = require('util')
+  const { exec: defaultExec } = require('child_process')
+
+  let pm = 'yarn'
+
+  const cwd = process.cwd()
+  const exec = promisify(defaultExec)
+  try {
+    await exec(`${pm} -v`, { cwd })
+  } catch (_) {
+    pm = 'npm'
+
+    try {
+      await exec(`${pm} -v`, { cwd })
+    } catch (_) {
+      pm = null
+    }
+  }
+
+  if (pm === null) {
+    console.log(chalk.red('No available package manager! (`yarn` or `npm` is needed)'))
+    process.exit(1)
+  }
+
+  return pm
+}
+
+const template = args['--template'] || 'with-javascript-material-ui'
+if (!existsSync(resolve(__dirname, `../examples/${template}`))) {
+  console.log(chalk.red(`Not found examples/${template}`))
+  process.exit(1)
+}
+
+async function init(name) {
+  const cwd = process.cwd()
+
+  spinner.create('Copy template')
+  await copy(resolve(__dirname, `../examples/${template}`), resolve(cwd, name))
+
+  spinner.create('Set meta information')
+  const pkg = resolve(cwd, `${name}/package.json`)
+  const content = await readJSON(pkg)
+  content.name = name
+  if (process.env.NODE_ENV === 'testing') {
+    content.dependencies['nextron'] = resolve(__dirname, '..')
+  }
+  await writeJSON(pkg, {...content}, {spaces: 2})
+
+  const cmd = (await pm() === 'yarn') ? 'yarn && yarn dev' : 'npm install && npm run dev'
+  spinner.clear(`Run \`${cmd}\` inside of "${name}" to start the app`)
+}
+
+init(args._[0] || 'my-nextron-app')

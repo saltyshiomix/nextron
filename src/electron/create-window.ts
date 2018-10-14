@@ -1,7 +1,12 @@
-import { app, BrowserWindow, screen } from 'electron'
+import {
+  app,
+  screen,
+  BrowserWindow,
+  BrowserWindowConstructorOptions
+} from 'electron'
 import * as jetpack from 'fs-jetpack'
 
-export default (name, options) => {
+export default (name: string, options: BrowserWindowConstructorOptions): BrowserWindow => {
   const userDataDir = jetpack.cwd(app.getPath('userData'))
   const stateStoreFile = `window-state-${name}.json`
   const defaultSize = {
@@ -72,7 +77,11 @@ export default (name, options) => {
 
   state = ensureVisibleOnSomeDisplay(restore())
 
-  win = new BrowserWindow(Object.assign({}, options, state))
+  const browserOptions: BrowserWindowConstructorOptions = {
+    ...options,
+    ...state
+  }
+  win = new BrowserWindow(browserOptions)
 
   win.on('close', saveState)
 

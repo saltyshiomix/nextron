@@ -1,12 +1,14 @@
-import * as ora from 'ora'
-import chalk from 'chalk'
+#!/usr/bin/env node
 
-const cache: any = {}
-const isTTY: boolean = process.env.CI ? false : process.stdout.isTTY
+const ora = require('ora')
+const chalk = require('chalk')
 
-export function create(text: string): void {
+const cache = {}
+const isTTY = process.env.CI ? false : process.stdout.isTTY
+
+function create(text) {
   if (!isTTY) {
-    console.log(`[nextron] ${text}`)
+    console.log(chalk`{cyan [nextron]} ${text}`)
     return
   }
 
@@ -22,9 +24,9 @@ export function create(text: string): void {
   }).start()
 }
 
-export function clear(message: string, isError?: boolean): void {
+function clear(message, isError) {
   if (!isTTY) {
-    console.log(`[nextron] ${message}`)
+    console.log(chalk`{cyan [nextron]} ${message}`)
     return
   }
 
@@ -39,7 +41,11 @@ export function clear(message: string, isError?: boolean): void {
   console.log(`${prefix} ${message}`)
 }
 
-export function fail(message: string): void {
+function fail(message) {
   clear(message, true)
   process.exit(1)
 }
+
+module.exports.create = create
+module.exports.clear = clear
+module.exports.fail = fail

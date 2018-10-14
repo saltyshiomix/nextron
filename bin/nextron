@@ -1,7 +1,8 @@
 #!/usr/bin/env node
 
-import { resolve } from 'path'
-import { spawn } from 'cross-spawn'
+const { resolve } = require('path')
+const { spawn } = require('cross-spawn')
+const chalk = require('chalk')
 
 const defaultCommand = 'dev'
 const commands = new Set([
@@ -15,7 +16,7 @@ let args = []
 let nodeArgs = []
 
 if (new Set(['--version', '-v']).has(cmd)) {
-  const pkg = require(resolve(__dirname, '../../package.json'))
+  const pkg = require(resolve(__dirname, '../package.json'))
   console.log(`nextron v${pkg.version}`)
   process.exit(0)
 }
@@ -26,15 +27,20 @@ if (inspectArg) {
 }
 
 if (new Set(['--help', '-h']).has(cmd)) {
-  console.log(`
-    Usage
-      $ nextron <command>
+  console.log(chalk`
+    {bold.cyan nextron} - Build an Electron + Next.js app for speed ⚡
 
-    Available commands
+    {bold USAGE}
+
+      {bold $} nextron <command>
+
+    {bold AVAILABLE COMMANDS}
+
       ${Array.from(commands).join(', ')}
 
     For more information run a command with the --help flag
-      $ nextron init --help
+
+      {bold $} nextron init --help
   `)
   process.exit(0)
 }
@@ -49,7 +55,7 @@ if (commands.has(cmd)) {
 const defaultEnv = cmd === 'dev' ? 'development' : 'production'
 process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv
 
-const cli = resolve(__dirname, `nextron-${cmd}.js`)
+const cli = resolve(__dirname, `nextron-${cmd}`)
 
 const startProcess = () => {
   const proc = spawn('node', [...nodeArgs, ...[cli], ...args], { stdio: 'inherit', customFds: [0, 1, 2] })
