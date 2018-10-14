@@ -25,43 +25,37 @@
     "dist",
     "examples"
   ],
-  "main": "dist/lib/index.js",
+  "main": "dist/index.js",
   "bin": {
-    "nextron": "dist/cli/nextron.js"
+    "nextron": "bin/nextron"
   },
   "scripts": {
-    "build": "taskr build",
-    "predev": "taskr build",
-    "dev": "ts-node src/dev/index.ts",
-    "prepublishOnly": "taskr build"
+    "clean": "rimraf dist workspace",
+    "predev": "npm run build",
+    "dev": "node dev.js",
+    "prebuild": "npm run clean",
+    "build": "tsc",
+    "prepublishOnly": "npm run build"
   },
   "dependencies": {
-    "chalk": "2.4.1",
-    "css-loader": "1.0.0",
-    "delay": "4.0.1",
-    "fast-glob": "2.2.3",
-    "friendly-errors-webpack-plugin": "1.7.0",
-    "fs-extra": "7.0.0",
-    "fs-jetpack": "2.1.1",
-    "minimist": "1.2.0",
+    "arg": "^2.0.0",
+    "chalk": "^2.4.1",
+    "delay": "^4.0.1",
+    "fast-glob": "^2.2.3",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^7.0.0",
+    "fs-jetpack": "^2.1.1",
     "next": "7.0.2",
-    "node-npx": "1.3.1",
-    "ora": "3.0.0",
-    "style-loader": "0.23.0",
-    "ts-loader": "5.2.1",
-    "webpack": "4.20.2",
-    "webpack-merge": "4.1.4"
+    "node-npx": "^1.3.1",
+    "ora": "^3.0.0",
+    "ts-loader": "^5.2.1",
+    "webpack": "^4.20.2",
+    "webpack-merge": "^4.1.4"
   },
   "devDependencies": {
-    "@taskr/clear": "1.1.0",
-    "@taskr/shell": "1.1.0",
-    "@taskr/typescript": "1.1.0",
-    "@types/fs-extra": "^5.0.4",
-    "@types/node": "^10.*",
-    "@types/react": "^16.*",
-    "@types/react-dom": "^16.*",
-    "taskr": "1.1.0",
-    "ts-node": "^7.0.1",
+    "@types/node": "^10.11.4",
+    "electron": "^3.0.2",
+    "rimraf": "^2.6.2",
     "typescript": "^3.1.1"
   }
 }

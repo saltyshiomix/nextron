@@ -5,21 +5,6 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 
 const cwd = process.cwd()
 const externals = require(resolve(cwd, 'package.json')).dependencies
-const possibleExternals = require(resolve(__dirname, '../../../package.json')).dependencies
-
-function filterDepWithoutEntryPoints(dep) {
-  try {
-    if (existsSync(join(__dirname, `node_modules/${dep}/index.js`))) {
-      return false
-    }
-    const pgkString = readFileSync(join(__dirname, `node_modules/${dep}/package.json`)).toString()
-    const pkg = JSON.parse(pgkString)
-    const fields = ['main', 'module', 'jsnext:main', 'browser']
-    return !fields.some(field => field in pkg)
-  } catch (_) {
-    return true
-  }
-}
 
 module.exports = (env, ext) => {
   const baseConfig = {
@@ -29,10 +14,7 @@ module.exports = (env, ext) => {
       __dirname: false,
       __filename: false
     },
-    externals: [
-      ...Object.keys(externals || {}),
-      ...Object.keys(possibleExternals || {}).filter(filterDepWithoutEntryPoints)
-    ],
+    externals: [...Object.keys(externals || {})],
     devtool: 'source-map',
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
