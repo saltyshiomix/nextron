@@ -1,7 +1,7 @@
 import { join, extname } from 'path'
 import * as fg from 'fast-glob'
 
-export default function detectExportPathMap() {
+export default function detectExportPathMap(): object {
   const cwd: string = process.cwd()
   const pagesVirtualPath: string = 'renderer/pages'
 

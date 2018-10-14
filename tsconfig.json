@@ -4,7 +4,7 @@
     "target": "es5",
     "module": "commonjs",
     "outDir": "./dist",
-    "allowJs": true,
+    "declaration": true,
     "moduleResolution": "node",
     "allowSyntheticDefaultImports": true,
     "noUnusedLocals": true,
