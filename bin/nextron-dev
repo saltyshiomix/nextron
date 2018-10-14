@@ -28,7 +28,7 @@ if (args['--help']) {
 
     {bold OPTIONS}
 
-      --help, -h     shows this help message
+      --help,    -h  shows this help message
       --version, -v  displays the current version of nextron
   `)
   process.exit(0)
