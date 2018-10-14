@@ -3247,10 +3247,10 @@ neo-async@^2.5.0:
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.5.2.tgz#489105ce7bc54e709d736b195f82135048c50fcc"
   integrity sha512-vdqTKI9GBIYcAEbFAcpKPErKINfPF5zIuz3/niBfq8WUZjpT2tytLlFVrBgWdOtqI4uaA/Rb6No0hux39XXDuw==
 
-next@7.0.1:
-  version "7.0.1"
-  resolved "https://registry.yarnpkg.com/next/-/next-7.0.1.tgz#58630126325dbeccf1926f32a8d9bd06ee43546c"
-  integrity sha512-9f/w2Zks8sdfh2XelA0+2l4+ilzAnGnEKkLBmCAxwM9h7oI0YQzHV4ZhOYMCQp7qQ5u3cnjvyeVfqx++ccry+g==
+next@7.0.2:
+  version "7.0.2"
+  resolved "https://registry.yarnpkg.com/next/-/next-7.0.2.tgz#5ff6b3f0e6cf03ce539d5779a55dc1f8fb1759d7"
+  integrity sha512-DOPKKk+2rAEvXS/JMaZL5+jd2WUJI5BEv8xXiR4ijqIuvAL0dI/cT8H6bhFCqbYIgFNuefp+NSVh2kvxpELyeg==
   dependencies:
     "@babel/core" "7.0.0"
     "@babel/plugin-proposal-class-properties" "7.0.0"
