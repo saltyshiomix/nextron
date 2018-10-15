@@ -2,7 +2,7 @@ import React from 'react'
 import Button from '@material-ui/core/Button'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 const styles = theme => ({
   root: {

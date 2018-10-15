@@ -7,7 +7,7 @@ import DialogContentText from '@material-ui/core/DialogContentText'
 import DialogActions from '@material-ui/core/DialogActions'
 import Typography from '@material-ui/core/Typography'
 import { withStyles } from '@material-ui/core/styles'
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 const styles = theme => ({
   root: {

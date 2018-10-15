@@ -16,24 +16,34 @@
     "publish": null
   },
   "scripts": {
-    "dev": "nextron",
-    "build": "nextron build"
+    "dev": "build/nextron",
+    "build": "build/nextron build"
   },
   "dependencies": {
     "@zeit/next-less": "1.0.1",
     "@zeit/next-typescript": "1.1.1",
-    "nextron": "latest",
+    "fs-jetpack": "^2.2.0",
+    "next": "7.0.2",
     "react": "^16.5.2",
     "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/runtime": "7.0.0",
-    "@types/next": "7.*",
+    "@types/next": "^7.*",
     "@types/react": "^16.*",
+    "arg": "^2.0.0",
+    "chalk": "^2.4.1",
     "electron": "3.0.4",
     "electron-builder": "20.28.4",
+    "fast-glob": "^2.2.3",
+    "fs-extra": "^7.0.0",
     "less": "3.7.1",
-    "typescript": "^3.1.1"
+    "node-npx": "^1.3.1",
+    "ora": "^3.0.0",
+    "ts-loader": "^5.2.2",
+    "typescript": "^3.1.1",
+    "webpack": "^4.20.2",
+    "webpack-merge": "^4.1.4"
   }
 }

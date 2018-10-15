@@ -1,5 +1,5 @@
 import Document, { Head, Main, NextScript } from 'next/document'
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 export default class MyDocument extends Document {
   render () {

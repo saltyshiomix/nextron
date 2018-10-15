@@ -7,7 +7,7 @@ import { default as DialogContentText } from '@material-ui/core/DialogContentTex
 import { default as DialogActions } from '@material-ui/core/DialogActions'
 import { default as Typography } from '@material-ui/core/Typography'
 import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 const styles = ({ spacing }: Theme) => createStyles({
   root: {

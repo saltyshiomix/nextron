@@ -11,12 +11,6 @@ const args = arg({
   '-v': '--version'
 })
 
-if (args['--version']) {
-  const pkg = require(resolve(__dirname, '../package.json'))
-  console.log(`nextron v${pkg.version}`)
-  process.exit(0)
-}
-
 if (args['--help']) {
   console.log(chalk`
     {bold.cyan nextron dev} - Starts the nextron application in development mode
@@ -38,7 +32,7 @@ async function dev() {
   const delay = require('delay')
   const { npx, npxSync } = require('node-npx')
   const webpack = require('webpack')
-  const config = require('../build/webpack.main.config')
+  const config = require('./webpack.main.config')
   const cwd = process.cwd()
 
   const startRendererProcess = () => {
@@ -66,7 +60,7 @@ async function dev() {
 
   rendererProcess = startRendererProcess()
 
-  // TODO: wait for ready (renderer process)
+  // wait for ready (renderer process)
   await delay(8000)
 
   let electronStarted = false
