@@ -28,7 +28,7 @@
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
-    "electron": "3.0.2",
+    "electron": "3.0.4",
     "electron-builder": "20.28.4"
   }
 }
