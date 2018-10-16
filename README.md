@@ -182,7 +182,7 @@ $ nuxtron init my-app --template with-typescript-material-ui
 $ git clone https://github.com/saltyshiomix/nextron
 $ cd nextron
 $ yarn
-$ yarn dev # default is examples/with-javascript
+$ yarn dev # default is examples/with-javascript-material-ui
 ```
 
 ### Developing `examples/*`
