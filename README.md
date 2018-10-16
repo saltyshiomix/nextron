@@ -13,14 +13,14 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 
 | nextron | next |
 | --- | --- |
-| `v2.x` | `v7.x` |
+| `v2.x` / `v3.x` | `v7.x` |
 | `v1.x` | `v6.x` |
 
 ## My Belief for Nextron
 
 1. Show a way of developing desktop apps only web knowledge
 1. Easy to use
-1. Open to OSS developers
+1. Be transparent (Open to OSS developers)
 
 ## Otherwise Specified
 
