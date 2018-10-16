@@ -4,16 +4,15 @@ const { resolve } = require('path')
 const { spawn } = require('cross-spawn')
 const chalk = require('chalk')
 
-const commands = new Set(['init'])
+const defaultCommand = 'dev'
+const commands = new Set([
+  'build',
+  defaultCommand
+])
+
 let cmd = process.argv[2]
 let args = []
 let nodeArgs = []
-
-if (new Set(['--version', '-v']).has(cmd)) {
-  const pkg = require(resolve(__dirname, '../package.json'))
-  console.log(`nextron v${pkg.version}`)
-  process.exit(0)
-}
 
 const inspectArg = process.argv.find(arg => arg.includes('--inspect'))
 if (inspectArg) {
@@ -26,9 +25,15 @@ if (new Set(['--help', '-h']).has(cmd)) {
 
     {bold USAGE}
 
-      {bold $} {cyan nextron init} --help
-      {bold $} {cyan nextron init} {underline my-app}
-      {bold $} {cyan nextron init} {underline my-app} [--template {underline example_folder_name}]
+      {bold $} nextron <command>
+
+    {bold AVAILABLE COMMANDS}
+
+      ${Array.from(commands).join(', ')}
+
+    For more information run a command with the --help flag
+
+      {bold $} nextron build --help
   `)
   process.exit(0)
 }
@@ -36,8 +41,12 @@ if (new Set(['--help', '-h']).has(cmd)) {
 if (commands.has(cmd)) {
   args = process.argv.slice(3)
 } else {
-  process.exit(1)
+  cmd = defaultCommand
+  args = process.argv.slice(2)
 }
+
+const defaultEnv = cmd === 'dev' ? 'development' : 'production'
+process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv
 
 const cli = resolve(__dirname, `nextron-${cmd}`)
 

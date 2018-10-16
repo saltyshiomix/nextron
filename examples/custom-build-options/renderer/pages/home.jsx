@@ -1,4 +1,4 @@
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 export default () => (
   <div>

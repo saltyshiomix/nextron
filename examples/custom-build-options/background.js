@@ -1,7 +1,7 @@
 import { join } from 'path'
 import { format } from 'url'
 import { app } from 'electron'
-import { createWindow, enableHotReload } from 'nextron'
+import { createWindow, enableHotReload } from './helpers'
 
 const env = require('env')
 const isProd = (env.name === 'production')

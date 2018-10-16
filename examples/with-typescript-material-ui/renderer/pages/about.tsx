@@ -2,7 +2,7 @@ import React from 'react'
 import { default as Button } from '@material-ui/core/Button'
 import { default as Typography } from '@material-ui/core/Typography'
 import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 const styles = ({ spacing }: Theme) => createStyles({
   root: {

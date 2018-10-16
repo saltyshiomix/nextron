@@ -45,14 +45,12 @@ async function pm() {
   const { exec: defaultExec } = require('child_process')
 
   let pm = 'yarn'
-
   const cwd = process.cwd()
   const exec = promisify(defaultExec)
   try {
     await exec(`${pm} -v`, { cwd })
   } catch (_) {
     pm = 'npm'
-
     try {
       await exec(`${pm} -v`, { cwd })
     } catch (_) {
@@ -79,15 +77,16 @@ async function init(name) {
 
   spinner.create('Copy template')
   await copy(resolve(__dirname, `../examples/${template}`), resolve(cwd, name))
+  const ext = existsSync(resolve(cwd, `${name}/tsconfig.json`)) ? 'ts' : 'js'
+  await copy(resolve(__dirname, '../examples/_template/build/cli'), resolve(cwd, `${name}/build`))
+  await copy(resolve(__dirname, `../examples/_template/build/${ext}`), resolve(cwd, `${name}/build`))
+  await copy(resolve(__dirname, `../examples/_template/helpers/${ext}/electron`), resolve(cwd, `${name}/helpers`))
+  await copy(resolve(__dirname, `../examples/_template/helpers/${ext}/next`), resolve(cwd, `${name}/renderer/helpers`))
 
   spinner.create('Set meta information')
   const pkg = resolve(cwd, `${name}/package.json`)
   const content = await readJSON(pkg)
-  content.name = name
-  if (process.env.NODE_ENV === 'testing') {
-    content.dependencies['nextron'] = resolve(__dirname, '..')
-  }
-  await writeJSON(pkg, {...content}, {spaces: 2})
+  await writeJSON(pkg, {...content, name}, {spaces: 2})
 
   const cmd = (await pm() === 'yarn') ? 'yarn && yarn dev' : 'npm install && npm run dev'
   spinner.clear(`Run \`${cmd}\` inside of "${name}" to start the app`)

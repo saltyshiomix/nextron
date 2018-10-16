@@ -1,5 +1,5 @@
 import '../styles/home.less'
-import { resolve } from 'nextron'
+import { resolve } from '../helpers'
 
 export default () =>
   <div className='home'>

@@ -6,7 +6,7 @@ const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
 const cwd = process.cwd()
 const externals = require(resolve(cwd, 'package.json')).dependencies
 
-module.exports = (env, ext) => {
+module.exports = (env) => {
   const baseConfig = {
     mode: env,
     target: 'electron-main',
@@ -51,18 +51,6 @@ module.exports = (env, ext) => {
       new webpack.NamedModulesPlugin(),
       new FriendlyErrorsWebpackPlugin({ clearConsole: env === 'development' })
     ]
-  }
-
-  if (ext === 'ts') {
-    baseConfig.resolve.extensions.push('.ts', '.tsx')
-    baseConfig.module.rules.push({
-      test: /\.tsx?$/,
-      use: 'ts-loader',
-      exclude: [
-        /node_modules/,
-        resolve(process.cwd(), 'renderer')
-      ]
-    })
   }
 
   return baseConfig
