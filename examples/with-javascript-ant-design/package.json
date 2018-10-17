@@ -16,8 +16,8 @@
     "publish": null
   },
   "scripts": {
-    "dev": "build/nextron",
-    "build": "build/nextron build"
+    "dev": "node build/nextron.js",
+    "build": "node build/nextron.js build"
   },
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
