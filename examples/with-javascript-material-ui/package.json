@@ -16,8 +16,8 @@
     "publish": null
   },
   "scripts": {
-    "dev": "build/nextron",
-    "build": "build/nextron build"
+    "dev": "node build/nextron.js",
+    "build": "node build/nextron.js build"
   },
   "dependencies": {
     "@material-ui/core": "3.1.1",

@@ -16,12 +16,12 @@
     "publish": null
   },
   "scripts": {
-    "dev": "build/nextron",
-    "build": "build/nextron build",
-    "build:all": "build/nextron build --all",
-    "build:win": "build/nextron build --win --ia32",
-    "build:mac": "build/nextron build --mac --x64",
-    "build:linux": "build/nextron build --linux"
+    "dev": "node build/nextron.js",
+    "build": "node build/nextron.js build",
+    "build:all": "node build/nextron.js build --all",
+    "build:win": "node build/nextron.js build --win --ia32",
+    "build:mac": "node build/nextron.js build --mac --x64",
+    "build:linux": "node build/nextron.js build --linux"
   },
   "dependencies": {
     "fs-jetpack": "^2.2.0",
