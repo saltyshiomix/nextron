@@ -28,9 +28,7 @@
     "nextron": "bin/nextron"
   },
   "scripts": {
-    "clean": "rimraf workspace",
-    "predev": "npm run clean",
-    "dev": "node dev.js"
+    "dev": "rimraf workspace && node dev.js"
   },
   "dependencies": {
     "arg": "^2.0.0",
