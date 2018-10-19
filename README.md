@@ -129,19 +129,19 @@ Or you can start the example app by `nextron init <app-name> --template <example
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 ```bash
-$ nuxtron init my-app --template custom-build-options
+$ nextron init my-app --template custom-build-options
 ```
 
 ### [examples/with-javascript](./examples/with-javascript)
 
 ```bash
-$ nuxtron init my-app --template with-javascript
+$ nextron init my-app --template with-javascript
 ```
 
 ### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
 
 ```bash
-$ nuxtron init my-app --template with-javascript-ant-design
+$ nextron init my-app --template with-javascript-ant-design
 ```
 
 <p align="center"><img src="https://i.imgur.com/PiEKeIZ.png"></p>
@@ -149,7 +149,7 @@ $ nuxtron init my-app --template with-javascript-ant-design
 ### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
 
 ```bash
-$ nuxtron init my-app --template with-javascript-material-ui
+$ nextron init my-app --template with-javascript-material-ui
 ```
 
 <p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
@@ -157,19 +157,19 @@ $ nuxtron init my-app --template with-javascript-material-ui
 ### [examples/with-typescript](./examples/with-typescript)
 
 ```bash
-$ nuxtron init my-app --template with-typescript
+$ nextron init my-app --template with-typescript
 ```
 
 ### [examples/with-typescript-less](./examples/with-typescript-less)
 
 ```bash
-$ nuxtron init my-app --template with-typescript-less
+$ nextron init my-app --template with-typescript-less
 ```
 
 ### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
 
 ```bash
-$ nuxtron init my-app --template with-typescript-material-ui
+$ nextron init my-app --template with-typescript-material-ui
 ```
 
 <p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
