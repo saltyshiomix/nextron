@@ -1,4 +1,4 @@
-# with-typescript
+<p align="center"><img src="https://i.imgur.com/cWBEdDR.png"></p>
 
 ## Usage
 

@@ -132,11 +132,15 @@ Or you can start the example app by `nextron init <app-name> --template <example
 $ nextron init my-app --template custom-build-options
 ```
 
+<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+
 ### [examples/with-javascript](./examples/with-javascript)
 
 ```bash
 $ nextron init my-app --template with-javascript
 ```
+
+<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
 
 ### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
 
@@ -160,11 +164,15 @@ $ nextron init my-app --template with-javascript-material-ui
 $ nextron init my-app --template with-typescript
 ```
 
+<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+
 ### [examples/with-typescript-less](./examples/with-typescript-less)
 
 ```bash
 $ nextron init my-app --template with-typescript-less
 ```
+
+<p align="center"><img src="https://i.imgur.com/cWBEdDR.png"></p>
 
 ### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
 
