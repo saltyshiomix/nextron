@@ -82,6 +82,7 @@ async function init(name) {
   await copy(resolve(__dirname, `../examples/_template/build/${ext}`), resolve(cwd, `${name}/build`))
   await copy(resolve(__dirname, `../examples/_template/helpers/${ext}/electron`), resolve(cwd, `${name}/main/helpers`))
   await copy(resolve(__dirname, `../examples/_template/helpers/${ext}/next`), resolve(cwd, `${name}/renderer/helpers`))
+  await copy(resolve(__dirname, `../examples/_template/gitignore.txt`), resolve(cwd, `${name}/.gitignore`))
 
   spinner.create('Set meta information')
   const pkg = resolve(cwd, `${name}/package.json`)
