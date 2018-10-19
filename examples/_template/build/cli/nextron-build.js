@@ -75,7 +75,7 @@ async function build(args) {
     })
 
     spinner.create('Building main process')
-    await npx('node', [`build${sep}webpack.production.config.js`], { cwd })
+    await npx('node', [`build${sep}build.production.js`], { cwd })
 
     spinner.create('Packaging - please wait a moment')
     await npx('electron-builder', createBuilderArgs(args), { cwd })
