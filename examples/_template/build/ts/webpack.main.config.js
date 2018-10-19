@@ -6,7 +6,7 @@ const base = require('./webpack.base.config')
 module.exports = (env) => {
   return merge(base(env), {
     entry: {
-      background: './background.ts'
+      background: './main/background.ts'
     },
     output: {
       filename: '[name].js',
