@@ -19,7 +19,7 @@ module.exports = (env) => {
     resolve: {
       extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
       alias: {
-        env: resolve(cwd, `env/${env}.json`)
+        env: resolve(cwd, `main/env/${env}.json`)
       },
       modules: [join(cwd, 'app'), 'node_modules']
     },
