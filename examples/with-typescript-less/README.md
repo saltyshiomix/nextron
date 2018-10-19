@@ -1,9 +1,9 @@
-# with-typescript
+<p align="center"><img src="https://i.imgur.com/cWBEdDR.png"></p>
 
 ## Usage
 
 ```bash
-$ nextron init my-app --template with-typescript
+$ nextron init my-app --template with-typescript-less
 
 $ cd my-app
 
