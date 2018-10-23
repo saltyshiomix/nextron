@@ -20,10 +20,10 @@ const About = withStyles(styles)(
 
       return (
         <div className={classes.root}>
-          <Typography variant="display1" gutterBottom>
+          <Typography variant="h4" gutterBottom>
             Material-UI
           </Typography>
-          <Typography variant="subheading" gutterBottom>
+          <Typography variant="subtitle1" gutterBottom>
             with Nextron
           </Typography>
           <Typography gutterBottom>
