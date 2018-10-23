@@ -25,7 +25,8 @@
     "jss": "^9.8.7",
     "next": "7.0.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2"
+    "react-dom": "^16.5.2",
+    "react-jss": "^8.6.1"
   },
   "devDependencies": {
     "arg": "^2.0.0",
