@@ -57,7 +57,7 @@ module.exports = (env) => {
     },
     plugins: [
       new webpack.NamedModulesPlugin(),
-      new FriendlyErrorsWebpackPlugin({ clearConsole: env === 'development' })
+      new FriendlyErrorsWebpackPlugin()
     ]
   }
 
