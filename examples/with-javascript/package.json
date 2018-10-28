@@ -28,7 +28,7 @@
   "devDependencies": {
     "arg": "^2.0.0",
     "chalk": "^2.4.1",
-    "electron": "3.0.5",
+    "electron": "3.0.6",
     "electron-builder": "20.28.4",
     "fast-glob": "^2.2.3",
     "friendly-errors-webpack-plugin": "^1.7.0",
