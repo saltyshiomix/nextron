@@ -31,7 +31,6 @@ if (args['--help']) {
 }
 
 async function dev() {
-  const delay = require('delay')
   const { npx, npxSync } = require('node-npx')
   const webpack = require('webpack')
   const config = require('./webpack.main.config')
@@ -66,9 +65,6 @@ async function dev() {
   process.on('exit', killWholeProcess)
 
   rendererProcess = startRendererProcess()
-
-  // wait for ready (renderer process)
-  await delay(8000)
 
   let electronStarted = false
   const compiler = webpack(config('development'))

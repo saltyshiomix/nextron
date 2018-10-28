@@ -134,6 +134,14 @@ $ nextron init my-app --template custom-build-options
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
 
+### [examples/parameterized-routing](./examples/parameterized-routing)
+
+```bash
+$ nextron init my-app --template parameterized-routing
+```
+
+<p align="center"><img src="https://i.imgur.com/LvPIeIj.png"></p>
+
 ### [examples/with-javascript](./examples/with-javascript)
 
 ```bash
