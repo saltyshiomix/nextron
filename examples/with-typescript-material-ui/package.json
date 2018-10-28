@@ -25,8 +25,8 @@
     "fs-jetpack": "^2.2.0",
     "jss": "^9.8.7",
     "next": "7.0.2",
-    "react": "^16.5.2",
-    "react-dom": "^16.5.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
@@ -36,7 +36,7 @@
     "@types/react": "^16.*",
     "arg": "^2.0.0",
     "chalk": "^2.4.1",
-    "electron": "3.0.5",
+    "electron": "3.0.6",
     "electron-builder": "20.28.4",
     "fast-glob": "^2.2.3",
     "friendly-errors-webpack-plugin": "^1.7.0",
@@ -44,7 +44,7 @@
     "node-npx": "^1.3.1",
     "ora": "^3.0.0",
     "ts-loader": "^5.2.2",
-    "typescript": "^3.1.1",
+    "typescript": "^3.1.3",
     "webpack": "^4.20.2",
     "webpack-merge": "^4.1.4"
   }
