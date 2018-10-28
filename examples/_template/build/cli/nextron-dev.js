@@ -7,8 +7,10 @@ const chalk = require('chalk')
 const args = arg({
   '--help': Boolean,
   '--version': Boolean,
+  '--custom-server': String,
   '-h': '--help',
-  '-v': '--version'
+  '-v': '--version',
+  '-c': '--custom-server'
 })
 
 if (args['--help']) {
@@ -36,7 +38,12 @@ async function dev() {
   const cwd = process.cwd()
 
   const startRendererProcess = () => {
-    const child = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio: 'inherit' })
+    let child
+    if (args['--custom-server']) {
+      child = npx('node', [args['--custom-server']], { cwd, stdio: 'inherit' })
+    } else {
+      child = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio: 'inherit' })
+    }
     child.on('close', () => {
       process.exit(0)
     })
