@@ -1,4 +1,3 @@
-const { existsSync } = require('fs')
 const { resolve } = require('path')
 const { smart: merge } = require('webpack-merge')
 const base = require('./webpack.base.config')

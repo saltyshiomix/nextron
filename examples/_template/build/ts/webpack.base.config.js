@@ -1,4 +1,3 @@
-const { existsSync, readFileSync } = require('fs')
 const { join, resolve } = require('path')
 const webpack = require('webpack')
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin')
