@@ -1,7 +1,7 @@
-const { app, BrowserWindow } = require('electron')
-const jetpack = require('fs-jetpack')
+import { app, BrowserWindow } from 'electron'
+import * as jetpack from 'fs-jetpack'
 
-module.exports = (name, options) => {
+export default function createWindow(name, options) {
   const userDataDir = jetpack.cwd(app.getPath('userData'))
   const stateStoreFile = `window-state-${name}.json`
   const defaultSize = {

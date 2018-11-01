@@ -1,7 +1,7 @@
-const createWindow = require('./create-window')
-const enableHotReload = require('./enable-hot-reload')
+import createWindow from './create-window'
+import enableHotReload from './enable-hot-reload'
 
-module.exports = {
+export {
   createWindow,
   enableHotReload
 }

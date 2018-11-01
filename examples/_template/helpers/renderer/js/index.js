@@ -1,5 +1,5 @@
-const resolve = require('./resolve')
+import resolve from './resolve'
 
-module.exports = {
+export {
   resolve
 }
