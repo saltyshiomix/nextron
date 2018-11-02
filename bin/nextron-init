@@ -80,8 +80,8 @@ async function init(name) {
   const ext = existsSync(resolve(cwd, `${name}/tsconfig.json`)) ? 'ts' : 'js'
   await copy(resolve(__dirname, '../examples/_template/build/cli'), resolve(cwd, `${name}/build`))
   await copy(resolve(__dirname, `../examples/_template/build/${ext}`), resolve(cwd, `${name}/build`))
-  await copy(resolve(__dirname, `../examples/_template/helpers/main/${ext}`), resolve(cwd, `${name}/main/helpers`))
-  await copy(resolve(__dirname, `../examples/_template/helpers/renderer/${ext}`), resolve(cwd, `${name}/renderer/helpers`))
+  await copy(resolve(__dirname, `../examples/_template/main/helpers/${ext}`), resolve(cwd, `${name}/main/helpers`))
+  await copy(resolve(__dirname, `../examples/_template/renderer/helpers/${ext}`), resolve(cwd, `${name}/renderer/helpers`))
   await copy(resolve(__dirname, `../examples/_template/gitignore.txt`), resolve(cwd, `${name}/.gitignore`))
 
   spinner.create('Set meta information')
