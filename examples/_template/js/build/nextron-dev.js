@@ -1,6 +1,5 @@
 #!/usr/bin/env node
 
-const { resolve } = require('path')
 const arg = require('arg')
 const chalk = require('chalk')
 
@@ -33,7 +32,7 @@ if (args['--help']) {
 async function dev() {
   const { npx, npxSync } = require('node-npx')
   const webpack = require('webpack')
-  const config = require('./webpack.main.config')
+  const config = require('./webpack/webpack.main.config')
   const cwd = process.cwd()
 
   const startRendererProcess = () => {

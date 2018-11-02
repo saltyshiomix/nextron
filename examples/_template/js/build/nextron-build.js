@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 
+const { join } = require('path')
 const { copy, remove, readFileSync, writeFileSync } = require('fs-extra')
-const { sep, join, resolve } = require('path')
 const arg = require('arg')
 const chalk = require('chalk')
 const fg = require('fast-glob')
@@ -75,7 +75,7 @@ async function build(args) {
     })
 
     spinner.create('Building main process')
-    await npx('node', [`build${sep}build.production.js`], { cwd })
+    await npx('node', [join('build/webpack/build.production.js')], { cwd })
 
     spinner.create('Packaging - please wait a moment')
     await npx('electron-builder', createBuilderArgs(args), { cwd })
