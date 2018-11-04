@@ -1,0 +1,72 @@
+{
+  "name": "nextronpy",
+  "description": "Nextron, Electron, NextJS, and Python sample",
+  "version": "1.0.0",
+  "author": "Don Alvarez",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.example.nextronpy",
+    "productName": "My App",
+    "copyright": "Copyright © ${year} ${author}",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "shx rm -rf pythondist && node build/nextron.js",
+    "python": "shx rm -rf pythondist && pyinstaller python/api.py --distpath pythondist --workpath build-py-temp && shx rm -rf build-py-temp && shx rm api.spec",
+    "build": "node build/nextron.js build",
+    "package": "electron-packager . --overwrite --ignore=\"python$\" --ignore=\"README.md\" --ignore=\"package.json\""
+  },
+  "keywords": [
+    "Nextron",
+    "Electron",
+    "NextJS",
+    "Python",
+    "zerorpc",
+    "demo"
+  ],
+  "dependencies": {
+    "@zeit/next-typescript": "1.1.1",
+    "fs-jetpack": "^2.2.0",
+    "classnames": "^2.2.6",
+    "is-electron-renderer": "^2.0.1",
+    "next": "7.0.2",
+    "react": "^16.6.0",
+    "react-dom": "^16.6.0",
+    "react-electron-web-view": "^2.0.1",
+    "zerorpc": "^0.9.8"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/plugin-proposal-class-properties": "^7.1.0",
+    "@babel/plugin-proposal-decorators": "^7.1.2",
+    "@babel/runtime": "7.0.0",
+    "@types/classnames": "^2.2.3",
+    "@types/next": "^7.*",
+    "@types/react": "^16.*",
+    "arg": "^2.0.0",
+    "chalk": "^2.4.1",
+    "electron": "3.0.7",
+    "electron-builder": "20.29.0",
+    "electron-packager": "^9.0.1",
+    "electron-rebuild": "^1.8.2",
+    "fast-glob": "^2.2.3",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^7.0.0",
+    "native-ext-loader": "^2.2.0",
+    "node-npx": "^1.3.1",
+    "ora": "^3.0.0",
+    "shx": "^0.3.2",
+    "ts-loader": "^5.3.0",
+    "tslint": "^5.9.1",
+    "tslint-config-standard": "^7.0.0",
+    "tslint-loader": "^3.6.0",
+    "tslint-react": "^3.4.0",
+    "typescript": "^3.1.6",
+    "webpack": "^4.24.0",
+    "webpack-merge": "^4.1.4"
+  }
+}

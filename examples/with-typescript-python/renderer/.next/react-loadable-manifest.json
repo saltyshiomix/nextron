@@ -1,0 +1,10 @@
+{
+  "./noop": [
+    {
+      "id": "../node_modules/next/dist/client/noop.js",
+      "name": "../node_modules/next/dist/client/noop.js",
+      "file": "static/chunks/0.js",
+      "publicPath": "static/chunks/0.js"
+    }
+  ]
+}

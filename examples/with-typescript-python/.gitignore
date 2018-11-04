@@ -1,0 +1,4 @@
+api.spec
+node_modules/
+dist/
+pythondist/
