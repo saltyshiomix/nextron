@@ -1,5 +1,4 @@
 import { join } from 'path'
-import { format } from 'url'
 import { app } from 'electron'
 import { createWindow, enableHotReload } from './helpers'
 
@@ -19,15 +18,12 @@ app.on('ready', () => {
     height: 600
   })
 
-  const homeUrl = isProd ? format({
-    pathname: join(__dirname, 'home/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }) : 'http://localhost:8888/home'
-
-  mainWindow.loadURL(homeUrl)
-
-  if (!isProd) {
+  if (isProd) {
+    const homeFile = join(app.getAppPath(), 'app/home/index.html')
+    mainWindow.loadFile(homeFile)
+  } else {
+    const homeUrl = 'http://localhost:8888/home'
+    mainWindow.loadURL(homeUrl)
     mainWindow.webContents.openDevTools()
   }
 })
