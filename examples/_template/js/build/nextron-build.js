@@ -90,7 +90,7 @@ async function build(args) {
 
 function resolveExportedPaths(page) {
   const content = readFileSync(page).toString()
-  const depth = page.split('app/')[1].split('/').length - 1
+  const depth = page.split('/app/')[1].split('/').length - 1
   return content
     .replace(/"\/_next\//g, `"${resolveDepth('next', depth)}`)
     .replace(/"\/_error\//g, `"${resolveDepth('error', depth)}`)
