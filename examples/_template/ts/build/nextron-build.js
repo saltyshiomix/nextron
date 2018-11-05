@@ -97,12 +97,7 @@ function resolveExportedPaths(page) {
 }
 
 function resolveDepth(name, depth) {
-  let result = ''
-  for (let i = 0; i < depth; i++) {
-    result += '../'
-  }
-  result += `_${name}/`
-  return result
+  return `${'../'.repeat(depth)}_${name}/`
 }
 
 function createBuilderArgs(args) {
