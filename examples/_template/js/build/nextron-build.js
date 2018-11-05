@@ -90,7 +90,19 @@ async function build(args) {
 
 function resolveExportedPaths(page) {
   const content = readFileSync(page).toString()
-  return content.replace(/"\/_next\//g, '"../_next/').replace(/"\/_error\//g, '"../_error/')
+  const depth = page.split('app/')[1].split('/').length - 1
+  return content
+    .replace(/"\/_next\//g, `"${resolveDepth('next', depth)}`)
+    .replace(/"\/_error\//g, `"${resolveDepth('error', depth)}`)
+}
+
+function resolveDepth(name, depth) {
+  let result = ''
+  for (let i = 0; i < depth; i++) {
+    result += '../'
+  }
+  result += `_${name}/`
+  return result
 }
 
 function createBuilderArgs(args) {
