@@ -1,5 +1,5 @@
 import React from 'react'
-import { resolve } from '../helpers'
+import { LinkWithIpc } from '../helpers'
 
 export default class extends React.Component {
   static getInitialProps ({ query: { id } }) {
@@ -15,7 +15,7 @@ export default class extends React.Component {
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <hr/>
-        <p>Go back to <a href={resolve('home')}>Home</a></p>
+        <p>Go back to <LinkWithIpc href="home"><a>Home</a></LinkWithIpc></p>
       </div>
     )
   }
