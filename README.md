@@ -140,7 +140,7 @@ $ nextron init my-app --template custom-build-options
 $ nextron init my-app --template ipc-communication
 ```
 
-<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+<p align="center"><img src="https://i.imgur.com/pzWuuyi.png"></p>
 
 ### [examples/parameterized-routing](./examples/parameterized-routing)
 
