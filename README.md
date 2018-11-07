@@ -35,7 +35,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 ### Install
 
 ```bash
-$ npm install --global nextron
+$ npm install --global nextron@latest
 ```
 
 ### Create Application
