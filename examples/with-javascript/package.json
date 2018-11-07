@@ -22,8 +22,8 @@
   "dependencies": {
     "fs-jetpack": "^2.2.0",
     "next": "7.0.2",
-    "react": "^16.6.0",
-    "react-dom": "^16.6.0"
+    "react": "^16.6.1",
+    "react-dom": "^16.6.1"
   },
   "devDependencies": {
     "arg": "^2.0.0",
