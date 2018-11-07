@@ -17,9 +17,6 @@ module.exports = (env) => {
     devtool: 'source-map',
     resolve: {
       extensions: ['.js', '.jsx', '.json'],
-      alias: {
-        env: resolve(cwd, `main/env/${env}.json`)
-      },
       modules: [join(cwd, 'app'), 'node_modules']
     },
     output: {
