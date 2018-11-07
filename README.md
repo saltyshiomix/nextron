@@ -35,7 +35,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 ### Install
 
 ```bash
-$ npm install --global nextron
+$ npm install --global nextron@latest
 ```
 
 ### Create Application
@@ -108,7 +108,7 @@ Edit `package.json#build` properties for custom build configuration.
   "build": {
     "appId": "com.example.nextron",
     "productName": "My Nextron App",
-    "copyright": "Copyright © ${year} ${author}",
+    "copyright": "Copyright © 2018 Yoshihide Shiono",
     "directories": {
       "output": "dist",
       "buildResources": "resources"
