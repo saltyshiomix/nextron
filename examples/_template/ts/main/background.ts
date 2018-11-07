@@ -1,19 +1,15 @@
 import { join } from 'path'
 import { app } from 'electron'
-import { createWindow, enableHotReload, resolveWithIpc } from './helpers'
+import { createWindow, enableHotReload } from './helpers'
 
-const env = require('env')
-const isProd = (env.name === 'production')
+const isProd = process.env.NODE_ENV === 'production'
 
 if (!isProd) {
   enableHotReload()
 
   const userDataPath = app.getPath('userData')
-  app.setPath('userData', `${userDataPath} (${env.name})`)
+  app.setPath('userData', `${userDataPath} (development)`)
 }
-
-// you can remove this if you don't use ipc
-resolveWithIpc()
 
 app.on('ready', () => {
   const mainWindow = createWindow('main', {

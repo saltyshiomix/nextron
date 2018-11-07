@@ -76,10 +76,10 @@ async function init(name) {
   const cwd = process.cwd()
 
   spinner.create('Copy template')
-  await copy(resolve(__dirname, `../examples/${template}`), resolve(cwd, name))
   const ext = existsSync(resolve(cwd, `${name}/tsconfig.json`)) ? 'ts' : 'js'
   await copy(resolve(__dirname, `../examples/_template/gitignore.txt`), resolve(cwd, `${name}/.gitignore`))
   await copy(resolve(__dirname, `../examples/_template/${ext}`), resolve(cwd, `${name}`))
+  await copy(resolve(__dirname, `../examples/${template}`), resolve(cwd, name))
 
   spinner.create('Set meta information')
   const pkg = resolve(cwd, `${name}/package.json`)
