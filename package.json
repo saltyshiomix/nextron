@@ -34,7 +34,7 @@
     "arg": "^2.0.0",
     "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
-    "fs-extra": "^7.0.0",
+    "fs-extra": "^7.0.1",
     "ora": "^3.0.0"
   },
   "devDependencies": {
