@@ -1,33 +1,13 @@
+import gql from "graphql-tag";
 import * as React from "react";
-console.log("TODO DEBUG if I import zerorpc here the client code fails silently (server is fine)");
-import * as zerorpc from "zerorpc"; // tslint:disable-line
-console.log("TODO DEBUG Past import of zerorpc");
 import { resolve } from "../../helpers";
+import { appGlobalClient } from "../_app";
 import { css } from "./styles.css";
 
 class CalculatorPage extends React.Component {
 
   public resultDiv:HTMLDivElement;
 
-  public client:any;
-
-  public componentDidMount() {
-    //
-    // NOTE componentDidMount is only called on the client
-    //
-    console.log("TODO DEBUG in calc componentDidMount");
-    console.log(zerorpc);
-    console.log("TODO DEBUG uncomment the following code once zerorpc runs on the client");
-    // client = new zerorpc.Client();
-    // client.connect("tcp://127.0.0.1:4242");
-    // client.invoke("echo", "server is ready", (error, res) => {
-    //   if (error) {
-    //     console.error(error);
-    //   } else {
-    //     console.log(res);
-    //   }
-    // });
-  }
   public render() {
     return (
       <div>
@@ -55,12 +35,16 @@ class CalculatorPage extends React.Component {
 
   private handleKeyDown = (event:React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
-      this.client.invoke("calc", event.currentTarget.value, (error, res) => {
-        if (error) {
-          console.error(error);
-        } else {
-          this.resultDiv.textContent = res;
-        }
+      const math = event.currentTarget.value;
+      appGlobalClient.query({
+        query:gql`query calc($math:String!) {
+          calc(math:$math)
+        }`,
+        variables: {
+          math,
+        },
+      }).then(({ data }) => {
+        this.resultDiv.textContent = (data as any).calc;
       });
     }
   }

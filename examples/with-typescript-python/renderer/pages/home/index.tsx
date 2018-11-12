@@ -3,11 +3,6 @@ import { resolve } from "../../helpers";
 import { css } from "./styles.css";
 
 class Page extends React.Component {
-
-  public componentDidMount() {
-    console.log("in home componentDidMount");
-  }
-  
   public render() {
     return (
       <div>
@@ -16,7 +11,6 @@ class Page extends React.Component {
           <h2>Home</h2>
           <ol>
             <li><a href={resolve("calculator")}>Calculator</a></li>
-            <li><a href={resolve("next")}>Next</a></li>
           </ol>
         </div>
       </div>

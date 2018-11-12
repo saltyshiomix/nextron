@@ -47,5 +47,10 @@
       "check-typecast",
       "check-type-operator"
     ]
+  },
+  "cliOptions": {
+    "exclude": [
+      "node_modules"
+    ]
   }
 }

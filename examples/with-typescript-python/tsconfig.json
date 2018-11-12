@@ -27,5 +27,9 @@
   "include": [
     "background.ts",
     "renderer/**/*"
+  ],
+  "exclude": [
+    "node_modules",
+    "**/*.spec.ts"
   ]
 }

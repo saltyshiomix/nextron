@@ -61,3 +61,5 @@ typings/
 .DS_Store
 dist
 workspace
+examples/with-typescript-python/app/
+examples/with-typescript-python/renderer/.next/
