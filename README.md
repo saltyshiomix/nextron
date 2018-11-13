@@ -1,6 +1,7 @@
 <p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
 
 <p align="center">
+  <a href="https://github.com/unicodeveloper/awesome-nextjs"><img src="https://cdn.rawgit.com/sindresorhus/awesome/d7305f38d29fed78fa85652e3a63e154dd8e8829/media/badge.svg"></a>
   <a href="https://www.npmjs.com/package/nextron"><img src="https://img.shields.io/npm/v/nextron.svg"></a>
   <a href="https://www.npmjs.com/package/nextron"><img src="https://img.shields.io/npm/dt/nextron.svg"></a>
 </p>
