@@ -42,7 +42,7 @@
     "ora": "^3.0.0",
     "ts-loader": "^5.3.0",
     "typescript": "^3.1.6",
-    "webpack": "^4.20.2",
+    "webpack": "4.20.2",
     "webpack-merge": "^4.1.4"
   }
 }
