@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "3.3.11",
+  "version": "3.3.12",
   "description": "Build an Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -31,7 +31,7 @@
     "dev": "rimraf workspace && node dev.js"
   },
   "dependencies": {
-    "arg": "^2.0.0",
+    "arg": "^2.0.1",
     "chalk": "^2.4.1",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
