@@ -24,8 +24,8 @@
     "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.0",
     "next": "7.0.2",
-    "react": "^16.6.1",
-    "react-dom": "^16.6.1"
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
