@@ -347,4 +347,5 @@ $ yarn dev <EXAMPLE-FOLDER-NAME>
 
 ## Related
 
+- [create-nextron-app - Create Nextron (Electron + Next.js) apps in one command ⚡](https://github.com/saltyshiomix/create-nextron-app)
 - [saltyshiomix/nuxtron](https://github.com/saltyshiomix/nuxtron) - ⚡ Electron + Nuxt.js ⚡
