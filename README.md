@@ -145,7 +145,23 @@ $ nextron list
 $ nextron init my-app --template custom-build-options
 ```
 
-<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+### [examples/custom-server](./examples/custom-server)
+
+```bash
+$ nextron init my-app --template custom-server
+```
+
+### [examples/custom-server-nodemon](./examples/custom-server-nodemon)
+
+```bash
+$ nextron init my-app --template custom-server-nodemon
+```
+
+### [examples/custom-server-typescript](./examples/custom-server-typescript)
+
+```bash
+$ nextron init my-app --template custom-server-typescript
+```
 
 ### [examples/ipc-communication](./examples/ipc-communication)
 

@@ -1,0 +1,50 @@
+{
+  "private": true,
+  "name": "my-nextron-app",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.example.nextron",
+    "productName": "My Nextron App",
+    "copyright": "Copyright © 2018 Yoshihide Shiono",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "node build/nextron.js --custom-server renderer/server/server.ts",
+    "build": "node build/nextron.js build"
+  },
+  "dependencies": {
+    "@zeit/next-typescript": "1.1.1",
+    "fs-jetpack": "^2.2.0",
+    "next": "7.0.2",
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3"
+  },
+  "devDependencies": {
+    "@babel/core": "7.0.0",
+    "@babel/runtime": "7.0.0",
+    "@types/next": "^7.*",
+    "@types/react": "^16.*",
+    "arg": "^2.0.1",
+    "chalk": "^2.4.1",
+    "electron": "3.0.9",
+    "electron-builder": "20.36.2",
+    "fast-glob": "^2.2.4",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^7.0.1",
+    "node-npx": "^1.3.1",
+    "nodemon": "^1.18.6",
+    "ora": "^3.0.0",
+    "ts-loader": "^5.3.0",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.6",
+    "webpack": "4.20.2",
+    "webpack-merge": "^4.1.4"
+  }
+}
