@@ -157,6 +157,12 @@ $ nextron init my-app --template custom-server
 $ nextron init my-app --template custom-server-nodemon
 ```
 
+### [examples/custom-server-typescript](./examples/custom-server-typescript)
+
+```bash
+$ nextron init my-app --template custom-server-typescript
+```
+
 ### [examples/ipc-communication](./examples/ipc-communication)
 
 ```bash
