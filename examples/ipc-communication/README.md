@@ -2,9 +2,22 @@
 
 ## Usage
 
+### Create an App
+
 ```bash
+# with `nextron`
 $ nextron init my-app --template ipc-communication
 
+# with npx
+$ npx create-nextron-app my-app --example ipc-communication
+
+# with yarn
+$ yarn create nextron-app my-app --example ipc-communication
+```
+
+### Use it
+
+```bash
 $ cd my-app
 
 # Install dependencies
