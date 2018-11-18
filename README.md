@@ -53,6 +53,16 @@ To create `<MY-APP>`, just run the command below:
 $ nextron init <MY-APP>
 ```
 
+Or, you can use a `create-nextron-app` command without installing the `nextron` command globally:
+
+```bash
+# with npx
+$ npx create-nextron-app <MY-APP>
+
+# with yarn
+$ yarn create nextron-app <MY-APP>
+```
+
 ### Create Application with Template
 
 You can use `examples/*` apps as a template.
@@ -60,7 +70,14 @@ You can use `examples/*` apps as a template.
 To create the `examples/with-typescript-material-ui` app, run the command below:
 
 ```bash
+# with `nextron`
 $ nextron init <MY-APP> --template with-typescript-material-ui
+
+# with npx
+$ npx create-nextron-app <MY-APP> --example with-typescript-material-ui
+
+# with yarn
+$ yarn create nextron-app <MY-APP> --example with-typescript-material-ui
 ```
 
 ### Run Electron with Development Mode
@@ -142,31 +159,66 @@ $ nextron list
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template custom-build-options
+
+# with npx
+$ npx create-nextron-app my-app --example custom-build-options
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-build-options
 ```
 
 ### [examples/custom-server](./examples/custom-server)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template custom-server
+
+# with npx
+$ npx create-nextron-app my-app --example custom-server
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-server
 ```
 
 ### [examples/custom-server-nodemon](./examples/custom-server-nodemon)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template custom-server-nodemon
+
+# with npx
+$ npx create-nextron-app my-app --example custom-server-nodemon
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-server-nodemon
 ```
 
 ### [examples/custom-server-typescript](./examples/custom-server-typescript)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template custom-server-typescript
+
+# with npx
+$ npx create-nextron-app my-app --example custom-server-typescript
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-server-typescript
 ```
 
 ### [examples/ipc-communication](./examples/ipc-communication)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template ipc-communication
+
+# with npx
+$ npx create-nextron-app my-app --example ipc-communication
+
+# with yarn
+$ yarn create nextron-app my-app --example ipc-communication
 ```
 
 <p align="center"><img src="https://i.imgur.com/pzWuuyi.png"></p>
@@ -174,7 +226,14 @@ $ nextron init my-app --template ipc-communication
 ### [examples/parameterized-routing](./examples/parameterized-routing)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template parameterized-routing
+
+# with npx
+$ npx create-nextron-app my-app --example parameterized-routing
+
+# with yarn
+$ yarn create nextron-app my-app --example parameterized-routing
 ```
 
 <p align="center"><img src="https://i.imgur.com/LvPIeIj.png"></p>
@@ -182,7 +241,14 @@ $ nextron init my-app --template parameterized-routing
 ### [examples/with-javascript](./examples/with-javascript)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-javascript
+
+# with npx
+$ npx create-nextron-app my-app --example with-javascript
+
+# with yarn
+$ yarn create nextron-app my-app --example with-javascript
 ```
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
@@ -190,7 +256,14 @@ $ nextron init my-app --template with-javascript
 ### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-javascript-ant-design
+
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-ant-design
+
+# with yarn
+$ yarn create nextron-app my-app --example with-javascript-ant-design
 ```
 
 <p align="center"><img src="https://i.imgur.com/PiEKeIZ.png"></p>
@@ -198,7 +271,14 @@ $ nextron init my-app --template with-javascript-ant-design
 ### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-javascript-material-ui
+
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-material-ui
+
+# with yarn
+$ yarn create nextron-app my-app --example with-javascript-material-ui
 ```
 
 <p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
@@ -206,7 +286,14 @@ $ nextron init my-app --template with-javascript-material-ui
 ### [examples/with-typescript](./examples/with-typescript)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-typescript
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript
 ```
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
@@ -214,7 +301,14 @@ $ nextron init my-app --template with-typescript
 ### [examples/with-typescript-less](./examples/with-typescript-less)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-typescript-less
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-less
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-less
 ```
 
 <p align="center"><img src="https://i.imgur.com/cWBEdDR.png"></p>
@@ -222,7 +316,14 @@ $ nextron init my-app --template with-typescript-less
 ### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
 
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-typescript-material-ui
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-material-ui
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-material-ui
 ```
 
 <p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
@@ -246,4 +347,5 @@ $ yarn dev <EXAMPLE-FOLDER-NAME>
 
 ## Related
 
-- [saltyshiomix/nuxtron](https://github.com/saltyshiomix/nuxtron) - ⚡ Electron + Nuxt.js ⚡
+- [create-nextron-app - Create Nextron (Electron + Next.js) apps in one command ⚡](https://github.com/saltyshiomix/create-nextron-app)
+- [Nuxtron - ⚡ Electron + Nuxt.js ⚡](https://github.com/saltyshiomix/nuxtron)

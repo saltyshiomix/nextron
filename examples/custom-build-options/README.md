@@ -2,9 +2,22 @@
 
 ## Usage
 
+### Create an App
+
 ```bash
+# with `nextron`
 $ nextron init my-app --template custom-build-options
 
+# with npx
+$ npx create-nextron-app my-app --example custom-build-options
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-build-options
+```
+
+### Use it
+
+```bash
 $ cd my-app
 
 # Install dependencies

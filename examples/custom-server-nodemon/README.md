@@ -2,9 +2,22 @@
 
 ## Usage
 
+### Create an App
+
 ```bash
+# with `nextron`
 $ nextron init my-app --template custom-server-nodemon
 
+# with npx
+$ npx create-nextron-app my-app --example custom-server-nodemon
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-server-nodemon
+```
+
+### Use it
+
+```bash
 $ cd my-app
 
 # Install dependencies

@@ -2,9 +2,22 @@
 
 ## Usage
 
+### Create an App
+
 ```bash
+# with `nextron`
 $ nextron init my-app --template parameterized-routing
 
+# with npx
+$ npx create-nextron-app my-app --example parameterized-routing
+
+# with yarn
+$ yarn create nextron-app my-app --example parameterized-routing
+```
+
+### Use it
+
+```bash
 $ cd my-app
 
 # Install dependencies
