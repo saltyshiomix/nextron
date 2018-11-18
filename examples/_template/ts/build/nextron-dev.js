@@ -39,7 +39,12 @@ async function dev() {
   const startRendererProcess = () => {
     let child
     if (args['--custom-server']) {
-      child = npx('node', [args['--custom-server']], { cwd, stdio: 'inherit' })
+      const { existsSync } = require('fs')
+      if (existsSync('nodemon.json')) {
+        child = npx('nodemon', [args['--custom-server']], { cwd, stdio: 'inherit' })
+      } else {
+        child = npx('node', [args['--custom-server']], { cwd, stdio: 'inherit' })
+      }
     } else {
       child = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio: 'inherit' })
     }
