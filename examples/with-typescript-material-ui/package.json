@@ -32,8 +32,8 @@
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/runtime": "7.0.0",
-    "@types/next": "^7.*",
-    "@types/react": "^16.*",
+    "@types/next": "^7.0.5",
+    "@types/react": "^16.7.17",
     "arg": "^3.0.0",
     "chalk": "^2.4.1",
     "electron": "3.0.13",
