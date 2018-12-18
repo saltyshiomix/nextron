@@ -32,7 +32,7 @@
     "@babel/runtime": "7.0.0",
     "@types/next": "^7.*",
     "@types/react": "^16.*",
-    "arg": "^2.0.1",
+    "arg": "^3.0.0",
     "chalk": "^2.4.1",
     "electron": "3.0.11",
     "electron-builder": "20.38.3",

@@ -29,7 +29,7 @@
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
-    "arg": "^2.0.1",
+    "arg": "^3.0.0",
     "chalk": "^2.4.1",
     "electron": "3.0.11",
     "electron-builder": "20.38.3",
