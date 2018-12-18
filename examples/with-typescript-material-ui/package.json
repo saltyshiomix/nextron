@@ -36,7 +36,7 @@
     "@types/react": "^16.*",
     "arg": "^3.0.0",
     "chalk": "^2.4.1",
-    "electron": "3.0.11",
+    "electron": "3.0.13",
     "electron-builder": "20.38.3",
     "fast-glob": "^2.2.4",
     "friendly-errors-webpack-plugin": "^1.7.0",
