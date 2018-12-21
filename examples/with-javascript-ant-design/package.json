@@ -25,14 +25,14 @@
     "babel-plugin-import": "^1.9.1",
     "fs-jetpack": "^2.2.0",
     "next": "7.0.2",
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3"
+    "react": "^16.7.0",
+    "react-dom": "^16.7.0"
   },
   "devDependencies": {
     "arg": "^3.0.0",
     "chalk": "^2.4.1",
-    "electron": "3.0.13",
-    "electron-builder": "20.38.3",
+    "electron": "4.0.0",
+    "electron-builder": "20.38.4",
     "fast-glob": "^2.2.4",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^7.0.1",
