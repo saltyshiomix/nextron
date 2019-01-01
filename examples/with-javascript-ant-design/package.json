@@ -29,7 +29,7 @@
     "react-dom": "^16.7.0"
   },
   "devDependencies": {
-    "arg": "^3.0.0",
+    "arg": "^4.0.1",
     "chalk": "^2.4.1",
     "electron": "4.0.0",
     "electron-builder": "20.38.4",
