@@ -45,6 +45,6 @@
     "ts-node": "^7.0.1",
     "typescript": "^3.2.2",
     "webpack": "4.20.2",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.2.1"
   }
 }
