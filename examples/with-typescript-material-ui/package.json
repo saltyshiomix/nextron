@@ -20,7 +20,7 @@
     "build": "node build/nextron.js build"
   },
   "dependencies": {
-    "@material-ui/core": "3.8.1",
+    "@material-ui/core": "3.8.2",
     "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.0",
     "jss": "^9.8.7",
@@ -35,10 +35,10 @@
     "@types/next": "^7.0.5",
     "@types/react": "^16.7.17",
     "arg": "^4.1.0",
-    "chalk": "^2.4.1",
+    "chalk": "^2.4.2",
     "electron": "4.0.1",
     "electron-builder": "20.38.4",
-    "fast-glob": "^2.2.4",
+    "fast-glob": "^2.2.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^7.0.1",
     "node-npx": "^1.3.1",
@@ -46,6 +46,6 @@
     "ts-loader": "^5.3.2",
     "typescript": "^3.2.2",
     "webpack": "4.20.2",
-    "webpack-merge": "^4.1.4"
+    "webpack-merge": "^4.2.1"
   }
 }
