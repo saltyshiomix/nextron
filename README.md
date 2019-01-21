@@ -238,6 +238,21 @@ $ yarn create nextron-app my-app --example parameterized-routing
 
 <p align="center"><img src="https://i.imgur.com/LvPIeIj.png"></p>
 
+### [examples/store-data](./examples/store-data)
+
+```bash
+# with `nextron`
+$ nextron init my-app --template store-data
+
+# with npx
+$ npx create-nextron-app my-app --example store-data
+
+# with yarn
+$ yarn create nextron-app my-app --example store-data
+```
+
+<p align="center"><img src="https://i.imgur.com/2ELjNqK.png"></p>
+
 ### [examples/with-javascript](./examples/with-javascript)
 
 ```bash
