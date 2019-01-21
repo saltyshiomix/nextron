@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@material-ui/core": "3.9.0",
-    "fs-jetpack": "^2.2.0",
+    "fs-jetpack": "^2.2.1",
     "jss": "^9.8.7",
     "next": "7.0.2",
     "react": "^16.7.0",

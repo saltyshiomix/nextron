@@ -22,7 +22,7 @@
   "dependencies": {
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.12.1",
-    "fs-jetpack": "^2.2.0",
+    "fs-jetpack": "^2.2.1",
     "next": "7.0.2",
     "react": "^16.7.0",
     "react-dom": "^16.7.0"
