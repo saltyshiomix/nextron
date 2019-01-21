@@ -37,7 +37,7 @@
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "electron": "4.0.1",
-    "electron-builder": "20.38.4",
+    "electron-builder": "20.38.5",
     "fast-glob": "^2.2.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^7.0.1",
