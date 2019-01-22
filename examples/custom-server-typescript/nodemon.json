@@ -1,6 +1,6 @@
 {
   "watch": ["renderer/server/**/*.ts"],
   "execMap": {
-    "ts": "ts-node --typeCheck --project tsconfig.server.json"
+    "ts": "ts-node --project tsconfig.server.json"
   }
 }
