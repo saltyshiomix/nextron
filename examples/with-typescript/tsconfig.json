@@ -17,6 +17,6 @@
   "exclude": [
     "app",
     "build",
-    "./renderer/next.config.js"
+    "renderer/next.config.js"
   ]
 }
