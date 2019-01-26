@@ -22,7 +22,7 @@
   "dependencies": {
     "electron-store": "^2.0.0",
     "fs-jetpack": "^2.2.1",
-    "next": "8.0.0-canary.10",
+    "next": "8.0.0-canary.15",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   },
@@ -36,7 +36,7 @@
     "fs-extra": "^7.0.1",
     "node-npx": "^1.3.1",
     "ora": "^3.0.0",
-    "webpack": "4.28.2",
+    "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
   }
 }

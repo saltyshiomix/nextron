@@ -24,7 +24,7 @@
     "@zeit/next-typescript": "1.1.2-canary.0",
     "fs-jetpack": "^2.2.1",
     "jss": "^9.8.7",
-    "next": "8.0.0-canary.10",
+    "next": "8.0.0-canary.15",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-jss": "^8.6.1"
@@ -45,7 +45,7 @@
     "ora": "^3.0.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.3.3",
-    "webpack": "4.28.2",
+    "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
   }
 }
