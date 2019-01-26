@@ -13,5 +13,10 @@
     "removeComments": false,
     "preserveConstEnums": true,
     "sourceMap": true
-  }
+  },
+  "exclude": [
+    "app",
+    "build",
+    "renderer/next.config.js"
+  ]
 }
