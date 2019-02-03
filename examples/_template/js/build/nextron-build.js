@@ -63,7 +63,7 @@ async function build(args) {
     await remove(join(cwd, 'dist'))
 
     spinner.create('Building renderer process')
-    const outdir = join(cwd, 'renderer/out')
+    const outdir = join(cwd, 'renderer/.next')
     const appdir = join(cwd, 'app')
     await npx('next', ['build', 'renderer'], { cwd })
     await npx('next', ['export', 'renderer'], { cwd })
