@@ -23,8 +23,8 @@
     "fs-jetpack": "^2.2.1",
     "next": "7.0.2",
     "path-match": "1.2.4",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "arg": "^4.1.0",

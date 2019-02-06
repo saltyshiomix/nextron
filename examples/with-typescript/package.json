@@ -23,14 +23,14 @@
     "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.1",
     "next": "7.0.2",
-    "react": "^16.7.0",
-    "react-dom": "^16.7.0"
+    "react": "^16.8.0",
+    "react-dom": "^16.8.0"
   },
   "devDependencies": {
     "@babel/core": "7.0.0",
     "@babel/runtime": "7.0.0",
-    "@types/next": "^7.0.7",
-    "@types/react": "^16.7.22",
+    "@types/next": "^7.0.9",
+    "@types/react": "^16.8.2",
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "electron": "4.0.4",
