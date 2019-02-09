@@ -15,16 +15,25 @@ export default class extends React.Component {
     this.setState({
       logo: resolveWithIpc('static/logo.png')
     })
-  }
 
-  onClickWithIpc = () => {
     if (this.ipcRenderer) {
-      this.ipcRenderer.send('ping-pong', 'some data from ipcRenderer')
       this.ipcRenderer.on('ping-pong', (event, data) => {
         this.setState({
           ipcResult: data
         })
       })
+    }
+  }
+
+  componentWillUnmount() {
+    if (this.ipcRenderer) {
+      this.ipcRenderer.removeAllListeners('ping-pong')
+    }
+  }
+
+  onClickWithIpc = () => {
+    if (this.ipcRenderer) {
+      this.ipcRenderer.send('ping-pong', 'some data from ipcRenderer')
     }
   }
 
