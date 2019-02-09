@@ -23,8 +23,8 @@
     "electron-store": "^2.0.0",
     "fs-jetpack": "^2.2.1",
     "next": "7.0.2",
-    "react": "^16.8.0",
-    "react-dom": "^16.8.0"
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1"
   },
   "devDependencies": {
     "arg": "^4.1.0",
