@@ -74,11 +74,9 @@ async function dev() {
   // wait until renderer process is ready
   await delay(8000)
 
-  let electronStarted = false
   const compiler = webpack(config('development'))
   watching = compiler.watch({}, async (err, stats) => {
-    if (!err && !stats.hasErrors() && !electronStarted) {
-      electronStarted = true
+    if (!err && !stats.hasErrors()) {
       await npxSync('electron', ['.'], { cwd, stdio: 'inherit' })
     }
   })
