@@ -1,11 +1,11 @@
 import { join } from 'path'
 import { app, ipcMain } from 'electron'
-import { createWindow, enableHotReload, resolveWithIpc } from './helpers'
+import { createWindow, exitOnChange, resolveWithIpc } from './helpers'
 
 const isProd = process.env.NODE_ENV === 'production'
 
 if (!isProd) {
-  enableHotReload()
+  exitOnChange()
 
   const userDataPath = app.getPath('userData')
   app.setPath('userData', `${userDataPath} (development)`)
