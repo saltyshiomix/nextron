@@ -57,7 +57,8 @@ typings/
 # dotenv environment variables file
 .env
 
-# nextron
+# poops
 .DS_Store
-dist
+
+# nextron build output
 workspace
