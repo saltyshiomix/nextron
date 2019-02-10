@@ -24,7 +24,7 @@
     "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.1",
     "jss": "^9.8.7",
-    "next": "7.0.2",
+    "next": "7.0.3",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-jss": "^8.6.1"
