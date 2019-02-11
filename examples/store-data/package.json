@@ -22,7 +22,7 @@
   "dependencies": {
     "electron-store": "^2.0.0",
     "fs-jetpack": "^2.2.1",
-    "next": "8.0.0-canary.15",
+    "next": "8.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
   },

@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "fs-jetpack": "^2.2.1",
-    "next": "8.0.0-canary.15",
+    "next": "8.0.0",
     "path-match": "1.2.4",
     "react": "^16.8.1",
     "react-dom": "^16.8.1"
