@@ -20,11 +20,11 @@
     "build": "node build/nextron.js build"
   },
   "dependencies": {
-    "@material-ui/core": "3.9.1",
-    "@zeit/next-typescript": "1.1.2-canary.0",
+    "@material-ui/core": "3.9.2",
+    "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.1",
     "jss": "^9.8.7",
-    "next": "8.0.0-canary.15",
+    "next": "8.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-jss": "^8.6.1"
