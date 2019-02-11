@@ -20,6 +20,7 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 
 | nextron | next |
 | --- | --- |
+| `v4.x` | `v8.x` |
 | `v2.x` / `v3.x` | `v7.x` |
 | `v1.x` | `v6.x` |
 

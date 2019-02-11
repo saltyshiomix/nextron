@@ -24,14 +24,14 @@
     "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.1",
     "jss": "^9.8.7",
-    "next": "7.0.3",
+    "next": "8.0.0",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
-    "@babel/core": "7.0.0",
-    "@babel/runtime": "7.0.0",
+    "@babel/core": "7.1.2",
+    "@babel/runtime": "7.1.2",
     "@types/next": "^7.0.9",
     "@types/react": "^16.8.2",
     "arg": "^4.1.0",
@@ -45,7 +45,7 @@
     "ora": "^3.0.0",
     "ts-loader": "^5.3.3",
     "typescript": "^3.3.3",
-    "webpack": "4.20.2",
+    "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
   }
 }
