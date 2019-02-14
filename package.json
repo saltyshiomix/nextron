@@ -35,7 +35,7 @@
     "chalk": "^2.4.2",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
-    "ora": "^3.0.0"
+    "ora": "^3.1.0"
   },
   "devDependencies": {
     "rimraf": "^2.6.3"
