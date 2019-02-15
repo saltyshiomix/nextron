@@ -24,14 +24,14 @@
     "fs-jetpack": "^2.2.1",
     "jss": "^9.8.7",
     "next": "8.0.1",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2",
     "react-jss": "^8.6.1"
   },
   "devDependencies": {
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
-    "electron": "4.0.4",
+    "electron": "4.0.5",
     "electron-builder": "20.38.5",
     "fast-glob": "^2.2.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
