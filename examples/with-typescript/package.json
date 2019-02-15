@@ -23,8 +23,8 @@
     "@zeit/next-typescript": "1.1.1",
     "fs-jetpack": "^2.2.1",
     "next": "8.0.1",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1"
+    "react": "^16.8.2",
+    "react-dom": "^16.8.2"
   },
   "devDependencies": {
     "@babel/core": "7.1.2",
