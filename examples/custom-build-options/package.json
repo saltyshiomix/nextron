@@ -25,9 +25,9 @@
   },
   "dependencies": {
     "fs-jetpack": "^2.2.1",
-    "next": "8.0.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "next": "8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "arg": "^4.1.0",
