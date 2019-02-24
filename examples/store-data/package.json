@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "electron-store": "^2.0.0",
-    "fs-jetpack": "^2.2.1",
+    "fs-jetpack": "^2.2.2",
     "next": "8.0.3",
     "react": "^16.8.3",
     "react-dom": "^16.8.3"
