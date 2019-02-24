@@ -22,16 +22,16 @@
   "dependencies": {
     "@zeit/next-less": "1.0.1",
     "@zeit/next-typescript": "1.1.1",
-    "fs-jetpack": "^2.2.1",
-    "next": "8.0.1",
-    "react": "^16.8.2",
-    "react-dom": "^16.8.2"
+    "fs-jetpack": "^2.2.2",
+    "next": "8.0.3",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3"
   },
   "devDependencies": {
     "@babel/core": "7.1.2",
     "@babel/runtime": "7.1.2",
-    "@types/next": "^7.0.9",
-    "@types/react": "^16.8.2",
+    "@types/next": "^8.0.1",
+    "@types/react": "^16.8.4",
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "electron": "4.0.5",
@@ -43,7 +43,7 @@
     "node-npx": "^1.3.1",
     "ora": "^3.1.0",
     "ts-loader": "^5.3.3",
-    "typescript": "^3.3.3",
+    "typescript": "^3.3.3333",
     "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
   }
