@@ -57,9 +57,10 @@ typings/
 # dotenv environment variables file
 .env
 
-# nextron
+# poops
 .DS_Store
-dist
+
+# nextron build output
 workspace
 examples/with-typescript-python/app/
 examples/with-typescript-python/renderer/.next/

@@ -31,6 +31,7 @@ if (args['--help']) {
 
 async function dev() {
   const { npx, npxSync } = require('node-npx')
+  const delay = require('delay')
   const webpack = require('webpack')
   const config = require('./webpack/webpack.main.config')
   const cwd = process.cwd()
@@ -38,7 +39,12 @@ async function dev() {
   const startRendererProcess = () => {
     let child
     if (args['--custom-server']) {
-      child = npx('node', [args['--custom-server']], { cwd, stdio: 'inherit' })
+      const { existsSync } = require('fs')
+      if (existsSync('nodemon.json')) {
+        child = npx('nodemon', [args['--custom-server']], { cwd, stdio: 'inherit' })
+      } else {
+        child = npx('node', [args['--custom-server']], { cwd, stdio: 'inherit' })
+      }
     } else {
       child = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio: 'inherit' })
     }
@@ -65,11 +71,17 @@ async function dev() {
 
   rendererProcess = startRendererProcess()
 
-  let electronStarted = false
+  // wait until renderer process is ready
+  await delay(8000)
+
   const compiler = webpack(config('development'))
+  let isHotReload = false
   watching = compiler.watch({}, async (err, stats) => {
-    if (!err && !stats.hasErrors() && !electronStarted) {
-      electronStarted = true
+    if (!err && !stats.hasErrors()) {
+      if (isHotReload) {
+        await delay(2000)
+      }
+      isHotReload = true
       await npxSync('electron', ['.'], { cwd, stdio: 'inherit' })
     }
   })

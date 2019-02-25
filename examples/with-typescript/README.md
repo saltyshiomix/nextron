@@ -2,9 +2,22 @@
 
 ## Usage
 
+### Create an App
+
 ```bash
+# with `nextron`
 $ nextron init my-app --template with-typescript
 
+# with npx
+$ npx create-nextron-app my-app --example with-typescript
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript
+```
+
+### Use it
+
+```bash
 $ cd my-app
 
 # Install dependencies

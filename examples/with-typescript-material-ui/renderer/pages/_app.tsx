@@ -3,7 +3,7 @@ import App, { Container } from 'next/app'
 import { MuiThemeProvider } from '@material-ui/core/styles'
 import { default as CssBaseline } from '@material-ui/core/CssBaseline'
 import JssProvider from 'react-jss/lib/JssProvider'
-import getPageContext from '../components/getPageContext'
+import getPageContext from '../lib/get-page-context'
 
 class MyApp extends App {
   pageContext = null

@@ -1,16 +1,14 @@
 import { join } from 'path'
-import { format } from 'url'
 import { app } from 'electron'
-import { createWindow, enableHotReload } from './helpers'
+import { createWindow, exitOnChange } from './helpers'
 
-const env = require('env')
-const isProd = (env.name === 'production')
+const isProd = process.env.NODE_ENV === 'production'
 
 if (!isProd) {
-  enableHotReload()
+  exitOnChange()
 
   const userDataPath = app.getPath('userData')
-  app.setPath('userData', `${userDataPath} (${env.name})`)
+  app.setPath('userData', `${userDataPath} (development)`)
 }
 
 app.on('ready', () => {
@@ -19,15 +17,12 @@ app.on('ready', () => {
     height: 600
   })
 
-  const homeUrl = isProd ? format({
-    pathname: join(__dirname, 'home/index.html'),
-    protocol: 'file:',
-    slashes: true
-  }) : 'http://localhost:8888/home'
-
-  mainWindow.loadURL(homeUrl)
-
-  if (!isProd) {
+  if (isProd) {
+    const homeFile = join(app.getAppPath(), 'app/home/index.html')
+    mainWindow.loadFile(homeFile)
+  } else {
+    const homeUrl = 'http://localhost:8888/home'
+    mainWindow.loadURL(homeUrl)
     mainWindow.webContents.openDevTools()
   }
 })

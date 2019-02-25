@@ -1,9 +1,21 @@
-import { resolve } from '../helpers'
+import { LinkWithIpc } from '../helpers'
 
 export default () => (
   <ul>
-    <li><a href={resolve('blog/first')}>My first blog post</a></li>
-    <li><a href={resolve('blog/second')}>My second blog post</a></li>
-    <li><a href={resolve('blog/last')}>My last blog post</a></li>
+    <li>
+      <LinkWithIpc href="blog/first">
+        <a>My first blog post</a>
+      </LinkWithIpc>
+    </li>
+    <li>
+      <LinkWithIpc href="blog/second">
+        <a>My second blog post</a>
+      </LinkWithIpc>
+    </li>
+    <li>
+      <LinkWithIpc href="blog/last">
+        <a>My last blog post</a>
+      </LinkWithIpc>
+    </li>
   </ul>
 )
