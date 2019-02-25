@@ -1,7 +1,7 @@
 import gql from "graphql-tag";
 import * as React from "react";
 import { resolve } from "../../helpers";
-import { appGlobalClient } from "../_app";
+import { getAppGlobalClient } from "../_app";
 import { css } from "./styles.css";
 
 class CalculatorPage extends React.Component {
@@ -36,7 +36,7 @@ class CalculatorPage extends React.Component {
   private handleKeyDown = (event:React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === "Enter") {
       const math = event.currentTarget.value;
-      appGlobalClient.query({
+      getAppGlobalClient().query({
         query:gql`query calc($math:String!) {
           calc(math:$math)
         }`,

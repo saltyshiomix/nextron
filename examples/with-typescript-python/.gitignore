@@ -1,4 +1,7 @@
+node_modules
+*.log
+.next
+app
+dist
 api.spec
-node_modules/
-dist/
-pythondist/
+pythondist

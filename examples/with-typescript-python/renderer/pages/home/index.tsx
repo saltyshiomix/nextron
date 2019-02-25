@@ -10,7 +10,7 @@ class Page extends React.Component {
         <div className="container">
           <h2>Home</h2>
           <ol>
-            <li><a href={resolve("calculator")}>Calculator</a></li>
+            <li><a href={resolve("calculator")}>Open calculator page</a></li>
           </ol>
         </div>
       </div>

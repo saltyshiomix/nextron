@@ -24,6 +24,12 @@ Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) ap
 | `v2.x` / `v3.x` | `v7.x` |
 | `v1.x` | `v6.x` |
 
+```
+👍 JavaScript frontend/backend
+👍 TypeScript frontend/backend
+👍 TypeScript frontend/Python backend
+```
+
 ## My Belief for Nextron
 
 1. Show a way of developing desktop apps only web knowledge
