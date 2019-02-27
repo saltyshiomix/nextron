@@ -350,6 +350,19 @@ $ yarn create nextron-app my-app --example with-typescript-material-ui
 
 <p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
 
+### [examples/with-typescript-python](./examples/with-typescript-python)
+
+```bash
+# with `nextron`
+$ nextron init my-app --template with-typescript-python
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-python
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-python
+```
+
 ## Develop
 
 ### Basic
