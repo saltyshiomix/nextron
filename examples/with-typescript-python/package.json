@@ -43,15 +43,15 @@
     "graphql-tag": "^2.10.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "8.0.3",
-    "react": "^16.8.1",
-    "react-dom": "^16.8.1",
+    "react": "^16.8.3",
+    "react-dom": "^16.8.3",
     "superagent": "^4.1.0"
   },
   "devDependencies": {
     "@babel/core": "7.1.2",
     "@babel/runtime": "7.1.2",
     "@types/next": "^8.0.1",
-    "@types/react": "^16.8.2",
+    "@types/react": "^16.8.5",
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "electron": "4.0.4",
