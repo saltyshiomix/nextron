@@ -2,6 +2,19 @@
 
 This example builds a stand-alone Electron + Next + Python application and installer. On Windows it builds the app into `./dist/win-uppacked/My Nextron Python App.exe` and the installer into `./dist/My Nextron Python App Setup 1.0.0.exe` (OSX and Linux destinations are similar). You can change the name of the application by changing the `name` property in `package.json`.
 
+# Create an App
+
+```bash
+# with `nextron`
+$ nextron init my-app --template with-typescript-python
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-python
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-python
+```
+
 # Installation
 
 Tested with Anaconda Python v3, should work fine with Anaconda Python v2.
@@ -18,6 +31,7 @@ npm install
 # a pain to track down if they come up and you dont realize a rebuild is needed
 npm rebuild
 ```
+
 **VERY IMPORTANT:** Windows users, if you use VS Code or use Powershell as your shell, you need to type `cmd` inside the VS Code terminal or inside your Powershell window before running the conda commands because conda's environment switcher will not work under Powershell (much of it works, but the critical parts that don't work, like activating evironments, fail silently while appearing to work),
 
 ```bash
@@ -40,6 +54,7 @@ Traceback (most recent call last):
     from graphene import ObjectType, String, Schema
 ModuleNotFoundError: No module named 'graphene'
 ```
+
 ```bash
 # use pyinstaller to convert the source code in python/ into an executable in pythondist/, build the electron app, and run electron-packager to package the electron app as a single file
 npm run build # must be run in the same shell you just conda activated
