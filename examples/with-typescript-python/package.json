@@ -37,6 +37,7 @@
     "apollo-cache-inmemory": "^1.3.9",
     "apollo-client": "^2.4.5",
     "apollo-link-http": "^1.5.5",
+    "cross-spawn": "^6.0.5",
     "fs-jetpack": "^2.2.1",
     "graphql": "^14.0.2",
     "graphql-tag": "^2.10.0",

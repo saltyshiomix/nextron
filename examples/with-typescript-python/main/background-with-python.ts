@@ -47,7 +47,7 @@ ipcMain.on("getPythonPort", (event) => {
       } else {
         // dialog.showErrorBox("info", "unpackaged");
         if (require("fs").existsSync(srcPath)) {
-          pyProc = require("child_process").spawn("python", [srcPath, "--apiport", pyPort]);
+          pyProc = require("cross-spawn")("python", [srcPath, "--apiport", pyPort]);
         } else {
           dialog.showErrorBox("Error", "Unpackaged python source not found");
         }
