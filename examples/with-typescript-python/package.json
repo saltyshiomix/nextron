@@ -1,0 +1,73 @@
+{
+  "private": true,
+  "name": "my-nextron-python-app",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Don Alvarez",
+  "main": "app/background.js",
+  "build": {
+    "appId": "com.example.nextronpython",
+    "productName": "My Nextron Python App",
+    "copyright": "Copyright © 2019 Don Alvarez",
+    "directories": {
+      "output": "dist",
+      "buildResources": "resources"
+    },
+    "publish": null
+  },
+  "scripts": {
+    "dev": "node build/nextron.js",
+    "build-python": "shx rm -rf pythondist && pyinstaller python/api.py --distpath pythondist --workpath build-py-temp --onefile && shx rm -rf build-py-temp && shx rm api.spec",
+    "build-nextron": "node build/nextron.js build",
+    "build": "npm run build-python && npm run build-nextron"
+  },
+  "keywords": [
+    "Nextron",
+    "Electron",
+    "NextJS",
+    "Python",
+    "Flask",
+    "demo"
+  ],
+  "dependencies": {
+    "@types/get-port": "^4.0.1",
+    "@types/isomorphic-fetch": "0.0.34",
+    "@types/node": "^11.9.5",
+    "@zeit/next-typescript": "1.1.1",
+    "apollo-cache-inmemory": "^1.3.9",
+    "apollo-client": "^2.4.5",
+    "apollo-link-http": "^1.5.5",
+    "cross-spawn": "^6.0.5",
+    "fs-jetpack": "^2.2.1",
+    "graphql": "^14.0.2",
+    "graphql-tag": "^2.10.0",
+    "isomorphic-fetch": "^2.2.1",
+    "next": "8.0.1",
+    "react": "^16.8.1",
+    "react-dom": "^16.8.1",
+    "superagent": "^4.1.0"
+  },
+  "devDependencies": {
+    "@babel/core": "7.1.2",
+    "@babel/runtime": "7.1.2",
+    "@types/next": "^7.0.9",
+    "@types/react": "^16.8.2",
+    "arg": "^4.1.0",
+    "chalk": "^2.4.2",
+    "electron": "4.0.4",
+    "electron-builder": "20.38.5",
+    "electron-packager": "^9.0.1",
+    "electron-rebuild": "^1.8.2",
+    "fast-glob": "^2.2.6",
+    "friendly-errors-webpack-plugin": "^1.7.0",
+    "fs-extra": "^7.0.1",
+    "node-npx": "^1.3.1",
+    "npm-run-all": "^4.1.3",
+    "ora": "^3.1.0",
+    "shx": "^0.3.2",
+    "ts-loader": "^5.3.3",
+    "typescript": "^3.3.3",
+    "webpack": "4.29.0",
+    "webpack-merge": "^4.2.1"
+  }
+}

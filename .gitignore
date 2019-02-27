@@ -62,3 +62,5 @@ typings/
 
 # nextron build output
 workspace
+examples/with-typescript-python/app/
+examples/with-typescript-python/renderer/.next/
