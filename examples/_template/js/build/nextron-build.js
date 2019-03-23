@@ -69,13 +69,15 @@ async function build(args) {
     await npx('next', ['export', 'renderer'], { cwd })
     await copy(outdir, appdir)
     await remove(outdir)
+
+    spinner.create('Building main process')
+    await npx('node', [join('build/webpack/build.production.js')], { cwd })
+
+    // fix absolute paths to relative ones
     const pages = fg.sync(join(appdir, '**/*.html'))
     pages.forEach(page => {
       writeFileSync(page, resolveExportedPaths(page))
     })
-
-    spinner.create('Building main process')
-    await npx('node', [join('build/webpack/build.production.js')], { cwd })
 
     spinner.create('Packaging - please wait a moment')
     await npx('electron-builder', createBuilderArgs(args), { cwd })
