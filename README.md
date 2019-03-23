@@ -260,6 +260,21 @@ $ yarn create nextron-app my-app --example store-data
 
 <p align="center"><img src="https://i.imgur.com/2ELjNqK.png"></p>
 
+### [examples/web-worker](./examples/web-worker)
+
+```bash
+# with `nextron`
+$ nextron init my-app --template web-worker
+
+# with npx
+$ npx create-nextron-app my-app --example web-worker
+
+# with yarn
+$ yarn create nextron-app my-app --example web-worker
+```
+
+<p align="center"><img src="https://i.imgur.com/7XkhMwQ.png"></p>
+
 ### [examples/with-javascript](./examples/with-javascript)
 
 ```bash
