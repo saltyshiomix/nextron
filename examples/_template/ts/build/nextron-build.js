@@ -69,31 +69,54 @@ async function build(args) {
     await npx('next', ['export', 'renderer'], { cwd })
     await copy(outdir, appdir)
     await remove(outdir)
-    const pages = fg.sync(join(appdir, '**/*.html'))
-    pages.forEach(page => {
-      writeFileSync(page, resolveExportedPaths(page))
-    })
 
     spinner.create('Building main process')
     await npx('node', [join('build/webpack/build.production.js')], { cwd })
+
+    // fix absolute paths to relative ones
+    const pages = fg.sync(join(appdir, '**/*.html'))
+    for (let i = 0; i < pages.length; i++) {
+      const page = pages[i];
+      writeFileSync(page, resolveAbsolutePaths(page, appdir))
+    }
 
     spinner.create('Packaging - please wait a moment')
     await npx('electron-builder', createBuilderArgs(args), { cwd })
 
     spinner.clear('See `dist` directory')
   } catch (err) {
-    spinner.fail('Cannot build electron packages. Please contact <shiono.yoshihide@gmail.com>.')
-    console.log(err)
+    spinner.fail(chalk`
+
+{bold.red Cannot build electron packages:}
+{bold.yellow ${err}}
+`)
     process.exit(1)
   }
 }
 
-function resolveExportedPaths(page) {
+function getName(page) {
+  const splitted = page.split('/')
+  return splitted[splitted.length - 2]
+}
+
+function resolveAbsolutePaths(page, appdir) {
   const content = readFileSync(page).toString()
   const depth = page.split('/app/')[1].split('/').length - 1
+
+  const scripts = fg.sync(join(appdir, `_next/static/**/${getName(page)}.js`), { ignore: ['**/*.js.map', '**/_*.js'] })
+  for (let i = 0; i < scripts.length; i++) {
+    const s = scripts[i];
+    writeFileSync(s, resolveScriptPaths(s, depth))
+  }
+
   return content
     .replace(/"\/_next\//g, `"${resolveDepth('next', depth)}`)
     .replace(/"\/_error\//g, `"${resolveDepth('error', depth)}`)
+}
+
+function resolveScriptPaths(s, depth) {
+  const content = readFileSync(s).toString()
+  return content.replace(/"\/_next\//g, `"${resolveDepth('next', depth)}`)
 }
 
 function resolveDepth(name, depth) {
