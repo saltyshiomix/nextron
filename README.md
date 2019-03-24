@@ -94,7 +94,7 @@ Run `npm run dev`, and nextron automatically launches an electron app.
 ```json
 {
   "scripts": {
-    "dev": "node build/nextron.js"
+    "dev": "node nextron/nextron.js"
   }
 }
 ```
@@ -106,7 +106,7 @@ Run `npm run build`, and nextron outputs packaged bundles under the `dist` folde
 ```json
 {
   "scripts": {
-    "build": "node build/nextron.js build"
+    "build": "node nextron/nextron.js build"
   }
 }
 ```
@@ -118,12 +118,12 @@ To build Windows 32 bit version, run `npm run build:win32` like below:
 ```json
 {
   "scripts": {
-    "build": "node build/nextron.js build",
-    "build:all": "node build/nextron.js build --all",
-    "build:win32": "node build/nextron.js build --win --ia32",
-    "build:win64": "node build/nextron.js build --win --x64",
-    "build:mac": "node build/nextron.js build --mac --x64",
-    "build:linux": "node build/nextron.js build --linux"
+    "build": "node nextron/nextron.js build",
+    "build:all": "node nextron/nextron.js build --all",
+    "build:win32": "node nextron/nextron.js build --win --ia32",
+    "build:win64": "node nextron/nextron.js build --win --x64",
+    "build:mac": "node nextron/nextron.js build --mac --x64",
+    "build:linux": "node nextron/nextron.js build --linux"
   }
 }
 ```

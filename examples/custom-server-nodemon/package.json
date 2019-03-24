@@ -16,8 +16,8 @@
     "publish": null
   },
   "scripts": {
-    "dev": "node build/nextron.js --custom-server renderer/server.js",
-    "build": "node build/nextron.js build"
+    "dev": "node nextron/nextron.js --custom-server renderer/server.js",
+    "build": "node nextron/nextron.js build"
   },
   "dependencies": {
     "fs-jetpack": "^2.2.2",

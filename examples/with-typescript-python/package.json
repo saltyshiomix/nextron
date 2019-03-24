@@ -16,9 +16,9 @@
     "publish": null
   },
   "scripts": {
-    "dev": "node build/nextron.js",
+    "dev": "node nextron/nextron.js",
     "build-python": "shx rm -rf pythondist && pyinstaller python/api.py --distpath pythondist --workpath build-py-temp --onefile && shx rm -rf build-py-temp && shx rm api.spec",
-    "build-nextron": "node build/nextron.js build",
+    "build-nextron": "node nextron/nextron.js build",
     "build": "npm run build-python && npm run build-nextron"
   },
   "keywords": [

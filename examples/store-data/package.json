@@ -16,8 +16,8 @@
     "publish": null
   },
   "scripts": {
-    "dev": "node build/nextron.js",
-    "build": "node build/nextron.js build"
+    "dev": "node nextron/nextron.js",
+    "build": "node nextron/nextron.js build"
   },
   "dependencies": {
     "electron-store": "^2.0.0",
