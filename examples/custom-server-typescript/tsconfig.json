@@ -16,7 +16,7 @@
   },
   "exclude": [
     "app",
-    "build",
+    "nextron",
     "renderer/next.config.js",
   ],
 }
