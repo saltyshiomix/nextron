@@ -71,7 +71,7 @@ async function build(args) {
     await remove(outdir)
 
     spinner.create('Building main process')
-    await npx('node', [join('build/webpack/build.production.js')], { cwd })
+    await npx('node', [join('nextron/webpack/build.production.js')], { cwd })
 
     // fix absolute paths to relative ones
     const pages = fg.sync(join(appdir, '**/*.html'))

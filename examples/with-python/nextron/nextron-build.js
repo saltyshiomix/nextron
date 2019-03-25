@@ -75,7 +75,7 @@ async function build(args) {
     })
 
     spinner.create('Building main process')
-    await npx('node', [join('build/webpack/build.production.js')], { cwd })
+    await npx('node', [join('nextron/webpack/build.production.js')], { cwd })
 
     spinner.create('Building python process')
     await npx('pyinstaller', [join(cwd, 'python/hello.py'), '--distpath', join(cwd, 'app'), '--workpath', join(cwd, 'pytmp'), '--onefile'], { cwd })

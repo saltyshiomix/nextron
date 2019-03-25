@@ -16,8 +16,8 @@
     "publish": null
   },
   "scripts": {
-    "dev": "node build/nextron.js --custom-server renderer/server/server.ts",
-    "build": "node build/nextron.js build"
+    "dev": "node nextron/nextron.js --custom-server renderer/server/server.ts",
+    "build": "node nextron/nextron.js build"
   },
   "dependencies": {
     "@zeit/next-typescript": "1.1.1",
