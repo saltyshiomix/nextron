@@ -1,10 +1,10 @@
-import electron from 'electron'
+import electron from 'electron';
 
 // prevent SSR webpacking
-const ipcRenderer = electron.ipcRenderer || false
+const ipcRenderer = electron.ipcRenderer || false;
 
 export default function resolve(pathname) {
   if (ipcRenderer) {
-    return ipcRenderer.sendSync('resolve', pathname)
+    return ipcRenderer.sendSync('resolve', pathname);
   }
-}
+};

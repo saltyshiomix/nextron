@@ -1,20 +1,20 @@
-import React from 'react'
-import App, { Container } from 'next/app'
-import { MuiThemeProvider } from '@material-ui/core/styles'
-import CssBaseline from '@material-ui/core/CssBaseline'
-import JssProvider from 'react-jss/lib/JssProvider'
-import getPageContext from '../lib/get-page-context'
+import React from 'react';
+import App, { Container } from 'next/app';
+import { MuiThemeProvider } from '@material-ui/core/styles';
+import CssBaseline from '@material-ui/core/CssBaseline';
+import JssProvider from 'react-jss/lib/JssProvider';
+import getPageContext from '../lib/get-page-context';
 
 class MyApp extends App {
-  pageContext = null
+  pageContext = null;
 
   constructor(props) {
-    super(props)
-    this.pageContext = getPageContext()
+    super(props);
+    this.pageContext = getPageContext();
   }
 
   render() {
-    const { Component, pageProps } = this.props
+    const { Component, pageProps } = this.props;
 
     return (
       <Container>
@@ -25,8 +25,8 @@ class MyApp extends App {
           </MuiThemeProvider>
         </JssProvider>
       </Container>
-    )
+    );
   }
 }
 
-export default MyApp
+export default MyApp;

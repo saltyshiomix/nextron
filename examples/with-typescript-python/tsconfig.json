@@ -12,15 +12,15 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
-    "sourceMap": true
+    "sourceMap": true,
   },
   "include": [
     "background-with-python.ts",
-    "renderer/**/*"
+    "renderer/**/*",
   ],
   "exclude": [
     "app",
-    "build",
-    "renderer/next.config.js"
-  ]
+    "nextron",
+    "renderer/next.config.js",
+  ],
 }

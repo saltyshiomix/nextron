@@ -1,9 +1,9 @@
-import { watchFile } from 'fs'
-import { join } from 'path'
-import { app } from 'electron'
+import { watchFile } from 'fs';
+import { join } from 'path';
+import { app } from 'electron';
 
 export default function exitOnChange(): void {
   watchFile(join(process.cwd(), 'app/background.js'), () => {
-    app.exit(0)
-  })
-}
+    app.exit(0);
+  });
+};

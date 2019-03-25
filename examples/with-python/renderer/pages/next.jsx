@@ -1,4 +1,4 @@
-import { resolve } from '../helpers'
+import { resolve } from '../helpers';
 
 export default () => (
   <div>
@@ -6,4 +6,4 @@ export default () => (
       ⚡ Electron + Next.js + Python ⚡ - <a href={resolve('home')}>To Home Page</a>
     </p>
   </div>
-)
+);

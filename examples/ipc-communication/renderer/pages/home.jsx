@@ -1,47 +1,47 @@
-import React from 'react'
-import electron from 'electron'
-import { resolveWithIpc, LinkWithIpc } from '../helpers'
+import React from 'react';
+import electron from 'electron';
+import { resolveWithIpc, LinkWithIpc } from '../helpers';
 
 export default class extends React.Component {
   // prevent SSR webpacking
-  ipcRenderer = electron.ipcRenderer || false
+  ipcRenderer = electron.ipcRenderer || false;
 
   state = {
     logo: null,
-    ipcResult: 'no ipc messaging'
-  }
+    ipcResult: 'no ipc messaging',
+  };
+
+  onClickWithIpc = () => {
+    if (this.ipcRenderer) {
+      this.ipcRenderer.send('ping-pong', 'some data from ipcRenderer');
+    }
+  };
+
+  onClickWithIpcSync = () => {
+    if (this.ipcRenderer) {
+      this.setState({
+        ipcResult: this.ipcRenderer.sendSync('ping-pong-sync', 'some data from ipcRenderer'),
+      });
+    }
+  };
 
   componentDidMount() {
     this.setState({
-      logo: resolveWithIpc('static/logo.png')
-    })
+      logo: resolveWithIpc('static/logo.png'),
+    });
 
     if (this.ipcRenderer) {
       this.ipcRenderer.on('ping-pong', (event, data) => {
         this.setState({
-          ipcResult: data
-        })
-      })
+          ipcResult: data,
+        });
+      });
     }
   }
 
   componentWillUnmount() {
     if (this.ipcRenderer) {
-      this.ipcRenderer.removeAllListeners('ping-pong')
-    }
-  }
-
-  onClickWithIpc = () => {
-    if (this.ipcRenderer) {
-      this.ipcRenderer.send('ping-pong', 'some data from ipcRenderer')
-    }
-  }
-
-  onClickWithIpcSync = () => {
-    if (this.ipcRenderer) {
-      this.setState({
-        ipcResult: this.ipcRenderer.sendSync('ping-pong-sync', 'some data from ipcRenderer')
-      })
+      this.ipcRenderer.removeAllListeners('ping-pong');
     }
   }
 
@@ -57,6 +57,6 @@ export default class extends React.Component {
         <button onClick={this.onClickWithIpcSync}>IPC messaging (sync)</button>
         <p>{this.state.ipcResult}</p>
       </div>
-    )
+    );
   }
-}
+};

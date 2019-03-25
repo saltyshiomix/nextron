@@ -1,19 +1,19 @@
-import React from 'react'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import { withStyles } from '@material-ui/core/styles'
-import { resolve } from '../helpers'
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { withStyles } from '@material-ui/core/styles';
+import { resolve } from '../helpers';
 
 const styles = theme => ({
   root: {
     textAlign: 'center',
-    paddingTop: theme.spacing.unit * 4
-  }
-})
+    paddingTop: theme.spacing.unit * 4,
+  },
+});
 
 class About extends React.Component {
   render() {
-    const { classes } = this.props
+    const { classes } = this.props;
 
     return (
       <div className={classes.root}>
@@ -32,8 +32,8 @@ class About extends React.Component {
           Do nothing button
         </Button>
       </div>
-    )
+    );
   }
 }
 
-export default withStyles(styles)(About)
+export default withStyles(styles)(About);

@@ -1,18 +1,17 @@
-import React from 'react'
-import Document, { Head, Main, NextScript } from 'next/document'
-import flush from 'styled-jsx/server'
+import React from 'react';
+import Document, { Head, Main, NextScript } from 'next/document';
+import flush from 'styled-jsx/server';
 
 class MyDocument extends Document {
   static getInitialProps(ctx) {
-    let pageContext
+    let pageContext;
     const page = ctx.renderPage(Component => {
       const WrappedComponent = props => {
-        pageContext = props.pageContext
-        return <Component {...props} />
-      }
-
-      return WrappedComponent
-    })
+        pageContext = props.pageContext;
+        return <Component {...props} />;
+      };
+      return WrappedComponent;
+    });
 
     return {
       ...page,
@@ -22,12 +21,12 @@ class MyDocument extends Document {
           <style id="jss-server-side" dangerouslySetInnerHTML={{ __html: pageContext.sheetsRegistry.toString() }} />
           {flush() || null}
         </React.Fragment>
-      )
-    }
+      ),
+    };
   }
 
   render() {
-    const { pageContext } = this.props
+    const { pageContext } = this.props;
 
     return (
       <html lang="en" dir="ltr">
@@ -42,8 +41,8 @@ class MyDocument extends Document {
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
 }
 
-export default MyDocument
+export default MyDocument;

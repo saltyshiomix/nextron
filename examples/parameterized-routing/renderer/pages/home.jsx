@@ -1,4 +1,4 @@
-import { LinkWithIpc } from '../helpers'
+import { LinkWithIpc } from '../helpers';
 
 export default () => (
   <ul>
@@ -18,4 +18,4 @@ export default () => (
       </LinkWithIpc>
     </li>
   </ul>
-)
+);

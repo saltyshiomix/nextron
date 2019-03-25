@@ -1,4 +1,4 @@
-import { LinkWithIpc } from '../helpers'
+import { LinkWithIpc } from '../helpers';
 
 export default () => (
   <div>
@@ -6,4 +6,4 @@ export default () => (
       ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="home"><a>To Home Page</a></LinkWithIpc>
     </p>
   </div>
-)
+);
