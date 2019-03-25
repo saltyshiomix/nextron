@@ -54,7 +54,7 @@
     "@types/react": "^16.8.8",
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
-    "electron": "4.1.0",
+    "electron": "4.1.1",
     "electron-builder": "20.39.0",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.2",
