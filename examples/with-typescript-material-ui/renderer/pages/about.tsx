@@ -1,22 +1,22 @@
-import React from 'react'
-import Button from '@material-ui/core/Button'
-import Typography from '@material-ui/core/Typography'
-import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { resolve } from '../helpers'
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Typography from '@material-ui/core/Typography';
+import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { resolve } from '../helpers';
 
 const styles = ({ spacing }: Theme) => createStyles({
   root: {
     textAlign: 'center',
-    paddingTop: spacing.unit * 4
-  }
-})
+    paddingTop: spacing.unit * 4,
+  },
+});
 
 interface Props extends WithStyles<typeof styles> {}
 
 const About = withStyles(styles)(
   class extends React.Component<Props> {
     render() {
-      const { classes } = this.props
+      const { classes } = this.props;
 
       return (
         <div className={classes.root}>
@@ -35,9 +35,9 @@ const About = withStyles(styles)(
             Do nothing button
           </Button>
         </div>
-      )
+      );
     }
   }
-)
+);
 
-export default About
+export default About;

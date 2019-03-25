@@ -12,11 +12,11 @@
     "noUnusedParameters": true,
     "removeComments": false,
     "preserveConstEnums": true,
-    "sourceMap": true
+    "sourceMap": true,
   },
   "exclude": [
     "app",
     "build",
-    "renderer/next.config.js"
-  ]
+    "renderer/next.config.js",
+  ],
 }

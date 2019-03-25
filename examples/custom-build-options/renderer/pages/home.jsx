@@ -1,4 +1,4 @@
-import { resolve } from '../helpers'
+import { resolve } from '../helpers';
 
 export default () => (
   <div>
@@ -7,4 +7,4 @@ export default () => (
     </p>
     <img src={resolve('static/logo.png')} />
   </div>
-)
+);

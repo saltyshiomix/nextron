@@ -1,46 +1,46 @@
-import React from 'react'
-import electron from 'electron'
-import { resolve } from '../helpers'
+import React from 'react';
+import electron from 'electron';
+import { resolve } from '../helpers';
 
 export default class extends React.Component {
   // prevent SSR webpacking
-  ipcRenderer = electron.ipcRenderer || false
+  ipcRenderer = electron.ipcRenderer || false;
 
   state = {
     message: '',
-    messages: []
-  }
-
-  componentDidMount() {
-    if (this.ipcRenderer) {
-      const messages = this.ipcRenderer.sendSync('get-messages')
-      this.setState({ messages })
-    }
-  }
+    messages: [],
+  };
 
   handleChange = (e) => {
     this.setState({
-      message: e.target.value
-    })
-  }
+      message: e.target.value,
+    });
+  };
 
   handleSubmit = (e) => {
-    e.preventDefault()
+    e.preventDefault();
 
     if (this.ipcRenderer) {
-      this.ipcRenderer.send('add-message', this.state.message)
+      this.ipcRenderer.send('add-message', this.state.message);
       this.setState({
         message: '',
-        messages: [...this.state.messages, this.state.message]
-      })
+        messages: [...this.state.messages, this.state.message],
+      });
+    }
+  };
+
+  componentDidMount() {
+    if (this.ipcRenderer) {
+      const messages = this.ipcRenderer.sendSync('get-messages');
+      this.setState({ messages });
     }
   }
 
   render() {
-    const messages = []
+    const messages = [];
     for (let i = 0; i < this.state.messages.length; i++) {
-      const message = this.state.messages[i]
-      messages.push(<li key={i}>{message}</li>)
+      const message = this.state.messages[i];
+      messages.push(<li key={i}>{message}</li>);
     }
 
     return (
@@ -58,6 +58,6 @@ export default class extends React.Component {
           {messages}
         </ul>
       </div>
-    )
+    );
   }
-}
+};

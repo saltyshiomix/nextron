@@ -1,44 +1,44 @@
-import React from 'react'
-import Button from '@material-ui/core/Button'
-import Dialog from '@material-ui/core/Dialog'
-import DialogTitle from '@material-ui/core/DialogTitle'
-import DialogContent from '@material-ui/core/DialogContent'
-import DialogContentText from '@material-ui/core/DialogContentText'
-import DialogActions from '@material-ui/core/DialogActions'
-import Typography from '@material-ui/core/Typography'
-import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles'
-import { resolve } from '../helpers'
+import React from 'react';
+import Button from '@material-ui/core/Button';
+import Dialog from '@material-ui/core/Dialog';
+import DialogTitle from '@material-ui/core/DialogTitle';
+import DialogContent from '@material-ui/core/DialogContent';
+import DialogContentText from '@material-ui/core/DialogContentText';
+import DialogActions from '@material-ui/core/DialogActions';
+import Typography from '@material-ui/core/Typography';
+import { withStyles, WithStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { resolve } from '../helpers';
 
 const styles = ({ spacing }: Theme) => createStyles({
   root: {
     textAlign: 'center',
-    paddingTop: spacing.unit * 4
-  }
-})
+    paddingTop: spacing.unit * 4,
+  },
+});
 
 interface Props extends WithStyles<typeof styles> {}
 
 const Home = withStyles(styles)(
   class extends React.Component<Props> {
     state = {
-      open: false
-    }
+      open: false,
+    };
 
     handleClose = () => {
       this.setState({
-        open: false
-      })
-    }
+        open: false,
+      });
+    };
 
     handleClick = () => {
       this.setState({
-        open: true
-      })
-    }
+        open: true,
+      });
+    };
 
     render() {
-      const { classes } = this.props
-      const { open } = this.state
+      const { classes } = this.props;
+      const { open } = this.state;
 
       return (
         <div className={classes.root}>
@@ -69,9 +69,9 @@ const Home = withStyles(styles)(
             Super Secret Password
           </Button>
         </div>
-      )
+      );
     }
   }
-)
+);
 
-export default Home
+export default Home;

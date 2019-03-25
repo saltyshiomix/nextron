@@ -1,5 +1,5 @@
-import Document, { Head, Main, NextScript } from 'next/document'
-import { resolve } from '../helpers'
+import Document, { Head, Main, NextScript } from 'next/document';
+import { resolve } from '../helpers';
 
 export default class MyDocument extends Document {
   render () {
@@ -13,6 +13,6 @@ export default class MyDocument extends Document {
           <NextScript />
         </body>
       </html>
-    )
+    );
   }
-}
+};

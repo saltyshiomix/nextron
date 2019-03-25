@@ -1,9 +1,9 @@
-import React from 'react'
-import { LinkWithIpc } from '../helpers'
+import React from 'react';
+import { LinkWithIpc } from '../helpers';
 
 export default class extends React.Component {
-  static getInitialProps ({ query: { id } }) {
-    return { id }
+  static getInitialProps({ query: { id } }) {
+    return { id };
   }
 
   render () {
@@ -17,6 +17,6 @@ export default class extends React.Component {
         <hr/>
         <p>Go back to <LinkWithIpc href="home"><a>Home</a></LinkWithIpc></p>
       </div>
-    )
+    );
   }
-}
+};
