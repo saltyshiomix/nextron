@@ -14,7 +14,7 @@
 
 Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
 
-(The screenshot above is a top page of [examples/with-javascript-emotion](./examples/with-javascript-emotion).)
+(The screenshot above is a top page of [examples/with-typescript-emotion](./examples/with-typescript-emotion).)
 
 ## Support
 
@@ -349,6 +349,21 @@ $ yarn create nextron-app my-app --example with-typescript
 ```
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+
+### [examples/with-typescript-emotion](./examples/with-typescript-emotion)
+
+```bash
+# with `nextron`
+$ nextron init my-app --template with-typescript-emotion
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-emotion
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-emotion
+```
+
+<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
 
 ### [examples/with-typescript-less](./examples/with-typescript-less)
 
