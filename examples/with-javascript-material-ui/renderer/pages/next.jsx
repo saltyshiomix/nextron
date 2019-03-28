@@ -25,7 +25,7 @@ class About extends React.Component {
         </Typography>
         <Typography gutterBottom>
           <a href={resolve('home')}>
-            Go to the home page
+            Go to home page
           </a>
         </Typography>
         <Button variant="contained" color="primary">

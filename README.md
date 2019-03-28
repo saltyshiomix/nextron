@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
+<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
 
 <p align="center">
   <a href="https://github.com/unicodeveloper/awesome-nextjs">
@@ -14,7 +14,7 @@
 
 Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
 
-(The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
+(The screenshot above is a top page of [examples/with-typescript-emotion](./examples/with-typescript-emotion).)
 
 ## Support
 
@@ -305,6 +305,21 @@ $ yarn create nextron-app my-app --example with-javascript-ant-design
 
 <p align="center"><img src="https://i.imgur.com/PiEKeIZ.png"></p>
 
+### [examples/with-javascript-emotion](./examples/with-javascript-emotion)
+
+```bash
+# with `nextron`
+$ nextron init my-app --template with-javascript-emotion
+
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-emotion
+
+# with yarn
+$ yarn create nextron-app my-app --example with-javascript-emotion
+```
+
+<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
+
 ### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
 
 ```bash
@@ -334,6 +349,21 @@ $ yarn create nextron-app my-app --example with-typescript
 ```
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+
+### [examples/with-typescript-emotion](./examples/with-typescript-emotion)
+
+```bash
+# with `nextron`
+$ nextron init my-app --template with-typescript-emotion
+
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-emotion
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-emotion
+```
+
+<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
 
 ### [examples/with-typescript-less](./examples/with-typescript-less)
 
@@ -388,7 +418,7 @@ $ yarn create nextron-app my-app --example with-typescript-python-api
 $ git clone https://github.com/saltyshiomix/nextron
 $ cd nextron
 $ yarn
-$ yarn dev # default is examples/with-javascript-material-ui
+$ yarn dev # default is examples/with-javascript-emotion
 ```
 
 ### Developing `examples/*`
