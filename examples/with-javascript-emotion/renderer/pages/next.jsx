@@ -16,7 +16,7 @@ export default () => {
           Nextron with Emotion
         </TitleCard>
         <BasicCard>
-          <a href={resolve('home')}>Go to Home Page</a>
+          <a href={resolve('home')}>Go to home page</a>
         </BasicCard>
         <AnimatedCard animation={bounce}>
           Let's bounce.

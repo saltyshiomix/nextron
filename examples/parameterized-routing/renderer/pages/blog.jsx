@@ -15,7 +15,7 @@ export default class extends React.Component {
           tempor incididunt ut labore et dolore magna aliqua.
         </p>
         <hr/>
-        <p>Go back to <LinkWithIpc href="home"><a>Home</a></LinkWithIpc></p>
+        <p>Back to <LinkWithIpc href="home"><a>home</a></LinkWithIpc></p>
       </div>
     );
   }

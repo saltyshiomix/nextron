@@ -49,7 +49,7 @@ export default class extends React.Component {
     return (
       <div>
         <p>
-          ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="next"><a>To Next Page</a></LinkWithIpc>
+          ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="next"><a>Go to next page</a></LinkWithIpc>
         </p>
         <img src={this.state.logo} />
         <hr />
