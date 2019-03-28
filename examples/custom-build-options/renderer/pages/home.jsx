@@ -1,10 +1,17 @@
+import React from 'react';
+import Head from 'next/head';
 import { resolve } from '../helpers';
 
 export default () => (
-  <div>
-    <p>
-      ⚡ Electron + Next.js ⚡ - <a href={resolve('next')}>Go to next page</a>
-    </p>
-    <img src={resolve('static/logo.png')} />
-  </div>
+  <React.Fragment>
+    <Head>
+      <title>Home - Nextron (custom-build-options)</title>
+    </Head>
+    <div>
+      <p>
+        ⚡ Electron + Next.js ⚡ - <a href={resolve('next')}>Go to next page</a>
+      </p>
+      <img src={resolve('static/logo.png')} />
+    </div>
+  </React.Fragment>
 );

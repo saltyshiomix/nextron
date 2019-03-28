@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import electron from 'electron';
 import { resolve } from '../helpers';
 
@@ -44,20 +45,25 @@ export default class extends React.Component {
     }
 
     return (
-      <div>
-        <p>
-          ⚡ Electron + Next.js ⚡ - <a href={resolve('next')}>Go to next page</a>
-        </p>
-        <img src={resolve('static/logo.png')} />
-        <hr />
-        <h2>Enter your message:</h2>
-        <form onSubmit={this.handleSubmit}>
-          <input type="text" value={this.state.message} onChange={this.handleChange} />
-        </form>
-        <ul>
-          {messages}
-        </ul>
-      </div>
+      <React.Fragment>
+        <Head>
+          <title>Home - Nextron (store-data)</title>
+        </Head>
+        <div>
+          <p>
+            ⚡ Electron + Next.js ⚡ - <a href={resolve('next')}>Go to next page</a>
+          </p>
+          <img src={resolve('static/logo.png')} />
+          <hr />
+          <h2>Enter your message:</h2>
+          <form onSubmit={this.handleSubmit}>
+            <input type="text" value={this.state.message} onChange={this.handleChange} />
+          </form>
+          <ul>
+            {messages}
+          </ul>
+        </div>
+      </React.Fragment>
     );
   }
 };

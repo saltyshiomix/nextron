@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import electron from 'electron';
 import { resolveWithIpc, LinkWithIpc } from '../helpers';
 
@@ -47,16 +48,21 @@ export default class extends React.Component {
 
   render() {
     return (
-      <div>
-        <p>
-          ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="next"><a>Go to next page</a></LinkWithIpc>
-        </p>
-        <img src={this.state.logo} />
-        <hr />
-        <button onClick={this.onClickWithIpc}>IPC messaging</button>
-        <button onClick={this.onClickWithIpcSync}>IPC messaging (sync)</button>
-        <p>{this.state.ipcResult}</p>
-      </div>
+      <React.Fragment>
+        <Head>
+          <title>Home - Nextron (ipc-communication)</title>
+        </Head>
+        <div>
+          <p>
+            ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="next"><a>Go to next page</a></LinkWithIpc>
+          </p>
+          <img src={this.state.logo} />
+          <hr />
+          <button onClick={this.onClickWithIpc}>IPC messaging</button>
+          <button onClick={this.onClickWithIpcSync}>IPC messaging (sync)</button>
+          <p>{this.state.ipcResult}</p>
+        </div>
+      </React.Fragment>
     );
   }
 };
