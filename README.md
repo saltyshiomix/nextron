@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
+<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
 
 <p align="center">
   <a href="https://github.com/unicodeveloper/awesome-nextjs">
@@ -14,7 +14,7 @@
 
 Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
 
-(The screenshot above is a top page of [examples/with-typescript-emotion](./examples/with-typescript-emotion).)
+(The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
 
 ## Support
 
