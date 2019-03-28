@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import { LinkWithIpc } from '../helpers';
 
 export default class extends React.Component {
@@ -7,16 +8,23 @@ export default class extends React.Component {
   }
 
   render () {
+    const title = `My ${this.props.id} blog post`;
+
     return (
-      <div>
-        <h1>My {this.props.id} blog post</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-          tempor incididunt ut labore et dolore magna aliqua.
-        </p>
-        <hr/>
-        <p>Back to <LinkWithIpc href="home"><a>home</a></LinkWithIpc></p>
-      </div>
+      <React.Fragment>
+        <Head>
+          <title>{title} - Nextron (parameterized-routing)</title>
+        </Head>
+        <div>
+          <h1>{title}</h1>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
+            tempor incididunt ut labore et dolore magna aliqua.
+          </p>
+          <hr/>
+          <p>Back to <LinkWithIpc href="home"><a>home</a></LinkWithIpc></p>
+        </div>
+      </React.Fragment>
     );
   }
 };

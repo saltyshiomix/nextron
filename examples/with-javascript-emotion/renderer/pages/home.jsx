@@ -9,7 +9,7 @@ export default () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Nextron with Emotion</title>
+        <title>Home - Nextron (with-javascript-emotion)</title>
       </Head>
       <div>
         <TitleCard>

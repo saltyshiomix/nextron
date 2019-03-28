@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
 import DialogTitle from '@material-ui/core/DialogTitle';
@@ -41,34 +42,40 @@ const Home = withStyles(styles)(
       const { open } = this.state;
 
       return (
-        <div className={classes.root}>
-          <Dialog open={open} onClose={this.handleClose}>
-            <DialogTitle>Super Secret Password</DialogTitle>
-            <DialogContent>
-              <DialogContentText>1-2-3-4-5</DialogContentText>
-            </DialogContent>
-            <DialogActions>
-              <Button color="primary" onClick={this.handleClose}>
-                OK
-              </Button>
-            </DialogActions>
-          </Dialog>
-          <Typography variant="h4" gutterBottom>
-            Material-UI
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            with Nextron
-          </Typography>
-          <img src={resolve('static/logo.png')} />
-          <Typography gutterBottom>
-            <a href={resolve('next')}>
-              Go to next page
-            </a>
-          </Typography>
-          <Button variant="contained" color="secondary" onClick={this.handleClick}>
-            Super Secret Password
-          </Button>
-        </div>
+        <React.Fragment>
+          <Head>
+            <title>Home - Nextron (with-typescript-material-ui)</title>
+          </Head>
+
+          <div className={classes.root}>
+            <Dialog open={open} onClose={this.handleClose}>
+              <DialogTitle>Super Secret Password</DialogTitle>
+              <DialogContent>
+                <DialogContentText>1-2-3-4-5</DialogContentText>
+              </DialogContent>
+              <DialogActions>
+                <Button color="primary" onClick={this.handleClose}>
+                  OK
+                </Button>
+              </DialogActions>
+            </Dialog>
+            <Typography variant="h4" gutterBottom>
+              Material-UI
+            </Typography>
+            <Typography variant="subtitle1" gutterBottom>
+              with Nextron
+            </Typography>
+            <img src={resolve('static/logo.png')} />
+            <Typography gutterBottom>
+              <a href={resolve('next')}>
+                Go to next page
+              </a>
+            </Typography>
+            <Button variant="contained" color="secondary" onClick={this.handleClick}>
+              Super Secret Password
+            </Button>
+          </div>
+        </React.Fragment>
       );
     }
   }
