@@ -403,7 +403,7 @@ $ yarn create nextron-app my-app --example with-typescript-python-api
 $ git clone https://github.com/saltyshiomix/nextron
 $ cd nextron
 $ yarn
-$ yarn dev # default is examples/with-javascript-material-ui
+$ yarn dev # default is examples/with-javascript-emotion
 ```
 
 ### Developing `examples/*`
