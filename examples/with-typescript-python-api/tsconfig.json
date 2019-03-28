@@ -15,7 +15,7 @@
     "sourceMap": true,
   },
   "include": [
-    "background-with-python.ts",
+    "background-with-python-api.ts",
     "renderer/**/*",
   ],
   "exclude": [

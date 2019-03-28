@@ -6,13 +6,13 @@ This example builds a stand-alone Electron + Next + Python application and insta
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript-python
+$ nextron init my-app --template with-typescript-python-api
 
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-python
+$ npx create-nextron-app my-app --example with-typescript-python-api
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-python
+$ yarn create nextron-app my-app --example with-typescript-python-api
 ```
 
 # Installation
@@ -72,4 +72,4 @@ The electron main process both spawns the Python child process and creates the w
 
 The Python script `python/calc.py` provides a function: `calc(text)` that can take text like `1 + 1` and return the result like `2.0`. The calc functionality is exposed as a GraphQL api by `python/api.py`.
 
-The details of how the electron app launches the Python executable is tricky because of differences between packaged and unpackaged scenarios. This complexity is handled by `main/background-with-python.ts`. If the Electron app is not packaged, the code needs to `spawn` the Python source script. If the Electron app is packaged, it needs to `execFile` the packaged Python executable found in the app.asar. To decide whether the Electron app itself has been packaged for distribution or not, `main/background-with-python.ts` checks whether the `__dirname` looks like an asar folder or not. Killing spawned processes under Electron can also be tricky so the electron main process sends a message to the Python server telling it to exit when Electron is shutting down.
+The details of how the electron app launches the Python executable is tricky because of differences between packaged and unpackaged scenarios. This complexity is handled by `main/background-with-python-api.ts`. If the Electron app is not packaged, the code needs to `spawn` the Python source script. If the Electron app is packaged, it needs to `execFile` the packaged Python executable found in the app.asar. To decide whether the Electron app itself has been packaged for distribution or not, `main/background-with-python-api.ts` checks whether the `__dirname` looks like an asar folder or not. Killing spawned processes under Electron can also be tricky so the electron main process sends a message to the Python server telling it to exit when Electron is shutting down.

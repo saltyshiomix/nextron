@@ -6,7 +6,7 @@
   "author": "Don Alvarez",
   "main": "app/background.js",
   "build": {
-    "appId": "com.example.nextronpython",
+    "appId": "com.example.nextronpythonapi",
     "productName": "My Nextron Python App",
     "copyright": "Copyright © 2019 Don Alvarez",
     "directories": {
