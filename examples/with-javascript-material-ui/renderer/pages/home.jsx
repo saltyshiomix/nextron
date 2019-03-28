@@ -58,8 +58,8 @@ class Home extends React.Component {
         </Typography>
         <img src={resolve('static/logo.png')} />
         <Typography gutterBottom>
-          <a href={resolve('about')}>
-            Go to the about page
+          <a href={resolve('next')}>
+            Go to next page
           </a>
         </Typography>
         <Button variant="contained" color="secondary" onClick={this.handleClick}>

@@ -5,7 +5,7 @@ module.exports = {
   exportPathMap: async function () {
     return {
       '/home': { page: '/home' },
-      '/about': { page: '/about' },
+      '/next': { page: '/next' },
     };
   },
 };
