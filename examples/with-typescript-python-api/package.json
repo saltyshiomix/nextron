@@ -40,8 +40,8 @@
     "graphql-tag": "^2.10.0",
     "isomorphic-fetch": "^2.2.1",
     "next": "8.0.3",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "superagent": "^4.1.0"
   },
   "devDependencies": {
@@ -50,7 +50,7 @@
     "@types/isomorphic-fetch": "0.0.35",
     "@types/next": "^8.0.3",
     "@types/node": "^11.11.6",
-    "@types/react": "^16.8.8",
+    "@types/react": "^16.8.10",
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "electron": "4.1.1",
