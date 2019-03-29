@@ -20,7 +20,7 @@
     "build": "node nextron/nextron.js build"
   },
   "dependencies": {
-    "@material-ui/core": "3.9.2",
+    "@material-ui/core": "3.9.3",
     "fs-jetpack": "^2.2.2",
     "jss": "^9.8.7",
     "next": "8.0.3",
