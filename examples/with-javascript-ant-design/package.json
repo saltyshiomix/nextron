@@ -20,7 +20,6 @@
     "build": "node nextron/nextron.js build"
   },
   "dependencies": {
-    "@zeit/next-css": "^1.0.1",
     "antd": "^3.15.1",
     "fs-jetpack": "^2.2.2",
     "next": "8.0.3",
@@ -28,6 +27,7 @@
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
+    "@zeit/next-css": "^1.0.1",
     "arg": "^4.1.0",
     "babel-plugin-import": "^1.11.0",
     "chalk": "^2.4.2",
