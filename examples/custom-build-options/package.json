@@ -26,13 +26,13 @@
   "dependencies": {
     "fs-jetpack": "^2.2.2",
     "next": "8.0.3",
-    "react": "^16.8.5",
-    "react-dom": "^16.8.5"
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
-    "electron": "4.1.1",
+    "electron": "4.1.2",
     "electron-builder": "20.39.0",
     "fast-glob": "^2.2.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
