@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@material-ui/core": "3.9.3",
-    "fs-jetpack": "^2.2.2",
+    "electron-store": "^3.0.0",
     "jss": "^9.8.7",
     "next": "8.0.3",
     "react": "^16.8.6",

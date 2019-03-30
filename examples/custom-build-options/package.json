@@ -24,7 +24,7 @@
     "build:linux": "node nextron/nextron.js build --linux"
   },
   "dependencies": {
-    "fs-jetpack": "^2.2.2",
+    "electron-store": "^3.0.0",
     "next": "8.0.3",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"

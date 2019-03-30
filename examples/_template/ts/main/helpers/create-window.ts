@@ -1,32 +1,22 @@
 import {
-  app,
   screen,
   BrowserWindow,
   BrowserWindowConstructorOptions,
 } from 'electron';
-import * as jetpack from 'fs-jetpack';
+import * as Store from 'electron-store';
 
-export default (name: string, options: BrowserWindowConstructorOptions): BrowserWindow => {
-  const userDataDir = jetpack.cwd(app.getPath('userData'));
-  const stateStoreFile = `window-state-${name}.json`;
+export default (windowName: string, options: BrowserWindowConstructorOptions): BrowserWindow => {
+  const key = 'window-state';
+  const name = `window-state-${windowName}`;
+  const store = new Store({ name });
   const defaultSize = {
     width: options.width,
     height: options.height,
   };
-
   let state = {};
   let win;
 
-  const restore = () => {
-    let restoredState = {};
-    try {
-      restoredState = userDataDir.read(stateStoreFile, 'json');
-    } catch (err) {
-      // For some reason json can't be read (might be corrupted).
-      // No worries, we have defaults.
-    }
-    return Object.assign({}, defaultSize, restoredState);
-  };
+  const restore = () => store.get(key, defaultSize);
 
   const getCurrentPosition = () => {
     const position = win.getPosition();
@@ -72,7 +62,7 @@ export default (name: string, options: BrowserWindowConstructorOptions): Browser
     if (!win.isMinimized() && !win.isMaximized()) {
       Object.assign(state, getCurrentPosition());
     }
-    userDataDir.write(stateStoreFile, state, { atomic: true });
+    store.set(key, state);
   };
 
   state = ensureVisibleOnSomeDisplay(restore());
