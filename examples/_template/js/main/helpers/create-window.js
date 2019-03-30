@@ -1,27 +1,18 @@
-import { app, BrowserWindow } from 'electron';
-import * as jetpack from 'fs-jetpack';
+import { BrowserWindow } from 'electron';
+import * as Store from 'electron-store';
 
-export default function createWindow(name, options) {
-  const userDataDir = jetpack.cwd(app.getPath('userData'));
-  const stateStoreFile = `window-state-${name}.json`;
+export default function createWindow(windowName, options) {
+  const key = 'window-state';
+  const name = `window-state-${windowName}`;
+  const store = new Store({ name });
   const defaultSize = {
     width: options.width,
     height: options.height,
   };
-
   let state = {};
   let win;
 
-  const restore = () => {
-    let restoredState = {};
-    try {
-      restoredState = userDataDir.read(stateStoreFile, 'json');
-    } catch (err) {
-      // For some reason json can't be read (might be corrupted).
-      // No worries, we have defaults.
-    }
-    return Object.assign({}, defaultSize, restoredState);
-  };
+  const restore = () => store.get(key, defaultSize);
 
   const getCurrentPosition = () => {
     const position = win.getPosition();
@@ -69,7 +60,7 @@ export default function createWindow(name, options) {
     if (!win.isMinimized() && !win.isMaximized()) {
       Object.assign(state, getCurrentPosition());
     }
-    userDataDir.write(stateStoreFile, state, { atomic: true });
+    store.set(key, state);
   };
 
   state = ensureVisibleOnSomeDisplay(restore());
