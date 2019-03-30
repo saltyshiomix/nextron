@@ -28,7 +28,7 @@
     "nextron": "bin/nextron"
   },
   "scripts": {
-    "dev": "rimraf workspace && node dev.js"
+    "dev": "node dev"
   },
   "dependencies": {
     "arg": "^4.1.0",
@@ -36,8 +36,5 @@
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
     "ora": "^3.2.0"
-  },
-  "devDependencies": {
-    "rimraf": "^2.6.3"
   }
 }

@@ -1,4 +1,4 @@
-const { existsSync } = require('fs');
+const { remove, existsSync } = require('fs-extra');
 const { resolve } = require('path');
 const { execSync } = require('child_process');
 const chalk = require('chalk');
@@ -17,14 +17,15 @@ async function dev() {
     template = newTemplate;
   }
 
+  await remove('workspace');
   execSync('node ' + resolve(__dirname, `bin/nextron init workspace --template ${template}`), {
     cwd: __dirname,
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
   execSync('cd workspace');
   execSync('yarn && yarn dev', {
     cwd: resolve(__dirname, 'workspace'),
-    stdio: 'inherit'
+    stdio: 'inherit',
   });
 }
 
