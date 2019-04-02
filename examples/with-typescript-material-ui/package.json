@@ -21,7 +21,7 @@
   },
   "dependencies": {
     "@material-ui/core": "3.9.3",
-    "electron-store": "^3.0.0",
+    "electron-store": "^3.1.0",
     "jss": "^9.8.7",
     "next": "8.0.3",
     "react": "^16.8.6",
