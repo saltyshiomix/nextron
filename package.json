@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "4.5.1",
+  "version": "4.5.2",
   "description": "Build an Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -35,6 +35,6 @@
     "chalk": "^2.4.2",
     "cross-spawn": "^6.0.5",
     "fs-extra": "^7.0.1",
-    "ora": "^3.2.0"
+    "ora": "^3.3.0"
   }
 }
