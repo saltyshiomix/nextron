@@ -1,4 +1,5 @@
 import { keyframes } from '@emotion/core';
+import { Keyframes } from '@emotion/serialize';
 import styled from '@emotion/styled';
 import { basicStyles } from './BasicCard';
 import { hoverStyles } from './HoverableCard';
@@ -12,11 +13,15 @@ to {
 }
 `;
 
+interface AnimatedCardProps {
+  animation: Keyframes;
+}
+
 export const AnimatedCard = styled.div`
   ${basicStyles};
   ${hoverStyles};
   & code {
     background-color: linen;
   }
-  animation: ${props => props.animation} 0.2s infinite ease-in-out alternate;
+  animation: ${(props: AnimatedCardProps) => props.animation} 0.2s infinite ease-in-out alternate;
 `;
