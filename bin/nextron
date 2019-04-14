@@ -21,7 +21,7 @@ if (new Set(['--help', '-h']).has(cmd) || !commands.has(cmd)) {
 
       {bold $} {cyan nextron init} --help
       {bold $} {cyan nextron init} {underline my-app}
-      {bold $} {cyan nextron init} {underline my-app} [--template {underline example_folder_name}]
+      {bold $} {cyan nextron init} {underline my-app} [--example {underline example_folder_name}]
   `);
   process.exit(0);
 }

@@ -51,9 +51,9 @@ names.forEach((name) => {
 console.log(chalk`
   {bold USAGE}
 
-    {bold $} {cyan nextron init} {underline my-app} [--template {underline example_folder_name}]
+    {bold $} {cyan nextron init} {underline my-app} [--example {underline example_folder_name}]
 
   If you want to use "{underline with-typescript-material-ui}", just type the command below:
 
-    {bold $} nextron init my-app --template {underline with-typescript-material-ui}
+    {bold $} nextron init my-app --example {underline with-typescript-material-ui}
 `);

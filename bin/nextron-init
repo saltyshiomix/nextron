@@ -10,9 +10,11 @@ const args = arg({
   '--help': Boolean,
   '--version': Boolean,
   '--template': String,
+  '--example': '--template',
   '-h': '--help',
   '-v': '--version',
   '-t': '--template',
+  '-e': '--template',
 });
 
 if (args['--version']) {
@@ -29,13 +31,13 @@ if (args['--help'] || (!args._[0])) {
 
       {bold $} {cyan nextron init} --help
       {bold $} {cyan nextron init} {underline my-app}
-      {bold $} {cyan nextron init} {underline my-app} [--template {underline example_folder_name}]
+      {bold $} {cyan nextron init} {underline my-app} [--example {underline example_folder_name}]
 
     {bold OPTIONS}
 
-      --help,     -h                      shows this help message
-      --version,  -v                      displays the current version of nextron
-      --template, -t {underline example_folder_name}  sets the example as a template
+      --help,    -h                      shows this help message
+      --version, -v                      displays the current version of nextron
+      --example, -e {underline example_folder_name}  sets the example as a template
   `);
   process.exit(0);
 }
@@ -66,7 +68,7 @@ async function pm() {
   return pm;
 }
 
-const template = args['--template'] || 'with-javascript-material-ui';
+const template = args['--template'] || args['--example'] || 'with-javascript-material-ui';
 if (!existsSync(resolve(__dirname, `../examples/${template}`))) {
   console.log(chalk.red(`Not found examples/${template}`));
   process.exit(1);

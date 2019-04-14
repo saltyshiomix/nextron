@@ -78,7 +78,7 @@ To create the `examples/with-typescript-material-ui` app, run the command below:
 
 ```bash
 # with `nextron`
-$ nextron init <MY-APP> --template with-typescript-material-ui
+$ nextron init <MY-APP> --example with-typescript-material-ui
 
 # with npx
 $ npx create-nextron-app <MY-APP> --example with-typescript-material-ui
@@ -155,7 +155,7 @@ For more information, please check out [electron-builder official configuration 
 
 See [examples](./examples) folder for more information.
 
-Or you can start the example app by `nextron init <app-name> --template <example-dirname>`.
+Or you can start the example app by `nextron init <app-name> --example <example-dirname>`.
 
 To list all examples, just type the command below:
 
@@ -167,7 +167,7 @@ $ nextron list
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template custom-build-options
+$ nextron init my-app --example custom-build-options
 
 # with npx
 $ npx create-nextron-app my-app --example custom-build-options
@@ -180,7 +180,7 @@ $ yarn create nextron-app my-app --example custom-build-options
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template custom-server
+$ nextron init my-app --example custom-server
 
 # with npx
 $ npx create-nextron-app my-app --example custom-server
@@ -193,7 +193,7 @@ $ yarn create nextron-app my-app --example custom-server
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template custom-server-nodemon
+$ nextron init my-app --example custom-server-nodemon
 
 # with npx
 $ npx create-nextron-app my-app --example custom-server-nodemon
@@ -206,7 +206,7 @@ $ yarn create nextron-app my-app --example custom-server-nodemon
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template custom-server-typescript
+$ nextron init my-app --example custom-server-typescript
 
 # with npx
 $ npx create-nextron-app my-app --example custom-server-typescript
@@ -219,7 +219,7 @@ $ yarn create nextron-app my-app --example custom-server-typescript
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template ipc-communication
+$ nextron init my-app --example ipc-communication
 
 # with npx
 $ npx create-nextron-app my-app --example ipc-communication
@@ -234,7 +234,7 @@ $ yarn create nextron-app my-app --example ipc-communication
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template parameterized-routing
+$ nextron init my-app --example parameterized-routing
 
 # with npx
 $ npx create-nextron-app my-app --example parameterized-routing
@@ -249,7 +249,7 @@ $ yarn create nextron-app my-app --example parameterized-routing
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template store-data
+$ nextron init my-app --example store-data
 
 # with npx
 $ npx create-nextron-app my-app --example store-data
@@ -264,7 +264,7 @@ $ yarn create nextron-app my-app --example store-data
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template web-worker
+$ nextron init my-app --example web-worker
 
 # with npx
 $ npx create-nextron-app my-app --example web-worker
@@ -279,7 +279,7 @@ $ yarn create nextron-app my-app --example web-worker
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-javascript
+$ nextron init my-app --example with-javascript
 
 # with npx
 $ npx create-nextron-app my-app --example with-javascript
@@ -294,7 +294,7 @@ $ yarn create nextron-app my-app --example with-javascript
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-javascript-ant-design
+$ nextron init my-app --example with-javascript-ant-design
 
 # with npx
 $ npx create-nextron-app my-app --example with-javascript-ant-design
@@ -309,7 +309,7 @@ $ yarn create nextron-app my-app --example with-javascript-ant-design
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-javascript-emotion
+$ nextron init my-app --example with-javascript-emotion
 
 # with npx
 $ npx create-nextron-app my-app --example with-javascript-emotion
@@ -324,7 +324,7 @@ $ yarn create nextron-app my-app --example with-javascript-emotion
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-javascript-material-ui
+$ nextron init my-app --example with-javascript-material-ui
 
 # with npx
 $ npx create-nextron-app my-app --example with-javascript-material-ui
@@ -339,7 +339,7 @@ $ yarn create nextron-app my-app --example with-javascript-material-ui
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript
+$ nextron init my-app --example with-typescript
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript
@@ -354,7 +354,7 @@ $ yarn create nextron-app my-app --example with-typescript
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript-emotion
+$ nextron init my-app --example with-typescript-emotion
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript-emotion
@@ -369,7 +369,7 @@ $ yarn create nextron-app my-app --example with-typescript-emotion
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript-less
+$ nextron init my-app --example with-typescript-less
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript-less
@@ -384,7 +384,7 @@ $ yarn create nextron-app my-app --example with-typescript-less
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript-material-ui
+$ nextron init my-app --example with-typescript-material-ui
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript-material-ui
@@ -399,7 +399,7 @@ $ yarn create nextron-app my-app --example with-typescript-material-ui
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript-python-api
+$ nextron init my-app --example with-typescript-python-api
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript-python-api

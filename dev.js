@@ -18,7 +18,7 @@ async function dev() {
   }
 
   await remove('workspace');
-  execSync('node ' + resolve(__dirname, `bin/nextron init workspace --template ${template}`), {
+  execSync('node ' + resolve(__dirname, `bin/nextron init workspace --example ${template}`), {
     cwd: __dirname,
     stdio: 'inherit',
   });
