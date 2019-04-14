@@ -4,8 +4,6 @@ const { execSync } = require('child_process');
 const chalk = require('chalk');
 
 async function dev() {
-  process.env.NODE_ENV = 'testing';
-
   let template = 'with-javascript-emotion';
   if (3 <= process.argv.length) {
     const newTemplate = process.argv[2];
