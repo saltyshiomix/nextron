@@ -4,8 +4,6 @@ const { execSync } = require('child_process');
 const chalk = require('chalk');
 
 async function dev() {
-  process.env.NODE_ENV = 'testing';
-
   let template = 'with-javascript-emotion';
   if (3 <= process.argv.length) {
     const newTemplate = process.argv[2];
@@ -18,7 +16,7 @@ async function dev() {
   }
 
   await remove('workspace');
-  execSync('node ' + resolve(__dirname, `bin/nextron init workspace --template ${template}`), {
+  execSync('node ' + resolve(__dirname, `bin/nextron init workspace --example ${template}`), {
     cwd: __dirname,
     stdio: 'inherit',
   });

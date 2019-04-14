@@ -1,21 +1,21 @@
 #!/usr/bin/env node
 
-const { readdirSync } = require('fs')
-const { resolve } = require('path')
-const arg = require('arg')
-const chalk = require('chalk')
+const { readdirSync } = require('fs');
+const { resolve } = require('path');
+const arg = require('arg');
+const chalk = require('chalk');
 
 const args = arg({
   '--help': Boolean,
   '--version': Boolean,
   '-h': '--help',
-  '-v': '--version'
-})
+  '-v': '--version',
+});
 
 if (args['--version']) {
-  const pkg = require(resolve(__dirname, '../package.json'))
-  console.log(`nextron v${pkg.version}`)
-  process.exit(0)
+  const pkg = require(resolve(__dirname, '../package.json'));
+  console.log(`nextron v${pkg.version}`);
+  process.exit(0);
 }
 
 if (args['--help']) {
@@ -31,29 +31,29 @@ if (args['--help']) {
 
       --help,     -h   shows this help message
       --version,  -v   displays the current version of nextron
-  `)
-  process.exit(0)
+  `);
+  process.exit(0);
 }
 
-const names = readdirSync(resolve(__dirname, '../examples'))
+const names = readdirSync(resolve(__dirname, '../examples'));
 
 console.log(chalk`
   {bold.cyan Available examples:}
-`)
+`);
 
 names.forEach((name) => {
   if (name === '_template') {
-    return
+    return;
   }
-  console.log(chalk`    {bold - ${name}}`)
-})
+  console.log(chalk`    {bold - ${name}}`);
+});
 
 console.log(chalk`
   {bold USAGE}
 
-    {bold $} {cyan nextron init} {underline my-app} [--template {underline example_folder_name}]
+    {bold $} {cyan nextron init} {underline my-app} [--example {underline example_folder_name}]
 
   If you want to use "{underline with-typescript-material-ui}", just type the command below:
 
-    {bold $} nextron init my-app --template {underline with-typescript-material-ui}
-`)
+    {bold $} nextron init my-app --example {underline with-typescript-material-ui}
+`);
