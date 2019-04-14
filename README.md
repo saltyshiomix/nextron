@@ -12,7 +12,7 @@
   </a>
 </p>
 
-Build an [Electron](https://electronjs.org/) + [Next.js](https://nextjs.org/) app for speed ⚡
+Build an [Electron](https://electronjs.org) + [Next.js](https://nextjs.org) app for speed ⚡
 
 (The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
 
@@ -149,7 +149,7 @@ Edit `package.json#build` properties for custom build configuration.
 }
 ```
 
-For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration/).
+For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration).
 
 ## Examples
 
