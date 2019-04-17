@@ -43,7 +43,7 @@
     "nodemon": "^1.18.11",
     "ora": "^3.4.0",
     "ts-loader": "^5.3.3",
-    "ts-node": "^8.0.3",
+    "ts-node": "^8.1.0",
     "typescript": "^3.4.3",
     "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
