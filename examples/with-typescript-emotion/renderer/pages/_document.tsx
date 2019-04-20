@@ -12,12 +12,15 @@ class MyDocument extends Document {
         </Head>
         <Global
           styles={css`
-            html,
-            body {
-              padding: 1rem;
+            html, body {
               margin: 0;
-              background: papayawhip;
+              padding: 0;
               min-height: 100%;
+            }
+
+            body {
+              padding: 2rem 4rem;
+              background: papayawhip;
               font-family: Helvetica, Arial, sans-serif;
               font-size: 24px;
             }
