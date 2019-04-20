@@ -24,21 +24,13 @@ module.exports = (env) => ({
   module: {
     rules: [
       {
-        test: /\.jsx$/,
+        test: /\.tsx?$/,
         use: {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
           },
         },
-        exclude: [
-          /node_modules/,
-          resolve(cwd, 'renderer'),
-        ],
-      },
-      {
-        test: /\.tsx?$/,
-        use: 'ts-loader',
         exclude: [
           /node_modules/,
           resolve(cwd, 'renderer'),
