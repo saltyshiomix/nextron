@@ -65,7 +65,7 @@
     "ora": "^3.4.0",
     "shx": "^0.3.2",
     "ts-loader": "^5.3.3",
-    "typescript": "^3.4.3",
+    "typescript": "^3.4.4",
     "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
   }
