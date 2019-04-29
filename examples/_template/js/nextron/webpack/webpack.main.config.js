@@ -1,8 +1,8 @@
 const { resolve } = require('path');
 const { smart: merge } = require('webpack-merge');
-const base = require('./webpack.base.config');
+const config = require('./webpack.base.config');
 
-module.exports = (env) => merge(base(env), {
+module.exports = (env) => merge(config(env), {
   entry: {
     background: './main/background.js',
   },
