@@ -56,7 +56,7 @@
     "electron": "5.0.0",
     "electron-builder": "20.39.0",
     "electron-packager": "^9.0.1",
-    "electron-rebuild": "^1.8.2",
+    "electron-rebuild": "^1.8.4",
     "fast-glob": "^2.2.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^7.0.1",
