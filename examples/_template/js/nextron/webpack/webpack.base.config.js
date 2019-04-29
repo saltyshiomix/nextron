@@ -43,6 +43,9 @@ module.exports = (env) => ({
     ],
   },
   plugins: [
+    new webpack.EnvironmentPlugin({
+      NODE_ENV: 'production',
+    }),
     new webpack.NamedModulesPlugin(),
     new FriendlyErrorsWebpackPlugin(),
   ],
