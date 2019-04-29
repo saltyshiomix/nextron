@@ -1,4 +1,4 @@
-const { join, resolve } = require('path');
+const { resolve } = require('path');
 const webpack = require('webpack');
 const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
 
@@ -16,7 +16,7 @@ module.exports = (env) => ({
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '.json'],
-    modules: [join(cwd, 'app'), 'node_modules'],
+    modules: [resolve(cwd, 'app'), 'node_modules'],
   },
   output: {
     libraryTarget: 'commonjs2',
