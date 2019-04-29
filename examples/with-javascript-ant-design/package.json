@@ -20,7 +20,7 @@
     "build": "node nextron/nextron.js build"
   },
   "dependencies": {
-    "antd": "^3.16.1",
+    "antd": "^3.16.6",
     "electron-store": "^3.2.0",
     "next": "8.1.0",
     "react": "^16.8.6",
