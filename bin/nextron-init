@@ -68,9 +68,9 @@ async function pm() {
   return pm;
 }
 
-const template = args['--template'] || args['--example'] || 'with-javascript-material-ui';
-if (!existsSync(resolve(__dirname, `../examples/${template}`))) {
-  console.log(chalk.red(`Not found examples/${template}`));
+const example = args['--template'] || args['--example'] || 'with-javascript-material-ui';
+if (!existsSync(resolve(__dirname, `../examples/${example}`))) {
+  console.log(chalk.red(`Not found examples/${example}`));
   process.exit(1);
 }
 
@@ -78,10 +78,10 @@ async function init(name) {
   const cwd = process.cwd();
 
   spinner.create('Copy template');
-  const ext = existsSync(resolve(__dirname, `../examples/${template}/tsconfig.json`)) ? 'ts' : 'js';
+  const ext = existsSync(resolve(__dirname, `../examples/${example}/tsconfig.json`)) ? 'ts' : 'js';
   await copy(resolve(__dirname, `../examples/_template/gitignore.txt`), resolve(cwd, `${name}/.gitignore`));
   await copy(resolve(__dirname, `../examples/_template/${ext}`), resolve(cwd, name));
-  await copy(resolve(__dirname, `../examples/${template}`), resolve(cwd, name));
+  await copy(resolve(__dirname, `../examples/${example}`), resolve(cwd, name));
 
   spinner.create('Set meta information');
   const pkg = resolve(cwd, `${name}/package.json`);
