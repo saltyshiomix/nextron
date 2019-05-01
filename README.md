@@ -415,7 +415,7 @@ $ yarn create nextron-app my-app --example with-typescript-python-api
 ### Basic
 
 ```bash
-$ git clone https://github.com/saltyshiomix/nextron
+$ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
 $ yarn
 $ yarn dev # default is examples/with-javascript-emotion
