@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "4.7.5",
+  "version": "4.7.6",
   "description": "Build an Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
