@@ -20,7 +20,7 @@
     "build": "node nextron/nextron.js build"
   },
   "dependencies": {
-    "antd": "^3.18.1",
+    "antd": "^3.19.1",
     "electron-store": "^3.2.0",
     "next": "8.1.0",
     "react": "^16.8.6",
@@ -29,10 +29,10 @@
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",
     "arg": "^4.1.0",
-    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-import": "^1.11.2",
     "chalk": "^2.4.2",
     "electron": "4.2.2",
-    "electron-builder": "20.40.2",
+    "electron-builder": "20.41.0",
     "fast-glob": "^2.2.6",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.0.1",
