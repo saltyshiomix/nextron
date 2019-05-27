@@ -29,7 +29,7 @@
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",
     "arg": "^4.1.0",
-    "babel-plugin-import": "^1.11.0",
+    "babel-plugin-import": "^1.11.2",
     "chalk": "^2.4.2",
     "electron": "4.2.2",
     "electron-builder": "20.41.0",
