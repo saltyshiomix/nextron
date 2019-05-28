@@ -20,13 +20,11 @@
     "build": "node nextron/nextron.js build"
   },
   "dependencies": {
-    "@material-ui/core": "3.9.3",
+    "@material-ui/core": "4.0.1",
     "electron-store": "^3.2.0",
-    "jss": "^9.8.7",
     "next": "8.1.0",
     "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "react-jss": "^8.6.1"
+    "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "@babel/core": "7.1.2",

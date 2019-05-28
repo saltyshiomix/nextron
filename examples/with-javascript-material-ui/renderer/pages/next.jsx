@@ -1,46 +1,45 @@
 import React from 'react';
 import Head from 'next/head';
+import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { withStyles } from '@material-ui/core/styles';
+import Link from '../components/Link';
 import { resolve } from '../helpers';
 
-const styles = theme => ({
-  root: {
-    textAlign: 'center',
-    paddingTop: theme.spacing.unit * 4,
-  },
-});
+const useStyles = makeStyles((theme) => 
+  createStyles({
+    root: {
+      textAlign: 'center',
+      paddingTop: theme.spacing(4),
+    },
+  }),
+);
 
-class About extends React.Component {
-  render() {
-    const { classes } = this.props;
+export default function About() {
+  const classes = useStyles();
 
-    return (
-      <React.Fragment>
-        <Head>
-          <title>Next - Nextron (with-javascript-material-ui)</title>
-        </Head>
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Next - Nextron (with-javascript-material-ui)</title>
+      </Head>
 
-        <div className={classes.root}>
-          <Typography variant="h4" gutterBottom>
-            Material-UI
-          </Typography>
-          <Typography variant="subtitle1" gutterBottom>
-            with Nextron
-          </Typography>
-          <Typography gutterBottom>
-            <a href={resolve('home')}>
-              Go to home page
-            </a>
-          </Typography>
-          <Button variant="contained" color="primary">
-            Do nothing button
-          </Button>
-        </div>
-      </React.Fragment>
-    );
-  }
+      <div className={classes.root}>
+        <Typography variant="h4" gutterBottom>
+          Material-UI
+        </Typography>
+        <Typography variant="subtitle1" gutterBottom>
+          with Nextron
+        </Typography>
+        <Typography gutterBottom>
+          <Link href={resolve('home')}>
+            Go to the home page
+          </Link>
+        </Typography>
+        <Button variant="contained" color="primary">
+          Do nothing button
+        </Button>
+      </div>
+    </React.Fragment>
+  );
 }
-
-export default withStyles(styles)(About);
