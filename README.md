@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
+<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
 <p align="center">
   <a href="https://github.com/unicodeveloper/awesome-nextjs">
@@ -333,7 +333,7 @@ $ npx create-nextron-app my-app --example with-javascript-material-ui
 $ yarn create nextron-app my-app --example with-javascript-material-ui
 ```
 
-<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
+<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
 ### [examples/with-typescript](./examples/with-typescript)
 
@@ -393,7 +393,7 @@ $ npx create-nextron-app my-app --example with-typescript-material-ui
 $ yarn create nextron-app my-app --example with-typescript-material-ui
 ```
 
-<p align="center"><img src="https://i.imgur.com/DNOsAH0.png"></p>
+<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
 ### [examples/with-typescript-python-api](./examples/with-typescript-python-api)
 
