@@ -8,6 +8,7 @@ import DialogContent from '@material-ui/core/DialogContent';
 import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
+import Link from '../components/Link';
 import { resolve } from '../helpers';
 
 const useStyles = makeStyles((theme: Theme) => 
@@ -51,9 +52,9 @@ export default function Home() {
         </Typography>
         <img src={resolve('static/logo.png')} />
         <Typography gutterBottom>
-          <a href={resolve('next')}>
-            Go to next page
-          </a>
+          <Link href={resolve('next')}>
+            Go to the next page
+          </Link>
         </Typography>
         <Button variant="contained" color="secondary" onClick={handleClick}>
           Super Secret Password

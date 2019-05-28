@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Link from '../components/Link';
 import { resolve } from '../helpers';
 
 const useStyles = makeStyles((theme: Theme) => 
@@ -31,9 +32,9 @@ export default function About() {
           with Nextron
         </Typography>
         <Typography gutterBottom>
-          <a href={resolve('home')}>
-            Go to home page
-          </a>
+          <Link href={resolve('home')}>
+            Go to the home page
+          </Link>
         </Typography>
         <Button variant="contained" color="primary">
           Do nothing button
