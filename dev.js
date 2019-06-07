@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 const chalk = require('chalk');
 
 async function dev() {
-  let example = 'with-javascript-emotion';
+  let example = 'with-javascript';
   if (3 <= process.argv.length) {
     const newExample = process.argv[2];
     if (!existsSync(resolve(__dirname, `examples/${newExample}`))) {
@@ -21,10 +21,15 @@ async function dev() {
     stdio: 'inherit',
   });
   execSync('cd workspace');
-  execSync('yarn && yarn dev', {
+  execSync('yarn link nextron && yarn', {
     cwd: resolve(__dirname, 'workspace'),
     stdio: 'inherit',
   });
+
+  execSync('yarn build', {
+    cwd: resolve(__dirname, 'workspace'),
+    stdio: 'inherit',
+  })
 }
 
 dev();

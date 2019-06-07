@@ -1,31 +1,36 @@
-import { join } from 'path';
 import { app } from 'electron';
 import { createWindow, exitOnChange } from './helpers';
+import serve from 'electron-serve'
 
 const isProd = process.env.NODE_ENV === 'production';
 
-if (!isProd) {
+if (isProd) {
+  serve({ directory: 'app' })
+}
+else {
   exitOnChange();
 
   const userDataPath = app.getPath('userData');
   app.setPath('userData', `${userDataPath} (development)`);
 }
 
-app.on('ready', () => {
+(async () => {
+  // Can't use app.on('ready)
+  // https://github.com/sindresorhus/electron-serve/issues/15
+  await app.whenReady();
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
   });
 
   if (isProd) {
-    const homeFile = join(app.getAppPath(), 'app/home/index.html');
-    mainWindow.loadFile(homeFile);
+    await mainWindow.loadURL('app://./home');
   } else {
     const homeUrl = 'http://localhost:8888/home';
-    mainWindow.loadURL(homeUrl);
+    await mainWindow.loadURL(homeUrl);
     mainWindow.webContents.openDevTools();
   }
-});
+})();
 
 app.on('window-all-closed', () => {
   app.quit();

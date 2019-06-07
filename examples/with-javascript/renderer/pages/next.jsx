@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { resolve } from '../helpers';
+import Link from 'next/link';
 
 export default () => (
   <React.Fragment>
@@ -9,7 +9,7 @@ export default () => (
     </Head>
     <div>
       <p>
-        ⚡ Electron + Next.js ⚡ - <a href={resolve('home')}>Go to home page</a>
+        ⚡ Electron + Next.js ⚡ - <Link href="/home"><a>Go to home page</a></Link>
       </p>
     </div>
   </React.Fragment>
