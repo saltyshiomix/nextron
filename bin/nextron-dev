@@ -3,6 +3,8 @@
 const arg = require('arg');
 const chalk = require('chalk');
 
+process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+
 const args = arg({
   '--help': Boolean,
   '--version': Boolean,

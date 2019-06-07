@@ -26,7 +26,7 @@ async function dev() {
     stdio: 'inherit',
   });
 
-  execSync('yarn build', {
+  execSync('yarn dev', {
     cwd: resolve(__dirname, 'workspace'),
     stdio: 'inherit',
   })
