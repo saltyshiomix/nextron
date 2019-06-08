@@ -60,6 +60,7 @@ async function build(args) {
     spinner.create('Clearing previous builds');
     await remove(join(cwd, 'app'));
     await remove(join(cwd, 'dist'));
+    await remove(join(cwd, 'renderer', '.next'));
 
     spinner.create('Building renderer process');
     const outdir = join(cwd, 'renderer/out');
