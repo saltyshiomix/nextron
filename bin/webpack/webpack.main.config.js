@@ -1,13 +1,20 @@
+const fs = require('fs');
 const { resolve } = require('path');
 const { smart: merge } = require('webpack-merge');
 const config = require('./webpack.base.config');
 
-module.exports = (env) => merge(config(env), {
-  entry: {
-    background: resolve(process.cwd(), 'main', 'background.js'),
-  },
-  output: {
-    filename: '[name].js',
-    path: resolve(process.cwd(), 'app'),
-  },
-});
+const tsEntry = resolve(process.cwd(), 'main', 'background.ts');
+const jsEntry = resolve(process.cwd(), 'main', 'background.js');
+
+const isTS = fs.existsSync(resolve(process.cwd(), 'main', 'background.ts'));
+
+module.exports = (env) =>
+  merge(config(env), {
+    entry: {
+      background: isTS ? tsEntry : jsEntry,
+    },
+    output: {
+      filename: '[name].js',
+      path: resolve(process.cwd(), 'app'),
+    },
+  });

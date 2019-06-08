@@ -1,5 +1,3 @@
 import ipc from './ipc';
 
-export {
-  ipc
-};
+export { ipc };

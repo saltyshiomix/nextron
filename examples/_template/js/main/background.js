@@ -1,13 +1,12 @@
 import { app } from 'electron';
 import { createWindow, exitOnChange } from './helpers';
-import serve from 'electron-serve'
+import serve from 'electron-serve';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 if (isProd) {
-  serve({ directory: 'app' })
-}
-else {
+  serve({ directory: 'app' });
+} else {
   exitOnChange();
 
   const userDataPath = app.getPath('userData');
@@ -15,7 +14,7 @@ else {
 }
 
 (async () => {
-  // Can't use app.on('ready)
+  // Can't use app.on('ready',...)
   // https://github.com/sindresorhus/electron-serve/issues/15
   await app.whenReady();
   const mainWindow = createWindow('main', {

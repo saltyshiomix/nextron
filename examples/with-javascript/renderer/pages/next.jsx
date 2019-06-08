@@ -9,7 +9,10 @@ export default () => (
     </Head>
     <div>
       <p>
-        ⚡ Electron + Next.js ⚡ - <Link href="/home"><a>Go to home page</a></Link>
+        ⚡ Electron + Next.js ⚡ -{' '}
+        <Link href="/home">
+          <a>Go to home page</a>
+        </Link>
       </p>
     </div>
   </React.Fragment>

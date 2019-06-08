@@ -9,9 +9,12 @@ export default () => (
     </Head>
     <div>
       <p>
-        ⚡ Electron + Next.js ⚡ - <Link href="/next"><a>Go to next page</a></Link>
+        ⚡ Electron + Next.js ⚡ -{' '}
+        <Link href="/next">
+          <a>Go to next page</a>
+        </Link>
       </p>
-      <img src='/static/logo.png' />
+      <img src="/static/logo.png" />
     </div>
   </React.Fragment>
 );
