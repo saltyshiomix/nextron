@@ -1,4 +1,7 @@
-import { BrowserWindow } from 'electron';
+import {
+  screen,
+  BrowserWindow,
+} from 'electron';
 import * as Store from 'electron-store';
 
 export default function createWindow(windowName, options) {
@@ -35,7 +38,6 @@ export default function createWindow(windowName, options) {
   };
 
   const resetToDefaults = () => {
-    const { screen } = require('electron');
     const bounds = screen.getPrimaryDisplay().bounds;
     return Object.assign({}, defaultSize, {
       x: (bounds.width - defaultSize.width) / 2,
@@ -43,8 +45,7 @@ export default function createWindow(windowName, options) {
     });
   };
 
-  const ensureVisibleOnSomeDisplay = windowState => {
-    const { screen } = require('electron');
+  const ensureVisibleOnSomeDisplay = (windowState) => {
     const visible = screen.getAllDisplays().some(display => {
       return windowWithinBounds(windowState, display.bounds)
     });
