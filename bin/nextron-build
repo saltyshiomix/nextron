@@ -52,7 +52,7 @@ if (args['--help']) {
 
 async function build(args) {
   // Ignore missing dependencies
-  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
+  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
 
   const cwd = process.cwd();
 
@@ -93,9 +93,9 @@ function createBuilderArgs(args) {
     results.push('-wml');
     results.push(...createArchArgs(args));
   } else {
-    args['--win'] && (results.push('--win'));
-    args['--mac'] && (results.push('--mac'));
-    args['--linux'] && (results.push('--linux'));
+    args['--win'] && results.push('--win');
+    args['--mac'] && results.push('--mac');
+    args['--linux'] && results.push('--linux');
     results.push(...createArchArgs(args));
   }
   return results;
@@ -103,10 +103,10 @@ function createBuilderArgs(args) {
 
 function createArchArgs(args) {
   let archArgs = [];
-  args['--x64'] && (archArgs.push('--x64'));
-  args['--ia32'] && (archArgs.push('--ia32'));
-  args['--armv7l'] && (archArgs.push('--armv7l'));
-  args['--arm64'] && (archArgs.push('--arm64'));
+  args['--x64'] && archArgs.push('--x64');
+  args['--ia32'] && archArgs.push('--ia32');
+  args['--armv7l'] && archArgs.push('--armv7l');
+  args['--arm64'] && archArgs.push('--arm64');
   return archArgs;
 }
 
