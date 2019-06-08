@@ -22,13 +22,15 @@
   },
   "files": [
     "bin",
-    "examples"
+    "examples",
+    "babel.js"
   ],
   "bin": {
     "nextron": "bin/nextron"
   },
   "scripts": {
-    "dev": "node dev"
+    "dev": "node dev",
+    "cleanup": "yalc installations clean nextron"
   },
   "peerDependencies": {
     "electron": ">=3",
@@ -48,5 +50,8 @@
     "ora": "^3.4.0",
     "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
+  },
+  "devDependencies": {
+    "yalc": "^1.0.0-pre.30"
   }
 }
