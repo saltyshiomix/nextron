@@ -70,6 +70,9 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
   const browserOptions: BrowserWindowConstructorOptions = {
     ...options,
     ...state,
+    webPreferences: {
+      nodeIntegration: true,
+    },
   };
   win = new BrowserWindow(browserOptions);
 
