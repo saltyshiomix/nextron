@@ -1,10 +1,9 @@
 #!/usr/bin/env node
 
 const { join } = require('path');
-const { copy, remove, readFileSync, writeFileSync } = require('fs-extra');
+const { copy, remove } = require('fs-extra');
 const arg = require('arg');
 const chalk = require('chalk');
-const fg = require('fast-glob');
 const { npxSync: npx } = require('node-npx');
 const spinner = require('./spinner');
 
@@ -53,7 +52,7 @@ if (args['--help']) {
 
 async function build(args) {
   // Ignore missing dependencies
-  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
+  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
 
   const cwd = process.cwd();
 
@@ -73,13 +72,6 @@ async function build(args) {
     spinner.create('Building main process');
     await npx('node', [join('nextron/webpack/build.production.js')], { cwd });
 
-    // fix absolute paths to relative ones
-    const pages = fg.sync(join(appdir, '**/*.html'));
-    for (let i = 0; i < pages.length; i++) {
-      const page = pages[i];
-      writeFileSync(page, resolveAbsolutePaths(page, appdir));
-    }
-
     spinner.create('Packaging - please wait a moment');
     await npx('electron-builder', createBuilderArgs(args), { cwd });
 
@@ -94,44 +86,15 @@ async function build(args) {
   }
 }
 
-function getName(page) {
-  const splitted = page.split('/');
-  return splitted[splitted.length - 2];
-}
-
-function resolveAbsolutePaths(page, appdir) {
-  const content = readFileSync(page).toString();
-  const depth = page.split('/app/')[1].split('/').length - 1;
-
-  const scripts = fg.sync(join(appdir, `_next/static/**/${getName(page)}.js`), { ignore: ['**/*.js.map', '**/_*.js'] });
-  for (let i = 0; i < scripts.length; i++) {
-    const s = scripts[i];
-    writeFileSync(s, resolveScriptPaths(s, depth));
-  }
-
-  return content
-    .replace(/"\/_next\//g, `"${resolveDepth('next', depth)}`)
-    .replace(/"\/_error\//g, `"${resolveDepth('error', depth)}`);
-}
-
-function resolveScriptPaths(s, depth) {
-  const content = readFileSync(s).toString();
-  return content.replace(/"\/_next\//g, `"${resolveDepth('next', depth)}`);
-}
-
-function resolveDepth(name, depth) {
-  return `${'../'.repeat(depth)}_${name}/`;
-}
-
 function createBuilderArgs(args) {
   let results = [];
   if (args['--all']) {
     results.push('-wml');
     results.push(...createArchArgs(args));
   } else {
-    args['--win'] && (results.push('--win'));
-    args['--mac'] && (results.push('--mac'));
-    args['--linux'] && (results.push('--linux'));
+    args['--win'] && results.push('--win');
+    args['--mac'] && results.push('--mac');
+    args['--linux'] && results.push('--linux');
     results.push(...createArchArgs(args));
   }
   return results;
@@ -139,10 +102,10 @@ function createBuilderArgs(args) {
 
 function createArchArgs(args) {
   let archArgs = [];
-  args['--x64'] && (archArgs.push('--x64'));
-  args['--ia32'] && (archArgs.push('--ia32'));
-  args['--armv7l'] && (archArgs.push('--armv7l'));
-  args['--arm64'] && (archArgs.push('--arm64'));
+  args['--x64'] && archArgs.push('--x64');
+  args['--ia32'] && archArgs.push('--ia32');
+  args['--armv7l'] && archArgs.push('--armv7l');
+  args['--arm64'] && archArgs.push('--arm64');
   return archArgs;
 }
 
