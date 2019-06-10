@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { HoverableCard } from '../components/HoverableCard';
-import { resolve } from '../helpers';
+import Link from 'next/link';
 
 export default () => {
   return (
@@ -12,16 +12,16 @@ export default () => {
         <title>Home - Nextron (with-typescript-emotion)</title>
       </Head>
       <div>
-        <TitleCard>
-          Nextron with Emotion
-        </TitleCard>
+        <TitleCard>Nextron with Emotion</TitleCard>
         <BasicCard>
-          <a href={resolve('next')}>Go to next page</a>
+          <Link href="/next">
+            <a>Go to next page</a>
+          </Link>
         </BasicCard>
         <HoverableCard>
           With <code>:hover</code>.
         </HoverableCard>
       </div>
     </React.Fragment>
-  )
-}
+  );
+};

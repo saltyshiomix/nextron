@@ -1,12 +1,11 @@
 import Document, { Head, Main, NextScript } from 'next/document';
-import { resolve } from '../helpers';
 
 export default class MyDocument extends Document {
-  render () {
+  render() {
     return (
       <html>
         <Head>
-          <link rel='stylesheet' href={resolve('_next/static/css/styles.chunk.css')} />
+          <link rel="stylesheet" href="/_next/static/css/styles.chunk.css" />
         </Head>
         <body>
           <Main />
@@ -15,4 +14,4 @@ export default class MyDocument extends Document {
       </html>
     );
   }
-};
+}

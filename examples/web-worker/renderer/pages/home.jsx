@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { resolve } from '../helpers';
+import Link from 'next/link';
 import MyWorker from '../lib/my.worker';
 
 export default class extends React.Component {
@@ -34,9 +34,12 @@ export default class extends React.Component {
         </Head>
         <div>
           <p>
-            ⚡ Electron + Next.js ⚡ - <a href={resolve('next')}>Go to next page</a>
+            ⚡ Electron + Next.js ⚡ -
+            <Link href="/next">
+              <a>Go to next page</a>
+            </Link>
           </p>
-          <img src={resolve('static/logo.png')} />
+          <img src="/static/logo.png" />
           <hr />
           <button onClick={this.handleClick}>Fire a worker!</button>
           <h1>Message from Worker: {this.state.latestMessage}</h1>

@@ -1,14 +1,13 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/head';
 import electron from 'electron';
-import { resolveWithIpc, LinkWithIpc } from '../helpers';
 
 export default class extends React.Component {
   // prevent SSR webpacking
   ipcRenderer = electron.ipcRenderer || false;
 
   state = {
-    logo: null,
     ipcResult: 'no ipc messaging',
   };
 
@@ -27,10 +26,6 @@ export default class extends React.Component {
   };
 
   componentDidMount() {
-    this.setState({
-      logo: resolveWithIpc('static/logo.png'),
-    });
-
     if (this.ipcRenderer) {
       this.ipcRenderer.on('ping-pong', (event, data) => {
         this.setState({
@@ -54,9 +49,12 @@ export default class extends React.Component {
         </Head>
         <div>
           <p>
-            ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="next"><a>Go to next page</a></LinkWithIpc>
+            ⚡ Electron + Next.js ⚡ -
+            <Link href="/next">
+              <a>Go to next page</a>
+            </Link>
           </p>
-          <img src={this.state.logo} />
+          <img src="/static/logo.png" />
           <hr />
           <button onClick={this.onClickWithIpc}>IPC messaging</button>
           <button onClick={this.onClickWithIpcSync}>IPC messaging (sync)</button>
@@ -65,4 +63,4 @@ export default class extends React.Component {
       </React.Fragment>
     );
   }
-};
+}

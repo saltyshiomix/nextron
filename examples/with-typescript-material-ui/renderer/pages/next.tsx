@@ -1,18 +1,18 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '../components/Link';
-import { resolve } from '../helpers';
 
-const useStyles = makeStyles((theme: Theme) => 
+const useStyles = makeStyles((theme: Theme) =>
   createStyles({
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
     },
-  }),
+  })
 );
 
 export default function About() {
@@ -32,9 +32,7 @@ export default function About() {
           with Nextron
         </Typography>
         <Typography gutterBottom>
-          <Link href={resolve('home')}>
-            Go to the home page
-          </Link>
+          <Link href="/home">Go to the home page</Link>
         </Typography>
         <Button variant="contained" color="primary">
           Do nothing button

@@ -9,15 +9,15 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import Link from '../components/Link';
-import { resolve } from '../helpers';
+import Link from 'next/link';
 
-const useStyles = makeStyles((theme) => 
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
     },
-  }),
+  })
 );
 
 export default function Home() {
@@ -50,11 +50,9 @@ export default function Home() {
         <Typography variant="subtitle1" gutterBottom>
           with Nextron
         </Typography>
-        <img src={resolve('static/logo.png')} />
+        <img src="/static/logo.png" />
         <Typography gutterBottom>
-          <Link href={resolve('next')}>
-            Go to the next page
-          </Link>
+          <Link href="/next">Go to the next page</Link>
         </Typography>
         <Button variant="contained" color="secondary" onClick={handleClick}>
           Super Secret Password

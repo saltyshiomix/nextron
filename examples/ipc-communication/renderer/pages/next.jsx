@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { LinkWithIpc } from '../helpers';
+import Link from 'next/head';
 
 export default () => (
   <React.Fragment>
@@ -9,7 +9,10 @@ export default () => (
     </Head>
     <div>
       <p>
-        ⚡ Electron + Next.js ⚡ - <LinkWithIpc href="home"><a>Go to home page</a></LinkWithIpc>
+        ⚡ Electron + Next.js ⚡ -
+        <Link href="home">
+          <a>Go to home page</a>
+        </Link>
       </p>
     </div>
   </React.Fragment>
