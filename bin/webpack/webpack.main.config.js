@@ -1,4 +1,4 @@
-const fs = require('fs');
+const { existsSync } = require('fs');
 const { resolve } = require('path');
 const { smart: merge } = require('webpack-merge');
 const config = require('./webpack.base.config');
@@ -6,7 +6,7 @@ const config = require('./webpack.base.config');
 const tsEntry = resolve(process.cwd(), 'main', 'background.ts');
 const jsEntry = resolve(process.cwd(), 'main', 'background.js');
 
-const isTS = fs.existsSync(resolve(process.cwd(), 'main', 'background.ts'));
+const isTS = existsSync(resolve(process.cwd(), 'main', 'background.ts'));
 
 module.exports = (env) =>
   merge(config(env), {
