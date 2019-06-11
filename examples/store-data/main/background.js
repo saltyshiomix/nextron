@@ -28,7 +28,10 @@ ipcMain.on('add-message', (event, arg) => {
   store.set('messages', messages);
 });
 
-app.on('ready', () => {
+(async () => {
+  // Can't use app.on('ready',...)
+  // https://github.com/sindresorhus/electron-serve/issues/15
+  await app.whenReady();
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
@@ -41,7 +44,7 @@ app.on('ready', () => {
     mainWindow.loadURL(homeUrl);
     mainWindow.webContents.openDevTools();
   }
-});
+})();
 
 app.on('window-all-closed', () => {
   app.quit();

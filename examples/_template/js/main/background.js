@@ -1,6 +1,5 @@
 import { app } from 'electron';
 import serve from 'electron-serve';
-
 import { createWindow, exitOnChange } from './helpers';
 
 const isProd = process.env.NODE_ENV === 'production';
