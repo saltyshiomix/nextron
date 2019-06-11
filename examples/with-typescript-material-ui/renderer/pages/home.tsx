@@ -9,7 +9,6 @@ import DialogContentText from '@material-ui/core/DialogContentText';
 import DialogActions from '@material-ui/core/DialogActions';
 import Typography from '@material-ui/core/Typography';
 import Link from '../components/Link';
-import Link from 'next/link';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
