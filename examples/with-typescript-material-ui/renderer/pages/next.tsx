@@ -15,7 +15,7 @@ const useStyles = makeStyles((theme: Theme) =>
 );
 
 export default function About() {
-  const classes = useStyles();
+  const classes = useStyles({});
 
   return (
     <React.Fragment>

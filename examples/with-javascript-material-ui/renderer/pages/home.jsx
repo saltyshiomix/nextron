@@ -20,7 +20,7 @@ const useStyles = makeStyles((theme) =>
 );
 
 export default function Home() {
-  const classes = useStyles();
+  const classes = useStyles({});
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
   const handleClick = () => setOpen(true);
