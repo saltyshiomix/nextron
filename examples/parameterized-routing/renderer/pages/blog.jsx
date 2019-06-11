@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import Link from 'next/head';
+import Link from 'next/link';
 
 export default class extends React.Component {
   static getInitialProps({ query: { id } }) {
@@ -23,8 +23,8 @@ export default class extends React.Component {
           </p>
           <hr />
           <p>
-            Back to
-            <Link href="home">
+            Back to{' '}
+            <Link href="/home">
               <a>home</a>
             </Link>
           </p>

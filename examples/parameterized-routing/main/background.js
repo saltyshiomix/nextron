@@ -1,6 +1,6 @@
 import { join } from 'path';
 import { app } from 'electron';
-import { createWindow, exitOnChange, resolveWithIpc } from './helpers';
+import { createWindow, exitOnChange } from './helpers';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -10,8 +10,6 @@ if (!isProd) {
   const userDataPath = app.getPath('userData');
   app.setPath('userData', `${userDataPath} (development)`);
 }
-
-resolveWithIpc();
 
 app.on('ready', () => {
   const mainWindow = createWindow('main', {
