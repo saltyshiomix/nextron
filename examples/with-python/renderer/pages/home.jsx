@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import electron from 'electron';
-import { resolve } from '../helpers';
+import Link from 'next/link';
 
 export default class extends React.Component {
   // prevent SSR webpacking
@@ -43,9 +43,12 @@ export default class extends React.Component {
 
         <div>
           <p>
-            ⚡ Electron + Next.js + Python ⚡ - <a href={resolve('next')}>Go to next page</a>
+            ⚡ Electron + Next.js + Python ⚡ -
+            <Link href="/next">
+              <a>Go to next page</a>
+            </Link>
           </p>
-          <img src={resolve('static/logo.png')} />
+          <img src="/static/logo.png" />
           <hr />
           <button onClick={this.handleClick}>Run Python</button>
           <p>{this.state.result}</p>
@@ -53,4 +56,4 @@ export default class extends React.Component {
       </React.Fragment>
     );
   }
-};
+}

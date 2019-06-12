@@ -4,19 +4,18 @@ import { makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Link from '../components/Link';
-import { resolve } from '../helpers';
 
-const useStyles = makeStyles((theme) => 
+const useStyles = makeStyles((theme) =>
   createStyles({
     root: {
       textAlign: 'center',
       paddingTop: theme.spacing(4),
     },
-  }),
+  })
 );
 
 export default function About() {
-  const classes = useStyles();
+  const classes = useStyles({});
 
   return (
     <React.Fragment>
@@ -32,9 +31,7 @@ export default function About() {
           with Nextron
         </Typography>
         <Typography gutterBottom>
-          <Link href={resolve('home')}>
-            Go to the home page
-          </Link>
+          <Link href="/home">Go to the home page</Link>
         </Typography>
         <Button variant="contained" color="primary">
           Do nothing button

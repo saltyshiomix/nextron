@@ -1,10 +1,14 @@
 import { join } from 'path';
 import { app, ipcMain } from 'electron';
+import serve from 'electron-serve';
+
 import { createWindow, exitOnChange } from './helpers';
 
 const isProd = process.env.NODE_ENV === 'production';
 
-if (!isProd) {
+if (isProd) {
+  serve({ directory: 'app' });
+} else {
   exitOnChange();
 
   const userDataPath = app.getPath('userData');
@@ -30,8 +34,7 @@ app.on('ready', () => {
   });
 
   if (isProd) {
-    const homeFile = join(app.getAppPath(), 'app/home/index.html');
-    mainWindow.loadFile(homeFile);
+    mainWindow.loadURL('app://./home');
   } else {
     const homeUrl = 'http://localhost:8888/home';
     mainWindow.loadURL(homeUrl);
