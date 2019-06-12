@@ -1,4 +1,3 @@
-import { join } from 'path';
 import { app, ipcMain } from 'electron';
 import serve from 'electron-serve';
 import * as Store from 'electron-store';
