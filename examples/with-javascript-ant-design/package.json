@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dev": "node nextron/nextron.js",
-    "build": "node nextron/nextron.js build"
+    "build": "node nextron/nextron.js build",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "antd": "^3.19.2",
