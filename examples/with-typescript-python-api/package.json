@@ -19,7 +19,8 @@
     "dev": "node nextron/nextron.js",
     "build-python": "shx rm -rf pythondist && pyinstaller python/api.py --distpath pythondist --workpath build-py-temp --onefile && shx rm -rf build-py-temp && shx rm api.spec",
     "build-nextron": "node nextron/nextron.js build",
-    "build": "npm run build-python && npm run build-nextron"
+    "build": "npm run build-python && npm run build-nextron",
+    "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [
     "Nextron",

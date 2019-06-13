@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dev": "node nextron/nextron.js",
-    "build": "node nextron/nextron.js build"
+    "build": "node nextron/nextron.js build",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "@material-ui/core": "4.1.1",

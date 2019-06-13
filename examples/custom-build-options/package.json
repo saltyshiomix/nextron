@@ -21,7 +21,8 @@
     "build:all": "node nextron/nextron.js build --all",
     "build:win": "node nextron/nextron.js build --win --ia32",
     "build:mac": "node nextron/nextron.js build --mac --x64",
-    "build:linux": "node nextron/nextron.js build --linux"
+    "build:linux": "node nextron/nextron.js build --linux",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "electron-serve": "^0.3.0",

@@ -17,7 +17,8 @@
   },
   "scripts": {
     "dev": "node nextron/nextron.js --custom-server renderer/server.js",
-    "build": "node nextron/nextron.js build"
+    "build": "node nextron/nextron.js build",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "electron-serve": "^0.3.0",
