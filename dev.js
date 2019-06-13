@@ -3,8 +3,31 @@ const { resolve } = require('path');
 const { execSync } = require('child_process');
 const chalk = require('chalk');
 const { npxSync } = require('node-npx');
+const delay = require('delay');
 
 const stdio = 'inherit';
+const workspace = resolve(__dirname, 'workspace');
+
+async function installNextron() {
+  npxSync('yalc', ['publish'], { stdio });
+
+  npxSync('yalc', ['add', 'nextron'], {
+    cwd: workspace,
+    stdio,
+  });
+
+  for (let i = 0; i < 10; i++) {
+    const { devDependencies: { nextron } } = require(resolve(workspace, 'package.json'));
+    if (nextron === 'file:.yalc/nextron') {
+      break;
+    }
+    if (10 <= i) {
+      console.log('Failed to install nextron!');
+      process.exit(1);
+    }
+    await delay(500);
+  }
+}
 
 async function dev() {
   let example = 'with-typescript';
@@ -19,25 +42,16 @@ async function dev() {
   }
 
   await remove('workspace');
-  execSync('node ' + resolve(__dirname, `bin/nextron init workspace --example ${example}`), {
+
+  execSync('node ' + resolve(__dirname, 'bin/nextron') + ` init workspace --example ${example}`, {
     cwd: __dirname,
     stdio,
   });
 
-  npxSync('yalc', ['publish'], { stdio });
+  await installNextron();
 
-  execSync('cd workspace');
-  npxSync('yalc', ['add', 'nextron'], {
-    cwd: resolve(__dirname, 'workspace'),
-    stdio,
-  });
-  execSync('yarn', {
-    cwd: resolve(__dirname, 'workspace'),
-    stdio,
-  });
-
-  execSync('yarn dev', {
-    cwd: resolve(__dirname, 'workspace'),
+  execSync('yarn && yarn dev', {
+    cwd: workspace,
     stdio,
   });
 }
