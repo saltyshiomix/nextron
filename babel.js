@@ -1,6 +1,6 @@
 const { join } = require('path');
 const cwd = process.cwd();
-const { devDependencies } = require(join(cwd, 'package.json'));
+const { devDependencies = {} } = require(join(cwd, 'package.json'));
 
 const isTSEnabled = Object.keys(devDependencies).includes('typescript');
 
@@ -18,8 +18,8 @@ module.exports = (_context, opts = {}) => {
           },
         },
       ],
-      '@babel/typescript',
-      isTSEnabled && '@babel/preset-react',
+      '@babel/preset-react',
+      isTSEnabled && '@babel/typescript',
     ].filter(Boolean),
   };
 };
