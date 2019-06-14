@@ -12,7 +12,7 @@ const getUserConfig = () => {
   }
 };
 
-const getwebpackConfig = (env) => {
+const getWebpackConfig = (env) => {
   const defaultConfig = config(env);
   const webpackOverRide = getUserConfig().webpack || {};
   if (typeof webpackOverRide === 'function') {
@@ -23,4 +23,4 @@ const getwebpackConfig = (env) => {
 };
 
 module.exports.getUserConfig = getUserConfig;
-module.exports.getwebpackConfig = getwebpackConfig;
+module.exports.getWebpackConfig = getWebpackConfig;

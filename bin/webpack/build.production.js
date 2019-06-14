@@ -1,9 +1,9 @@
 #!/usr/bin/env node
 
 const webpack = require('webpack');
-const { getwebpackConfig } = require('./helpers');
+const { getWebpackConfig } = require('./helpers');
 
-const compiler = webpack(getwebpackConfig('production'));
+const compiler = webpack(getWebpackConfig('production'));
 
 compiler.run((err, stats) => {
   if (err) {
