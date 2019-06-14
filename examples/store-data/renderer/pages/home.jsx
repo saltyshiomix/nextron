@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
 import electron from 'electron';
-import { resolve } from '../helpers';
+import Link from 'next/link';
 
 export default class extends React.Component {
   // prevent SSR webpacking
@@ -51,19 +51,20 @@ export default class extends React.Component {
         </Head>
         <div>
           <p>
-            ⚡ Electron + Next.js ⚡ - <a href={resolve('next')}>Go to next page</a>
+            ⚡ Electron + Next.js ⚡ -
+            <Link href="/next">
+              <a>Go to next page</a>
+            </Link>
           </p>
-          <img src={resolve('static/logo.png')} />
+          <img src="/static/logo.png" />
           <hr />
           <h2>Enter your message:</h2>
           <form onSubmit={this.handleSubmit}>
             <input type="text" value={this.state.message} onChange={this.handleChange} />
           </form>
-          <ul>
-            {messages}
-          </ul>
+          <ul>{messages}</ul>
         </div>
       </React.Fragment>
     );
   }
-};
+}

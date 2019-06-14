@@ -1,6 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
-import { LinkWithIpc } from '../helpers';
+import Link from 'next/link';
 
 export default () => (
   <React.Fragment>
@@ -9,19 +9,19 @@ export default () => (
     </Head>
     <ul>
       <li>
-        <LinkWithIpc href="blog/first">
+        <Link href="/blog/first">
           <a>My first blog post</a>
-        </LinkWithIpc>
+        </Link>
       </li>
       <li>
-        <LinkWithIpc href="blog/second">
+        <Link href="/blog/second">
           <a>My second blog post</a>
-        </LinkWithIpc>
+        </Link>
       </li>
       <li>
-        <LinkWithIpc href="blog/last">
+        <Link href="/blog/last">
           <a>My last blog post</a>
-        </LinkWithIpc>
+        </Link>
       </li>
     </ul>
   </React.Fragment>

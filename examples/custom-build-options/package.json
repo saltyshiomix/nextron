@@ -21,22 +21,23 @@
     "build:all": "node nextron/nextron.js build --all",
     "build:win": "node nextron/nextron.js build --win --ia32",
     "build:mac": "node nextron/nextron.js build --mac --x64",
-    "build:linux": "node nextron/nextron.js build --linux"
+    "build:linux": "node nextron/nextron.js build --linux",
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-store": "^3.2.0",
-    "next": "8.1.0",
+    "electron-serve": "^0.3.0",
+    "electron-store": "^3.3.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   },
   "devDependencies": {
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
-    "electron": "4.2.3",
+    "electron": "5.0.3",
     "electron-builder": "20.43.0",
-    "fast-glob": "^2.2.7",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.0.1",
+    "next": "8.1.0",
     "node-npx": "^1.3.1",
     "ora": "^3.4.0",
     "webpack": "4.29.0",
