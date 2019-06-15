@@ -35,7 +35,7 @@ async function dev() {
   const { npx, npxSync } = require('node-npx');
   const delay = require('delay');
   const webpack = require('webpack');
-  const { getwebpackConfig } = require('./webpack/helpers');
+  const { getWebpackConfig } = require('./webpack/helpers');
   const cwd = process.cwd();
   const stdio = 'inherit';
 
@@ -77,7 +77,7 @@ async function dev() {
   // wait until renderer process is ready
   await delay(8000);
 
-  const compiler = webpack(getwebpackConfig('development'));
+  const compiler = webpack(getWebpackConfig('development'));
   let isHotReload = false;
   watching = compiler.watch({}, async (err, stats) => {
     if (!err && !stats.hasErrors()) {
