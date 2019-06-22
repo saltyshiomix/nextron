@@ -13,18 +13,25 @@
       "output": "dist",
       "buildResources": "resources"
     },
+    "files": [
+      {
+        "from": ".",
+        "filter": [
+          "package.json",
+          "app"
+        ]
+      }
+    ],
     "publish": null
   },
   "scripts": {
-    "dev": "node nextron/nextron.js --custom-server renderer/server.js",
-    "build": "node nextron/nextron.js build",
+    "dev": "nextron dev",
+    "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "electron-serve": "^0.3.0",
-    "electron-store": "^3.3.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "electron-store": "^3.3.0"
   },
   "devDependencies": {
     "arg": "^4.1.0",
@@ -34,8 +41,11 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.0.1",
     "next": "8.1.0",
+    "nextron": "^4.11.0",
     "node-npx": "^1.3.1",
     "ora": "^3.4.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "webpack": "4.29.0",
     "webpack-merge": "^4.2.1"
   }
