@@ -39,7 +39,7 @@
   "devDependencies": {
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
-    "electron": "5.0.3",
+    "electron": "5.0.6",
     "electron-builder": "20.43.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.0.1",
