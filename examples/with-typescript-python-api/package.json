@@ -55,7 +55,7 @@
     "arg": "^4.1.0",
     "chalk": "^2.4.2",
     "electron": "5.0.6",
-    "electron-builder": "20.43.0",
+    "electron-builder": "20.44.4",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.4",
     "friendly-errors-webpack-plugin": "^1.7.0",

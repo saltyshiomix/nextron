@@ -38,7 +38,7 @@
     "antd": "^3.19.2",
     "babel-plugin-import": "^1.12.0",
     "electron": "5.0.6",
-    "electron-builder": "20.43.0",
+    "electron-builder": "20.44.4",
     "next": "8.1.0",
     "nextron": "^4.11.0",
     "react": "^16.8.6",
