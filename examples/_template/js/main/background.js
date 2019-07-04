@@ -23,10 +23,10 @@ if (isProd) {
   });
 
   if (isProd) {
-    mainWindow.loadURL('app://./home');
+    await mainWindow.loadURL('app://./home');
   } else {
     const homeUrl = 'http://localhost:8888/home';
-    mainWindow.loadURL(homeUrl);
+    await mainWindow.loadURL(homeUrl);
     mainWindow.webContents.openDevTools();
   }
 })();

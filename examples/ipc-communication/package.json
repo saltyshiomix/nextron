@@ -13,11 +13,20 @@
       "output": "dist",
       "buildResources": "resources"
     },
+    "files": [
+      {
+        "from": ".",
+        "filter": [
+          "package.json",
+          "app"
+        ]
+      }
+    ],
     "publish": null
   },
   "scripts": {
-    "dev": "node nextron/nextron.js",
-    "build": "node nextron/nextron.js build",
+    "dev": "nextron dev",
+    "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {

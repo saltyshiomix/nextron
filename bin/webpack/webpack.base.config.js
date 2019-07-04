@@ -15,7 +15,7 @@ module.exports = (env) => ({
   externals: [...Object.keys(externals || {})],
   devtool: 'source-map',
   resolve: {
-    extensions: ['.js', '.jsx', '.json'],
+    extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
     modules: [resolve(cwd, 'app'), 'node_modules'],
   },
   output: {
@@ -24,24 +24,18 @@ module.exports = (env) => ({
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
+        test: /\.[j|t]sx?$/,
         use: {
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
           },
         },
-        exclude: [
-          /node_modules/,
-          resolve(cwd, 'renderer'),
-        ],
+        exclude: [/node_modules/, resolve(cwd, 'renderer')],
       },
       {
         test: /\.css$/,
-        use: [
-          'style-loader',
-          'css-loader',
-        ],
+        use: ['style-loader', 'css-loader'],
       },
     ],
   },

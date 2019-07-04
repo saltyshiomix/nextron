@@ -4,7 +4,7 @@ const { resolve } = require('path');
 const spawn = require('cross-spawn');
 const chalk = require('chalk');
 
-const commands = new Set(['init', 'list']);
+const commands = new Set(['init', 'list', 'dev', 'build']);
 let cmd = process.argv[2];
 
 if (new Set(['--version', '-v']).has(cmd)) {
