@@ -422,8 +422,13 @@ $ yarn dev # default is examples/with-javascript-emotion
 
 ### Developing `examples/*`
 
+Currently MacOS only:
+
 ```bash
 $ yarn dev <EXAMPLE-FOLDER-NAME>
+
+# cleanup yalc installed dependencies
+$ yarn cleanup
 ```
 
 ## Related
