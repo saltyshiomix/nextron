@@ -31,7 +31,7 @@
   },
   "dependencies": {
     "electron-serve": "^0.3.0",
-    "electron-store": "^3.3.0",
+    "electron-store": "^4.0.0",
     "path-match": "1.2.4",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
