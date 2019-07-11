@@ -25,7 +25,7 @@
     "publish": null
   },
   "scripts": {
-    "dev": "nextron dev  --custom-server renderer/server.js",
+    "dev": "nextron dev --custom-server renderer/server.js",
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
@@ -34,10 +34,8 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "electron": "5.0.6",
-    "electron-builder": "20.44.4",
     "next": "8.1.0",
-    "nodemon": "^1.19.1",
+    "nextron": "^4.11.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }

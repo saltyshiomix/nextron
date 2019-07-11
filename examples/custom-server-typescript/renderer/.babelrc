@@ -1,3 +1,6 @@
 {
-  "presets": ["nextron/babel"]
+  "presets": [
+    "next/babel",
+    "@babel/typescript"
+  ]
 }

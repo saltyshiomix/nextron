@@ -86,7 +86,11 @@ async function init(name) {
   spinner.create('Set meta information');
   const pkg = resolve(cwd, `${name}/package.json`);
   const content = await readJSON(pkg);
-  await writeJSON(pkg, {...content, name}, {spaces: 2});
+  content.name = name;
+  if (process.env.NODE_ENV === 'testing') {
+    content.devDependencies.nextron = cwd;
+  }
+  await writeJSON(pkg, {...content}, {spaces: 2});
 
   const cmd = (await pm() === 'yarn') ? 'yarn && yarn dev' : 'npm install && npm run dev';
   spinner.clear(`Run \`${cmd}\` inside of "${name}" to start the app`);
