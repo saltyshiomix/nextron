@@ -17,6 +17,7 @@
   "exclude": [
     "node_modules",
     "app",
+    "dist",
     "renderer/next.config.js",
   ],
 }
