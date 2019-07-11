@@ -1,7 +1,7 @@
 {
   "presets": [
     "next/babel",
-    "@zeit/next-typescript/babel"
+    "@babel/typescript"
   ],
   "plugins": [
     ["emotion"]
