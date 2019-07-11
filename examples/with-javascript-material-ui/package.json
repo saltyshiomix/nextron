@@ -35,9 +35,6 @@
   },
   "devDependencies": {
     "@material-ui/core": "4.1.1",
-    "next": "8.1.0",
-    "nextron": "^4.11.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6"
+    "nextron": "^4.11.0"
   }
 }

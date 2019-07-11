@@ -35,15 +35,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.1.2",
-    "@babel/preset-typescript": "^7.3.3",
-    "@types/next": "^8.0.5",
     "@types/node": "^12.0.3",
-    "@types/react": "^16.8.19",
     "@zeit/next-typescript": "^1.1.1",
-    "next": "8.1.0",
     "nextron": "^4.11.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "typescript": "^3.5.1"
   }
 }

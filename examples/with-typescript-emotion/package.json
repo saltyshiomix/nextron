@@ -35,12 +35,9 @@
   },
   "devDependencies": {
     "@babel/core": "7.1.2",
-    "@babel/preset-typescript": "^7.3.3",
     "@emotion/core": "^10.0.10",
     "@emotion/styled": "^10.0.11",
-    "@types/next": "^8.0.5",
     "@types/node": "^12.0.3",
-    "@types/react": "^16.8.19",
     "@zeit/next-typescript": "1.1.1",
     "babel-plugin-emotion": "^10.0.9",
     "electron": "5.0.6",
