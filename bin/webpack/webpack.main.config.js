@@ -14,6 +14,6 @@ module.exports = (env) =>
     },
     output: {
       filename: '[name].js',
-      path: resolve(process.cwd(), 'app'),
+      path: resolve(cwd, 'app'),
     },
   });
