@@ -34,14 +34,11 @@
     "apollo-cache-inmemory": "^1.5.1",
     "apollo-client": "^2.5.1",
     "apollo-link-http": "^1.5.14",
-    "cross-spawn": "^6.0.5",
     "electron-serve": "^0.3.0",
     "electron-store": "^4.0.0",
     "graphql": "^14.2.1",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
     "superagent": "^4.1.0"
   },
   "devDependencies": {
