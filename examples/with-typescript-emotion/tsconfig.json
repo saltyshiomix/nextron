@@ -15,8 +15,9 @@
     "sourceMap": true,
   },
   "exclude": [
+    "node_modules",
     "app",
-    "nextron",
+    "dist",
     "renderer/next.config.js",
   ],
 }

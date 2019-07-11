@@ -14,13 +14,10 @@
     "preserveConstEnums": true,
     "sourceMap": true,
   },
-  "include": [
-    "background-with-python-api.ts",
-    "renderer/**/*",
-  ],
   "exclude": [
+    "node_modules",
     "app",
-    "nextron",
+    "dist",
     "renderer/next.config.js",
   ],
 }

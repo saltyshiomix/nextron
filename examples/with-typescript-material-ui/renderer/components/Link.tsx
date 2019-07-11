@@ -1,10 +1,21 @@
 import React from 'react';
 import clsx from 'clsx';
-import { withRouter } from 'next/router';
+import { useRouter } from 'next/router';
 import NextLink from 'next/link';
-import MuiLink from '@material-ui/core/Link';
+import MuiLink, { LinkProps as MuiLinkProps } from '@material-ui/core/Link';
 
-const NextComposed = React.forwardRef(function NextComposed(props: any, ref: any) {
+interface NextLinkProps {
+  as?: string;
+  href?: string;
+  prefetch?: boolean;
+}
+
+type NextComposedProps = React.AnchorHTMLAttributes<HTMLAnchorElement> & NextLinkProps;
+
+const NextComposed = React.forwardRef(function NextComposed(
+  props: NextComposedProps,
+  ref: React.Ref<any>,
+) {
   const { as, href, prefetch, ...other } = props;
 
   return (
@@ -14,8 +25,22 @@ const NextComposed = React.forwardRef(function NextComposed(props: any, ref: any
   );
 });
 
-function Link(props) {
-  const { activeClassName, router, className: classNameProps, innerRef, naked, ...other } = props;
+interface LinkProps extends MuiLinkProps, NextLinkProps {
+  activeClassName?: string;
+  naked?: boolean;
+}
+
+// A styled version of the Next.js Link component:
+// https://nextjs.org/docs/#with-link
+function RouterLink(props: LinkProps) {
+  const router = useRouter();
+  const {
+    activeClassName = 'active',
+    className: classNameProps,
+    innerRef,
+    naked,
+    ...other
+  } = props;
 
   const className = clsx(classNameProps, {
     [activeClassName]: router.pathname === props.href && activeClassName,
@@ -28,6 +53,6 @@ function Link(props) {
   return <MuiLink component={NextComposed} className={className} ref={innerRef} {...other} />;
 }
 
-const RouterLink = withRouter(Link);
-
-export default React.forwardRef((props, ref) => <RouterLink {...props} innerRef={ref} />);
+export default React.forwardRef((props: LinkProps, ref) => (
+  <RouterLink {...props} innerRef={ref} />
+));
