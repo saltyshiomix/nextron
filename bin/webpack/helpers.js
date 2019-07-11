@@ -16,7 +16,7 @@ const getWebpackConfig = (env) => {
   const defaultConfig = config(env);
   const webpackOverRide = getUserConfig().webpack || {};
   if (typeof webpackOverRide === 'function') {
-    return webpackOverRide(defaultConfig, { dev: 'production' !== env, webpack });
+    return webpackOverRide(defaultConfig, env);
   } else {
     return merge(defaultConfig, webpackOverRide);
   }
