@@ -19,6 +19,6 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "nextron": "^4.12.3"
+    "nextron": "^4.12.4"
   }
 }
