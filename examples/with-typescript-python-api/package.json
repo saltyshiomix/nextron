@@ -38,7 +38,7 @@
     "@zeit/next-typescript": "1.1.1",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.4",
-    "nextron": "^4.12.4",
+    "nextron": "^4.13.0",
     "shx": "^0.3.2",
     "typescript": "^3.5.3"
   }
