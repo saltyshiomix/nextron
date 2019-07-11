@@ -21,7 +21,7 @@
     "@zeit/next-typescript": "1.1.1",
     "less": "3.9.0",
     "nextron": "^4.12.0",
-    "typescript": "^3.5.1",
+    "typescript": "^3.5.3",
     "webpack": "4.29.0"
   }
 }
