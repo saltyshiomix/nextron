@@ -150,6 +150,18 @@ publish: null
 
 For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration).
 
+## nextron.config.js
+
+```js
+module.exports = {
+  // main process' webpack config
+  webpack: (defaultConfig, env) => {
+    // do some stuff here
+    return defaultConfig;
+  },
+};
+```
+
 ## Examples
 
 See [examples](./examples) folder for more information.
@@ -173,6 +185,19 @@ $ npx create-nextron-app my-app --example custom-build-options
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-build-options
+```
+
+### [examples/custom-main-entry](./examples/custom-main-entry)
+
+```bash
+# with `nextron`
+$ nextron init my-app --example custom-main-entry
+
+# with npx
+$ npx create-nextron-app my-app --example custom-main-entry
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-main-entry
 ```
 
 ### [examples/custom-server](./examples/custom-server)

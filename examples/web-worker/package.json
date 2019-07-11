@@ -15,7 +15,7 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "nextron": "^4.12.4",
+    "nextron": "^4.13.0",
     "webpack": "4.29.0",
     "worker-loader": "^2.0.0"
   }
