@@ -131,21 +131,21 @@ To build Windows 32 bit version, run `npm run build:win32` like below:
 
 ### Build Configuration
 
-Edit `package.json#build` properties for custom build configuration.
+Edit `electron-builder.yml` properties for custom build configuration.
 
-```json
-{
-  "build": {
-    "appId": "com.example.nextron",
-    "productName": "My Nextron App",
-    "copyright": "Copyright © 2018 Yoshihide Shiono",
-    "directories": {
-      "output": "dist",
-      "buildResources": "resources"
-    },
-    "publish": null
-  }
-}
+```yml
+appId: com.example.nextron
+productName: My Nextron App
+copyright: Copyright © 2018 Yoshihide Shiono
+directories:
+  output: dist
+  buildResources: resources
+files:
+  - from: .
+    filter:
+      - package.json
+      - app
+publish: null
 ```
 
 For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration).
