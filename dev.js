@@ -4,7 +4,7 @@ const { execSync } = require('child_process');
 const chalk = require('chalk');
 
 async function dev() {
-  process.env.NODE_ENV === 'testing';
+  process.env.NODE_ENV = 'testing';
 
   let example = 'with-typescript';
   if (3 <= process.argv.length) {
