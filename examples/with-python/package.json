@@ -16,8 +16,8 @@
     "publish": null
   },
   "scripts": {
-    "dev": "node nextron/nextron.js",
-    "build": "node nextron/nextron.js build",
+    "dev": "nextron",
+    "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {

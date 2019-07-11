@@ -25,7 +25,7 @@
     "publish": null
   },
   "scripts": {
-    "dev": "nextron dev --custom-server renderer/server/server.ts",
+    "dev": "nextron --custom-server renderer/server/server.ts",
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
