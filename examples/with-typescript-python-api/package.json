@@ -5,16 +5,6 @@
   "version": "1.0.0",
   "author": "Don Alvarez",
   "main": "app/background.js",
-  "build": {
-    "appId": "com.example.nextronpythonapi",
-    "productName": "My Nextron Python App",
-    "copyright": "Copyright © 2019 Don Alvarez",
-    "directories": {
-      "output": "dist",
-      "buildResources": "resources"
-    },
-    "publish": null
-  },
   "scripts": {
     "dev": "nextron",
     "build-python": "shx rm -rf pythondist && pyinstaller python/api.py --distpath pythondist --workpath build-py-temp --onefile && shx rm -rf build-py-temp && shx rm api.spec",

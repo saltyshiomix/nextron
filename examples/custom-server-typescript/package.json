@@ -5,25 +5,6 @@
   "version": "1.0.0",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
   "main": "app/background.js",
-  "build": {
-    "appId": "com.example.nextron",
-    "productName": "My Nextron App",
-    "copyright": "Copyright © 2018 Yoshihide Shiono",
-    "directories": {
-      "output": "dist",
-      "buildResources": "resources"
-    },
-    "files": [
-      {
-        "from": ".",
-        "filter": [
-          "package.json",
-          "app"
-        ]
-      }
-    ],
-    "publish": null
-  },
   "scripts": {
     "dev": "nextron --custom-server renderer/server/server.ts",
     "build": "nextron build",
