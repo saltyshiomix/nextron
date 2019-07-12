@@ -1,7 +1,7 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import gql from 'graphql-tag';
-import { resolve } from '../../helpers';
 import { getAppGlobalClient } from '../_app';
 import { css } from './styles.css';
 
@@ -21,7 +21,7 @@ class CalculatorPage extends React.Component {
           <div className="container">
             <h2>Calculator</h2>
             <ol>
-              <li><a href={resolve("home")}>Home</a></li>
+              <li><Link href="/home">Home</Link></li>
             </ol>
             <h1>Hello Calculator!</h1>
             <p>Input something like <code>1 + 1</code>.</p>
