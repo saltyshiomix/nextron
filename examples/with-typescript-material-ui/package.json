@@ -19,7 +19,7 @@
     "@material-ui/core": "4.2.0",
     "@types/node": "^12.0.3",
     "@zeit/next-typescript": "1.1.1",
-    "nextron": "^4.13.0",
+    "nextron": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "typescript": "^3.5.3"
