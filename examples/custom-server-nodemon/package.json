@@ -8,7 +8,7 @@
   "scripts": {
     "dev": "nextron --custom-server renderer/server.js",
     "build": "nextron build",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "nextron postinstall"
   },
   "dependencies": {
     "electron-serve": "^0.3.0",

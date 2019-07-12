@@ -12,7 +12,7 @@
     "build:win": "nextron build --win --ia32",
     "build:mac": "nextron build --mac --x64",
     "build:linux": "nextron build --linux",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "nextron postinstall"
   },
   "dependencies": {
     "electron-serve": "^0.3.0",

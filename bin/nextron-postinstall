@@ -1,0 +1,8 @@
+#!/usr/bin/env node
+
+const { npxSync } = require('node-npx');
+
+npxSync('electron-builder', ['install-app-deps'], {
+  cwd: process.cwd(),
+  stdio: 'inherit',
+});
