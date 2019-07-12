@@ -63,11 +63,10 @@ async function build(args) {
     await remove(join(cwd, 'renderer', '.next'));
 
     spinner.create('Building renderer process');
-    const next = `./node_modules/nextron/node_modules/.bin/next${process.platform === 'win32' ? '.cmd' : ''}`;
     const outdir = join(cwd, 'renderer/out');
     const appdir = join(cwd, 'app');
-    await npx(next, ['build', join(cwd, 'renderer')], { cwd });
-    await npx(next, ['export', join(cwd, 'renderer')], { cwd });
+    await npx('next', ['build', join(cwd, 'renderer')], { cwd });
+    await npx('next', ['export', join(cwd, 'renderer')], { cwd });
     await copy(outdir, appdir);
     await remove(outdir);
 
@@ -75,8 +74,7 @@ async function build(args) {
     await npx('node', [join(__dirname, 'webpack', 'build.production.js')], { cwd });
 
     spinner.create('Packaging - please wait a moment');
-    const electronBuilder = `./node_modules/nextron/node_modules/.bin/electron-builder${process.platform === 'win32' ? '.cmd' : ''}`;
-    await npx(electronBuilder, createBuilderArgs(args), { cwd });
+    await npx('electron-builder', createBuilderArgs(args), { cwd });
 
     spinner.clear('See `dist` directory');
   } catch (err) {

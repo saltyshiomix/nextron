@@ -8,13 +8,18 @@
   "scripts": {
     "dev": "nextron",
     "build": "nextron build",
-    "postinstall": "nextron postinstall"
+    "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "electron-serve": "^0.3.0",
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "nextron": "^4.13.1"
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15",
+    "next": "^9.0.1",
+    "nextron": "^4.13.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

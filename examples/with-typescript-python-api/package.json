@@ -10,7 +10,7 @@
     "build-python": "shx rm -rf pythondist && pyinstaller python/api.py --distpath pythondist --workpath build-py-temp --onefile && shx rm -rf build-py-temp && shx rm api.spec",
     "build-nextron": "nextron build",
     "build": "npm run build-python && npm run build-nextron",
-    "postinstall": "nextron postinstall"
+    "postinstall": "electron-builder install-app-deps"
   },
   "keywords": [
     "Nextron",
@@ -28,16 +28,23 @@
     "@types/cross-spawn": "^6.0.0",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^12.6.2",
+    "@types/react": "^16.8.23",
+    "@types/react-dom": "^16.8.4",
     "@types/superagent": "^4.1.3",
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-client": "^2.6.3",
     "apollo-link-http": "^1.5.15",
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.5",
     "graphql": "^14.4.2",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
+    "next": "^9.0.1",
     "nextron": "^4.13.1",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
     "shx": "^0.3.2",
     "superagent": "^5.1.0",
     "typescript": "^3.5.3"

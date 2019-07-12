@@ -9,7 +9,6 @@ const commands = new Set([
   'list',
   'init',
   'build',
-  'postinstall',
   defaultCommand,
 ]);
 

@@ -31,10 +31,6 @@ if (args['--help']) {
   process.exit(0);
 }
 
-const next = `./node_modules/nextron/node_modules/.bin/next${process.platform === 'win32' ? '.cmd' : ''}`;
-const nodemon = `./node_modules/nextron/node_modules/.bin/nodemon${process.platform === 'win32' ? '.cmd' : ''}`;
-const electron = `./node_modules/nextron/node_modules/.bin/electron${process.platform === 'win32' ? '.cmd' : ''}`;
-
 async function dev() {
   const { npx, npxSync } = require('node-npx');
   const delay = require('delay');
@@ -48,12 +44,12 @@ async function dev() {
     if (args['--custom-server']) {
       const { existsSync } = require('fs');
       if (existsSync('nodemon.json')) {
-        child = npx(nodemon, [args['--custom-server']], { cwd, stdio });
+        child = npx('nodemon', [args['--custom-server']], { cwd, stdio });
       } else {
         child = npx('node', [args['--custom-server']], { cwd, stdio });
       }
     } else {
-      child = npx(next, ['-p', '8888', 'renderer'], { cwd, stdio });
+      child = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio });
     }
     child.on('close', () => {
       process.exit(0);
@@ -89,7 +85,7 @@ async function dev() {
         await delay(2000);
       }
       isHotReload = true;
-      await npxSync(electron, ['.'], { cwd, stdio });
+      await npxSync('electron', ['.'], { cwd, stdio });
     }
   });
 }
