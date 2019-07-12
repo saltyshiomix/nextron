@@ -21,23 +21,23 @@
     "demo"
   ],
   "dependencies": {
-    "apollo-cache-inmemory": "^1.5.1",
-    "apollo-client": "^2.5.1",
-    "apollo-link-http": "^1.5.14",
     "electron-serve": "^0.3.0",
-    "electron-store": "^4.0.0",
-    "graphql": "^14.2.1",
-    "graphql-tag": "^2.10.1",
-    "isomorphic-fetch": "^2.2.1",
-    "superagent": "^4.1.0"
+    "electron-store": "^4.0.0"
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.35",
     "@types/node": "^12.6.2",
+    "apollo-cache-inmemory": "^1.6.2",
+    "apollo-client": "^2.6.3",
+    "apollo-link-http": "^1.5.15",
     "electron-packager": "^9.0.1",
-    "electron-rebuild": "^1.8.4",
+    "electron-rebuild": "^1.8.5",
+    "graphql": "^14.4.2",
+    "graphql-tag": "^2.10.1",
+    "isomorphic-fetch": "^2.2.1",
     "nextron": "^4.13.1",
     "shx": "^0.3.2",
+    "superagent": "^5.1.0",
     "typescript": "^3.5.3"
   }
 }
