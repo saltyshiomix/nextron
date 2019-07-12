@@ -15,7 +15,7 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "@types/node": "^12.0.3",
+    "@types/node": "^12.6.2",
     "@zeit/next-less": "1.0.1",
     "less": "3.9.0",
     "nextron": "^4.13.1",

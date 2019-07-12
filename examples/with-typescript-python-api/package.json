@@ -33,7 +33,7 @@
   },
   "devDependencies": {
     "@types/isomorphic-fetch": "0.0.35",
-    "@types/node": "^12.0.3",
+    "@types/node": "^12.6.2",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.4",
     "nextron": "^4.13.1",
