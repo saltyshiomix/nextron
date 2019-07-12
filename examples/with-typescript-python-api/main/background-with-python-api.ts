@@ -2,12 +2,13 @@ import { existsSync } from "fs";
 import { execFile } from "child_process";
 import { app, dialog, ipcMain } from "electron";
 import * as path from "path";
-import * as spawn from "cross-spawn";
 import superagent from "superagent";
 //
 // Run the default background.ts code from the main nextron template
 //
 import "./background";
+
+const spawn = require("cross-spawn");
 
 const PY_DIST_FOLDER = "pythondist";
 const PY_FOLDER = "python";
@@ -23,7 +24,7 @@ const PY_MODULE = "api"; // without .py suffix
 const pyPort = 58723;
 let pyProc = null as any;
 
-ipcMain.on("getPythonPort", (event) => {
+ipcMain.on("getPythonPort", (event: any) => {
   // dialog.showErrorBox("success", "getPythonPort called");
   superagent.get("http://127.0.0.1:" + pyPort + "/graphql/?query=%7Bawake%7D")
     .then(() => {
