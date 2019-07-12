@@ -6,7 +6,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template ipc-communication
+$ nextron init my-app --example ipc-communication
 
 # with npx
 $ npx create-nextron-app my-app --example ipc-communication

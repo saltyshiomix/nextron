@@ -10,7 +10,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-python
+$ nextron init my-app --example with-python
 
 # with npx
 $ npx create-nextron-app my-app --example with-python

@@ -6,13 +6,13 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-javascript
+$ nextron init my-app --example custom-main-entry
 
 # with npx
-$ npx create-nextron-app my-app --example with-javascript
+$ npx create-nextron-app my-app --example custom-main-entry
 
 # with yarn
-$ yarn create nextron-app my-app --example with-javascript
+$ yarn create nextron-app my-app --example custom-main-entry
 ```
 
 ### Use it

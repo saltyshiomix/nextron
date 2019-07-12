@@ -6,7 +6,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript
+$ nextron init my-app --example with-typescript
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript

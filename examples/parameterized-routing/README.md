@@ -6,7 +6,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template parameterized-routing
+$ nextron init my-app --example parameterized-routing
 
 # with npx
 $ npx create-nextron-app my-app --example parameterized-routing

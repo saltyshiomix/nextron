@@ -6,7 +6,7 @@ This example builds a stand-alone Electron + Next + Python application and insta
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template with-typescript-python-api
+$ nextron init my-app --example with-typescript-python-api
 
 # with npx
 $ npx create-nextron-app my-app --example with-typescript-python-api
