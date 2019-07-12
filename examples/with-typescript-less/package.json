@@ -15,13 +15,11 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "@babel/core": "7.1.2",
     "@types/node": "^12.0.3",
     "@zeit/next-less": "1.0.1",
-    "@zeit/next-typescript": "1.1.1",
     "less": "3.9.0",
     "nextron": "^4.13.1",
     "typescript": "^3.5.3",
-    "webpack": "4.29.0"
+    "webpack": "^4.35.3"
   }
 }

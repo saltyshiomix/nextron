@@ -1,6 +1,4 @@
-const withTypeScript = require('@zeit/next-typescript');
-
-module.exports = withTypeScript({
+module.exports = {
   webpack: config => Object.assign(config, {
     target: 'electron-renderer',
   }),
@@ -10,4 +8,4 @@ module.exports = withTypeScript({
       '/home': { page: '/home' },
     };
   },
-});
+};

@@ -29,6 +29,7 @@ module.exports = (env) => ({
           loader: 'babel-loader',
           options: {
             cacheDirectory: true,
+            presets: ['@babel/preset-typescript'],
           },
         },
         exclude: [/node_modules/, resolve(cwd, 'renderer')],

@@ -1,7 +1,6 @@
-const withTypeScript = require('@zeit/next-typescript');
 const withLess = require('@zeit/next-less');
 
-module.exports = withTypeScript(withLess({
+module.exports = withLess({
   webpack: config => Object.assign(config, {
     target: 'electron-renderer',
   }),
@@ -11,4 +10,4 @@ module.exports = withTypeScript(withLess({
       '/next': { page: '/next' },
     };
   },
-}));
+});

@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "nextron": "^4.13.1",
-    "webpack": "4.29.0",
+    "webpack": "^4.35.3",
     "worker-loader": "^2.0.0"
   }
 }
