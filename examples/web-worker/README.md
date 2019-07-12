@@ -6,7 +6,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template web-worker
+$ nextron init my-app --example web-worker
 
 # with npx
 $ npx create-nextron-app my-app --example web-worker

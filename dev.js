@@ -6,7 +6,7 @@ const chalk = require('chalk');
 async function dev() {
   process.env.NODE_ENV = 'testing';
 
-  let example = 'with-typescript';
+  let example = 'with-javascript-emotion';
   if (3 <= process.argv.length) {
     const newExample = process.argv[2];
     if (!existsSync(resolve(__dirname, `examples/${newExample}`))) {

@@ -6,7 +6,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template store-data
+$ nextron init my-app --example store-data
 
 # with npx
 $ npx create-nextron-app my-app --example store-data

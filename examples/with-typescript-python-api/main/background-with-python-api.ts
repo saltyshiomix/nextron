@@ -1,3 +1,5 @@
+import { existsSync } from "fs";
+import { execFile } from "child_process";
 import { app, dialog, ipcMain } from "electron";
 import * as path from "path";
 import superagent from "superagent";
@@ -5,6 +7,8 @@ import superagent from "superagent";
 // Run the default background.ts code from the main nextron template
 //
 import "./background";
+
+const spawn = require("cross-spawn");
 
 const PY_DIST_FOLDER = "pythondist";
 const PY_FOLDER = "python";
@@ -20,7 +24,7 @@ const PY_MODULE = "api"; // without .py suffix
 const pyPort = 58723;
 let pyProc = null as any;
 
-ipcMain.on("getPythonPort", (event) => {
+ipcMain.on("getPythonPort", (event: any) => {
   // dialog.showErrorBox("success", "getPythonPort called");
   superagent.get("http://127.0.0.1:" + pyPort + "/graphql/?query=%7Bawake%7D")
     .then(() => {
@@ -33,9 +37,8 @@ ipcMain.on("getPythonPort", (event) => {
       const exePath = (process.platform === "win32") ? path.join(__dirname, "..", PY_DIST_FOLDER, PY_MODULE + ".exe") : path.join(__dirname, PY_DIST_FOLDER, PY_MODULE);
       if (__dirname.indexOf("app.asar") > 0) {
         // dialog.showErrorBox("info", "packaged");
-        if (require("fs").existsSync(exePath)) {
-          pyProc = require("child_process").execFile(exePath, ["--apiport", pyPort], ({},{},{}) => {
-          });
+        if (existsSync(exePath)) {
+          pyProc = execFile(exePath, ["--apiport", pyPort.toString()], () => {});
           if (pyProc === undefined) {
             dialog.showErrorBox("Error", "pyProc is undefined");
           } else if (pyProc === null) {
@@ -46,8 +49,8 @@ ipcMain.on("getPythonPort", (event) => {
         }
       } else {
         // dialog.showErrorBox("info", "unpackaged");
-        if (require("fs").existsSync(srcPath)) {
-          pyProc = require("cross-spawn")("python", [srcPath, "--apiport", pyPort]);
+        if (existsSync(srcPath)) {
+          pyProc = spawn("python", [srcPath, "--apiport", pyPort.toString()]);
         } else {
           dialog.showErrorBox("Error", "Unpackaged python source not found");
         }

@@ -18,7 +18,10 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "babel-plugin-emotion": "^10.0.14",
-    "nextron": "^4.13.1",
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15",
+    "next": "^9.0.1",
+    "nextron": "^5.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6"
   }

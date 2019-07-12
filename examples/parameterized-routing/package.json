@@ -16,6 +16,11 @@
     "path-match": "1.2.4"
   },
   "devDependencies": {
-    "nextron": "^4.13.1"
+    "electron": "^5.0.6",
+    "electron-builder": "^21.0.15",
+    "next": "^9.0.1",
+    "nextron": "^5.0.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
   }
 }

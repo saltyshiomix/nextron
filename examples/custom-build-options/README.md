@@ -6,7 +6,7 @@
 
 ```bash
 # with `nextron`
-$ nextron init my-app --template custom-build-options
+$ nextron init my-app --example custom-build-options
 
 # with npx
 $ npx create-nextron-app my-app --example custom-build-options

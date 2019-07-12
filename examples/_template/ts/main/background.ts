@@ -23,7 +23,7 @@ if (isProd) {
   });
 
   if (isProd) {
-    await mainWindow.loadURL('app://./home');
+    await mainWindow.loadURL('app://./home.html');
   } else {
     const homeUrl = 'http://localhost:8888/home';
     await mainWindow.loadURL(homeUrl);

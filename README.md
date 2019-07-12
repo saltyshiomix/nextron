@@ -13,12 +13,13 @@
 
 Build an [Electron](https://electronjs.org) + [Next.js](https://nextjs.org) app for speed ⚡
 
-(The screenshot above is a top page of [examples/with-javascript-material-ui](./examples/with-javascript-material-ui).)
+(The screenshot above is a top page of [examples/with-typescript-material-ui](./examples/with-typescript-material-ui).)
 
 ## Support
 
 | nextron | next |
 | --- | --- |
+| `v5.x` | `v9.x` |
 | `v4.x` | `v8.x` |
 | `v2.x` / `v3.x` | `v7.x` |
 | `v1.x` | `v6.x` |
