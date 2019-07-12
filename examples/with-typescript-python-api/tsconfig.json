@@ -18,6 +18,7 @@
     "node_modules",
     "app",
     "dist",
+    "nextron.config.js",
     "renderer/next.config.js",
   ],
 }
