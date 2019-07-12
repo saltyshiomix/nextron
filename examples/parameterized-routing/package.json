@@ -16,6 +16,6 @@
     "path-match": "1.2.4"
   },
   "devDependencies": {
-    "nextron": "^4.13.0"
+    "nextron": "^4.13.1"
   }
 }
