@@ -3,7 +3,6 @@ import Head from 'next/head';
 import Link from 'next/link';
 import gql from 'graphql-tag';
 import { getAppGlobalClient } from '../_app';
-import { css } from './styles.css';
 
 class CalculatorPage extends React.Component {
 
@@ -17,7 +16,25 @@ class CalculatorPage extends React.Component {
         </Head>
 
         <div>
-          <style>{css}</style>
+          <style>{`
+            .container {
+              position: absolute;
+              top: 30%;
+              left: 10px;
+            }
+          
+            .container h2 {
+              font-size: 5rem;
+            }
+          
+            .container a {
+              font-size: 1.4rem;
+            }
+          
+            .container ol {
+              padding-left: 20px;
+            }
+          `}</style>
           <div className="container">
             <h2>Calculator</h2>
             <ol>

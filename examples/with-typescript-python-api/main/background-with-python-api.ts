@@ -8,8 +8,6 @@ import superagent from "superagent";
 //
 import "./background";
 
-const spawn = require("cross-spawn");
-
 const PY_DIST_FOLDER = "pythondist";
 const PY_FOLDER = "python";
 const PY_MODULE = "api"; // without .py suffix
@@ -50,7 +48,7 @@ ipcMain.on("getPythonPort", (event: any) => {
       } else {
         // dialog.showErrorBox("info", "unpackaged");
         if (existsSync(srcPath)) {
-          pyProc = spawn("python", [srcPath, "--apiport", pyPort.toString()]);
+          pyProc = require("cross-spawn")("python", [srcPath, "--apiport", pyPort.toString()]);
         } else {
           dialog.showErrorBox("Error", "Unpackaged python source not found");
         }

@@ -1,7 +1,6 @@
 import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import { css } from './styles.css';
 
 class Page extends React.Component {
   public render() {
@@ -12,7 +11,25 @@ class Page extends React.Component {
         </Head>
 
         <div>
-          <style>{css}</style>
+          <style>{`
+            .container {
+              position: absolute;
+              top: 30%;
+              left: 10px;
+            }
+
+            .container h2 {
+              font-size: 5rem;
+            }
+
+            .container a {
+              font-size: 1.4rem;
+            }
+
+            .container ol {
+              padding-left: 20px;
+            }
+          `}</style>
           <div className="container">
             <h2>Home</h2>
             <ol>
