@@ -4,8 +4,8 @@ module.exports = {
   }),
   exportPathMap: async () => {
     return {
-      '/calculator': { page: '/calculator' },
       '/home': { page: '/home' },
+      '/calculator': { page: '/calculator' },
     };
   },
 };
