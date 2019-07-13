@@ -1,5 +1,5 @@
 module.exports = {
-  webpack: config => {
+  webpack: (config) => {
     config.target = 'electron-renderer';
 
     config.module.rules.push({
@@ -15,7 +15,7 @@ module.exports = {
 
     return config;
   },
-  exportPathMap: async function () {
+  exportPathMap: async () => {
     return {
       '/home': { page: '/home' },
       '/next': { page: '/next' },
