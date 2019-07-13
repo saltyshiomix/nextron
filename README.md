@@ -422,6 +422,8 @@ $ yarn create nextron-app my-app --example with-typescript-material-ui
 
 ### [examples/with-typescript-python-api](./examples/with-typescript-python-api)
 
+(Note: When working with the with-typescript-python-api example, see the example's readme file for python setup details)
+
 ```bash
 # with `nextron`
 $ nextron init my-app --example with-typescript-python-api
@@ -433,7 +435,7 @@ $ npx create-nextron-app my-app --example with-typescript-python-api
 $ yarn create nextron-app my-app --example with-typescript-python-api
 ```
 
-(Note: When working with the with-typescript-python-api example, see the example's readme file for python setup details)
+<p align="center"><img src="https://i.imgur.com/NvpeT9C.png"></p>
 
 ## Develop
 

@@ -1,3 +1,5 @@
+<p align="center"><img src="https://i.imgur.com/NvpeT9C.png"></p>
+
 # Electron + Next.js + Python Flask + GraphQL
 
 This example builds a stand-alone Electron + Next + Python application and installer. On Windows it builds the app into `./dist/win-uppacked/My Nextron Python App.exe` and the installer into `./dist/My Nextron Python App Setup 1.0.0.exe` (OSX and Linux destinations are similar). You can change the name of the application by changing the `name` property in `package.json`.
