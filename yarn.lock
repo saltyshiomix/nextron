@@ -1901,10 +1901,10 @@ node-libs-browser@^2.0.0:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-npx@^1.4.2:
-  version "1.4.2"
-  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-1.4.2.tgz#93e0f02e4a93ecfb7fcaccc81a09b15d35b84eda"
-  integrity sha512-8te0tpSJgOrApfmyP5m803wr0cUY9DjO4ADSpsL75y12po63fbw3OTl2SaVaBQiw8OyjuKpTGSwDvr8P+gtEnw==
+node-npx@^1.5.0:
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-1.5.0.tgz#3e28ea13cdee4e27e3e2a12f4ee65b694088bca5"
+  integrity sha512-w/DfdbkpAuyh9gad8fD8zklBFsMQQ7+mPBGJ5dI3F9CCFwCGyVmR86fcha1oWDrW9MeDKcgDmW977SBbryUdoA==
   dependencies:
     cross-spawn "^6.0.5"
     delay "^4.3.0"
