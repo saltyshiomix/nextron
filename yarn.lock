@@ -753,7 +753,16 @@ create-hmac@^1.1.0, create-hmac@^1.1.2, create-hmac@^1.1.4:
     safe-buffer "^5.0.1"
     sha.js "^2.4.8"
 
-cross-spawn@6.0.5:
+cross-spawn@^5.0.1:
+  version "5.1.0"
+  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
+  integrity sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=
+  dependencies:
+    lru-cache "^4.0.1"
+    shebang-command "^1.2.0"
+    which "^1.2.9"
+
+cross-spawn@^6.0.5:
   version "6.0.5"
   resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-6.0.5.tgz#4a5ec7c64dfae22c3a14124dbacdee846d80cbc4"
   integrity sha512-eTVLrBSt7fjbDygz805pMnstIs2VTBNkRm0qxZd+M7A5XDdxVRWO5MxGBXZhjY4cqLYLdtrGqRf8mBPmzwSpWQ==
@@ -761,15 +770,6 @@ cross-spawn@6.0.5:
     nice-try "^1.0.4"
     path-key "^2.0.1"
     semver "^5.5.0"
-    shebang-command "^1.2.0"
-    which "^1.2.9"
-
-cross-spawn@^5.0.1:
-  version "5.1.0"
-  resolved "https://registry.yarnpkg.com/cross-spawn/-/cross-spawn-5.1.0.tgz#e8bd0efee58fcff6f8f94510a0a554bbfa235449"
-  integrity sha1-6L0O/uWPz/b4+UUQoKVUu/ojVEk=
-  dependencies:
-    lru-cache "^4.0.1"
     shebang-command "^1.2.0"
     which "^1.2.9"
 
@@ -858,10 +858,10 @@ define-property@^2.0.2:
     is-descriptor "^1.0.2"
     isobject "^3.0.1"
 
-delay@4.0.1:
-  version "4.0.1"
-  resolved "https://registry.yarnpkg.com/delay/-/delay-4.0.1.tgz#052120e49bc3617a92e9a6cd9556be2cf23397a0"
-  integrity sha512-wOsrzqdl8Lphi0v3g4FPz7zf0sT4o/u+z+LB+s1q0qzB9xw6QzZbdY9D6IoCojRHIxbaHvpUkLt6//1KB6VNug==
+delay@^4.3.0:
+  version "4.3.0"
+  resolved "https://registry.yarnpkg.com/delay/-/delay-4.3.0.tgz#efeebfb8f545579cb396b3a722443ec96d14c50e"
+  integrity sha512-Lwaf3zVFDMBop1yDuFZ19F9WyGcZcGacsbdlZtWjQmM50tOcMntm1njF/Nb/Vjij3KaSvCF+sEYGKrrjObu2NA==
 
 delegates@^1.0.0:
   version "1.0.0"
@@ -1942,14 +1942,14 @@ node-libs-browser@^2.0.0:
     util "^0.11.0"
     vm-browserify "^1.0.1"
 
-node-npx@^1.3.1:
-  version "1.3.1"
-  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-1.3.1.tgz#1c37a7a959bad089b4d3fa218cada1f18f156f50"
-  integrity sha512-14sshQJYgSXS9wPSO3GqmUPtql/qUEoiRlHKYTJ9yVIkrl5L/n49SgZ6aSrULkMnsvV3lfyhnJV9YR5cqTO34A==
+node-npx@^1.4.0:
+  version "1.4.0"
+  resolved "https://registry.yarnpkg.com/node-npx/-/node-npx-1.4.0.tgz#60bc9ea0259eb40294a01fd65d58ebbae1dfeee1"
+  integrity sha512-QYHeRJ7Xi9tiL01nIqukNiNAW7A/WxUIt8kLeCfYv1COchWew80odhdb372VeP2hPGZI9dGh+o2TLy/yZO6MAQ==
   dependencies:
-    cross-spawn "6.0.5"
-    delay "4.0.1"
-    resolve-as-bin "1.3.0"
+    cross-spawn "^6.0.5"
+    delay "^4.3.0"
+    resolve-as-bin "^2.1.0"
 
 node-pre-gyp@^0.12.0:
   version "0.12.0"
@@ -2432,12 +2432,12 @@ repeat-string@^1.6.1:
   resolved "https://registry.yarnpkg.com/repeat-string/-/repeat-string-1.6.1.tgz#8dcae470e1c88abc2d600fff4a776286da75e637"
   integrity sha1-jcrkcOHIirwtYA//Sndihtp15jc=
 
-resolve-as-bin@1.3.0:
-  version "1.3.0"
-  resolved "https://registry.yarnpkg.com/resolve-as-bin/-/resolve-as-bin-1.3.0.tgz#b967bfbc995906db849d3f71198913af1d2a1a0c"
-  integrity sha512-INEBe/Z6tcRD0iA+DXHmwSgyLa2R1iFBNXxf4IAhqbyKZaLBsWpyHoXppo3jNwnx0dxxR+zQ1RKkGorLvdPvNA==
+resolve-as-bin@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/resolve-as-bin/-/resolve-as-bin-2.1.0.tgz#25638f52e13203eae97125ab26f54082ab98c6e1"
+  integrity sha512-ileUuPIOP+xj+GS/d/EbB2XqRA8T2IeZTFkMggNIW2Mo72VyBMbq+HvIAxdW0ED9D44aEzJwHvUtbMm2PJT5Kw==
   dependencies:
-    cross-spawn "6.0.5"
+    cross-spawn "^6.0.5"
 
 resolve-url@^0.2.1:
   version "0.2.1"
