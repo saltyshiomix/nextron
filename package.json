@@ -35,9 +35,8 @@
     "chalk": "^2.4.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.1.0",
-    "node-npx": "^1.4.0",
+    "node-npx": "^1.4.2",
     "nodemon": "^1.19.1",
-    "ora": "^3.4.0",
     "webpack": "^4.35.3",
     "webpack-merge": "^4.2.1"
   }
