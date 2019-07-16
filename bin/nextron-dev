@@ -31,25 +31,28 @@ if (args['--help']) {
   process.exit(0);
 }
 
+const spawnOptions = {
+  cwd: process.cwd(),
+  stdio: 'inherit',
+};
+
 async function dev() {
   const { npx, npxSync } = require('node-npx');
   const delay = require('delay');
   const webpack = require('webpack');
   const { getWebpackConfig } = require('./webpack/helpers');
-  const cwd = process.cwd();
-  const stdio = 'inherit';
 
   const startRendererProcess = () => {
     let child;
     if (args['--custom-server']) {
       const { existsSync } = require('fs');
       if (existsSync('nodemon.json')) {
-        child = npx('nodemon', [args['--custom-server']], { cwd, stdio });
+        child = npx('nodemon', [args['--custom-server']], spawnOptions);
       } else {
-        child = npx('node', [args['--custom-server']], { cwd, stdio });
+        child = npx('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = npx('next', ['-p', '8888', 'renderer'], { cwd, stdio });
+      child = npx('next', ['-p', '8888', 'renderer'], spawnOptions);
     }
     child.on('close', () => {
       process.exit(0);
@@ -85,7 +88,7 @@ async function dev() {
         await delay(2000);
       }
       isHotReload = true;
-      await npxSync('electron', ['.'], { cwd, stdio });
+      await npxSync('electron', ['.'], spawnOptions);
     }
   });
 }
