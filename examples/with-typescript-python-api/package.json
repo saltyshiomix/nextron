@@ -36,7 +36,7 @@
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-client": "^2.6.3",
     "apollo-link-http": "^1.5.15",
-    "electron": "^5.0.6",
+    "electron": "^5.0.7",
     "electron-builder": "^21.0.15",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.5",

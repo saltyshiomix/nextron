@@ -18,7 +18,7 @@
     "@emotion/core": "^10.0.14",
     "@emotion/styled": "^10.0.14",
     "babel-plugin-emotion": "^10.0.14",
-    "electron": "^5.0.6",
+    "electron": "^5.0.7",
     "electron-builder": "^21.0.15",
     "next": "^9.0.1",
     "nextron": "^5.1.0",
