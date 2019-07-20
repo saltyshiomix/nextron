@@ -15,10 +15,4 @@ module.exports = {
 
     return config;
   },
-  exportPathMap: async () => {
-    return {
-      '/home': { page: '/home' },
-      '/next': { page: '/next' },
-    };
-  },
 };
