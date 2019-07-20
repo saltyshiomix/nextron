@@ -37,7 +37,7 @@
     "fs-extra": "^8.1.0",
     "node-npx": "^1.5.0",
     "nodemon": "^1.19.1",
-    "webpack": "^4.35.3",
+    "webpack": "^4.36.1",
     "webpack-merge": "^4.2.1"
   }
 }
