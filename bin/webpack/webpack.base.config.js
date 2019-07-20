@@ -24,7 +24,20 @@ module.exports = (env) => ({
   module: {
     rules: [
       {
-        test: /\.[j|t]sx?$/,
+        test: /\.jsx?$/,
+        use: {
+          loader: 'babel-loader',
+          options: {
+            cacheDirectory: true,
+          },
+        },
+        exclude: [
+          /node_modules/,
+          resolve(cwd, 'renderer'),
+        ],
+      },
+      {
+        test: /\.tsx?$/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -32,7 +45,10 @@ module.exports = (env) => ({
             presets: ['@babel/preset-typescript'],
           },
         },
-        exclude: [/node_modules/, resolve(cwd, 'renderer')],
+        exclude: [
+          /node_modules/,
+          resolve(cwd, 'renderer'),
+        ],
       },
       {
         test: /\.css$/,
