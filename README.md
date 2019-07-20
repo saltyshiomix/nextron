@@ -328,7 +328,7 @@ $ npx create-nextron-app my-app --example with-javascript-ant-design
 $ yarn create nextron-app my-app --example with-javascript-ant-design
 ```
 
-<p align="center"><img src="https://i.imgur.com/PiEKeIZ.png"></p>
+<p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ### [examples/with-javascript-emotion](./examples/with-javascript-emotion)
 

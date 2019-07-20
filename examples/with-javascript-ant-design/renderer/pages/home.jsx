@@ -1,6 +1,8 @@
 import React from 'react';
-import Head from 'next/head';
+import Head from 'next/Head';
+import Link from 'next/Link';
 import {
+  Layout,
   Form,
   Select,
   InputNumber,
@@ -10,8 +12,14 @@ import {
   Button,
 } from 'antd';
 
-const FormItem = Form.Item;
-const Option = Select.Option;
+import 'antd/dist/antd.css';
+
+const {
+  Header,
+  Content,
+} = Layout;
+const { Item: FormItem } = Form;
+const { Option } = Select;
 
 export default () => (
   <React.Fragment>
@@ -19,7 +27,13 @@ export default () => (
       <title>Home - Nextron (with-javascript-ant-design)</title>
     </Head>
 
-    <div style={{ marginTop: 100 }}>
+    <Header>
+      <Link href="/next">
+        <a>Go to next page</a>
+      </Link>
+    </Header>
+
+    <Content style={{ padding: 48 }}>
       <Form layout='horizontal'>
         <FormItem
           label='Input Number'
@@ -78,6 +92,6 @@ export default () => (
           </Button>
         </FormItem>
       </Form>
-    </div>
+    </Content>
   </React.Fragment>
 );

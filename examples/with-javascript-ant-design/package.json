@@ -15,13 +15,15 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
+    "@babel/core": "^7.5.5",
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.20.3",
+    "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.0",
     "electron": "^5.0.7",
     "electron-builder": "^21.0.15",
     "next": "^9.0.2",
-    "nextron": "^5.2.0",
+    "nextron": "^5.3.0",
     "null-loader": "^3.0.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
