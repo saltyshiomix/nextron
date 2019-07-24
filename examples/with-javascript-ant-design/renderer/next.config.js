@@ -2,6 +2,8 @@ const withCss = require('@zeit/next-css');
 
 module.exports = withCss({
   webpack: (config, { isServer }) => {
+    config.target = 'electron-renderer';
+
     if (isServer) {
       const antStyles = /antd\/.*?\/style\/css.*?/;
       const origExternals = [...config.externals];
@@ -22,6 +24,7 @@ module.exports = withCss({
         use: 'null-loader',
       });
     }
+
     return config
   },
 });
