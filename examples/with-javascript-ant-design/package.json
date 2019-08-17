@@ -17,16 +17,16 @@
   "devDependencies": {
     "@babel/core": "^7.5.5",
     "@zeit/next-css": "^1.0.1",
-    "antd": "^3.20.5",
+    "antd": "^3.21.4",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.0",
-    "electron": "^5.0.8",
-    "electron-builder": "^21.1.5",
-    "next": "^9.0.2",
-    "nextron": "^5.3.3",
+    "electron": "^6.0.2",
+    "electron-builder": "^21.2.0",
+    "next": "^9.0.3",
+    "nextron": "^5.4.0",
     "null-loader": "^3.0.0",
-    "react": "^16.8.6",
-    "react-dom": "^16.8.6",
-    "webpack": "^4.37.0"
+    "react": "^16.9.0",
+    "react-dom": "^16.9.0",
+    "webpack": "^4.39.2"
   }
 }
