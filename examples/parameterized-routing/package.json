@@ -16,8 +16,8 @@
     "path-match": "1.2.4"
   },
   "devDependencies": {
-    "electron": "^5.0.8",
-    "electron-builder": "^21.1.5",
+    "electron": "^6.0.2",
+    "electron-builder": "^21.2.0",
     "next": "^9.0.2",
     "nextron": "^5.3.3",
     "react": "^16.8.6",
