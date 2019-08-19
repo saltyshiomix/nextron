@@ -4,5 +4,7 @@
     "module": "commonjs",
     "outDir": "renderer/.next/production-server/",
   },
-  "include": ["renderer/server/**/*.ts"],
+  "include": [
+    "renderer/server/**/*.ts",
+  ],
 }
