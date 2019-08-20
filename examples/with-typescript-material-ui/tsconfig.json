@@ -19,7 +19,7 @@
     "isolatedModules": true,
   },
   "include": [
-    "next-env.d.ts",
+    "renderer/next-env.d.ts",
     "**/*.ts",
     "**/*.tsx",
   ],
