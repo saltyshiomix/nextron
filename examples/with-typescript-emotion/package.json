@@ -22,7 +22,7 @@
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.8.5",
     "babel-plugin-emotion": "^10.0.16",
-    "electron": "^6.0.2",
+    "electron": "^6.0.3",
     "electron-builder": "^21.2.0",
     "next": "^9.0.3",
     "nextron": "^5.5.0",
