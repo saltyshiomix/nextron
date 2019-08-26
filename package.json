@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "5.5.1",
+  "version": "5.6.0",
   "description": "Build an Electron + Next.js app for speed ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -31,11 +31,15 @@
     "dev": "node dev"
   },
   "dependencies": {
+    "@babel/core": "^7.5.5",
+    "@babel/preset-typescript": "^7.3.3",
     "arg": "^4.1.1",
+    "babel-loader": "^8.0.6",
     "chalk": "^2.4.2",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.1.0",
     "node-npx": "^1.5.0",
+    "nodemon": "^1.19.1",
     "webpack": "^4.39.2",
     "webpack-merge": "^4.2.1"
   }
