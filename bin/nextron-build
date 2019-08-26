@@ -76,9 +76,13 @@ async function build(args) {
 
     log('Building main process');
     await npx('node', [join(__dirname, 'webpack', 'build.production.js')], spawnOptions);
-
-    log('Packaging - please wait a moment');
-    await npx('electron-builder', createBuilderArgs(args), spawnOptions);
+    
+    if (args['--all'] || args['--win'] || args['--mac'] || args['--linux']) {
+      log('Packaging - please wait a moment');
+      await npx('electron-builder', createBuilderArgs(args), spawnOptions);
+    } else {
+      log('Skipping packaging - provide --all or any platform specification arguments if you want to package');
+    }
 
     log('See `dist` directory');
   } catch (err) {
