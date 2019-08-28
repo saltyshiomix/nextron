@@ -1,9 +1,28 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
+import electron from 'electron';
 import fetch from 'isomorphic-unfetch';
 
-const Person = ({ data, status }) => {
-  if (status === 200) {
+// prevent SSR webpacking
+const ipcRenderer = electron.ipcRenderer || false;
+
+const Person = ({ id }) => {
+  const [person, setPerson] = useState({});
+
+  if (ipcRenderer) {
+    useEffect(() => {
+      const fn = async () => {
+        const response = await fetch(`${ipcRenderer.sendSync('get-base-url')}/api/people/${id}`);
+        if (response.status === 200) {
+          setPerson(await response.json());
+        }
+      };
+      fn();
+    }, []);
+  }
+
+  if (person.id) {
     return (
       <React.Fragment>
         <Head>
@@ -23,13 +42,13 @@ const Person = ({ data, status }) => {
           </thead>
           <tbody>
             <tr>
-              <td>{data.name}</td>
-              <td>{data.height}</td>
-              <td>{data.mass}</td>
-              <td>{data.hair_color}</td>
-              <td>{data.skin_color}</td>
-              <td>{data.eye_color}</td>
-              <td>{data.gender}</td>
+              <td>{person.name}</td>
+              <td>{person.height}</td>
+              <td>{person.mass}</td>
+              <td>{person.hair_color}</td>
+              <td>{person.skin_color}</td>
+              <td>{person.eye_color}</td>
+              <td>{person.gender}</td>
             </tr>
           </tbody>
         </table>
@@ -43,20 +62,19 @@ const Person = ({ data, status }) => {
       </React.Fragment>
     );
   }
+
   return (
     <React.Fragment>
       <Head>
         <title>Next - Nextron (api-routes)</title>
       </Head>
-      <p>{data.message}</p>
+      <p>Not Found.</p>
     </React.Fragment>
   );
 };
 
 Person.getInitialProps = async ({ query }) => {
-  const response = await fetch(`http://localhost:8888/api/people/${query.id}`);
-  const data = await response.json();
-  return { data, status: response.status };
+  return { id: query.id };
 }
 
 export default Person;
