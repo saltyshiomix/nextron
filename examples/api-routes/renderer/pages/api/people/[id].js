@@ -1,4 +1,4 @@
-import { people } from '../../../data';
+const people = require('../../../data');
 
 export default ({ query: { id } }, res) => {
   const filtered = people.filter(p => p.id === id);
