@@ -21,7 +21,7 @@
     "electron": "^6.0.5",
     "electron-builder": "^21.2.0",
     "next": "^9.0.5",
-    "nextron": "^5.7.0",
+    "nextron": "^5.7.1",
     "null-loader": "^3.0.0",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
