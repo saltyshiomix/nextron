@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@zeit/next-css": "^1.0.1",
-    "antd": "^3.22.1",
+    "antd": "^3.22.2",
     "babel-plugin-import": "^1.12.0",
     "electron": "^6.0.5",
     "electron-builder": "^21.2.0",
