@@ -8,25 +8,23 @@ if (isProd) {
   serve({ directory: 'app' });
 } else {
   exitOnChange();
-
-  const userDataPath = app.getPath('userData');
-  app.setPath('userData', `${userDataPath} (development)`);
+  app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 
 (async () => {
   // Can't use app.on('ready',...)
-  // https://github.com/sindresorhus/electron-serve/issues/15
+  // See https://github.com/sindresorhus/electron-serve/issues/15
   await app.whenReady();
+
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
   });
 
-  if (isProd) {
-    await mainWindow.loadURL('app://./home.html');
-  } else {
-    const homeUrl = 'http://localhost:8888/home';
-    await mainWindow.loadURL(homeUrl);
+  const homeUrl = isProd ? 'app://./home' : 'http://localhost:8888/home';
+  mainWindow.loadURL(homeUrl);
+
+  if (!isProd) {
     mainWindow.webContents.openDevTools();
   }
 })();
