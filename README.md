@@ -175,6 +175,21 @@ To list all examples, just type the command below:
 $ nextron list
 ```
 
+### [examples/api-routes](./examples/api-routes)
+
+```bash
+# with `nextron`
+$ nextron init my-app --example api-routes
+
+# with npx
+$ npx create-nextron-app my-app --example api-routes
+
+# with yarn
+$ yarn create nextron-app my-app --example api-routes
+```
+
+<p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
+
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 ```bash

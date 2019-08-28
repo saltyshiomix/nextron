@@ -15,16 +15,12 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "@types/next": "^8.0.6",
-    "@types/node": "^12.7.2",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
     "electron": "^6.0.5",
     "electron-builder": "^21.2.0",
+    "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.5",
     "nextron": "^5.8.0",
     "react": "^16.9.0",
-    "react-dom": "^16.9.0",
-    "typescript": "^3.5.3"
+    "react-dom": "^16.9.0"
   }
 }
