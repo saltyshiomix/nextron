@@ -1,4 +1,12 @@
-<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
+<p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
+
+## Caution When Production Build
+
+It works **only development mode**.
+
+We can't use API routes if the api url is `localhost` (the development server itself) when production!
+
+It is possible to use **only external** API urls with Electron.
 
 ## Usage
 
