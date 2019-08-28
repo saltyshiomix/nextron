@@ -21,7 +21,7 @@ if (isProd) {
     height: 600,
   });
 
-  const homeUrl: string = isProd ? 'app://./home' : 'http://localhost:8888/home';
+  const homeUrl: string = isProd ? 'app://./home.html' : 'http://localhost:8888/home';
   mainWindow.loadURL(homeUrl);
 
   if (!isProd) {
