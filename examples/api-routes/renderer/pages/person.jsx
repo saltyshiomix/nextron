@@ -73,8 +73,8 @@ const Person = ({ id }) => {
   );
 };
 
-Person.getInitialProps = async ({ query }) => {
-  return { id: query.id };
+Person.getInitialProps = async ({ query: { id } }) => {
+  return { id };
 }
 
 export default Person;
