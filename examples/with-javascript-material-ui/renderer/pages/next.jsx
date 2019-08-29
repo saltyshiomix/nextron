@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-export default function About() {
+const Next = () => {
   const classes = useStyles({});
 
   return (
@@ -39,4 +39,6 @@ export default function About() {
       </div>
     </React.Fragment>
   );
-}
+};
+
+export default Next;

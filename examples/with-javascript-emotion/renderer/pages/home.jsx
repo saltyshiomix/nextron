@@ -5,7 +5,7 @@ import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { HoverableCard } from '../components/HoverableCard';
 
-export default () => {
+const Home = () => {
   return (
     <React.Fragment>
       <Head>
@@ -25,3 +25,5 @@ export default () => {
     </React.Fragment>
   );
 };
+
+export default Home;
