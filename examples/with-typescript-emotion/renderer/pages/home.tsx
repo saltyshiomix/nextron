@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { HoverableCard } from '../components/HoverableCard';
-import Link from 'next/link';
 
-export default () => {
+const Home = () => {
   return (
     <React.Fragment>
       <Head>
@@ -25,3 +25,5 @@ export default () => {
     </React.Fragment>
   );
 };
+
+export default Home;

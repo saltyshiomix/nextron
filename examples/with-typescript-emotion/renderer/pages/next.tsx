@@ -1,11 +1,11 @@
 import React from 'react';
 import Head from 'next/head';
+import Link from 'next/link';
 import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { bounce, AnimatedCard } from '../components/AnimatedCard';
-import Link from 'next/link';
 
-export default () => {
+const Next = () => {
   return (
     <React.Fragment>
       <Head>
@@ -23,3 +23,5 @@ export default () => {
     </React.Fragment>
   );
 };
+
+export default Next;

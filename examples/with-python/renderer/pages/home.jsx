@@ -1,59 +1,56 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import electron from 'electron';
 import Link from 'next/link';
+import electron from 'electron';
 
-export default class extends React.Component {
-  // prevent SSR webpacking
-  ipcRenderer = electron.ipcRenderer || false;
+// prevent SSR webpacking
+const ipcRenderer = electron.ipcRenderer || false;
 
-  state = {
-    result: 'no python result',
-  };
+const Home = () => {
+  const [result, setResult] = useState('no python result');
 
-  handleClick = () => {
-    if (this.ipcRenderer) {
-      this.ipcRenderer.send('run-python');
+  const onClick = () => {
+    if (ipcRenderer) {
+      ipcRenderer.send('run-python');
     }
   };
 
-  componentDidMount() {
-    if (this.ipcRenderer) {
-      this.ipcRenderer.on('result', (event, data) => {
-        console.log(data);
-        this.setState({
-          result: data,
-        });
+  useEffect(() => {
+    // componentDidMount()
+    if (ipcRenderer) {
+      ipcRenderer.on('result', (event, data) => {
+        setResult(data);
       });
     }
-  }
 
-  componentWillUnmount() {
-    if (this.ipcRenderer) {
-      this.ipcRenderer.removeAllListeners('result');
-    }
-  }
+    return () => {
+      // componentWillUnmount()
+      if (ipcRenderer) {
+        ipcRenderer.removeAllListeners('result');
+      }
+    };
+  }, []);
 
-  render() {
-    return (
-      <React.Fragment>
-        <Head>
-          <title>Home - Nextron (with-python)</title>
-        </Head>
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Home - Nextron (with-python)</title>
+      </Head>
 
-        <div>
-          <p>
-            ⚡ Electron + Next.js + Python ⚡ -
-            <Link href="/next">
-              <a>Go to next page</a>
-            </Link>
-          </p>
-          <img src="/static/logo.png" />
-          <hr />
-          <button onClick={this.handleClick}>Run Python</button>
-          <p>{this.state.result}</p>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+      <div>
+        <p>
+          ⚡ Electron + Next.js + Python ⚡ -
+          <Link href="/next">
+            <a>Go to next page</a>
+          </Link>
+        </p>
+        <img src="/static/logo.png" />
+        <hr />
+        <button onClick={onClick}>Run Python</button>
+        <p>{result}</p>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default Home;

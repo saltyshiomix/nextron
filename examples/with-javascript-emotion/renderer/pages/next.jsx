@@ -5,7 +5,7 @@ import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { bounce, AnimatedCard } from '../components/AnimatedCard';
 
-export default () => {
+const Next = () => {
   return (
     <React.Fragment>
       <Head>
@@ -23,3 +23,5 @@ export default () => {
     </React.Fragment>
   );
 };
+
+export default Next;

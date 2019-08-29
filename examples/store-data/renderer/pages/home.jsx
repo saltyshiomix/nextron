@@ -1,70 +1,60 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import electron from 'electron';
 import Link from 'next/link';
+import electron from 'electron';
 
-export default class extends React.Component {
-  // prevent SSR webpacking
-  ipcRenderer = electron.ipcRenderer || false;
+// prevent SSR webpacking
+const ipcRenderer = electron.ipcRenderer || false;
 
-  state = {
-    message: '',
-    messages: [],
-  };
+const Home = () => {
+  const [message, setMessage] = useState('');
+  const [messages, setMessages] = useState([]);
 
-  handleChange = (e) => {
-    this.setState({
-      message: e.target.value,
-    });
-  };
-
-  handleSubmit = (e) => {
+  const onChange = (e) => setMessage(e.target.value);
+  const onSubmit = (e) => {
     e.preventDefault();
-
-    if (this.ipcRenderer) {
-      this.ipcRenderer.send('add-message', this.state.message);
-      this.setState({
-        message: '',
-        messages: [...this.state.messages, this.state.message],
-      });
+    if (ipcRenderer) {
+      ipcRenderer.send('add-message', message);
+      setMessages([...messages, message]);
+      setMessage(''); // clear the input value
     }
   };
 
-  componentDidMount() {
-    if (this.ipcRenderer) {
-      const messages = this.ipcRenderer.sendSync('get-messages');
-      this.setState({ messages });
-    }
-  }
-
-  render() {
-    const messages = [];
-    for (let i = 0; i < this.state.messages.length; i++) {
-      const message = this.state.messages[i];
-      messages.push(<li key={i}>{message}</li>);
+  useEffect(() => {
+    // componentDidMount()
+    if (ipcRenderer) {
+      setMessages(ipcRenderer.sendSync('get-messages'));
     }
 
-    return (
-      <React.Fragment>
-        <Head>
-          <title>Home - Nextron (store-data)</title>
-        </Head>
-        <div>
-          <p>
-            ⚡ Electron + Next.js ⚡ -
-            <Link href="/next">
-              <a>Go to next page</a>
-            </Link>
-          </p>
-          <img src="/static/logo.png" />
-          <hr />
-          <h2>Enter your message:</h2>
-          <form onSubmit={this.handleSubmit}>
-            <input type="text" value={this.state.message} onChange={this.handleChange} />
-          </form>
-          <ul>{messages}</ul>
-        </div>
-      </React.Fragment>
-    );
-  }
-}
+    return () => {
+      // componentWillUnmount()
+    };
+  }, []);
+
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Home - Nextron (store-data)</title>
+      </Head>
+      <div>
+        <p>
+          ⚡ Electron + Next.js ⚡ -
+          <Link href="/next">
+            <a>Go to next page</a>
+          </Link>
+        </p>
+        <img src="/static/logo.png" />
+        <hr />
+        <h2>Enter your message:</h2>
+        <form onSubmit={onSubmit}>
+          <input type="text" value={message} onChange={onChange} />
+        </form>
+        <ul>
+          {messages.map((m, i) => <li key={i}>{m}</li>)}
+        </ul>
+      </div>
+    </React.Fragment>
+  );
+};
+
+export default Home;

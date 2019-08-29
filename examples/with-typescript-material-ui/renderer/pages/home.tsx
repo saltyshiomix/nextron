@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-export default function Home() {
+const Home = () => {
   const classes = useStyles({});
   const [open, setOpen] = useState(false);
   const handleClose = () => setOpen(false);
@@ -59,4 +59,6 @@ export default function Home() {
       </div>
     </React.Fragment>
   );
-}
+};
+
+export default Home;
