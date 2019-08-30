@@ -35,18 +35,16 @@ if (args['--help']) {
   process.exit(0);
 }
 
-const names = readdirSync(resolve(__dirname, '../examples'));
+let names = readdirSync(resolve(__dirname, '../examples'));
+names = names.filter(name => name.toLowerCase() !== '_template' && name.toLowerCase() !== '.ds_store');
 
 console.log(chalk`
-  {bold.cyan Available examples:}
+  {bold.cyan Available examples (${names.length}):}
 `);
 
-names.forEach((name) => {
-  if (name === '_template') {
-    return;
-  }
-  console.log(chalk`    {bold - ${name}}`);
-});
+for (let i = 0; i < names.length; i++) {
+  console.log(chalk`    {bold - ${names[i]}}`);
+}
 
 console.log(chalk`
   {bold USAGE}
