@@ -285,6 +285,21 @@ $ yarn create nextron-app my-app --example parameterized-routing
 
 <p align="center"><img src="https://i.imgur.com/LvPIeIj.png"></p>
 
+### [examples/remote-require](./examples/remote-require)
+
+```bash
+# with `nextron`
+$ nextron init my-app --example remote-require
+
+# with npx
+$ npx create-nextron-app my-app --example remote-require
+
+# with yarn
+$ yarn create nextron-app my-app --example remote-require
+```
+
+<p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
+
 ### [examples/store-data](./examples/store-data)
 
 ```bash
