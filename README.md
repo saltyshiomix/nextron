@@ -163,11 +163,95 @@ module.exports = {
 };
 ```
 
+### Additional Entries
+
+```js
+module.exports = {
+  webpack: (defaultConfig, env) => Object.assign(defaultConfig, {
+    entry: {
+      // electron main process
+      background: './main/background.js',
+      // we can require `config.js` by using `require('electron').remote.require('./config')`
+      config: './main/config.js',
+    },
+  }),
+};
+```
+
+## Tips
+
+### Next.js' Webpack Processes
+
+There are two webpack processes: a server process and client one.
+
+If we want to use some libraries that don't support SSR(Server Side Rendering), we should check if the current process is whether a server or client:
+
+```jsx
+// pages/home.jsx
+
+import electron from 'electron';
+
+const Home = () => {
+  // we can't use `electron.remote` directly!
+  const remote = electron.remote;
+
+  // we should check like this
+  const remote = electron.remote || false;
+  if (remote) {
+    // we can use `electron.remote`
+    // because this scope is the client webpack process
+  }
+};
+
+export default Home;
+```
+
+### The Basic of React Hooks :)
+
+As mentioned above, we should check if the webpack process is a client because the renderer process is a web client.
+
+So we must use react `state` as follows:
+
+```jsx
+// pages/home.jsx
+
+import electron from 'electron';
+import React, { useState, useEffect } from 'react';
+
+// prevent SSR webpacking
+const remote = electron.remote || false;
+
+const Home = () => {
+  const [config, setConfig] = useState({});
+
+  useEffect(() => {
+    // componentDidMount()
+    if (remote) {
+      // require `./main/config.js` from `./main/background.js`
+      // and set the config
+      setConfig(remote.require('./config').default);
+    }
+
+    return () => {
+      // componentWillUnmount()
+    };
+  }, []);
+
+  return (
+    <React.Fragment>
+      <p>Message: {config.message}</p>
+    </React.Fragment>
+  );
+};
+
+export default Home;
+```
+
 ## Examples
 
 See [examples](./examples) folder for more information.
 
-Or you can start the example app by `nextron init <app-name> --example <example-dirname>`.
+Or we can start the example app by `nextron init <app-name> --example <example-dirname>`.
 
 To list all examples, just type the command below:
 

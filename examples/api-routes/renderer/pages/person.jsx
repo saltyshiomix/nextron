@@ -1,7 +1,7 @@
+import electron from 'electron';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
-import electron from 'electron';
 import fetch from 'isomorphic-unfetch';
 
 // prevent SSR webpacking
