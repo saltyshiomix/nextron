@@ -10,8 +10,9 @@ const ipcRenderer = electron.ipcRenderer || false;
 const Home = () => {
   const [people, setPeople] = useState([]);
 
-  if (ipcRenderer) {
-    useEffect(() => {
+  useEffect(() => {
+    // componentDidMount()
+    if (ipcRenderer) {
       const fn = async () => {
         const response = await fetch(`${ipcRenderer.sendSync('get-base-url')}/api/people`);
         if (response.status === 200) {
@@ -19,8 +20,16 @@ const Home = () => {
         }
       };
       fn();
-    }, []);
-  }
+    }
+
+    return () => {
+      // componentWillUnmount()
+      if (ipcRenderer) {
+        // unregister it
+        ipcRenderer.removeAllListeners('ping-pong');
+      }
+    };
+  }, []);
 
   return (
     <React.Fragment>
