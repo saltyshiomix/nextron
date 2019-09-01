@@ -1,6 +1,6 @@
+import electron from 'electron';
 import React, { useState, useEffect } from 'react';
 import Head from 'next/head';
-import electron from 'electron';
 import fetch from 'isomorphic-unfetch';
 import Person from '../components/Person';
 
