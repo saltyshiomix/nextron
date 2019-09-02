@@ -37,7 +37,7 @@ const spawnOptions = {
 };
 
 async function dev() {
-  const { npx, npxSync } = require('node-npx');
+  const spawn = require('cross-spawn');
   const delay = require('delay');
   const webpack = require('webpack');
   const { getWebpackConfig } = require('./webpack/helpers');
@@ -47,12 +47,12 @@ async function dev() {
     if (args['--custom-server']) {
       const { existsSync } = require('fs');
       if (existsSync('nodemon.json')) {
-        child = npx('nodemon', [args['--custom-server']], spawnOptions);
+        child = spawn('nodemon', [args['--custom-server']], spawnOptions);
       } else {
-        child = npx('node', [args['--custom-server']], spawnOptions);
+        child = spawn('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = npx('next', ['-p', '8888', 'renderer'], spawnOptions);
+      child = spawn('next', ['-p', '8888', 'renderer'], spawnOptions);
     }
     child.on('close', () => {
       process.exit(0);
@@ -88,7 +88,7 @@ async function dev() {
         await delay(2000);
       }
       isHotReload = true;
-      await npxSync('electron', ['.'], spawnOptions);
+      await spawn.sync('electron', ['.'], spawnOptions);
     }
   });
 }
