@@ -21,6 +21,9 @@ $ npx create-nextron-app my-app --example api-routes
 
 # with yarn
 $ yarn create nextron-app my-app --example api-routes
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example api-routes
 ```
 
 ### Use it
@@ -33,7 +36,4 @@ $ yarn (or `npm install`)
 
 # Run development mode
 $ yarn dev (or `npm run dev`)
-
-# Build packages
-$ yarn build (or `npm run build`)
 ```
