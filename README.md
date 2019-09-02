@@ -279,6 +279,8 @@ $ nextron list
 
 ### [examples/api-routes](./examples/api-routes)
 
+<p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
+
 ```bash
 # with `nextron`
 $ nextron init my-app --example api-routes
@@ -293,9 +295,9 @@ $ yarn create nextron-app my-app --example api-routes
 $ pnpx create-nextron-app my-app --example api-routes
 ```
 
-<p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
-
 ### [examples/custom-build-options](./examples/custom-build-options)
+
+<p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
 
 ```bash
 # with `nextron`
@@ -313,6 +315,8 @@ $ pnpx create-nextron-app my-app --example custom-build-options
 
 ### [examples/custom-main-entry](./examples/custom-main-entry)
 
+<p align="center"><img src="https://i.imgur.com/nqpLJI0.png"></p>
+
 ```bash
 # with `nextron`
 $ nextron init my-app --example custom-main-entry
@@ -328,6 +332,8 @@ $ pnpx create-nextron-app my-app --example custom-main-entry
 ```
 
 ### [examples/custom-server](./examples/custom-server)
+
+<p align="center"><img src="https://i.imgur.com/SBTLNhq.png"></p>
 
 ```bash
 # with `nextron`
@@ -345,6 +351,8 @@ $ pnpx create-nextron-app my-app --example custom-server
 
 ### [examples/custom-server-nodemon](./examples/custom-server-nodemon)
 
+<p align="center"><img src="https://i.imgur.com/yTvam6R.png"></p>
+
 ```bash
 # with `nextron`
 $ nextron init my-app --example custom-server-nodemon
@@ -360,6 +368,8 @@ $ pnpx create-nextron-app my-app --example custom-server-nodemon
 ```
 
 ### [examples/custom-server-typescript](./examples/custom-server-typescript)
+
+<p align="center"><img src="https://i.imgur.com/fyjMMmP.png"></p>
 
 ```bash
 # with `nextron`
@@ -377,6 +387,8 @@ $ pnpx create-nextron-app my-app --example custom-server-typescript
 
 ### [examples/ipc-communication](./examples/ipc-communication)
 
+<p align="center"><img src="https://i.imgur.com/kIDlAFT.png"></p>
+
 ```bash
 # with `nextron`
 $ nextron init my-app --example ipc-communication
@@ -391,9 +403,9 @@ $ yarn create nextron-app my-app --example ipc-communication
 $ pnpx create-nextron-app my-app --example ipc-communication
 ```
 
-<p align="center"><img src="https://i.imgur.com/pzWuuyi.png"></p>
-
 ### [examples/parameterized-routing](./examples/parameterized-routing)
+
+<p align="center"><img src="https://i.imgur.com/ICrzX0V.png"></p>
 
 ```bash
 # with `nextron`
@@ -409,9 +421,9 @@ $ yarn create nextron-app my-app --example parameterized-routing
 $ pnpx create-nextron-app my-app --example parameterized-routing
 ```
 
-<p align="center"><img src="https://i.imgur.com/LvPIeIj.png"></p>
-
 ### [examples/remote-require](./examples/remote-require)
+
+<p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
 
 ```bash
 # with `nextron`
@@ -427,9 +439,9 @@ $ yarn create nextron-app my-app --example remote-require
 $ pnpx create-nextron-app my-app --example remote-require
 ```
 
-<p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
-
 ### [examples/store-data](./examples/store-data)
+
+<p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
 
 ```bash
 # with `nextron`
@@ -445,9 +457,9 @@ $ yarn create nextron-app my-app --example store-data
 $ pnpx create-nextron-app my-app --example store-data
 ```
 
-<p align="center"><img src="https://i.imgur.com/2ELjNqK.png"></p>
-
 ### [examples/web-worker](./examples/web-worker)
+
+<p align="center"><img src="https://i.imgur.com/mq6qMPk.png"></p>
 
 ```bash
 # with `nextron`
@@ -463,9 +475,9 @@ $ yarn create nextron-app my-app --example web-worker
 $ pnpx create-nextron-app my-app --example web-worker
 ```
 
-<p align="center"><img src="https://i.imgur.com/7XkhMwQ.png"></p>
-
 ### [examples/with-javascript](./examples/with-javascript)
+
+<p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```bash
 # with `nextron`
@@ -481,9 +493,9 @@ $ yarn create nextron-app my-app --example with-javascript
 $ pnpx create-nextron-app my-app --example with-javascript
 ```
 
-<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
-
 ### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
+
+<p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ```bash
 # with `nextron`
@@ -499,9 +511,9 @@ $ yarn create nextron-app my-app --example with-javascript-ant-design
 $ pnpx create-nextron-app my-app --example with-javascript-ant-design
 ```
 
-<p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
-
 ### [examples/with-javascript-emotion](./examples/with-javascript-emotion)
+
+<p align="center"><img src="https://i.imgur.com/FDRVPr8.png"></p>
 
 ```bash
 # with `nextron`
@@ -517,9 +529,9 @@ $ yarn create nextron-app my-app --example with-javascript-emotion
 $ pnpx create-nextron-app my-app --example with-javascript-emotion
 ```
 
-<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
-
 ### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
+
+<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
 ```bash
 # with `nextron`
@@ -535,9 +547,27 @@ $ yarn create nextron-app my-app --example with-javascript-material-ui
 $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 ```
 
-<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
+### [examples/with-python](./examples/with-python)
+
+<p align="center"><img src="https://i.imgur.com/1hAUjRY.png"></p>
+
+```bash
+# with `nextron`
+$ nextron init my-app --example with-python
+
+# with npx
+$ npx create-nextron-app my-app --example with-python
+
+# with yarn
+$ yarn create nextron-app my-app --example with-python
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-python
+```
 
 ### [examples/with-typescript](./examples/with-typescript)
+
+<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
 
 ```bash
 # with `nextron`
@@ -553,9 +583,9 @@ $ yarn create nextron-app my-app --example with-typescript
 $ pnpx create-nextron-app my-app --example with-typescript
 ```
 
-<p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
-
 ### [examples/with-typescript-emotion](./examples/with-typescript-emotion)
+
+<p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
 
 ```bash
 # with `nextron`
@@ -571,9 +601,9 @@ $ yarn create nextron-app my-app --example with-typescript-emotion
 $ pnpx create-nextron-app my-app --example with-typescript-emotion
 ```
 
-<p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
-
 ### [examples/with-typescript-less](./examples/with-typescript-less)
+
+<p align="center"><img src="https://i.imgur.com/OBtezMb.png"></p>
 
 ```bash
 # with `nextron`
@@ -589,9 +619,9 @@ $ yarn create nextron-app my-app --example with-typescript-less
 $ pnpx create-nextron-app my-app --example with-typescript-less
 ```
 
-<p align="center"><img src="https://i.imgur.com/cWBEdDR.png"></p>
-
 ### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
+
+<p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
 
 ```bash
 # with `nextron`
@@ -607,9 +637,9 @@ $ yarn create nextron-app my-app --example with-typescript-material-ui
 $ pnpx create-nextron-app my-app --example with-typescript-material-ui
 ```
 
-<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
-
 ### [examples/with-typescript-python-api](./examples/with-typescript-python-api)
+
+<p align="center"><img src="https://i.imgur.com/NvpeT9C.png"></p>
 
 (Note: When working with the with-typescript-python-api example, see the example's readme file for python setup details)
 
@@ -626,8 +656,6 @@ $ yarn create nextron-app my-app --example with-typescript-python-api
 # with pnpx
 $ pnpx create-nextron-app my-app --example with-typescript-python-api
 ```
-
-<p align="center"><img src="https://i.imgur.com/NvpeT9C.png"></p>
 
 ## Develop
 
