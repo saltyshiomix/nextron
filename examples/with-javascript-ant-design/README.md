@@ -13,15 +13,28 @@ $ npx create-nextron-app my-app --example with-javascript-ant-design
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-ant-design
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-javascript-ant-design
 ```
 
-### Use it
+### Install Dependencies
+
+Please use `npm install` or `yarn`, not `pnpm install`.
+
+Electron can't handle `pnpm`'s structures of node_modules.
 
 ```bash
 $ cd my-app
 
 # Install dependencies
 $ yarn (or `npm install`)
+```
+
+### Use it
+
+```bash
+$ cd my-app
 
 # Run development mode
 $ yarn dev (or `npm run dev`)
@@ -32,4 +45,4 @@ $ yarn build (or `npm run build`)
 
 ## Resources
 
-http://ant.design
+<https://ant.design>

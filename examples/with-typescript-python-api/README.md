@@ -15,6 +15,9 @@ $ npx create-nextron-app my-app --example with-typescript-python-api
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-python-api
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-python-api
 ```
 
 # Installation

@@ -17,6 +17,8 @@ Build an [Electron](https://electronjs.org) + [Next.js](https://nextjs.org) app 
 
 ## Support
 
+### Nextron vs Next.js
+
 | nextron | next |
 | --- | --- |
 | `v5.x` | `v9.x` |
@@ -30,11 +32,15 @@ Build an [Electron](https://electronjs.org) + [Next.js](https://nextjs.org) app 
 👍 TypeScript frontend/Python backend
 ```
 
+### Package Manager
+
+`npm`, `yarn` and `pnpm` are supported.
+
 ## My Belief for Nextron
 
 1. Show a way of developing desktop apps only web knowledge
 1. Easy to use
-1. Be transparent (Open to OSS developers)
+1. Be transparent and open to OSS developers
 
 ## Otherwise Specified
 
@@ -68,6 +74,9 @@ $ npx create-nextron-app <MY-APP>
 
 # with yarn
 $ yarn create nextron-app <MY-APP>
+
+# with pnpx
+$ pnpx create-nextron-app <MY-APP>
 ```
 
 ### Create Application with Template
@@ -85,7 +94,16 @@ $ npx create-nextron-app <MY-APP> --example with-typescript-material-ui
 
 # with yarn
 $ yarn create nextron-app <MY-APP> --example with-typescript-material-ui
+
+# with pnpx
+$ pnpx create-nextron-app <MY-APP> --example with-typescript-material-ui
 ```
+
+### Install Dependencies
+
+Please use `npm install` or `yarn`, not `pnpm install`.
+
+Electron can't handle `pnpm`'s structures of node_modules.
 
 ### Run Electron with Development Mode
 
@@ -195,7 +213,7 @@ const Home = () => {
   // we can't use `electron.remote` directly!
   const remote = electron.remote;
 
-  // we should check like this
+  // we should check it like this
   const remote = electron.remote || false;
   if (remote) {
     // we can use `electron.remote`
@@ -270,6 +288,9 @@ $ npx create-nextron-app my-app --example api-routes
 
 # with yarn
 $ yarn create nextron-app my-app --example api-routes
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example api-routes
 ```
 
 <p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
@@ -285,6 +306,9 @@ $ npx create-nextron-app my-app --example custom-build-options
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-build-options
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example custom-build-options
 ```
 
 ### [examples/custom-main-entry](./examples/custom-main-entry)
@@ -298,6 +322,9 @@ $ npx create-nextron-app my-app --example custom-main-entry
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-main-entry
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example custom-main-entry
 ```
 
 ### [examples/custom-server](./examples/custom-server)
@@ -311,6 +338,9 @@ $ npx create-nextron-app my-app --example custom-server
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-server
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example custom-server
 ```
 
 ### [examples/custom-server-nodemon](./examples/custom-server-nodemon)
@@ -324,6 +354,9 @@ $ npx create-nextron-app my-app --example custom-server-nodemon
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-server-nodemon
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example custom-server-nodemon
 ```
 
 ### [examples/custom-server-typescript](./examples/custom-server-typescript)
@@ -337,6 +370,9 @@ $ npx create-nextron-app my-app --example custom-server-typescript
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-server-typescript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example custom-server-typescript
 ```
 
 ### [examples/ipc-communication](./examples/ipc-communication)
@@ -350,6 +386,9 @@ $ npx create-nextron-app my-app --example ipc-communication
 
 # with yarn
 $ yarn create nextron-app my-app --example ipc-communication
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example ipc-communication
 ```
 
 <p align="center"><img src="https://i.imgur.com/pzWuuyi.png"></p>
@@ -365,6 +404,9 @@ $ npx create-nextron-app my-app --example parameterized-routing
 
 # with yarn
 $ yarn create nextron-app my-app --example parameterized-routing
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example parameterized-routing
 ```
 
 <p align="center"><img src="https://i.imgur.com/LvPIeIj.png"></p>
@@ -380,6 +422,9 @@ $ npx create-nextron-app my-app --example remote-require
 
 # with yarn
 $ yarn create nextron-app my-app --example remote-require
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example remote-require
 ```
 
 <p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
@@ -395,6 +440,9 @@ $ npx create-nextron-app my-app --example store-data
 
 # with yarn
 $ yarn create nextron-app my-app --example store-data
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example store-data
 ```
 
 <p align="center"><img src="https://i.imgur.com/2ELjNqK.png"></p>
@@ -410,6 +458,9 @@ $ npx create-nextron-app my-app --example web-worker
 
 # with yarn
 $ yarn create nextron-app my-app --example web-worker
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example web-worker
 ```
 
 <p align="center"><img src="https://i.imgur.com/7XkhMwQ.png"></p>
@@ -425,6 +476,9 @@ $ npx create-nextron-app my-app --example with-javascript
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-javascript
 ```
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
@@ -440,6 +494,9 @@ $ npx create-nextron-app my-app --example with-javascript-ant-design
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-ant-design
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-javascript-ant-design
 ```
 
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
@@ -455,6 +512,9 @@ $ npx create-nextron-app my-app --example with-javascript-emotion
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-emotion
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-javascript-emotion
 ```
 
 <p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
@@ -470,6 +530,9 @@ $ npx create-nextron-app my-app --example with-javascript-material-ui
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-material-ui
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-javascript-material-ui
 ```
 
 <p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
@@ -485,6 +548,9 @@ $ npx create-nextron-app my-app --example with-typescript
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript
 ```
 
 <p align="center"><img src="https://i.imgur.com/ZWNgF2C.png"></p>
@@ -500,6 +566,9 @@ $ npx create-nextron-app my-app --example with-typescript-emotion
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-emotion
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-emotion
 ```
 
 <p align="center"><img src="https://i.imgur.com/vE0RZkH.png"></p>
@@ -515,6 +584,9 @@ $ npx create-nextron-app my-app --example with-typescript-less
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-less
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-less
 ```
 
 <p align="center"><img src="https://i.imgur.com/cWBEdDR.png"></p>
@@ -530,6 +602,9 @@ $ npx create-nextron-app my-app --example with-typescript-material-ui
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-material-ui
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-material-ui
 ```
 
 <p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
@@ -547,6 +622,9 @@ $ npx create-nextron-app my-app --example with-typescript-python-api
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-python-api
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-python-api
 ```
 
 <p align="center"><img src="https://i.imgur.com/NvpeT9C.png"></p>
@@ -559,8 +637,10 @@ $ yarn create nextron-app my-app --example with-typescript-python-api
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
 $ yarn
-$ yarn dev # default is examples/with-javascript-emotion
+$ yarn dev # default is examples/with-javascript
 ```
+
+`pnpm` or `npm` are also supported.
 
 ### Developing `examples/*`
 
