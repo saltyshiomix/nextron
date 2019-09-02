@@ -42,26 +42,31 @@ if (args['--help'] || (!args._[0])) {
   process.exit(0);
 }
 
-async function pm() {
+async function detectPackageManager() {
+  const cwd = process.cwd();
   const { promisify } = require('util');
   const { exec: defaultExec } = require('child_process');
+  const exec = promisify(defaultExec);
 
   let pm = 'yarn';
-  const cwd = process.cwd();
-  const exec = promisify(defaultExec);
   try {
     await exec(`${pm} -v`, { cwd });
   } catch (_) {
-    pm = 'npm';
+    pm = 'pnpm';
     try {
       await exec(`${pm} -v`, { cwd });
-    } catch (_) {
-      pm = null;
+    } catch (_ignore) {
+      pm = 'npm';
+      try {
+        await exec(`${pm} -v`, { cwd });
+      } catch (_) {
+        pm = null;
+      }
     }
   }
 
   if (pm === null) {
-    console.log(chalk.red('No available package manager! (`yarn` or `npm` is needed)'));
+    console.log(chalk.red('No available package manager! (`yarn`, `pnpm` or `npm` is needed)'));
     process.exit(1);
   }
 
@@ -92,7 +97,19 @@ async function init(name) {
   }
   await writeJSON(pkg, {...content}, {spaces: 2});
 
-  const cmd = (await pm() === 'yarn') ? 'yarn && yarn dev' : 'npm install && npm run dev';
+  let cmd;
+  const pm = await detectPackageManager();
+  switch (pm) {
+    case 'yarn':
+      cmd = 'yarn && yarn dev';
+      break;
+    case 'pnpm':
+      cmd = 'pnpm install && pnpm run dev';
+      break;
+    default:
+      cmd = 'npm install && npm run dev';
+      break;
+  }
   log(`Run \`${cmd}\` inside of "${name}" to start the app`);
 }
 
