@@ -15,17 +15,17 @@
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.16",
-    "@emotion/styled": "^10.0.15",
+    "@emotion/core": "^10.0.17",
+    "@emotion/styled": "^10.0.17",
     "@types/next": "^8.0.6",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
     "@types/react-dom": "^16.9.0",
-    "babel-plugin-emotion": "^10.0.16",
+    "babel-plugin-emotion": "^10.0.17",
     "electron": "^6.0.7",
     "electron-builder": "^21.2.0",
     "next": "^9.0.5",
-    "nextron": "^5.10.2",
+    "nextron": "^5.10.3",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "typescript": "^3.6.2"

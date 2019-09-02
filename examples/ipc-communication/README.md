@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/pzWuuyi.png"></p>
+<p align="center"><img src="https://i.imgur.com/kIDlAFT.png"></p>
 
 ## Usage
 

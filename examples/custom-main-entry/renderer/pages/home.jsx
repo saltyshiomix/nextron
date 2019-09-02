@@ -6,7 +6,7 @@ const Home = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-javascript)</title>
+        <title>Home - Nextron (custom-main-entry)</title>
       </Head>
       <div>
         <p>
