@@ -4,7 +4,7 @@ const { join } = require('path');
 const { copy, remove } = require('fs-extra');
 const arg = require('arg');
 const chalk = require('chalk');
-const { npxSync: npx } = require('node-npx');
+const spawn = require('cross-spawn');
 const log = require('./logger');
 
 const args = arg({
@@ -69,16 +69,16 @@ async function build(args) {
     log('Building renderer process');
     const outdir = join(cwd, 'renderer/out');
     const appdir = join(cwd, 'app');
-    await npx('next', ['build', join(cwd, 'renderer')], spawnOptions);
-    await npx('next', ['export', join(cwd, 'renderer')], spawnOptions);
+    await spawn.sync('next', ['build', join(cwd, 'renderer')], spawnOptions);
+    await spawn.sync('next', ['export', join(cwd, 'renderer')], spawnOptions);
     await copy(outdir, appdir);
     await remove(outdir);
 
     log('Building main process');
-    await npx('node', [join(__dirname, 'webpack', 'build.production.js')], spawnOptions);
+    await spawn.sync('node', [join(__dirname, 'webpack', 'build.production.js')], spawnOptions);
 
     log('Packaging - please wait a moment');
-    await npx('electron-builder', createBuilderArgs(args), spawnOptions);
+    await spawn.sync('electron-builder', createBuilderArgs(args), spawnOptions);
 
     log('See `dist` directory');
   } catch (err) {
