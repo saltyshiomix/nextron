@@ -6,7 +6,7 @@ const Next = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-javascript)</title>
+        <title>Next - Nextron (custom-main-entry)</title>
       </Head>
       <div>
         <p>
