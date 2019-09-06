@@ -40,7 +40,7 @@
     "delay": "^4.3.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.1.0",
-    "nodemon": "^1.19.1",
+    "nodemon": "^1.19.2",
     "webpack": "^4.39.3",
     "webpack-merge": "^4.2.2"
   }
