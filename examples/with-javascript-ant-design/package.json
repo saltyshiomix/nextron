@@ -18,7 +18,7 @@
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.23.2",
     "babel-loader": "^8.0.6",
-    "babel-plugin-import": "^1.12.0",
+    "babel-plugin-import": "^1.12.1",
     "electron": "^6.0.7",
     "electron-builder": "^21.2.0",
     "next": "^9.0.5",
