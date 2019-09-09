@@ -11,7 +11,7 @@
   },
   "dependencies": {
     "cross-spawn": "^6.0.5",
-    "electron-serve": "^0.3.0",
+    "electron-serve": "^0.4.0",
     "electron-store": "^4.0.0"
   },
   "devDependencies": {
