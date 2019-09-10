@@ -12,16 +12,16 @@
   },
   "dependencies": {
     "electron-serve": "^0.4.0",
-    "electron-store": "^4.0.0"
+    "electron-store": "^5.0.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.17",
     "@emotion/styled": "^10.0.17",
     "babel-plugin-emotion": "^10.0.17",
-    "electron": "^6.0.7",
+    "electron": "^6.0.8",
     "electron-builder": "^21.2.0",
     "next": "^9.0.5",
-    "nextron": "^5.10.5",
+    "nextron": "^5.10.6",
     "react": "^16.9.0",
     "react-dom": "^16.9.0"
   }
