@@ -23,7 +23,7 @@
   "dependencies": {
     "cross-spawn": "^6.0.5",
     "electron-serve": "^0.4.0",
-    "electron-store": "^4.0.0",
+    "electron-store": "^5.0.0",
     "superagent": "^5.1.0"
   },
   "devDependencies": {
