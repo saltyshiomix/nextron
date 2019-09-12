@@ -15,7 +15,7 @@
     "electron-store": "^5.0.0"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.4.1",
+    "@material-ui/core": "^4.4.2",
     "@types/next": "^8.0.6",
     "@types/node": "^12.7.2",
     "@types/react": "^16.9.2",
@@ -23,9 +23,9 @@
     "electron": "^6.0.8",
     "electron-builder": "^21.2.0",
     "next": "^9.0.5",
-    "nextron": "^5.10.6",
+    "nextron": "^5.10.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "typescript": "^3.6.2"
+    "typescript": "^3.6.3"
   }
 }

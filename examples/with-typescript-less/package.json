@@ -24,10 +24,10 @@
     "electron-builder": "^21.2.0",
     "less": "^3.10.3",
     "next": "^9.0.5",
-    "nextron": "^5.10.6",
+    "nextron": "^5.10.7",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "typescript": "^3.6.2",
+    "typescript": "^3.6.3",
     "webpack": "^4.39.3"
   }
 }
