@@ -5,11 +5,11 @@ import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
 import theme from '../components/theme';
 
-class MyApp extends App {
+export default class MyApp extends App {
   componentDidMount() {
     const jssStyles = document.querySelector('#jss-server-side');
     if (jssStyles) {
-      jssStyles.parentNode.removeChild(jssStyles);
+      jssStyles.parentNode!.removeChild(jssStyles);
     }
   }
 
@@ -28,5 +28,3 @@ class MyApp extends App {
     );
   }
 }
-
-export default MyApp;
