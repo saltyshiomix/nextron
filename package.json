@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "5.10.7",
+  "version": "5.10.8",
   "description": "⚡ Electron + Next.js ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
@@ -41,7 +41,7 @@
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.1.0",
     "nodemon": "^1.19.2",
-    "webpack": "^4.39.3",
+    "webpack": "^4.40.1",
     "webpack-merge": "^4.2.2"
   }
 }
