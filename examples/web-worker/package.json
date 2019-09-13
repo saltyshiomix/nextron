@@ -23,7 +23,7 @@
     "nextron": "^5.10.8",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
-    "webpack": "^4.40.1",
+    "webpack": "^4.40.2",
     "worker-loader": "^2.0.0"
   }
 }

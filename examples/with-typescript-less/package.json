@@ -28,6 +28,6 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "typescript": "^3.6.3",
-    "webpack": "^4.40.1"
+    "webpack": "^4.40.2"
   }
 }
