@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "5.10.7",
+  "version": "5.10.8",
   "description": "⚡ Electron + Next.js ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
