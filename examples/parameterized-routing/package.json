@@ -13,7 +13,7 @@
   "dependencies": {
     "electron-serve": "^0.4.0",
     "electron-store": "^5.0.0",
-    "path-match": "1.2.4"
+    "path-match": "^1.2.4"
   },
   "devDependencies": {
     "electron": "^6.0.9",
