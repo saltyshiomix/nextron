@@ -17,7 +17,7 @@
   "devDependencies": {
     "@babel/core": "^7.6.0",
     "@zeit/next-css": "^1.0.1",
-    "antd": "^3.23.2",
+    "antd": "^3.23.3",
     "babel-loader": "^8.0.6",
     "babel-plugin-import": "^1.12.1",
     "electron": "^6.0.9",
