@@ -1,6 +1,9 @@
 import { app } from 'electron';
 import serve from 'electron-serve';
-import { createWindow, exitOnChange } from './helpers';
+import {
+  createWindow,
+  exitOnChange,
+} from './helpers';
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -12,8 +15,6 @@ if (isProd) {
 }
 
 (async () => {
-  // Can't use app.on('ready',...)
-  // See https://github.com/sindresorhus/electron-serve/issues/15
   await app.whenReady();
 
   const mainWindow = createWindow('main', {
@@ -22,7 +23,7 @@ if (isProd) {
   });
 
   const homeUrl = isProd ? 'app://./home.html' : 'http://localhost:8888/home';
-  mainWindow.loadURL(homeUrl);
+  await mainWindow.loadURL(homeUrl);
 
   if (!isProd) {
     mainWindow.webContents.openDevTools();
