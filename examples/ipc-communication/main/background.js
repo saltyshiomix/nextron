@@ -23,13 +23,14 @@ ipcMain.on('ping-pong-sync', (event, arg) => {
   // Can't use app.on('ready',...)
   // https://github.com/sindresorhus/electron-serve/issues/15
   await app.whenReady();
+
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
   });
 
   const homeUrl = isProd ? 'app://./home.html' : 'http://localhost:8888/home';
-  mainWindow.loadURL(homeUrl);
+  await mainWindow.loadURL(homeUrl);
 
   if (!isProd) {
     mainWindow.webContents.openDevTools();

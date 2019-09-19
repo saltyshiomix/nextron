@@ -28,7 +28,7 @@ ipcMain.on('get-base-url', (event) => {
   });
 
   const homeUrl = isProd ? 'app://./home.html' : 'http://localhost:8888/home';
-  mainWindow.loadURL(homeUrl);
+  await mainWindow.loadURL(homeUrl);
 
   if (!isProd) {
     mainWindow.webContents.openDevTools();
