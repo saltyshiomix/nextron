@@ -12,18 +12,6 @@ if (isProd) {
   app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 
-ipcMain.on('run-python', (event, arg) => {
-  const spawn = require('cross-spawn');
-  let result;
-  if (process.env.NODE_ENV === 'production') {
-    const executable = join(__dirname, process.platform === 'win32' ? 'hello.exe' : 'hello');
-    result = spawn.sync(executable, [], { encoding: 'utf8' });
-  } else {
-    result = spawn.sync('python', [join(__dirname, '../python/hello.py')], { encoding: 'utf8' });
-  }
-  event.sender.send('result', result.stdout);
-});
-
 (async () => {
   // Can't use app.on('ready',...)
   // See https://github.com/sindresorhus/electron-serve/issues/15
@@ -44,4 +32,16 @@ ipcMain.on('run-python', (event, arg) => {
 
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+ipcMain.on('run-python', (event, arg) => {
+  const spawn = require('cross-spawn');
+  let result;
+  if (process.env.NODE_ENV === 'production') {
+    const executable = join(__dirname, process.platform === 'win32' ? 'hello.exe' : 'hello');
+    result = spawn.sync(executable, [], { encoding: 'utf8' });
+  } else {
+    result = spawn.sync('python', [join(__dirname, '../python/hello.py')], { encoding: 'utf8' });
+  }
+  event.sender.send('result', result.stdout);
 });

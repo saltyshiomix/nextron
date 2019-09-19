@@ -11,12 +11,6 @@ if (isProd) {
   app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 
-const baseUrl = isProd ? 'app://./' : 'http://localhost:8888';
-
-ipcMain.on('get-base-url', (event) => {
-  event.returnValue = baseUrl;
-});
-
 (async () => {
   // Can't use app.on('ready',...)
   // https://github.com/sindresorhus/electron-serve/issues/15
@@ -37,4 +31,8 @@ ipcMain.on('get-base-url', (event) => {
 
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+ipcMain.on('get-base-url', (event) => {
+  event.returnValue = isProd ? 'app://./' : 'http://localhost:8888';
 });

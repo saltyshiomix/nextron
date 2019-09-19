@@ -11,14 +11,6 @@ if (isProd) {
   app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 
-ipcMain.on('ping-pong', (event, arg) => {
-  event.sender.send('ping-pong', `[ipcMain] "${arg}" received asynchronously.`);
-});
-
-ipcMain.on('ping-pong-sync', (event, arg) => {
-  event.returnValue = `[ipcMain] "${arg}" received synchronously.`;
-});
-
 (async () => {
   // Can't use app.on('ready',...)
   // https://github.com/sindresorhus/electron-serve/issues/15
@@ -39,4 +31,12 @@ ipcMain.on('ping-pong-sync', (event, arg) => {
 
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+ipcMain.on('ping-pong', (event, arg) => {
+  event.sender.send('ping-pong', `[ipcMain] "${arg}" received asynchronously.`);
+});
+
+ipcMain.on('ping-pong-sync', (event, arg) => {
+  event.returnValue = `[ipcMain] "${arg}" received synchronously.`;
 });

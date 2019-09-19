@@ -12,18 +12,6 @@ if (isProd) {
   app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 
-const store = new Store({ name: 'messages' });
-
-ipcMain.on('get-messages', (event, arg) => {
-  event.returnValue = store.get('messages') || [];
-});
-
-ipcMain.on('add-message', (event, arg) => {
-  const messages = store.get('messages') || [];
-  messages.push(arg);
-  store.set('messages', messages);
-});
-
 (async () => {
   // Can't use app.on('ready',...)
   // https://github.com/sindresorhus/electron-serve/issues/15
@@ -44,4 +32,16 @@ ipcMain.on('add-message', (event, arg) => {
 
 app.on('window-all-closed', () => {
   app.quit();
+});
+
+const store = new Store({ name: 'messages' });
+
+ipcMain.on('get-messages', (event, arg) => {
+  event.returnValue = store.get('messages') || [];
+});
+
+ipcMain.on('add-message', (event, arg) => {
+  const messages = store.get('messages') || [];
+  messages.push(arg);
+  store.set('messages', messages);
 });
