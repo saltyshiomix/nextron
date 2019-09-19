@@ -13,8 +13,6 @@ if (isProd) {
 }
 
 (async () => {
-  // Can't use app.on('ready',...)
-  // https://github.com/sindresorhus/electron-serve/issues/15
   await app.whenReady();
 
   const mainWindow = createWindow('main', {
