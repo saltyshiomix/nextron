@@ -1,9 +1,16 @@
 import React from 'react';
 import Document, { Head, Main, NextScript } from 'next/document';
 import { ServerStyleSheets } from '@material-ui/styles';
-import theme from '../components/theme';
+import {
+  initializeFonts,
+  theme,
+} from '../lib';
 
 class MyDocument extends Document {
+  componentDidMount() {
+    initializeFonts();
+  }
+
   render() {
     return (
       <html lang="en" dir="ltr">
@@ -11,7 +18,6 @@ class MyDocument extends Document {
           <meta charSet="utf-8" />
           <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width, shrink-to-fit=no" />
           <meta name="theme-color" content={theme.palette.primary.main} />
-          <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500&display=swap" />
         </Head>
         <body>
           <Main />
