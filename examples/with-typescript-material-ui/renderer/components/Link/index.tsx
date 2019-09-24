@@ -32,7 +32,7 @@ interface LinkPropsBase {
 
 type LinkProps = LinkPropsBase & NextComposedProps & Omit<MuiLinkProps, 'ref'>;
 
-function Link(props: LinkProps) {
+function LinkComponent(props: LinkProps) {
   const {
     activeClassName = 'active',
     className: classNameProps,
@@ -52,6 +52,6 @@ function Link(props: LinkProps) {
   return <MuiLink component={NextComposed} className={className} ref={innerRef} {...other} />;
 }
 
-export default React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
-  <Link {...props} innerRef={ref} />
+export const Link = React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
+  <LinkComponent {...props} innerRef={ref} />
 ));

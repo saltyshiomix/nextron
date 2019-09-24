@@ -14,7 +14,7 @@ const NextComposed = React.forwardRef(function NextComposed(props, ref) {
   );
 });
 
-function Link(props) {
+function LinkComponent(props) {
   const {
     activeClassName = 'active',
     className: classNameProps,
@@ -34,4 +34,4 @@ function Link(props) {
   return <MuiLink component={NextComposed} className={className} ref={innerRef} {...other} />;
 }
 
-export default React.forwardRef((props, ref) => <Link {...props} innerRef={ref} />);
+export const Link = React.forwardRef((props, ref) => <LinkComponent {...props} innerRef={ref} />);

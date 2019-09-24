@@ -3,7 +3,7 @@ import App from 'next/app';
 import Head from 'next/head';
 import { ThemeProvider } from '@material-ui/styles';
 import CssBaseline from '@material-ui/core/CssBaseline';
-import theme from '../components/theme';
+import { theme } from '../lib';
 
 export default class MyApp extends App {
   componentDidMount() {
@@ -18,7 +18,7 @@ export default class MyApp extends App {
     return (
       <React.Fragment>
         <Head>
-          <title>ARK</title>
+          <title>with-typescript-material-ui</title>
         </Head>
         <ThemeProvider theme={theme}>
           <CssBaseline />
