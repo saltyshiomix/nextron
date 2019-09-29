@@ -19,7 +19,7 @@
     "electron-builder": "^21.2.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.0.7",
-    "nextron": "^5.11.0",
+    "nextron": "^5.11.1",
     "react": "^16.10.1",
     "react-dom": "^16.10.1"
   }
