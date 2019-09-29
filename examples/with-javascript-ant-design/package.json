@@ -19,14 +19,14 @@
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.23.4",
     "babel-loader": "^8.0.6",
-    "babel-plugin-import": "^1.12.1",
+    "babel-plugin-import": "^1.12.2",
     "electron": "^6.0.10",
     "electron-builder": "^21.2.0",
-    "next": "^9.0.6",
-    "nextron": "^5.11.0",
+    "next": "9.0.6",
+    "nextron": "^5.11.1",
     "null-loader": "^3.0.0",
-    "react": "^16.9.0",
-    "react-dom": "^16.9.0",
+    "react": "^16.10.1",
+    "react-dom": "^16.10.1",
     "webpack": "^4.41.0"
   }
 }
