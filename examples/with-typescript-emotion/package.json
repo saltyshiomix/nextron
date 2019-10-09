@@ -15,13 +15,13 @@
     "electron-store": "^5.0.0"
   },
   "devDependencies": {
-    "@emotion/core": "^10.0.17",
+    "@emotion/core": "^10.0.21",
     "@emotion/styled": "^10.0.17",
     "@types/next": "^8.0.6",
     "@types/node": "^12.7.12",
     "@types/react": "^16.9.5",
     "@types/react-dom": "^16.9.1",
-    "babel-plugin-emotion": "^10.0.17",
+    "babel-plugin-emotion": "^10.0.21",
     "electron": "^6.0.12",
     "electron-builder": "^21.2.0",
     "next": "^9.1.1",
