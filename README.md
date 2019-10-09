@@ -331,6 +331,24 @@ $ yarn create nextron-app my-app --example custom-main-entry
 $ pnpx create-nextron-app my-app --example custom-main-entry
 ```
 
+### [examples/custom-renderer-port](./examples/custom-renderer-port)
+
+<p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
+
+```bash
+# with `nextron`
+$ nextron init my-app --example custom-renderer-port
+
+# with npx
+$ npx create-nextron-app my-app --example custom-renderer-port
+
+# with yarn
+$ yarn create nextron-app my-app --example custom-renderer-port
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example custom-renderer-port
+```
+
 ### [examples/custom-server](./examples/custom-server)
 
 <p align="center"><img src="https://i.imgur.com/SBTLNhq.png"></p>

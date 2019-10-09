@@ -15,15 +15,17 @@
     "electron-store": "^5.0.0"
   },
   "devDependencies": {
-    "@material-ui/core": "^4.4.3",
+    "@babel/core": "^7.6.3",
+    "@material-ui/core": "^4.5.0",
     "@zeit/next-css": "^1.0.1",
-    "electron": "^6.0.10",
+    "babel-loader": "^8.0.6",
+    "electron": "^6.0.12",
     "electron-builder": "^21.2.0",
     "fontfaceobserver": "^2.1.0",
-    "next": "9.0.6",
-    "nextron": "^5.11.1",
-    "react": "^16.10.1",
-    "react-dom": "^16.10.1",
+    "next": "^9.1.1",
+    "nextron": "^5.12.0",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2",
     "typeface-roboto": "^0.0.75",
     "url-loader": "^2.1.0",
     "webpack": "^4.41.0"

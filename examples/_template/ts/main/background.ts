@@ -22,10 +22,11 @@ if (isProd) {
     height: 600,
   });
 
-  const homeUrl: string = isProd ? 'app://./home.html' : 'http://localhost:8888/home';
-  await mainWindow.loadURL(homeUrl);
-
-  if (!isProd) {
+  if (isProd) {
+    await mainWindow.loadURL('app://./home.html');
+  } else {
+    const port = process.argv[2];
+    await mainWindow.loadURL(`http://localhost:${port}/home`);
     mainWindow.webContents.openDevTools();
   }
 })();
