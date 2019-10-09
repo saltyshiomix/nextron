@@ -1,0 +1,25 @@
+{
+  "private": true,
+  "name": "my-nextron-app",
+  "description": "My application description",
+  "version": "1.0.0",
+  "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
+  "main": "app/background.js",
+  "scripts": {
+    "dev": "nextron --port 1234",
+    "build": "nextron build",
+    "postinstall": "electron-builder install-app-deps"
+  },
+  "dependencies": {
+    "electron-serve": "^0.4.0",
+    "electron-store": "^5.0.0"
+  },
+  "devDependencies": {
+    "electron": "^6.0.12",
+    "electron-builder": "^21.2.0",
+    "next": "^9.1.1",
+    "nextron": "^5.11.1",
+    "react": "^16.10.2",
+    "react-dom": "^16.10.2"
+  }
+}
