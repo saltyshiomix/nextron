@@ -16,9 +16,9 @@
   },
   "devDependencies": {
     "@types/next": "^8.0.6",
-    "@types/node": "^12.7.5",
-    "@types/react": "^16.9.2",
-    "@types/react-dom": "^16.9.0",
+    "@types/node": "^12.7.12",
+    "@types/react": "^16.9.5",
+    "@types/react-dom": "^16.9.1",
     "@zeit/next-less": "^1.0.1",
     "electron": "^6.0.12",
     "electron-builder": "^21.2.0",
