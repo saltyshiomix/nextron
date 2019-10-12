@@ -24,7 +24,7 @@ if (new Set(['--version', '-v']).has(cmd)) {
 
 if (new Set(['--help', '-h']).has(cmd)) {
   console.log(chalk`
-    {bold.cyan nextron} - Build an Electron + Next.js app for speed ⚡
+    {bold.cyan nextron} - ⚡ Electron + NEXT.js ⚡
 
     {bold USAGE}
 
