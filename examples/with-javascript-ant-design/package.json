@@ -15,7 +15,7 @@
     "electron-store": "^5.0.0"
   },
   "devDependencies": {
-    "@babel/core": "^7.6.3",
+    "@babel/core": "^7.6.4",
     "@zeit/next-css": "^1.0.1",
     "antd": "^3.23.6",
     "babel-loader": "^8.0.6",
@@ -23,10 +23,10 @@
     "electron": "^6.0.12",
     "electron-builder": "^21.2.0",
     "next": "^9.1.1",
-    "nextron": "^5.12.0",
+    "nextron": "^5.12.1",
     "null-loader": "^3.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "webpack": "^4.41.0"
+    "webpack": "^4.41.1"
   }
 }

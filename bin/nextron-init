@@ -25,7 +25,7 @@ if (args['--version']) {
 
 if (args['--help'] || (!args._[0])) {
   console.log(chalk`
-    {bold.cyan nextron} - Build an Electron + Next.js app for speed ⚡
+    {bold.cyan nextron} - ⚡ Electron + NEXT.js ⚡
 
     {bold USAGE}
 
@@ -104,7 +104,7 @@ async function init(name) {
       cmd = 'yarn && yarn dev';
       break;
     case 'pnpm':
-      cmd = 'pnpm install && pnpm run dev';
+      cmd = 'npm install && npm run dev';
       break;
     default:
       cmd = 'npm install && npm run dev';

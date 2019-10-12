@@ -1,7 +1,7 @@
 {
   "name": "nextron",
-  "version": "5.12.0",
-  "description": "⚡ Electron + Next.js ⚡",
+  "version": "5.12.1",
+  "description": "⚡ Electron + NEXT.js ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
   "license": "MIT",
@@ -31,7 +31,7 @@
     "dev": "node dev"
   },
   "dependencies": {
-    "@babel/core": "^7.6.3",
+    "@babel/core": "^7.6.4",
     "@babel/preset-typescript": "^7.6.0",
     "arg": "^4.1.1",
     "babel-loader": "^8.0.6",
@@ -43,7 +43,7 @@
     "fs-extra": "^8.1.0",
     "nodemon": "^1.19.3",
     "style-loader": "^1.0.0",
-    "webpack": "^4.41.0",
+    "webpack": "^4.41.1",
     "webpack-merge": "^4.2.2"
   }
 }

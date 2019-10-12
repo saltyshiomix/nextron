@@ -20,7 +20,7 @@ if (args['--version']) {
 
 if (args['--help']) {
   console.log(chalk`
-    {bold.cyan nextron} - Build an Electron + Next.js app for speed ⚡
+    {bold.cyan nextron} - ⚡ Electron + NEXT.js ⚡
 
     {bold USAGE}
 
@@ -51,7 +51,7 @@ console.log(chalk`
 
     {bold $} {cyan nextron init} {underline my-app} [--example {underline example_folder_name}]
 
-  If you want to use "{underline with-typescript-emotion}", just type the command below:
+  If you want to use "{underline with-typescript-material-ui}", just type the command below:
 
-    {bold $} nextron init my-app --example {underline with-typescript-emotion}
+    {bold $} nextron init my-app --example {underline with-typescript-material-ui}
 `);
