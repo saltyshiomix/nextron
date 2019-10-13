@@ -3,11 +3,11 @@
   <a aria-label="AWESOME NEXTJS" href="https://github.com/unicodeveloper/awesome-nextjs">
     <img src="https://img.shields.io/badge/AWESOME%20%20NEXTJS-b37fb3.svg?style=for-the-badge">
   </a>
-  <a aria-label="MADE BY NEXTRON" href="https://github.com/zeit">
+  <a aria-label="MADE BY NEXTRON" href="https://github.com/saltyshiomix/nextron">
     <img src="https://img.shields.io/badge/MADE%20BY%20NEXTRON-000000.svg?style=for-the-badge&labelColor=000000">
   </a>
 </p>
-<p>
+<p align="center">
   <a aria-label="NPM version" href="https://www.npmjs.com/package/nextron">
     <img src="https://img.shields.io/npm/v/nextron.svg?style=for-the-badge&labelColor=000000">
   </a>
