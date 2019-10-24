@@ -5,9 +5,7 @@ module.exports = {
   exportPathMap: async () => {
     return {
       '/home': { page: '/home' },
-      '/blog/first': { page: '/blog', query: { id: 'first' } },
-      '/blog/second': { page: '/blog', query: { id: 'second' } },
-      '/blog/last': { page: '/blog', query: { id: 'last' } },
+      '/blog': { page: '/blog' },
     };
   },
 };
