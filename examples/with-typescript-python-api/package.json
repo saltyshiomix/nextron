@@ -45,8 +45,8 @@
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.1.1",
     "nextron": "^5.12.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
     "shx": "^0.3.2",
     "typescript": "^3.6.3"
   }
