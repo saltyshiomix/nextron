@@ -41,7 +41,7 @@
     "delay": "^4.3.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.1.0",
-    "nodemon": "^1.19.3",
+    "nodemon": "^1.19.4",
     "style-loader": "^1.0.0",
     "webpack": "^4.41.1",
     "webpack-merge": "^4.2.2"
