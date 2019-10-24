@@ -16,18 +16,18 @@
   },
   "devDependencies": {
     "@types/next": "^8.0.6",
-    "@types/node": "^12.7.12",
-    "@types/react": "^16.9.5",
-    "@types/react-dom": "^16.9.1",
+    "@types/node": "^12.11.6",
+    "@types/react": "^16.9.9",
+    "@types/react-dom": "^16.9.2",
     "@zeit/next-less": "^1.0.1",
-    "electron": "^6.0.12",
+    "electron": "^7.0.0",
     "electron-builder": "^21.2.0",
     "less": "^3.10.3",
     "next": "^9.1.1",
-    "nextron": "^5.12.1",
-    "react": "^16.10.2",
-    "react-dom": "^16.10.2",
-    "typescript": "^3.6.3",
-    "webpack": "^4.41.1"
+    "nextron": "^5.12.2",
+    "react": "^16.11.0",
+    "react-dom": "^16.11.0",
+    "typescript": "^3.6.4",
+    "webpack": "^4.41.2"
   }
 }
