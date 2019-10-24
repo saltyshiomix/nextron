@@ -19,9 +19,6 @@
     <img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="join us in spectrum">
   </a>
 </p>
-<p align="center">
-  ⚡ Electron + NEXT.js ⚡
-</p>
 
 ## Support
 
