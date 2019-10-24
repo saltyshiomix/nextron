@@ -2,16 +2,16 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Blog = ({ id }) => {
-  const title = `My ${id} blog post`;
+const codec = require('json-url')('lzw');
 
+const Blog = ({ id, title }) => {
   return (
     <React.Fragment>
       <Head>
         <title>{title} - Nextron (parameterized-routing)</title>
       </Head>
       <div>
-        <h1>{title}</h1>
+        <h1>{title} (id: {id})</h1>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
           dolore magna aliqua.
@@ -28,8 +28,8 @@ const Blog = ({ id }) => {
   );
 };
 
-Blog.getInitialProps = async ({ query: { id } }) => {
-  return { id };
+Blog.getInitialProps = async ({ query }) => {
+  return codec.decompress(query.props);
 };
 
 export default Blog;
