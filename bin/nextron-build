@@ -60,8 +60,7 @@ async function build(args) {
   // Ignore missing dependencies
   process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
   const { getUserConfig } = require('./webpack/helpers');
-  const srcDir = getUserConfig().srcDir || 'renderer';
-  const distDir = getUserConfig().distDir || 'app';
+  const rendererSrcDir = getUserConfig().rendererSrc || 'renderer';
 
   try {
     log('Clearing previous builds');
@@ -70,10 +69,10 @@ async function build(args) {
     await remove(join(cwd, 'renderer', '.next'));
 
     log('Building renderer process');
-    const outdir = join(cwd, srcDir, 'out');
-    const appdir = join(cwd, distDir);
-    await spawn.sync('next', ['build', join(cwd, srcDir)], spawnOptions);
-    await spawn.sync('next', ['export', join(cwd, srcDir)], spawnOptions);
+    const outdir = join(cwd, rendererSrcDir, 'out');
+    const appdir = join(cwd, 'app');
+    await spawn.sync('next', ['build', join(cwd, rendererSrcDir)], spawnOptions);
+    await spawn.sync('next', ['export', join(cwd, rendererSrcDir)], spawnOptions);
     await copy(outdir, appdir);
     await remove(outdir);
 

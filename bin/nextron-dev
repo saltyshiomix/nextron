@@ -45,7 +45,7 @@ async function dev() {
   const delay = require('delay');
   const webpack = require('webpack');
   const { getWebpackConfig, getUserConfig } = require('./webpack/helpers');
-  const srcDir = getUserConfig().srcDir || 'renderer';
+  const rendererSrcDir = getUserConfig().rendererSrc || 'renderer';
 
 
   const startRendererProcess = () => {
@@ -58,7 +58,7 @@ async function dev() {
         child = spawn('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = spawn('next', ['-p', rendererPort, srcDir], spawnOptions);
+      child = spawn('next', ['-p', rendererPort, rendererSrcDir], spawnOptions);
     }
     child.on('close', () => {
       process.exit(0);

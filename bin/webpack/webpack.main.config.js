@@ -5,7 +5,9 @@ const config = require('./webpack.base.config');
 
 const cwd = process.cwd();
 const isTS = existsSync(resolve(cwd, 'tsconfig.json'));
-const entry = resolve(cwd, `main/background.${isTS ? 'ts' : 'js'}`);
+const mainSrcDir = getUserConfig().mainSrc || 'main';
+
+const entry = resolve(cwd, mainSrcDir, `background.${isTS ? 'ts' : 'js'}`);
 
 module.exports = (env) =>
   merge(config(env), {
