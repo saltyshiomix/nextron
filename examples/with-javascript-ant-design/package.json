@@ -27,6 +27,6 @@
     "null-loader": "^3.0.0",
     "react": "^16.10.2",
     "react-dom": "^16.10.2",
-    "webpack": "^4.41.1"
+    "webpack": "^4.41.2"
   }
 }

@@ -43,7 +43,7 @@
     "fs-extra": "^8.1.0",
     "nodemon": "^1.19.4",
     "style-loader": "^1.0.0",
-    "webpack": "^4.41.1",
+    "webpack": "^4.41.2",
     "webpack-merge": "^4.2.2"
   }
 }
