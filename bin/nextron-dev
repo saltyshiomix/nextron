@@ -8,10 +8,12 @@ process.env.NODE_ENV = process.env.NODE_ENV || 'development';
 const args = arg({
   '--help': Boolean,
   '--version': Boolean,
+  '--dir': String,
   '--port': Number,
   '--custom-server': String,
   '-h': '--help',
   '-v': '--version',
+  '-d': '--dir',
   '-p': '--port',
   '-c': '--custom-server',
 });
@@ -33,6 +35,7 @@ if (args['--help']) {
   process.exit(0);
 }
 
+const rendererDir = args['--dir'] || 'renderer';
 const rendererPort = args['--port'] || 8888;
 
 const spawnOptions = {
@@ -56,7 +59,7 @@ async function dev() {
         child = spawn('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = spawn('next', ['-p', rendererPort, 'renderer'], spawnOptions);
+      child = spawn('next', ['-p', rendererPort, rendererDir], spawnOptions);
     }
     child.on('close', () => {
       process.exit(0);
