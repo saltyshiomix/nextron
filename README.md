@@ -1,27 +1,27 @@
 <p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 <p align="center">
   <a aria-label="NPM version" href="https://www.npmjs.com/package/nextron">
-    <img src="https://img.shields.io/npm/v/nextron.svg?style=for-the-badge&labelColor=000000">
+    <img src="https://img.shields.io/npm/v/nextron.svg?style=for-the-badge&labelColor=000000" alt="NPM version">
   </a>
   <a aria-label="NPM downloads" href="https://www.npmjs.com/package/nextron">
-    <img src="https://img.shields.io/npm/dt/nextron.svg?style=for-the-badge&labelColor=000000">
+    <img src="https://img.shields.io/npm/dt/nextron.svg?style=for-the-badge&labelColor=000000" alt="NPM downloads">
   </a>
-  <a aria-label="join us in spectrum" href="https://spectrum.chat/nextron">
-    <img alt="" src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000">
-  </a>
+  <img src="https://img.shields.io/github/license/saltyshiomix/nextron.svg?style=for-the-badge&labelColor=000000" alt="Package License (MIT)">
 </p>
 <p align="center">
   <a aria-label="AWESOME NEXTJS" href="https://github.com/unicodeveloper/awesome-nextjs">
-    <img src="https://img.shields.io/badge/AWESOME%20%20NEXTJS-b37fb3.svg?style=for-the-badge">
+    <img src="https://img.shields.io/badge/AWESOME%20%20NEXTJS-b37fb3.svg?style=for-the-badge" alt="AWESOME NEXTJS">
   </a>
   <a aria-label="MADE BY NEXTRON" href="https://github.com/saltyshiomix/nextron">
-    <img src="https://img.shields.io/badge/MADE%20BY%20NEXTRON-000000.svg?style=for-the-badge&labelColor=000000">
+    <img src="https://img.shields.io/badge/MADE%20BY%20NEXTRON-000000.svg?style=for-the-badge&labelColor=000000" alt="MADE BY NEXTRON">
+  </a>
+  <a aria-label="join us in spectrum" href="https://spectrum.chat/nextron">
+    <img src="https://img.shields.io/badge/Join%20the%20community-blueviolet.svg?style=for-the-badge&labelColor=000000" alt="join us in spectrum">
   </a>
 </p>
-
-Build an [Electron](https://electronjs.org) + [Next.js](https://nextjs.org) app for speed ⚡
-
-(The screenshot above is a top page of [examples/with-javascript-material-ui](./examples/with-javascript-material-ui).)
+<p align="center">>
+  ⚡ Electron + NEXT.js ⚡
+</p>
 
 ## Support
 
