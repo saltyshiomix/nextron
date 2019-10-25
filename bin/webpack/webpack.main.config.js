@@ -2,6 +2,7 @@ const { existsSync } = require('fs');
 const { resolve } = require('path');
 const { smart: merge } = require('webpack-merge');
 const config = require('./webpack.base.config');
+const { getUserConfig } = require('./helpers');
 
 const cwd = process.cwd();
 const isTS = existsSync(resolve(cwd, 'tsconfig.json'));
