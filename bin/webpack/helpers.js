@@ -1,7 +1,7 @@
 const { existsSync } = require('fs');
 const { join } = require('path');
 const { smart: merge } = require('webpack-merge');
-const config = require('./webpack.base.config');
+const config = require('./webpack.config');
 
 const cwd = process.cwd();
 const ext = existsSync(join(cwd, 'tsconfig.json')) ? '.ts' : '.js';
