@@ -44,9 +44,8 @@ async function dev() {
   const spawn = require('cross-spawn');
   const delay = require('delay');
   const webpack = require('webpack');
-  const { getWebpackConfig, getUserConfig } = require('./webpack/helpers');
-  const rendererSrcDir = getUserConfig().rendererSrc || 'renderer';
-
+  const { getNextronConfig, getWebpackConfig } = require('./webpack/helpers');
+  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
 
   const startRendererProcess = () => {
     let child;
