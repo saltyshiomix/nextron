@@ -44,7 +44,8 @@ async function dev() {
   const spawn = require('cross-spawn');
   const delay = require('delay');
   const webpack = require('webpack');
-  const { getWebpackConfig } = require('./webpack/helpers');
+  const { getNextronConfig, getWebpackConfig } = require('./webpack/helpers');
+  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
 
   const startRendererProcess = () => {
     let child;
@@ -56,7 +57,7 @@ async function dev() {
         child = spawn('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = spawn('next', ['-p', rendererPort, 'renderer'], spawnOptions);
+      child = spawn('next', ['-p', rendererPort, rendererSrcDir], spawnOptions);
     }
     child.on('close', () => {
       process.exit(0);
