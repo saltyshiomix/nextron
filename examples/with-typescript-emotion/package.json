@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "electron-serve": "^0.4.0",
-    "electron-store": "^5.0.0"
+    "electron-store": "^5.1.0"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.22",
