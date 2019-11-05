@@ -8,7 +8,6 @@ async function detectPackageManager() {
   const { exec: defaultExec } = require('child_process');
   const cwd = process.cwd();
   const exec = promisify(defaultExec);
-
   let pm = 'yarn';
   try {
     await exec(`${pm} -v`, { cwd });
@@ -21,16 +20,14 @@ async function detectPackageManager() {
       try {
         await exec(`${pm} -v`, { cwd });
       } catch (_) {
-        pm = null;
+        pm = undefined;
       }
     }
   }
-
-  if (pm === null) {
+  if (pm === undefined) {
     console.log(chalk.red('No available package manager! (`yarn`, `pnpm` or `npm` is needed)'));
     process.exit(1);
   }
-
   return pm;
 }
 
