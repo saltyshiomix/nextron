@@ -33,7 +33,7 @@ const cliConfig = (src) => ({
   ...coreConfig,
 });
 
-const fileConfig = (src, dist) => ({
+const config = (src, dist) => ({
   input: src,
   output: {
     file: dist,
@@ -48,5 +48,5 @@ export default [
   cliConfig('lib/nextron-dev.ts'),
   cliConfig('lib/nextron-build.ts'),
   cliConfig('lib/nextron-list.ts'),
-  fileConfig('lib/webpack/build.production.ts', 'bin/webpack/build.production.js'),
+  config('lib/webpack/build.production.ts', 'bin/webpack/build.production.js'),
 ];
