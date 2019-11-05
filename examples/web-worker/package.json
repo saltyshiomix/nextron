@@ -12,15 +12,15 @@
   },
   "dependencies": {
     "electron-serve": "^0.4.0",
-    "electron-store": "^5.0.0"
+    "electron-store": "^5.1.0"
   },
   "devDependencies": {
     "@babel/core": "^7.6.4",
     "babel-loader": "^8.0.6",
-    "electron": "^7.0.0",
-    "electron-builder": "^21.2.0",
-    "next": "^9.1.1",
-    "nextron": "^5.12.4",
+    "electron": "^7.0.1",
+    "electron-builder": "^22.1.0",
+    "next": "^9.1.2",
+    "nextron": "^5.12.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "webpack": "^4.41.2",

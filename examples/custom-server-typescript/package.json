@@ -12,20 +12,20 @@
   },
   "dependencies": {
     "electron-serve": "^0.4.0",
-    "electron-store": "^5.0.0"
+    "electron-store": "^5.1.0"
   },
   "devDependencies": {
     "@types/next": "^8.0.6",
     "@types/node": "^12.11.6",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
-    "electron": "^7.0.0",
-    "electron-builder": "^21.2.0",
-    "next": "^9.1.1",
-    "nextron": "^5.12.4",
+    "electron": "^7.0.1",
+    "electron-builder": "^22.1.0",
+    "next": "^9.1.2",
+    "nextron": "^5.12.5",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
-    "ts-node": "^8.3.0",
+    "ts-node": "^8.4.1",
     "typescript": "^3.6.4"
   }
 }
