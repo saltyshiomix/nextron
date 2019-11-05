@@ -82,15 +82,7 @@ async function build(args) {
     await spawn.sync('node', [join(__dirname, 'webpack/build.production.js')], spawnOptions);
 
     log('Packaging - please wait a moment');
-    await spawn.sync(
-      'electron-builder',
-      [
-        '--config',
-        args['--config'] || 'electron-builder.yml',
-        [...createBuilderArgs(args)],
-      ],
-      spawnOptions,
-    );
+    await spawn.sync('electron-builder', createBuilderArgs(args), spawnOptions);
 
     log('See `dist` directory');
   } catch (err) {
@@ -105,6 +97,10 @@ async function build(args) {
 
 function createBuilderArgs(args) {
   let results = [];
+  if (args['--config']) {
+    results.push('--config');
+    results.push(args['--config'] || 'electron-builder.yml');
+  }
   if (args['--all']) {
     results.push('-wml');
     results.push(...createArchArgs(args));
