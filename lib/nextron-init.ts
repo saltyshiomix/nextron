@@ -1,10 +1,11 @@
-#!/usr/bin/env node
+import fs from 'fs-extra';
+import path from 'path';
+import { execSync } from 'child_process';
+import arg from 'arg';
+import chalk from 'chalk';
+import log from './logger';
 
-const { existsSync, copy, readJSON, writeJSON } = require('fs-extra');
-const { resolve } = require('path');
-const arg = require('arg');
-const chalk = require('chalk');
-const log = require('./logger');
+const cwd = process.cwd();
 
 const args = arg({
   '--help': Boolean,
@@ -18,7 +19,7 @@ const args = arg({
 });
 
 if (args['--version']) {
-  const pkg = require(resolve(__dirname, '../package.json'));
+  const pkg = require(path.resolve(__dirname, '../package.json'));
   console.log(`nextron v${pkg.version}`);
   process.exit(0);
 }
@@ -42,63 +43,54 @@ if (args['--help'] || (!args._[0])) {
   process.exit(0);
 }
 
-async function detectPackageManager() {
-  const cwd = process.cwd();
-  const { promisify } = require('util');
-  const { exec: defaultExec } = require('child_process');
-  const exec = promisify(defaultExec);
-
-  let pm = 'yarn';
+function detectPackageManager() {
+  let pm: string | undefined = 'yarn';
   try {
-    await exec(`${pm} -v`, { cwd });
+    execSync(`${pm} -v`, { cwd });
   } catch (_) {
     pm = 'pnpm';
     try {
-      await exec(`${pm} -v`, { cwd });
+      execSync(`${pm} -v`, { cwd });
     } catch (_ignore) {
       pm = 'npm';
       try {
-        await exec(`${pm} -v`, { cwd });
+        execSync(`${pm} -v`, { cwd });
       } catch (_) {
-        pm = null;
+        pm = undefined;
       }
     }
   }
-
-  if (pm === null) {
+  if (pm === undefined) {
     console.log(chalk.red('No available package manager! (`yarn`, `pnpm` or `npm` is needed)'));
     process.exit(1);
   }
-
   return pm;
 }
 
 const example = args['--template'] || args['--example'] || 'with-javascript-material-ui';
-if (!existsSync(resolve(__dirname, `../examples/${example}`))) {
+if (!fs.existsSync(path.resolve(__dirname, `../examples/${example}`))) {
   console.log(chalk.red(`Not found examples/${example}`));
   process.exit(1);
 }
 
-async function init(name) {
-  const cwd = process.cwd();
-
+function init(name: string) {
   log('Copy template');
-  const ext = existsSync(resolve(__dirname, `../examples/${example}/tsconfig.json`)) ? 'ts' : 'js';
-  await copy(resolve(__dirname, `../examples/_template/gitignore.txt`), resolve(cwd, `${name}/.gitignore`));
-  await copy(resolve(__dirname, `../examples/_template/${ext}`), resolve(cwd, name));
-  await copy(resolve(__dirname, `../examples/${example}`), resolve(cwd, name));
+  const ext = fs.existsSync(path.resolve(__dirname, `../examples/${example}/tsconfig.json`)) ? 'ts' : 'js';
+  fs.copySync(path.resolve(__dirname, `../examples/_template/gitignore.txt`), path.join(cwd, `${name}/.gitignore`));
+  fs.copySync(path.resolve(__dirname, `../examples/_template/${ext}`), path.join(cwd, name));
+  fs.copySync(path.resolve(__dirname, `../examples/${example}`), path.join(cwd, name));
 
   log('Set meta information');
-  const pkg = resolve(cwd, `${name}/package.json`);
-  const content = await readJSON(pkg);
+  const pkg = path.resolve(cwd, `${name}/package.json`);
+  const content = fs.readJSONSync(pkg);
   content.name = name;
   if (process.env.NODE_ENV === 'testing') {
     content.devDependencies.nextron = cwd;
   }
-  await writeJSON(pkg, {...content}, {spaces: 2});
+  fs.writeJSONSync(pkg, {...content}, {spaces: 2});
 
-  let cmd;
-  const pm = await detectPackageManager();
+  let cmd: string;
+  const pm = detectPackageManager();
   switch (pm) {
     case 'yarn':
       cmd = 'yarn && yarn dev';

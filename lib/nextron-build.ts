@@ -1,11 +1,11 @@
-#!/usr/bin/env node
-
-const { join } = require('path');
-const { copy, remove } = require('fs-extra');
-const arg = require('arg');
-const chalk = require('chalk');
-const spawn = require('cross-spawn');
-const log = require('./logger');
+import fs from 'fs-extra';
+import path from 'path';
+import { SpawnSyncOptions } from 'child_process';
+import arg from 'arg';
+import chalk from 'chalk';
+import spawn from 'cross-spawn';
+import { getNextronConfig } from './webpack/helpers';
+import log from './logger';
 
 const args = arg({
   '--help': Boolean,
@@ -53,36 +53,36 @@ if (args['--help']) {
 }
 
 const cwd = process.cwd();
-const spawnOptions = {
+const spawnOptions: SpawnSyncOptions = {
   cwd,
   stdio: 'inherit',
 };
 
-async function build(args) {
+async function build() {
   // Ignore missing dependencies
   process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
-  const { getNextronConfig } = require('./webpack/helpers');
+
   const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
 
   try {
     log('Clearing previous builds');
-    await remove(join(cwd, 'app'));
-    await remove(join(cwd, 'dist'));
-    await remove(join(cwd, 'renderer', '.next'));
+    fs.removeSync(path.join(cwd, 'app'));
+    fs.removeSync(path.join(cwd, 'dist'));
+    fs.removeSync(path.join(cwd, 'renderer', '.next'));
 
     log('Building renderer process');
-    const outdir = join(cwd, rendererSrcDir, 'out');
-    const appdir = join(cwd, 'app');
-    await spawn.sync('next', ['build', join(cwd, rendererSrcDir)], spawnOptions);
-    await spawn.sync('next', ['export', join(cwd, rendererSrcDir)], spawnOptions);
-    await copy(outdir, appdir);
-    await remove(outdir);
+    const outdir = path.join(cwd, rendererSrcDir, 'out');
+    const appdir = path.join(cwd, 'app');
+    spawn.sync('next', ['build', path.join(cwd, rendererSrcDir)], spawnOptions);
+    spawn.sync('next', ['export', path.join(cwd, rendererSrcDir)], spawnOptions);
+    fs.copySync(outdir, appdir);
+    fs.removeSync(outdir);
 
     log('Building main process');
-    await spawn.sync('node', [join(__dirname, 'webpack/build.production.js')], spawnOptions);
+    spawn.sync('node', [path.join(__dirname, 'webpack/build.production.js')], spawnOptions);
 
     log('Packaging - please wait a moment');
-    await spawn.sync('electron-builder', createBuilderArgs(args), spawnOptions);
+    spawn.sync('electron-builder', createBuilderArgs(), spawnOptions);
 
     log('See `dist` directory');
   } catch (err) {
@@ -95,7 +95,7 @@ async function build(args) {
   }
 }
 
-function createBuilderArgs(args) {
+function createBuilderArgs() {
   let results = [];
   if (args['--config']) {
     results.push('--config');
@@ -103,17 +103,17 @@ function createBuilderArgs(args) {
   }
   if (args['--all']) {
     results.push('-wml');
-    results.push(...createArchArgs(args));
+    results.push(...createArchArgs());
   } else {
     args['--win'] && results.push('--win');
     args['--mac'] && results.push('--mac');
     args['--linux'] && results.push('--linux');
-    results.push(...createArchArgs(args));
+    results.push(...createArchArgs());
   }
   return results;
 }
 
-function createArchArgs(args) {
+function createArchArgs() {
   let archArgs = [];
   args['--x64'] && archArgs.push('--x64');
   args['--ia32'] && archArgs.push('--ia32');
@@ -122,4 +122,4 @@ function createArchArgs(args) {
   return archArgs;
 }
 
-build(args);
+build();

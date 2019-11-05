@@ -1,11 +1,11 @@
-const { resolve } = require('path');
-const webpack = require('webpack');
-const FriendlyErrorsWebpackPlugin = require('friendly-errors-webpack-plugin');
+import path from 'path';
+import webpack from 'webpack';
+import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 
 const cwd = process.cwd();
-const externals = require(resolve(cwd, 'package.json')).dependencies;
+const externals = require(path.join(cwd, 'package.json')).dependencies;
 
-module.exports = (env) => ({
+export default (env: 'development' | 'production'): webpack.Configuration => ({
   mode: env,
   target: 'electron-main',
   node: {
@@ -16,7 +16,7 @@ module.exports = (env) => ({
   devtool: 'source-map',
   resolve: {
     extensions: ['.js', '.jsx', '.json', '.ts', '.tsx'],
-    modules: [resolve(cwd, 'app'), 'node_modules'],
+    modules: [path.join(cwd, 'app'), 'node_modules'],
   },
   output: {
     libraryTarget: 'commonjs2',
@@ -33,7 +33,7 @@ module.exports = (env) => ({
         },
         exclude: [
           /node_modules/,
-          resolve(cwd, 'renderer'),
+          path.join(cwd, 'renderer'),
         ],
       },
       {
@@ -47,7 +47,7 @@ module.exports = (env) => ({
         },
         exclude: [
           /node_modules/,
-          resolve(cwd, 'renderer'),
+          path.join(cwd, 'renderer'),
         ],
       },
       {

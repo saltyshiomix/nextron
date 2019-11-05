@@ -1,9 +1,18 @@
-#!/usr/bin/env node
-
-const arg = require('arg');
-const chalk = require('chalk');
-
-process.env.NODE_ENV = process.env.NODE_ENV || 'development';
+import fs from 'fs';
+import path from 'path';
+import {
+  ChildProcess,
+  SpawnSyncOptions,
+} from 'child_process';
+import arg from 'arg';
+import chalk from 'chalk';
+import spawn from 'cross-spawn';
+import delay from 'delay';
+import webpack from 'webpack';
+import {
+  getNextronConfig,
+  getWebpackConfig,
+} from './webpack/helpers';
 
 const args = arg({
   '--help': Boolean,
@@ -35,23 +44,18 @@ if (args['--help']) {
 
 const rendererPort = args['--port'] || 8888;
 
-const spawnOptions = {
+const spawnOptions: SpawnSyncOptions = {
   cwd: process.cwd(),
   stdio: 'inherit',
 };
 
 async function dev() {
-  const spawn = require('cross-spawn');
-  const delay = require('delay');
-  const webpack = require('webpack');
-  const { getNextronConfig, getWebpackConfig } = require('./webpack/helpers');
   const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
 
   const startRendererProcess = () => {
-    let child;
+    let child: ChildProcess;
     if (args['--custom-server']) {
-      const { existsSync } = require('fs');
-      if (existsSync('nodemon.json')) {
+      if (fs.existsSync('nodemon.json')) {
         child = spawn('nodemon', [args['--custom-server']], spawnOptions);
       } else {
         child = spawn('node', [args['--custom-server']], spawnOptions);
@@ -65,11 +69,11 @@ async function dev() {
     return child;
   };
 
-  let watching;
-  let rendererProcess;
+  let watching: webpack.Watching;
+  let rendererProcess: ChildProcess;
   const killWholeProcess = () => {
     if (watching) {
-      watching.close();
+      watching.close(() => {});
     }
     if (rendererProcess) {
       rendererProcess.kill();
@@ -93,7 +97,7 @@ async function dev() {
         await delay(2000);
       }
       isHotReload = true;
-      await spawn.sync('electron', ['.', rendererPort], spawnOptions);
+      spawn.sync('electron', ['.', `${rendererPort}`], spawnOptions);
     }
   });
 }

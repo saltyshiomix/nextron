@@ -1,8 +1,7 @@
-#!/usr/bin/env node
-
-const { resolve } = require('path');
-const spawn = require('cross-spawn');
-const chalk = require('chalk');
+import fs from 'fs';
+import path from 'path';
+import spawn from 'cross-spawn';
+import chalk from 'chalk';
 
 const defaultCommand = 'dev';
 const commands = new Set([
@@ -13,11 +12,11 @@ const commands = new Set([
 ]);
 
 let cmd = process.argv[2];
-let args = [];
-let nodeArgs = [];
+let args: string[] = [];
+let nodeArgs: string[] = [];
 
 if (new Set(['--version', '-v']).has(cmd)) {
-  const pkg = require(resolve(__dirname, '../package.json'));
+  const pkg = require(path.resolve(__dirname, '../package.json'));
   console.log(`nextron v${pkg.version}`);
   process.exit(0);
 }
@@ -50,11 +49,11 @@ if (commands.has(cmd)) {
 const defaultEnv = cmd === 'dev' ? 'development' : 'production';
 process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv;
 
-const cli = resolve(__dirname, `nextron-${cmd}`);
+const cli = path.join(__dirname, `nextron-${cmd}`);
 
 const startProcess = () => {
-  const proc = spawn('node', [...nodeArgs, ...[cli], ...args], { stdio: 'inherit', customFds: [0, 1, 2] });
-  proc.on('close', (code, signal) => {
+  const proc = spawn('node', [...nodeArgs, cli, ...args], { stdio: 'inherit' });
+  proc.on('close', (code: number, signal: string) => {
     if (code !== null) {
       process.exit(code);
     }
