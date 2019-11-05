@@ -18,11 +18,13 @@ const args = arg({
   '--ia32': Boolean,
   '--armv7l': Boolean,
   '--arm64': Boolean,
+  '--config': String,
   '-h': '--help',
   '-v': '--version',
   '-w': '--win',
   '-m': '--mac',
   '-l': '--linux',
+  '-c': '--config',
 });
 
 if (args['--help']) {
@@ -80,7 +82,15 @@ async function build(args) {
     await spawn.sync('node', [join(__dirname, 'webpack/build.production.js')], spawnOptions);
 
     log('Packaging - please wait a moment');
-    await spawn.sync('electron-builder', createBuilderArgs(args), spawnOptions);
+    await spawn.sync(
+      'electron-builder',
+      [
+        '--config',
+        args['--config'] || 'electron-builder.yml',
+        [...createBuilderArgs(args)],
+      ],
+      spawnOptions,
+    );
 
     log('See `dist` directory');
   } catch (err) {
