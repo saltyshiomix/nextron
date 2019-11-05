@@ -20,7 +20,7 @@
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.0.6",
     "electron": "^7.0.1",
-    "electron-builder": "^21.2.0",
+    "electron-builder": "^22.1.0",
     "fontfaceobserver": "^2.1.0",
     "next": "^9.1.1",
     "nextron": "^5.12.4",
