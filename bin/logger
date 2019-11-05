@@ -1,9 +1,0 @@
-#!/usr/bin/env node
-
-const chalk = require('chalk');
-
-const log = (text) => {
-  console.log(chalk`{cyan [nextron]} ${text}`);
-};
-
-module.exports = log;
