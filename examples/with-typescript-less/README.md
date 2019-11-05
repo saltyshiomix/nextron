@@ -4,7 +4,7 @@
 
 ### Create an App
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript-less
 
@@ -20,25 +20,22 @@ $ pnpx create-nextron-app my-app --example with-typescript-less
 
 ### Install Dependencies
 
-Please use `npm install` or `yarn`, not `pnpm install`.
-
-Electron can't handle `pnpm`'s structures of node_modules.
-
-```bash
+```zsh
 $ cd my-app
 
-# Install dependencies
+# using yarn or npm
 $ yarn (or `npm install`)
+
+# using pnpm
+$ pnpm install --shamefully-hoist
 ```
 
 ### Use it
 
-```bash
-$ cd my-app
+```zsh
+# development mode
+$ yarn dev (or `npm run dev` or `pnpm run dev`)
 
-# Run development mode
-$ yarn dev (or `npm run dev`)
-
-# Build packages
-$ yarn build (or `npm run build`)
+# production build
+$ yarn build (or `npm run build` or `pnpm run build`)
 ```
