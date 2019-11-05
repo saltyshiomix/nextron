@@ -6,7 +6,7 @@ This example builds a stand-alone Electron + Next + Python application and insta
 
 # Create an App
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript-python-api
 
@@ -26,7 +26,7 @@ Tested with Anaconda Python v3, should work fine with Anaconda Python v2.
 
 NOTE: On windows you will need to [install anaconda](https://www.anaconda.com/download/) (which installs python and pip) and potentially configure environment variables to add python and/or pip to the path if you don't have it installed already.
 
-```bash
+```zsh
 # start with the obvious step you always need to do with node projects
 npm install
 
@@ -39,7 +39,7 @@ npm rebuild
 
 **VERY IMPORTANT:** Windows users, if you use VS Code or use Powershell as your shell, you need to type `cmd` inside the VS Code terminal or inside your Powershell window before running the conda commands because conda's environment switcher will not work under Powershell (much of it works, but the critical parts that don't work, like activating evironments, fail silently while appearing to work),
 
-```bash
+```zsh
 # install Anaconda if not already installed
 
 cmd # Only needed if you're coding on Windows in VS Code or Powershell, as discussed above
@@ -60,7 +60,7 @@ Traceback (most recent call last):
 ModuleNotFoundError: No module named 'graphene'
 ```
 
-```bash
+```zsh
 # use pyinstaller to convert the source code in python/ into an executable in pythondist/, build the electron app, and run electron-packager to package the electron app as a single file
 npm run build # must be run in the same shell you just conda activated
 

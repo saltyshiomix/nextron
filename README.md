@@ -31,7 +31,7 @@
 
 ### Package Manager
 
-`npm`, `yarn` and `pnpm` are supported.
+`npm`, `yarn` and `pnpm >= v4` are supported.
 
 ## My Belief for Nextron
 
@@ -51,7 +51,7 @@
 
 ### Install
 
-```bash
+```zsh
 $ npm install --global nextron@latest
 ```
 
@@ -59,13 +59,13 @@ $ npm install --global nextron@latest
 
 To create `<MY-APP>`, just run the command below:
 
-```bash
+```zsh
 $ nextron init <MY-APP>
 ```
 
 Or, you can use a `create-nextron-app` command without installing the `nextron` command globally:
 
-```bash
+```zsh
 # with npx
 $ npx create-nextron-app <MY-APP>
 
@@ -82,7 +82,7 @@ You can use `examples/*` apps as a template.
 
 To create the `examples/with-typescript-material-ui` app, run the command below:
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init <MY-APP> --example with-typescript-material-ui
 
@@ -97,10 +97,6 @@ $ pnpx create-nextron-app <MY-APP> --example with-typescript-material-ui
 ```
 
 ### Install Dependencies
-
-Please use `npm install` or `yarn`, not `pnpm install`.
-
-Electron can't handle `pnpm`'s structures of node_modules.
 
 ### Run Electron with Development Mode
 
@@ -275,7 +271,7 @@ Or we can start the example app by `nextron init <app-name> --example <example-d
 
 To list all examples, just type the command below:
 
-```bash
+```zsh
 $ nextron list
 ```
 
@@ -283,7 +279,7 @@ $ nextron list
 
 <p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example api-routes
 
@@ -301,7 +297,7 @@ $ pnpx create-nextron-app my-app --example api-routes
 
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example custom-build-options
 
@@ -319,7 +315,7 @@ $ pnpx create-nextron-app my-app --example custom-build-options
 
 <p align="center"><img src="https://i.imgur.com/nqpLJI0.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example custom-main-entry
 
@@ -337,7 +333,7 @@ $ pnpx create-nextron-app my-app --example custom-main-entry
 
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example custom-renderer-port
 
@@ -355,7 +351,7 @@ $ pnpx create-nextron-app my-app --example custom-renderer-port
 
 <p align="center"><img src="https://i.imgur.com/SBTLNhq.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example custom-server
 
@@ -373,7 +369,7 @@ $ pnpx create-nextron-app my-app --example custom-server
 
 <p align="center"><img src="https://i.imgur.com/yTvam6R.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example custom-server-nodemon
 
@@ -391,7 +387,7 @@ $ pnpx create-nextron-app my-app --example custom-server-nodemon
 
 <p align="center"><img src="https://i.imgur.com/fyjMMmP.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example custom-server-typescript
 
@@ -409,7 +405,7 @@ $ pnpx create-nextron-app my-app --example custom-server-typescript
 
 <p align="center"><img src="https://i.imgur.com/kIDlAFT.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example ipc-communication
 
@@ -427,7 +423,7 @@ $ pnpx create-nextron-app my-app --example ipc-communication
 
 <p align="center"><img src="https://i.imgur.com/ICrzX0V.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example parameterized-routing
 
@@ -445,7 +441,7 @@ $ pnpx create-nextron-app my-app --example parameterized-routing
 
 <p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example remote-require
 
@@ -463,7 +459,7 @@ $ pnpx create-nextron-app my-app --example remote-require
 
 <p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example store-data
 
@@ -481,7 +477,7 @@ $ pnpx create-nextron-app my-app --example store-data
 
 <p align="center"><img src="https://i.imgur.com/mq6qMPk.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example web-worker
 
@@ -499,7 +495,7 @@ $ pnpx create-nextron-app my-app --example web-worker
 
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-javascript
 
@@ -517,7 +513,7 @@ $ pnpx create-nextron-app my-app --example with-javascript
 
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-javascript-ant-design
 
@@ -535,7 +531,7 @@ $ pnpx create-nextron-app my-app --example with-javascript-ant-design
 
 <p align="center"><img src="https://i.imgur.com/FDRVPr8.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-javascript-emotion
 
@@ -553,7 +549,7 @@ $ pnpx create-nextron-app my-app --example with-javascript-emotion
 
 <p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-javascript-material-ui
 
@@ -571,7 +567,7 @@ $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 
 <p align="center"><img src="https://i.imgur.com/1hAUjRY.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-python
 
@@ -589,7 +585,7 @@ $ pnpx create-nextron-app my-app --example with-python
 
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript
 
@@ -607,7 +603,7 @@ $ pnpx create-nextron-app my-app --example with-typescript
 
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript-emotion
 
@@ -625,7 +621,7 @@ $ pnpx create-nextron-app my-app --example with-typescript-emotion
 
 <p align="center"><img src="https://i.imgur.com/OBtezMb.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript-less
 
@@ -643,7 +639,7 @@ $ pnpx create-nextron-app my-app --example with-typescript-less
 
 <p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript-material-ui
 
@@ -663,7 +659,7 @@ $ pnpx create-nextron-app my-app --example with-typescript-material-ui
 
 (Note: When working with the with-typescript-python-api example, see the example's readme file for python setup details)
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example with-typescript-python-api
 
@@ -681,7 +677,7 @@ $ pnpx create-nextron-app my-app --example with-typescript-python-api
 
 ### Basic
 
-```bash
+```zsh
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
 $ yarn
@@ -692,7 +688,7 @@ $ yarn dev # default is examples/with-javascript
 
 ### Developing `examples/*`
 
-```bash
+```zsh
 $ yarn dev <EXAMPLE-FOLDER-NAME>
 ```
 

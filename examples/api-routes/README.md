@@ -12,7 +12,7 @@ It is possible to use **only external** API urls with Electron.
 
 ### Create an App
 
-```bash
+```zsh
 # with `nextron`
 $ nextron init my-app --example api-routes
 
@@ -28,7 +28,7 @@ $ pnpx create-nextron-app my-app --example api-routes
 
 ### Use it
 
-```bash
+```zsh
 $ cd my-app
 
 # Install dependencies
