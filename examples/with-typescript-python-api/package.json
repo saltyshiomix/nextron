@@ -43,7 +43,7 @@
     "graphql": "^14.4.2",
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
-    "next": "^9.1.1",
+    "next": "^9.1.2",
     "nextron": "^5.12.4",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
