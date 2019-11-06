@@ -24,20 +24,7 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-          },
-        },
-        exclude: [
-          /node_modules/,
-          path.join(cwd, 'renderer'),
-        ],
-      },
-      {
-        test: /\.tsx?$/,
+        test: /\.(js|ts)x?$/,
         use: {
           loader: 'babel-loader',
           options: {
