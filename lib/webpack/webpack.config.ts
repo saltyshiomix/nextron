@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 
 const cwd = process.cwd();
 const externals = require(path.join(cwd, 'package.json')).dependencies;
@@ -24,20 +23,7 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
   module: {
     rules: [
       {
-        test: /\.jsx?$/,
-        use: {
-          loader: 'babel-loader',
-          options: {
-            cacheDirectory: true,
-          },
-        },
-        exclude: [
-          /node_modules/,
-          path.join(cwd, 'renderer'),
-        ],
-      },
-      {
-        test: /\.tsx?$/,
+        test: /\.(js|ts)x?$/,
         use: {
           loader: 'babel-loader',
           options: {
@@ -50,17 +36,11 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
           path.join(cwd, 'renderer'),
         ],
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
     ],
   },
   plugins: [
     new webpack.EnvironmentPlugin({
       NODE_ENV: env,
     }),
-    new webpack.NamedModulesPlugin(),
-    new FriendlyErrorsWebpackPlugin(),
   ],
 });
