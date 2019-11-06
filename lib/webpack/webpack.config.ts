@@ -1,6 +1,5 @@
 import path from 'path';
 import webpack from 'webpack';
-import FriendlyErrorsWebpackPlugin from 'friendly-errors-webpack-plugin';
 
 const cwd = process.cwd();
 const externals = require(path.join(cwd, 'package.json')).dependencies;
@@ -43,6 +42,5 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
     new webpack.EnvironmentPlugin({
       NODE_ENV: env,
     }),
-    new FriendlyErrorsWebpackPlugin(),
   ],
 });
