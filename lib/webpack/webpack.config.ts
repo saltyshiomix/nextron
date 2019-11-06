@@ -50,10 +50,6 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
           path.join(cwd, 'renderer'),
         ],
       },
-      {
-        test: /\.css$/,
-        use: ['style-loader', 'css-loader'],
-      },
     ],
   },
   plugins: [

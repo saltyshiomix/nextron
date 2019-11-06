@@ -41,12 +41,10 @@
     "babel-loader": "^8.0.6",
     "chalk": "^2.4.2",
     "cross-spawn": "^7.0.1",
-    "css-loader": "^3.2.0",
     "delay": "^4.3.0",
     "friendly-errors-webpack-plugin": "^1.7.0",
     "fs-extra": "^8.1.0",
     "nodemon": "^1.19.4",
-    "style-loader": "^1.0.0",
     "webpack": "^4.41.2",
     "webpack-merge": "^4.2.2"
   },
