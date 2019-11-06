@@ -43,7 +43,6 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
     new webpack.EnvironmentPlugin({
       NODE_ENV: env,
     }),
-    new webpack.NamedModulesPlugin(),
     new FriendlyErrorsWebpackPlugin(),
   ],
 });
