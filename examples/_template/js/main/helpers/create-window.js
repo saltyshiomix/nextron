@@ -71,6 +71,7 @@ export default function createWindow(windowName, options) {
     ...state,
     webPreferences: {
       nodeIntegration: true,
+      ...options.webPreferences,
     },
   });
 
