@@ -96,7 +96,7 @@ function init(name: string) {
       cmd = 'yarn && yarn dev';
       break;
     case 'pnpm':
-      cmd = 'npm install && npm run dev';
+      cmd = 'pnpm install && pnpm run dev';
       break;
     default:
       cmd = 'npm install && npm run dev';
