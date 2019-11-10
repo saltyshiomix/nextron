@@ -1,16 +1,12 @@
 import { app } from 'electron';
 import serve from 'electron-serve';
-import {
-  createWindow,
-  exitOnChange,
-} from './helpers';
+import { createWindow } from './helpers';
 
 const isProd: boolean = process.env.NODE_ENV === 'production';
 
 if (isProd) {
   serve({ directory: 'app' });
 } else {
-  exitOnChange();
   app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 
