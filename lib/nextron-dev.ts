@@ -91,7 +91,22 @@ async function dev() {
 
   const compiler = webpack(getWebpackConfig('development'));
   let isHotReload = false;
-  watching = compiler.watch({}, async (err, stats) => {
+  watching = compiler.watch({}, async (err: any, stats: webpack.Stats) => {
+    if (err) {
+      console.error(err.stack || err);
+      if (err.details) {
+        console.error(err.details);
+      }
+    }
+
+    const info = stats.toJson('errors-warnings');
+    if (stats.hasErrors()) {
+      console.error(info.errors);
+    }
+    if (stats.hasWarnings()) {
+      console.warn(info.warnings);
+    }
+
     if (!err && !stats.hasErrors()) {
       if (isHotReload) {
         await delay(2000);
