@@ -68,7 +68,7 @@ async function build() {
     log('Clearing previous builds');
     fs.removeSync(path.join(cwd, 'app'));
     fs.removeSync(path.join(cwd, 'dist'));
-    fs.removeSync(path.join(cwd, 'renderer', '.next'));
+    fs.removeSync(path.join(cwd, rendererSrcDir, '.next'));
 
     log('Building renderer process');
     const outdir = path.join(cwd, rendererSrcDir, 'out');

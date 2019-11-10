@@ -1,17 +1,13 @@
 import { app, ipcMain } from 'electron';
 import serve from 'electron-serve';
 import * as Store from 'electron-store';
-import {
-  createWindow,
-  exitOnChange,
-} from './helpers';
+import { createWindow } from './helpers';
 
 const isProd = process.env.NODE_ENV === 'production';
 
 if (isProd) {
   serve({ directory: 'app' });
 } else {
-  exitOnChange();
   app.setPath('userData', `${app.getPath('userData')} (development)`);
 }
 

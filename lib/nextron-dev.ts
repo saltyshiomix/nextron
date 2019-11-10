@@ -1,5 +1,4 @@
 import fs from 'fs';
-import path from 'path';
 import {
   ChildProcess,
   SpawnSyncOptions,
@@ -50,7 +49,20 @@ const spawnOptions: SpawnSyncOptions = {
 };
 
 async function dev() {
-  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
+  const { rendererSrcDir } = getNextronConfig();
+
+  let firstCompile = true;
+  let watching: webpack.Watching;
+  let mainProcess: ChildProcess;
+  let rendererProcess: ChildProcess;
+
+  const startMainProcess = () => {
+    mainProcess = spawn('electron', ['.', `${rendererPort}`], {
+      detached: true,
+      ...spawnOptions,
+    });
+    mainProcess.unref();
+  };
 
   const startRendererProcess = () => {
     let child: ChildProcess;
@@ -61,7 +73,7 @@ async function dev() {
         child = spawn('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = spawn('next', ['-p', rendererPort, rendererSrcDir], spawnOptions);
+      child = spawn('next', ['-p', rendererPort, rendererSrcDir || 'renderer'], spawnOptions);
     }
     child.on('close', () => {
       process.exit(0);
@@ -69,11 +81,12 @@ async function dev() {
     return child;
   };
 
-  let watching: webpack.Watching;
-  let rendererProcess: ChildProcess;
   const killWholeProcess = () => {
     if (watching) {
       watching.close(() => {});
+    }
+    if (mainProcess) {
+      mainProcess.kill();
     }
     if (rendererProcess) {
       rendererProcess.kill();
@@ -90,14 +103,34 @@ async function dev() {
   await delay(8000);
 
   const compiler = webpack(getWebpackConfig('development'));
-  let isHotReload = false;
-  watching = compiler.watch({}, async (err, stats) => {
-    if (!err && !stats.hasErrors()) {
-      if (isHotReload) {
-        await delay(2000);
+
+  watching = compiler.watch({}, async (err: any, stats: webpack.Stats) => {
+    if (err) {
+      console.error(err.stack || err);
+      if (err.details) {
+        console.error(err.details);
       }
-      isHotReload = true;
-      spawn.sync('electron', ['.', `${rendererPort}`], spawnOptions);
+    }
+
+    const info = stats.toJson('errors-warnings');
+    if (stats.hasErrors()) {
+      console.error(info.errors);
+    }
+    if (stats.hasWarnings()) {
+      console.warn(info.warnings);
+    }
+
+    if (firstCompile) {
+      firstCompile = false;
+    }
+
+    if (!err && !stats.hasErrors()) {
+      if (!firstCompile) {
+        if (mainProcess) {
+          mainProcess.kill();
+        }
+      }
+      startMainProcess();
     }
   });
 }
