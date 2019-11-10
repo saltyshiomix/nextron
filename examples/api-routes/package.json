@@ -15,7 +15,7 @@
     "electron-store": "^5.1.0"
   },
   "devDependencies": {
-    "electron": "^7.1.0",
+    "electron": "^7.1.1",
     "electron-builder": "^22.1.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "^9.1.2",
