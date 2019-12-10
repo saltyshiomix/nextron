@@ -24,8 +24,8 @@
     "fontfaceobserver": "^2.1.0",
     "next": "^9.1.5",
     "nextron": "^5.14.0",
-    "react": "^16.11.0",
-    "react-dom": "^16.11.0",
+    "react": "^16.12.0",
+    "react-dom": "^16.12.0",
     "typeface-roboto": "^0.0.75",
     "url-loader": "^2.2.0",
     "webpack": "^4.41.2"
