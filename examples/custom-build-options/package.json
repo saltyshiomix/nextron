@@ -16,7 +16,7 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-serve": "^0.4.0",
+    "electron-serve": "^0.4.1",
     "electron-store": "^5.1.0"
   },
   "devDependencies": {
