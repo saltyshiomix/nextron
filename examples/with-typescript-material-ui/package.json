@@ -31,7 +31,7 @@
     "react": "^16.11.0",
     "react-dom": "^16.11.0",
     "typeface-roboto": "^0.0.75",
-    "typescript": "^3.7.2",
+    "typescript": "^3.7.3",
     "url-loader": "^2.2.0",
     "webpack": "^4.41.2"
   }
