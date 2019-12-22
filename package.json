@@ -35,8 +35,8 @@
     "prepublishOnly": "cross-env NODE_ENV=production npm run build"
   },
   "dependencies": {
-    "@babel/core": "^7.7.5",
-    "@babel/preset-typescript": "^7.7.4",
+    "@babel/core": "^7.7.7",
+    "@babel/preset-typescript": "^7.7.7",
     "arg": "^4.1.2",
     "babel-loader": "^8.0.6",
     "chalk": "^3.0.0",
