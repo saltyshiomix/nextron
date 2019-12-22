@@ -15,7 +15,7 @@
     "electron-store": "^5.1.0"
   },
   "devDependencies": {
-    "electron": "^7.1.4",
+    "electron": "^7.1.7",
     "electron-builder": "^21.2.0",
     "next": "^9.1.5",
     "nextron": "^5.14.1",
