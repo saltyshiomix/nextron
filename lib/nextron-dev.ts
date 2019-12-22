@@ -18,6 +18,8 @@ const args = arg({
   '--version': Boolean,
   '--port': Number,
   '--custom-server': String,
+  '--no-sandbox': Boolean,
+  '--disable-features': String,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
@@ -57,7 +59,16 @@ async function dev() {
   let rendererProcess: ChildProcess;
 
   const startMainProcess = () => {
-    mainProcess = spawn('electron', ['.', `${rendererPort}`], {
+    const options: string[] = ['.', `${rendererPort}`];
+    if (args['--no-sandbox']) {
+      options.push('--no-sandbox');
+    }
+
+    if (args['--disable-features']) {
+      options.push(`--disable-features=${args['--disable-features']}`)
+    }
+
+    mainProcess = spawn('electron', options, {
       detached: true,
       ...spawnOptions,
     });
