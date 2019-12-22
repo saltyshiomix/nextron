@@ -48,7 +48,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-class-properties": "^7.7.4",
-    "@babel/plugin-proposal-object-rest-spread": "^7.7.4",
+    "@babel/plugin-proposal-object-rest-spread": "^7.7.7",
     "@babel/plugin-syntax-dynamic-import": "^7.7.4",
     "@types/cross-spawn": "^6.0.1",
     "@types/fs-extra": "^8.0.1",
