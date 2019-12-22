@@ -17,7 +17,6 @@
   "devDependencies": {
     "@emotion/core": "^10.0.22",
     "@emotion/styled": "^10.0.23",
-    "@types/next": "^9.0.0",
     "@types/node": "^12.12.21",
     "@types/react": "^16.9.17",
     "@types/react-dom": "^16.9.4",
