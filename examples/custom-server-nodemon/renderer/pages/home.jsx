@@ -15,7 +15,7 @@ const Home = () => {
             <a>Go to next page</a>
           </Link>
         </p>
-        <img src="/static/logo.png" />
+        <img src="/images/logo.png" />
       </div>
     </React.Fragment>
   );

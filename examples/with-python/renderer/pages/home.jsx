@@ -44,7 +44,7 @@ const Home = () => {
             <a>Go to next page</a>
           </Link>
         </p>
-        <img src="/static/logo.png" />
+        <img src="/images/logo.png" />
         <hr />
         <button onClick={onClick}>Run Python</button>
         <p>{result}</p>

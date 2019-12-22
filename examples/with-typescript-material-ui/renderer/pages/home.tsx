@@ -49,7 +49,7 @@ const Home = () => {
         <Typography variant="subtitle1" gutterBottom>
           with Nextron
         </Typography>
-        <img src="/static/logo.png" />
+        <img src="/images/logo.png" />
         <Typography gutterBottom>
           <Link href="/next">Go to the next page</Link>
         </Typography>
