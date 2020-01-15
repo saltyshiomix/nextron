@@ -20,7 +20,7 @@
     "@types/react-dom": "^16.9.4",
     "electron": "^7.1.9",
     "electron-builder": "^22.2.0",
-    "next": "^9.1.6",
+    "next": "^9.1.7",
     "nextron": "^5.14.3",
     "nodemon": "^1.19.4",
     "react": "^16.12.0",
