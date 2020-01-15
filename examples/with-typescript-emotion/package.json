@@ -27,6 +27,6 @@
     "nextron": "^5.14.3",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
-    "typescript": "^3.7.3"
+    "typescript": "^3.7.4"
   }
 }
