@@ -51,7 +51,7 @@
     "@babel/plugin-proposal-object-rest-spread": "^7.8.3",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
     "@rollup/plugin-commonjs": "^11.0.0",
-    "@rollup/plugin-node-resolve": "^6.0.0",
+    "@rollup/plugin-node-resolve": "^7.0.0",
     "@types/cross-spawn": "^6.0.1",
     "@types/fs-extra": "^8.0.1",
     "@types/node": "^12.12.21",
