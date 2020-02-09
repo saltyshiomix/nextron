@@ -7,7 +7,8 @@
   "main": "app/background.js",
   "scripts": {
     "dev": "nextron",
-    "postinstall": "electron-builder install-app-deps"
+    "postinstall": "electron-builder install-app-deps",
+    "build": "nextron build"
   },
   "dependencies": {
     "cross-spawn": "^6.0.5",
