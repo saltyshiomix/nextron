@@ -17,10 +17,12 @@ const args = arg({
   '--help': Boolean,
   '--version': Boolean,
   '--port': Number,
+  '--run-only': Boolean,
   '--custom-server': String,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
+  '-r': '--run',
   '-c': '--custom-server',
 });
 
@@ -93,6 +95,36 @@ async function dev() {
     }
   };
 
+  const webpackCallback = async (err: any, stats: webpack.Stats) => {
+	  if (err) {
+	    console.error(err.stack || err);
+	    if (err.details) {
+	      console.error(err.details);
+	    }
+	  }
+
+	  const info = stats.toJson('errors-warnings');
+	  if (stats.hasErrors()) {
+	    console.error(info.errors);
+	  }
+	  if (stats.hasWarnings()) {
+	    console.warn(info.warnings);
+	  }
+
+	  if (firstCompile) {
+	    firstCompile = false;
+	  }
+
+	  if (!err && !stats.hasErrors()) {
+	    if (!firstCompile) {
+	      if (mainProcess) {
+	        mainProcess.kill();
+	      }
+	    }
+	    startMainProcess();
+	  }
+	}
+
   process.on('SIGINT', killWholeProcess);
   process.on('SIGTERM', killWholeProcess);
   process.on('exit', killWholeProcess);
@@ -104,35 +136,15 @@ async function dev() {
 
   const compiler = webpack(getWebpackConfig('development'));
 
-  watching = compiler.watch({}, async (err: any, stats: webpack.Stats) => {
-    if (err) {
-      console.error(err.stack || err);
-      if (err.details) {
-        console.error(err.details);
-      }
-    }
+  if (args['--run-only']) {
 
-    const info = stats.toJson('errors-warnings');
-    if (stats.hasErrors()) {
-      console.error(info.errors);
-    }
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings);
-    }
+	  watching = compiler.watch({}, webpackCallback);
 
-    if (firstCompile) {
-      firstCompile = false;
-    }
+	} else {
 
-    if (!err && !stats.hasErrors()) {
-      if (!firstCompile) {
-        if (mainProcess) {
-          mainProcess.kill();
-        }
-      }
-      startMainProcess();
-    }
-  });
+		compiler.run(webpackCallback)
+
+	}
 }
 
 dev();
