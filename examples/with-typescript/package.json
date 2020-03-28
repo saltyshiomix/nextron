@@ -12,18 +12,18 @@
   },
   "dependencies": {
     "electron-serve": "^0.4.1",
-    "electron-store": "^5.1.0"
+    "electron-store": "^5.1.1"
   },
   "devDependencies": {
-    "@types/node": "^12.12.21",
-    "@types/react": "^16.9.17",
-    "@types/react-dom": "^16.9.4",
-    "electron": "^7.1.9",
-    "electron-builder": "^22.2.0",
-    "next": "^9.1.7",
+    "@types/node": "^13.9.5",
+    "@types/react": "^16.9.26",
+    "@types/react-dom": "^16.9.5",
+    "electron": "^8.2.0",
+    "electron-builder": "^22.4.1",
+    "next": "^9.3.2",
     "nextron": "^5.14.4",
-    "react": "^16.12.0",
-    "react-dom": "^16.12.0",
-    "typescript": "^3.7.4"
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1",
+    "typescript": "^3.8.3"
   }
 }
