@@ -23,7 +23,7 @@
     "electron-builder": "^22.4.1",
     "fontfaceobserver": "^2.1.0",
     "next": "^9.3.2",
-    "nextron": "^5.14.4",
+    "nextron": "^5.14.5",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typeface-roboto": "^0.0.75",
