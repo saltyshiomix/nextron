@@ -96,34 +96,34 @@ async function dev() {
   };
 
   const webpackCallback = async (err: any, stats: webpack.Stats) => {
-	  if (err) {
-	    console.error(err.stack || err);
-	    if (err.details) {
-	      console.error(err.details);
-	    }
-	  }
+    if (err) {
+      console.error(err.stack || err);
+      if (err.details) {
+        console.error(err.details);
+      }
+    }
 
-	  const info = stats.toJson('errors-warnings');
-	  if (stats.hasErrors()) {
-	    console.error(info.errors);
-	  }
-	  if (stats.hasWarnings()) {
-	    console.warn(info.warnings);
-	  }
+    const info = stats.toJson('errors-warnings');
+    if (stats.hasErrors()) {
+      console.error(info.errors);
+    }
+    if (stats.hasWarnings()) {
+      console.warn(info.warnings);
+    }
 
-	  if (firstCompile) {
-	    firstCompile = false;
-	  }
+    if (firstCompile) {
+      firstCompile = false;
+    }
 
-	  if (!err && !stats.hasErrors()) {
-	    if (!firstCompile) {
-	      if (mainProcess) {
-	        mainProcess.kill();
-	      }
-	    }
-	    startMainProcess();
-	  }
-	}
+    if (!err && !stats.hasErrors()) {
+      if (!firstCompile) {
+        if (mainProcess) {
+          mainProcess.kill();
+        }
+      }
+      startMainProcess();
+    }
+  }
 
   process.on('SIGINT', killWholeProcess);
   process.on('SIGTERM', killWholeProcess);
@@ -135,16 +135,11 @@ async function dev() {
   await delay(8000);
 
   const compiler = webpack(getWebpackConfig('development'));
-
   if (args['--run-only']) {
-
-	  compiler.run(webpackCallback);
-
-	} else {
-
-		watching = compiler.watch({}, webpackCallback);
-
-	}
+    compiler.run(webpackCallback);
+  } else {
+    watching = compiler.watch({}, webpackCallback);
+  }
 }
 
 dev();
