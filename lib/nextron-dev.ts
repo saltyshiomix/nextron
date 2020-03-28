@@ -138,11 +138,11 @@ async function dev() {
 
   if (args['--run-only']) {
 
-	  watching = compiler.watch({}, webpackCallback);
+	  compiler.run(webpackCallback);
 
 	} else {
 
-		compiler.run(webpackCallback)
+		watching = compiler.watch({}, webpackCallback);
 
 	}
 }
