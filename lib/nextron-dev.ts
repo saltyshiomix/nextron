@@ -17,10 +17,12 @@ const args = arg({
   '--help': Boolean,
   '--version': Boolean,
   '--port': Number,
+  '--run-only': Boolean,
   '--custom-server': String,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
+  '-r': '--run-only',
   '-c': '--custom-server',
 });
 
@@ -93,18 +95,7 @@ async function dev() {
     }
   };
 
-  process.on('SIGINT', killWholeProcess);
-  process.on('SIGTERM', killWholeProcess);
-  process.on('exit', killWholeProcess);
-
-  rendererProcess = startRendererProcess();
-
-  // wait until renderer process is ready
-  await delay(8000);
-
-  const compiler = webpack(getWebpackConfig('development'));
-
-  watching = compiler.watch({}, async (err: any, stats: webpack.Stats) => {
+  const webpackCallback = async (err: any, stats: webpack.Stats) => {
     if (err) {
       console.error(err.stack || err);
       if (err.details) {
@@ -132,7 +123,23 @@ async function dev() {
       }
       startMainProcess();
     }
-  });
+  }
+
+  process.on('SIGINT', killWholeProcess);
+  process.on('SIGTERM', killWholeProcess);
+  process.on('exit', killWholeProcess);
+
+  rendererProcess = startRendererProcess();
+
+  // wait until renderer process is ready
+  await delay(8000);
+
+  const compiler = webpack(getWebpackConfig('development'));
+  if (args['--run-only']) {
+    compiler.run(webpackCallback);
+  } else {
+    watching = compiler.watch({}, webpackCallback);
+  }
 }
 
 dev();
