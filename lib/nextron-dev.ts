@@ -22,7 +22,7 @@ const args = arg({
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
-  '-r': '--run',
+  '-r': '--run-only',
   '-c': '--custom-server',
 });
 
