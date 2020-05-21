@@ -17,6 +17,8 @@ const args = arg({
   '--help': Boolean,
   '--version': Boolean,
   '--port': Number,
+  '--remote-debugging-port': Number,
+  '--inspect': Number,
   '--run-only': Boolean,
   '--custom-server': String,
   '-h': '--help',
@@ -44,6 +46,8 @@ if (args['--help']) {
 }
 
 const rendererPort = args['--port'] || 8888;
+const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
+const inspectPort = args['--inspect'] || 9292;
 
 const spawnOptions: SpawnSyncOptions = {
   cwd: process.cwd(),
@@ -59,10 +63,19 @@ async function dev() {
   let rendererProcess: ChildProcess;
 
   const startMainProcess = () => {
-    mainProcess = spawn('electron', ['.', `${rendererPort}`], {
-      detached: true,
-      ...spawnOptions,
-    });
+    mainProcess = spawn(
+      'electron',
+      [
+        '.',
+        `${rendererPort}`,
+        `--remote-debugging-port=${remoteDebuggingPort}`,
+        `--inspect=${inspectPort}`,
+      ],
+      {
+        detached: true,
+        ...spawnOptions,
+      }
+    );
     mainProcess.unref();
   };
 
@@ -75,7 +88,11 @@ async function dev() {
         child = spawn('node', [args['--custom-server']], spawnOptions);
       }
     } else {
-      child = spawn('next', ['-p', rendererPort, rendererSrcDir || 'renderer'], spawnOptions);
+      child = spawn(
+        'next',
+        ['-p', rendererPort, rendererSrcDir || 'renderer'],
+        spawnOptions
+      );
     }
     child.on('close', () => {
       process.exit(0);
