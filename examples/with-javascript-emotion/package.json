@@ -11,17 +11,17 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-serve": "^0.4.1",
+    "electron-serve": "^1.0.0",
     "electron-store": "^5.1.1"
   },
   "devDependencies": {
     "@emotion/core": "^10.0.28",
     "@emotion/styled": "^10.0.27",
-    "babel-plugin-emotion": "^10.0.29",
-    "electron": "^8.2.0",
-    "electron-builder": "^22.4.1",
-    "next": "^9.3.2",
-    "nextron": "^5.14.5",
+    "babel-plugin-emotion": "^10.0.33",
+    "electron": "^9.0.0",
+    "electron-builder": "^22.6.1",
+    "next": "^9.4.2",
+    "nextron": "^5.14.6",
     "react": "^16.13.1",
     "react-dom": "^16.13.1"
   }
