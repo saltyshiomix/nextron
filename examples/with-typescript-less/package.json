@@ -19,7 +19,7 @@
     "@types/react": "^16.9.26",
     "@types/react-dom": "^16.9.5",
     "@zeit/next-less": "^1.0.1",
-    "electron": "^8.2.0",
+    "electron": "^9.0.0",
     "electron-builder": "^22.4.1",
     "less": "^3.11.1",
     "next": "^9.3.2",
