@@ -29,9 +29,9 @@
   "devDependencies": {
     "@types/cross-spawn": "^6.0.1",
     "@types/isomorphic-fetch": "^0.0.35",
-    "@types/node": "^13.9.5",
-    "@types/react": "^16.9.26",
-    "@types/react-dom": "^16.9.5",
+    "@types/node": "^14.0.5",
+    "@types/react": "^16.9.35",
+    "@types/react-dom": "^16.9.8",
     "@types/superagent": "^4.1.7",
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-client": "^2.6.3",
@@ -48,6 +48,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shx": "^0.3.2",
-    "typescript": "^3.8.3"
+    "typescript": "^3.9.3"
   }
 }
