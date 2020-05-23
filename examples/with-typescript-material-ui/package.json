@@ -32,6 +32,6 @@
     "typeface-roboto": "^0.0.75",
     "typescript": "^3.8.3",
     "url-loader": "^4.0.0",
-    "webpack": "^4.42.1"
+    "webpack": "^4.43.0"
   }
 }

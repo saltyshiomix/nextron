@@ -43,7 +43,7 @@
     "cross-spawn": "^7.0.2",
     "delay": "^4.3.0",
     "fs-extra": "^9.0.0",
-    "webpack": "^4.42.1",
+    "webpack": "^4.43.0",
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
