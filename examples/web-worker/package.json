@@ -18,7 +18,7 @@
     "@babel/core": "^7.9.6",
     "babel-loader": "^8.1.0",
     "electron": "^9.0.0",
-    "electron-builder": "^22.4.1",
+    "electron-builder": "^22.6.1",
     "next": "^9.3.2",
     "nextron": "^5.14.5",
     "react": "^16.13.1",

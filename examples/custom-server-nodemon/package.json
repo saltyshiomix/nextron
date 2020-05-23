@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "electron": "^9.0.0",
-    "electron-builder": "^22.4.1",
+    "electron-builder": "^22.6.1",
     "next": "^9.3.2",
     "nextron": "^5.14.5",
     "nodemon": "^2.0.2",
