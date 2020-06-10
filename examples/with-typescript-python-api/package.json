@@ -46,7 +46,7 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.4.4",
-    "nextron": "^5.14.7",
+    "nextron": "^5.14.8",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shx": "^0.3.2",
