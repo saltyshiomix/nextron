@@ -3,7 +3,7 @@ import Head from 'next/head';
 import { Theme, makeStyles, createStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import { Link } from '../components';
+import Link from '../components/Link';
 
 const useStyles = makeStyles((theme: Theme) =>
   createStyles({
@@ -22,7 +22,6 @@ const Next = () => {
       <Head>
         <title>Next - Nextron (with-typescript-material-ui)</title>
       </Head>
-
       <div className={classes.root}>
         <Typography variant="h4" gutterBottom>
           Material-UI
