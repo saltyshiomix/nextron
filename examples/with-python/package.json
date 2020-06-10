@@ -13,7 +13,7 @@
   "dependencies": {
     "cross-spawn": "^7.0.1",
     "electron-serve": "^1.0.0",
-    "electron-store": "^5.1.1"
+    "electron-store": "^5.2.0"
   },
   "devDependencies": {
     "electron": "^9.0.0",
