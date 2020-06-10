@@ -47,22 +47,22 @@
     "webpack-merge": "^4.2.2"
   },
   "devDependencies": {
-    "@babel/plugin-proposal-class-properties": "^7.8.3",
-    "@babel/plugin-proposal-object-rest-spread": "^7.9.6",
+    "@babel/plugin-proposal-class-properties": "^7.10.1",
+    "@babel/plugin-proposal-object-rest-spread": "^7.10.1",
     "@babel/plugin-syntax-dynamic-import": "^7.8.3",
-    "@rollup/plugin-commonjs": "^12.0.0",
-    "@rollup/plugin-node-resolve": "^8.0.0",
+    "@rollup/plugin-commonjs": "^13.0.0",
+    "@rollup/plugin-node-resolve": "^8.0.1",
     "@types/cross-spawn": "^6.0.2",
     "@types/fs-extra": "^9.0.1",
-    "@types/node": "^14.0.5",
-    "@types/webpack": "^4.41.13",
+    "@types/node": "^14.0.13",
+    "@types/webpack": "^4.41.17",
     "@types/webpack-merge": "^4.1.5",
     "cross-env": "^7.0.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.10.7",
+    "rollup": "^2.15.0",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-babel": "^4.4.0",
-    "rollup-plugin-terser": "^5.3.0",
-    "typescript": "^3.9.3"
+    "rollup-plugin-terser": "^6.1.0",
+    "typescript": "^3.9.5"
   }
 }
