@@ -22,7 +22,7 @@
     "@types/react-dom": "^16.9.8",
     "@zeit/next-css": "^1.0.1",
     "babel-loader": "^8.1.0",
-    "electron": "^9.0.0",
+    "electron": "^9.0.3",
     "electron-builder": "^22.6.1",
     "fontfaceobserver": "^2.1.0",
     "next": "^9.4.2",
