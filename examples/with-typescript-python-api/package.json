@@ -27,6 +27,7 @@
     "superagent": "^5.2.2"
   },
   "devDependencies": {
+    "@babel/core": "^7.10.2",
     "@types/cross-spawn": "^6.0.1",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^14.0.5",
@@ -36,6 +37,7 @@
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-client": "^2.6.3",
     "apollo-link-http": "^1.5.15",
+    "babel-loader": "^8.1.0",
     "electron": "^9.0.3",
     "electron-builder": "^22.7.0",
     "electron-packager": "^9.0.1",
@@ -44,10 +46,11 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     "next": "^9.4.4",
-    "nextron": "^5.14.7",
+    "nextron": "^5.15.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shx": "^0.3.2",
-    "typescript": "^3.9.5"
+    "typescript": "^3.9.5",
+    "webpack": "^4.43.0"
   }
 }
