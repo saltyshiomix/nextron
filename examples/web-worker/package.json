@@ -15,7 +15,7 @@
     "electron-store": "^5.1.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.9.6",
+    "@babel/core": "^7.10.2",
     "babel-loader": "^8.1.0",
     "electron": "^9.0.0",
     "electron-builder": "^22.6.1",
