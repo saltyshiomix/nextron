@@ -30,7 +30,7 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "typeface-roboto": "^0.0.75",
-    "typescript": "^3.9.3",
+    "typescript": "^3.9.5",
     "url-loader": "^4.0.0",
     "webpack": "^4.43.0"
   }

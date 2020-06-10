@@ -48,6 +48,6 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "shx": "^0.3.2",
-    "typescript": "^3.9.3"
+    "typescript": "^3.9.5"
   }
 }
