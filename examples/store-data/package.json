@@ -19,7 +19,7 @@
     "babel-loader": "^8.1.0",
     "electron": "^9.0.3",
     "electron-builder": "^22.7.0",
-    "next": "^9.4.4",
+    "next": "9.3.6",
     "nextron": "^5.15.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
