@@ -2,7 +2,7 @@
 // _document is only rendered on the server side and not on the client side
 // Event handlers like onClick can't be added to this file
 //
-import Document, { Head, Main, NextScript } from "next/document";
+import Document, { Html, Head, Main, NextScript } from "next/document";
 import { css } from "./_document.css";
 
 export default class MyDocument extends Document {
@@ -13,7 +13,7 @@ export default class MyDocument extends Document {
 
   public render() {
     return (
-      <html>
+      <Html>
         <Head>
           <meta content="text/html; charset=utf-8"/>
           <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -58,7 +58,7 @@ if (typeof(require) === "undefined") {
 ` }}
           />
         </body>
-      </html>
+      </Html>
     );
   }
 }
