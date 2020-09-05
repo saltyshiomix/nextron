@@ -29,6 +29,6 @@
     "react-dom": "^16.13.1",
     "ts-node": "^8.10.1",
     "typescript": "^3.9.5",
-    "webpack": "^4.43.0"
+    "webpack": "^4.44.1"
   }
 }
