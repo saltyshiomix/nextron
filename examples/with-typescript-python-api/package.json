@@ -39,7 +39,7 @@
     "apollo-link-http": "^1.5.15",
     "babel-loader": "^8.1.0",
     "electron": "^10.1.1",
-    "electron-builder": "^22.7.0",
+    "electron-builder": "^22.8.0",
     "electron-packager": "^9.0.1",
     "electron-rebuild": "^1.8.5",
     "graphql": "^14.4.2",
