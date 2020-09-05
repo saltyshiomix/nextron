@@ -20,7 +20,7 @@ export default function(props: AppProps) {
       <Head>
         <meta charSet="utf-8" />
         <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-        <title>with-javascript-material-ui</title>
+        <title>with-typescript-material-ui</title>
       </Head>
       <ThemeProvider theme={theme}>
         <CssBaseline />
