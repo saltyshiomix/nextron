@@ -42,7 +42,7 @@
     "babel-loader": "^8.1.0",
     "chalk": "^4.1.0",
     "cross-spawn": "^7.0.3",
-    "delay": "^4.3.0",
+    "delay": "^4.4.0",
     "fs-extra": "^9.0.0",
     "webpack": "^4.43.0",
     "webpack-merge": "^4.2.2"
