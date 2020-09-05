@@ -16,8 +16,8 @@
   },
   "devDependencies": {
     "@babel/core": "^7.11.6",
-    "@types/node": "^14.0.5",
-    "@types/react": "^16.9.35",
+    "@types/node": "^14.6.4",
+    "@types/react": "^16.9.49",
     "@types/react-dom": "^16.9.8",
     "babel-loader": "^8.1.0",
     "electron": "^9.0.3",
