@@ -21,7 +21,7 @@
     "demo"
   ],
   "dependencies": {
-    "cross-spawn": "^7.0.1",
+    "cross-spawn": "^7.0.3",
     "electron-serve": "^1.0.0",
     "electron-store": "^5.2.0",
     "superagent": "^5.2.2"
