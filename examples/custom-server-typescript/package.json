@@ -23,7 +23,7 @@
     "electron": "^10.1.1",
     "electron-builder": "^22.8.0",
     "next": "9.3.6",
-    "nextron": "^5.15.1",
+    "nextron": "^5.15.2",
     "nodemon": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
