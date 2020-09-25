@@ -62,21 +62,18 @@ async function build() {
   // Ignore missing dependencies
   process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
 
+  const appdir = path.join(cwd, 'app');
+  const distdir = path.join(cwd, 'dist');
   const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
 
   try {
     log('Clearing previous builds');
-    fs.removeSync(path.join(cwd, 'app'));
-    fs.removeSync(path.join(cwd, 'dist'));
-    fs.removeSync(path.join(cwd, rendererSrcDir, '.next'));
+    fs.removeSync(appdir);
+    fs.removeSync(distdir);
 
     log('Building renderer process');
-    const outdir = path.join(cwd, rendererSrcDir, 'out');
-    const appdir = path.join(cwd, 'app');
     spawn.sync('next', ['build', path.join(cwd, rendererSrcDir)], spawnOptions);
-    spawn.sync('next', ['export', path.join(cwd, rendererSrcDir)], spawnOptions);
-    fs.copySync(outdir, appdir);
-    fs.removeSync(outdir);
+    spawn.sync('next', ['export', '-o', appdir, path.join(cwd, rendererSrcDir)], spawnOptions);
 
     log('Building main process');
     spawn.sync('node', [path.join(__dirname, 'webpack/build.production.js')], spawnOptions);

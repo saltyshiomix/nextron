@@ -23,10 +23,10 @@
     "electron": "^10.1.1",
     "electron-builder": "^22.8.0",
     "next": "9.3.6",
-    "nextron": "^5.15.1",
+    "nextron": "^5.15.2",
     "null-loader": "^3.0.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "webpack": "^4.44.1"
+    "webpack": "^4.44.2"
   }
 }
