@@ -29,7 +29,10 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
           options: {
             cacheDirectory: true,
             presets: ['@babel/preset-typescript'],
-            plugins: ['@babel/plugin-proposal-optional-chaining'],
+            plugins: [
+              '@babel/plugin-proposal-class-properties',
+              '@babel/plugin-proposal-optional-chaining',
+            ],
           },
         },
         exclude: [
