@@ -22,7 +22,7 @@
     "babel-plugin-emotion": "^10.0.33",
     "electron": "^10.1.3",
     "electron-builder": "^22.9.1",
-    "next": "9.5.1",
+    "next": "9.5.5",
     "nextron": "^5.15.3",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
