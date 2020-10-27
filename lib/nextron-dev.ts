@@ -58,7 +58,7 @@ async function dev() {
   const { rendererSrcDir } = getNextronConfig();
 
   let firstCompile = true;
-  let watching: webpack.Watching;
+  let watching: any;
   let mainProcess: ChildProcess;
   let rendererProcess: ChildProcess;
 
@@ -112,7 +112,7 @@ async function dev() {
     }
   };
 
-  const webpackCallback = async (err: any, stats: webpack.Stats) => {
+  const webpackCallback = async (err: any) => {
     if (err) {
       console.error(err.stack || err);
       if (err.details) {
@@ -120,23 +120,13 @@ async function dev() {
       }
     }
 
-    const info = stats.toJson('errors-warnings');
-    if (stats.hasErrors()) {
-      console.error(info.errors);
-    }
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings);
-    }
-
     if (firstCompile) {
       firstCompile = false;
     }
 
-    if (!err && !stats.hasErrors()) {
-      if (!firstCompile) {
-        if (mainProcess) {
-          mainProcess.kill();
-        }
+    if (!err) {
+      if (!firstCompile && mainProcess) {
+        mainProcess.kill();
       }
       startMainProcess();
     }
