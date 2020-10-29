@@ -1,11 +1,8 @@
 import fs from 'fs';
-import {
-  ChildProcess,
-  SpawnSyncOptions,
-} from 'child_process';
+import { ChildProcess } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
-import spawn from 'cross-spawn';
+import execa from 'execa';
 import delay from 'delay';
 import webpack from 'webpack';
 import {
@@ -49,7 +46,7 @@ const rendererPort = args['--port'] || 8888;
 const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
 const inspectPort = args['--inspect'] || 9292;
 
-const spawnOptions: SpawnSyncOptions = {
+const execaOptions: execa.Options = {
   cwd: process.cwd(),
   stdio: 'inherit',
 };
@@ -58,12 +55,12 @@ async function dev() {
   const { rendererSrcDir } = getNextronConfig();
 
   let firstCompile = true;
-  let watching: webpack.Watching;
+  let watching: any;
   let mainProcess: ChildProcess;
   let rendererProcess: ChildProcess;
 
   const startMainProcess = () => {
-    mainProcess = spawn(
+    mainProcess = execa(
       'electron',
       [
         '.',
@@ -73,7 +70,7 @@ async function dev() {
       ],
       {
         detached: true,
-        ...spawnOptions,
+        ...execaOptions,
       }
     );
     mainProcess.unref();
@@ -83,15 +80,15 @@ async function dev() {
     let child: ChildProcess;
     if (args['--custom-server']) {
       if (fs.existsSync('nodemon.json')) {
-        child = spawn('nodemon', [args['--custom-server']], spawnOptions);
+        child = execa('nodemon', [args['--custom-server']], execaOptions);
       } else {
-        child = spawn('node', [args['--custom-server']], spawnOptions);
+        child = execa('node', [args['--custom-server']], execaOptions);
       }
     } else {
-      child = spawn(
+      child = execa(
         'next',
         ['-p', rendererPort, rendererSrcDir || 'renderer'],
-        spawnOptions
+        execaOptions,
       );
     }
     child.on('close', () => {
@@ -112,31 +109,21 @@ async function dev() {
     }
   };
 
-  const webpackCallback = async (err: any, stats: webpack.Stats) => {
+  const webpackCallback = async (err: Error | undefined) => {
     if (err) {
       console.error(err.stack || err);
-      if (err.details) {
-        console.error(err.details);
+      if (err.stack) {
+        console.error(err.stack);
       }
-    }
-
-    const info = stats.toJson('errors-warnings');
-    if (stats.hasErrors()) {
-      console.error(info.errors);
-    }
-    if (stats.hasWarnings()) {
-      console.warn(info.warnings);
     }
 
     if (firstCompile) {
       firstCompile = false;
     }
 
-    if (!err && !stats.hasErrors()) {
-      if (!firstCompile) {
-        if (mainProcess) {
-          mainProcess.kill();
-        }
+    if (!err) {
+      if (!firstCompile && mainProcess) {
+        mainProcess.kill();
       }
       startMainProcess();
     }

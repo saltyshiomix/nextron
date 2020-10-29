@@ -1,9 +1,8 @@
 import fs from 'fs-extra';
 import path from 'path';
-import { SpawnSyncOptions } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
-import spawn from 'cross-spawn';
+import execa from 'execa';
 import { getNextronConfig } from './webpack/helpers';
 import log from './logger';
 
@@ -53,7 +52,7 @@ if (args['--help']) {
 }
 
 const cwd = process.cwd();
-const spawnOptions: SpawnSyncOptions = {
+const execaOptions: execa.Options = {
   cwd,
   stdio: 'inherit',
 };
@@ -72,14 +71,14 @@ async function build() {
     fs.removeSync(distdir);
 
     log('Building renderer process');
-    spawn.sync('next', ['build', path.join(cwd, rendererSrcDir)], spawnOptions);
-    spawn.sync('next', ['export', '-o', appdir, path.join(cwd, rendererSrcDir)], spawnOptions);
+    await execa('next', ['build', path.join(cwd, rendererSrcDir)], execaOptions);
+    await execa('next', ['export', '-o', appdir, path.join(cwd, rendererSrcDir)], execaOptions);
 
     log('Building main process');
-    spawn.sync('node', [path.join(__dirname, 'webpack/build.production.js')], spawnOptions);
+    await execa('node', [path.join(__dirname, 'webpack/build.production.js')], execaOptions);
 
     log('Packaging - please wait a moment');
-    spawn.sync('electron-builder', createBuilderArgs(), spawnOptions);
+    await execa('electron-builder', createBuilderArgs(), execaOptions);
 
     log('See `dist` directory');
   } catch (err) {
