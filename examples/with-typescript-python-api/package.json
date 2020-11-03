@@ -46,11 +46,11 @@
     "graphql-tag": "^2.10.1",
     "isomorphic-fetch": "^2.2.1",
     "next": "9.5.1",
-    "nextron": "^5.15.6",
+    "nextron": "^5.15.7",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "shx": "^0.3.2",
     "typescript": "^4.0.5",
-    "webpack": "^5.2.0"
+    "webpack": "4.44.0"
   }
 }
