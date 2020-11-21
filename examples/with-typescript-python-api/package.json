@@ -37,7 +37,7 @@
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-client": "^2.6.3",
     "apollo-link-http": "^1.5.15",
-    "babel-loader": "^8.1.0",
+    "babel-loader": "^8.2.1",
     "electron": "^10.1.5",
     "electron-builder": "^22.9.1",
     "electron-packager": "^9.0.1",
