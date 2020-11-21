@@ -27,7 +27,7 @@
     "superagent": "^5.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.3",
+    "@babel/core": "^7.12.7",
     "@types/cross-spawn": "^6.0.1",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^14.6.4",
