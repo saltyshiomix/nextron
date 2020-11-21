@@ -60,7 +60,7 @@
     "@types/webpack-merge": "^4.1.5",
     "cross-env": "^7.0.2",
     "rimraf": "^3.0.2",
-    "rollup": "^2.32.1",
+    "rollup": "^2.33.3",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
     "typescript": "^4.0.5"
