@@ -1,4 +1,4 @@
-import { keyframes } from '@emotion/core';
+import { keyframes } from '@emotion/react';
 import { Keyframes } from '@emotion/serialize';
 import styled from '@emotion/styled';
 import { basicStyles } from './BasicCard';
