@@ -20,7 +20,7 @@
     "electron": "^11.0.2",
     "electron-builder": "^22.9.1",
     "next": "9.5.1",
-    "nextron": "^5.15.10",
+    "nextron": "^5.15.11",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",
     "webpack": "4.44.0"
