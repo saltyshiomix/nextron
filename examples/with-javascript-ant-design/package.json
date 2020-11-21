@@ -20,7 +20,7 @@
     "antd": "^4.2.4",
     "babel-loader": "^8.2.1",
     "babel-plugin-import": "^1.13.0",
-    "electron": "^10.1.5",
+    "electron": "^11.0.2",
     "electron-builder": "^22.9.1",
     "next": "9.5.1",
     "nextron": "^5.15.7",
