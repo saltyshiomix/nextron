@@ -18,6 +18,7 @@
     "@babel/core": "^7.12.7",
     "@emotion/babel-plugin": "^11.0.0",
     "@emotion/core": "^11.0.0",
+    "@emotion/react": "^11.1.1",
     "@emotion/styled": "^11.0.0",
     "babel-loader": "^8.2.1",
     "electron": "^11.0.2",
