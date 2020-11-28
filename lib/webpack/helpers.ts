@@ -6,7 +6,7 @@ import configure from './webpack.config';
 const cwd = process.cwd();
 const ext = fs.existsSync(path.join(cwd, 'tsconfig.json')) ? '.ts' : '.js';
 
-const getNextronConfig = () => {
+export const getNextronConfig = () => {
   const nextronConfigPath = path.join(cwd, 'nextron.config.js');
   if (fs.existsSync(nextronConfigPath)) {
     return require(nextronConfigPath);
@@ -15,7 +15,7 @@ const getNextronConfig = () => {
   }
 };
 
-const getWebpackConfig = (env: 'development' | 'production') => {
+export const getWebpackConfig = (env: 'development' | 'production') => {
   const { mainSrcDir, webpack } = getNextronConfig();
   const userConfig = merge(configure(env), {
     entry: {
@@ -33,9 +33,4 @@ const getWebpackConfig = (env: 'development' | 'production') => {
   } else {
     return merge(userConfig, userWebpack);
   }
-};
-
-export {
-  getNextronConfig,
-  getWebpackConfig,
 };
