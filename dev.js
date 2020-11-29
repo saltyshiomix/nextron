@@ -3,6 +3,8 @@ const path = require('path');
 const execa = require('execa');
 const chalk = require('chalk');
 
+const cwd = process.cwd();
+
 async function detectPackageManager() {
   let pm = 'yarn';
   try {
@@ -31,7 +33,7 @@ async function detectPackageManager() {
   let example = 'with-javascript';
   if (3 <= process.argv.length) {
     const newExample = process.argv[2];
-    if (!fs.existsSync(path.join(__dirname, `examples/${newExample}`))) {
+    if (!fs.existsSync(path.join(cwd, `examples/${newExample}`))) {
       console.log(chalk.red(`Not found examples/${newExample}`));
       console.log('');
       process.exit(1);
@@ -41,21 +43,11 @@ async function detectPackageManager() {
 
   await fs.remove('workspace');
 
-  await execa(
-    'node',
-    [
-      path.join(__dirname, 'bin/nextron'),
-      'init',
-      'workspace',
-      '--example',
-      example,
-    ],
-    {
-      stdio: 'inherit',
-    },
-  );
+  const ext = fs.existsSync(path.resolve(cwd, `examples/${example}/tsconfig.json`)) ? 'ts' : 'js';
+  await fs.copy(path.resolve(cwd, `examples/_template/gitignore.txt`), path.join(cwd, 'workspace/.gitignore'));
+  await fs.copy(path.resolve(cwd, `examples/_template/${ext}`), path.join(cwd, 'workspace'));
+  await fs.copy(path.resolve(cwd, `examples/${example}`), path.join(cwd, 'workspace'));
 
-  const cwd = process.cwd();
   const pkg = path.join(cwd, 'workspace/package.json');
   const content = await fs.readJSON(pkg);
   content.devDependencies.nextron = cwd;
