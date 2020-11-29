@@ -23,12 +23,6 @@
 | `v2.x` / `v3.x` | `v7.x` |
 | `v1.x` | `v6.x` |
 
-```
-👍 JavaScript frontend/backend
-👍 TypeScript frontend/backend
-👍 TypeScript frontend/Python backend
-```
-
 ### Package Manager
 
 `npm`, `yarn` and `pnpm >= v4` are supported.
@@ -577,24 +571,6 @@ $ yarn create nextron-app my-app --example with-javascript-material-ui
 $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 ```
 
-### [examples/with-python](./examples/with-python)
-
-<p align="center"><img src="https://i.imgur.com/1hAUjRY.png"></p>
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example with-python
-
-# with npx
-$ npx create-nextron-app my-app --example with-python
-
-# with yarn
-$ yarn create nextron-app my-app --example with-python
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-python
-```
-
 ### [examples/with-typescript](./examples/with-typescript)
 
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
@@ -631,24 +607,6 @@ $ yarn create nextron-app my-app --example with-typescript-emotion
 $ pnpx create-nextron-app my-app --example with-typescript-emotion
 ```
 
-### [examples/with-typescript-less](./examples/with-typescript-less)
-
-<p align="center"><img src="https://i.imgur.com/OBtezMb.png"></p>
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example with-typescript-less
-
-# with npx
-$ npx create-nextron-app my-app --example with-typescript-less
-
-# with yarn
-$ yarn create nextron-app my-app --example with-typescript-less
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-less
-```
-
 ### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
 
 <p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
@@ -665,26 +623,6 @@ $ yarn create nextron-app my-app --example with-typescript-material-ui
 
 # with pnpx
 $ pnpx create-nextron-app my-app --example with-typescript-material-ui
-```
-
-### [examples/with-typescript-python-api](./examples/with-typescript-python-api)
-
-<p align="center"><img src="https://i.imgur.com/NvpeT9C.png"></p>
-
-(Note: When working with the with-typescript-python-api example, see the example's readme file for python setup details)
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example with-typescript-python-api
-
-# with npx
-$ npx create-nextron-app my-app --example with-typescript-python-api
-
-# with yarn
-$ yarn create nextron-app my-app --example with-typescript-python-api
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-python-api
 ```
 
 ## Develop
