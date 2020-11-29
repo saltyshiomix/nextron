@@ -22,8 +22,7 @@
   },
   "files": [
     "bin",
-    "babel.js",
-    "examples"
+    "babel.js"
   ],
   "bin": {
     "nextron": "bin/nextron.js"
