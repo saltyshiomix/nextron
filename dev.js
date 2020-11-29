@@ -1,24 +1,20 @@
-const { remove, existsSync } = require('fs-extra');
-const { resolve } = require('path');
-const { execSync } = require('child_process');
+const fs = require('fs-extra');
+const path = require('path');
+const execa = require('execa');
 const chalk = require('chalk');
 
 async function detectPackageManager() {
-  const { promisify } = require('util');
-  const { exec: defaultExec } = require('child_process');
-  const cwd = process.cwd();
-  const exec = promisify(defaultExec);
   let pm = 'yarn';
   try {
-    await exec(`${pm} -v`, { cwd });
+    await execa(pm, '-v');
   } catch (_) {
     pm = 'pnpm';
     try {
-      await exec(`${pm} -v`, { cwd });
+      await execa(pm, '-v');
     } catch (_ignore) {
       pm = 'npm';
       try {
-        await exec(`${pm} -v`, { cwd });
+        await execa(pm, '-v');
       } catch (_) {
         pm = undefined;
       }
@@ -31,13 +27,11 @@ async function detectPackageManager() {
   return pm;
 }
 
-async function dev() {
-  process.env.NODE_ENV = 'testing';
-
+(async () => {
   let example = 'with-javascript';
   if (3 <= process.argv.length) {
     const newExample = process.argv[2];
-    if (!existsSync(resolve(__dirname, `examples/${newExample}`))) {
+    if (!fs.existsSync(path.join(__dirname, `examples/${newExample}`))) {
       console.log(chalk.red(`Not found examples/${newExample}`));
       console.log('');
       process.exit(1);
@@ -45,18 +39,35 @@ async function dev() {
     example = newExample;
   }
 
-  await remove('workspace');
+  await fs.remove('workspace');
 
-  execSync('node ' + resolve(__dirname, 'bin/nextron') + ` init workspace --example ${example}`, {
-    cwd: __dirname,
-    stdio: 'inherit',
-  });
+  await execa(
+    'node',
+    [
+      path.join(__dirname, 'bin/nextron'),
+      'init',
+      'workspace',
+      '--example',
+      example,
+    ],
+    {
+      stdio: 'inherit',
+    },
+  );
+
+  const cwd = process.cwd();
+  const pkg = path.join(cwd, 'workspace/package.json');
+  const content = await fs.readJSON(pkg);
+  content.devDependencies.nextron = cwd;
+  await fs.writeJSON(pkg, {...content}, {spaces: 2});
 
   const pm = await detectPackageManager();
-  execSync(`${pm} install && ${pm} run dev`, {
-    cwd: resolve(__dirname, 'workspace'),
+  await execa(pm, ['install'], {
+    cwd: path.join(cwd, 'workspace'),
     stdio: 'inherit',
   });
-}
-
-dev();
+  await execa(pm, ['run', 'dev'], {
+    cwd: path.join(cwd, 'workspace'),
+    stdio: 'inherit',
+  });
+})();
