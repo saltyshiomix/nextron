@@ -14,6 +14,7 @@ const coreConfig = {
     }),
     babel({
       extensions,
+      babelHelpers: 'inline',
       exclude: /node_modules/,
     }),
     commonjs(),
