@@ -1,4 +1,3 @@
-import fs from 'fs-extra';
 import path from 'path';
 import execa from 'execa';
 import arg from 'arg';
@@ -41,10 +40,6 @@ if (args['--help'] || (!args._[0])) {
 }
 
 const example = args['--template'] || args['--example'] || 'with-javascript-material-ui';
-if (!fs.existsSync(path.resolve(__dirname, `../examples/${example}`))) {
-  console.log(chalk.red(`Not found examples/${example}`));
-  process.exit(1);
-}
 
 execa.sync(
   'npx',
