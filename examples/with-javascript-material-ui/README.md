@@ -4,10 +4,7 @@
 
 ### Create an App
 
-```zsh
-# with `nextron`
-$ nextron init my-app --example with-javascript-material-ui
-
+```
 # with npx
 $ npx create-nextron-app my-app --example with-javascript-material-ui
 
@@ -20,7 +17,7 @@ $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 
 ### Install Dependencies
 
-```zsh
+```
 $ cd my-app
 
 # using yarn or npm
@@ -32,7 +29,7 @@ $ pnpm install --shamefully-hoist
 
 ### Use it
 
-```zsh
+```
 # development mode
 $ yarn dev (or `npm run dev` or `pnpm run dev`)
 

@@ -18,11 +18,6 @@
     "resolveJsonModule": true,
     "isolatedModules": true
   },
-  "include": [
-    "renderer/next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx"
-  ],
   "exclude": [
     "node_modules",
     "renderer/next.config.js",

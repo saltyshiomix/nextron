@@ -4,7 +4,6 @@ import chalk from 'chalk';
 
 const defaultCommand = 'dev';
 const commands = new Set([
-  'list',
   'init',
   'build',
   defaultCommand,
