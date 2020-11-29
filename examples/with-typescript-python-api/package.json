@@ -27,7 +27,7 @@
     "superagent": "^5.2.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.7",
+    "@babel/core": "^7.12.9",
     "@types/cross-spawn": "^6.0.1",
     "@types/isomorphic-fetch": "^0.0.35",
     "@types/node": "^14.6.4",
@@ -37,7 +37,7 @@
     "apollo-cache-inmemory": "^1.6.2",
     "apollo-client": "^2.6.3",
     "apollo-link-http": "^1.5.15",
-    "babel-loader": "^8.2.1",
+    "babel-loader": "^8.2.2",
     "electron": "^11.0.2",
     "electron-builder": "^22.9.1",
     "electron-packager": "^9.0.1",
