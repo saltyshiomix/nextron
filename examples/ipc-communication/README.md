@@ -5,8 +5,8 @@
 ### Create an App
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example ipc-communication
+# with npm
+$ npm init nextron-app my-app --example ipc-communication
 
 # with yarn
 $ yarn create nextron-app my-app --example ipc-communication

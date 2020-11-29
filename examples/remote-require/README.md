@@ -5,8 +5,8 @@
 ### Create an App
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example remote-require
+# with npm
+$ npm init nextron-app my-app --example remote-require
 
 # with yarn
 $ yarn create nextron-app my-app --example remote-require

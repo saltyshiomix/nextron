@@ -43,8 +43,8 @@ We can use `examples/*` as a template.
 To create the `examples/with-typescript-material-ui`, run the command below:
 
 ```
-# with npx
-$ npx create-nextron-app MY_APP --example with-typescript-material-ui
+# with npm
+$ npm init nextron-app MY_APP --example with-typescript-material-ui
 
 # with yarn
 $ yarn create nextron-app MY_APP --example with-typescript-material-ui
@@ -241,8 +241,8 @@ See [examples](./examples) folder for more information.
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example custom-build-options
+# with npm
+$ npm init nextron-app my-app --example custom-build-options
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-build-options
@@ -256,8 +256,8 @@ $ pnpx create-nextron-app my-app --example custom-build-options
 <p align="center"><img src="https://i.imgur.com/nqpLJI0.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example custom-main-entry
+# with npm
+$ npm init nextron-app my-app --example custom-main-entry
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-main-entry
@@ -271,8 +271,8 @@ $ pnpx create-nextron-app my-app --example custom-main-entry
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example custom-renderer-port
+# with npm
+$ npm init nextron-app my-app --example custom-renderer-port
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-renderer-port
@@ -286,8 +286,8 @@ $ pnpx create-nextron-app my-app --example custom-renderer-port
 <p align="center"><img src="https://i.imgur.com/kIDlAFT.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example ipc-communication
+# with npm
+$ npm init nextron-app my-app --example ipc-communication
 
 # with yarn
 $ yarn create nextron-app my-app --example ipc-communication
@@ -301,8 +301,8 @@ $ pnpx create-nextron-app my-app --example ipc-communication
 <p align="center"><img src="https://i.imgur.com/ICrzX0V.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example parameterized-routing
+# with npm
+$ npm init nextron-app my-app --example parameterized-routing
 
 # with yarn
 $ yarn create nextron-app my-app --example parameterized-routing
@@ -316,8 +316,8 @@ $ pnpx create-nextron-app my-app --example parameterized-routing
 <p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example remote-require
+# with npm
+$ npm init nextron-app my-app --example remote-require
 
 # with yarn
 $ yarn create nextron-app my-app --example remote-require
@@ -331,8 +331,8 @@ $ pnpx create-nextron-app my-app --example remote-require
 <p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example store-data
+# with npm
+$ npm init nextron-app my-app --example store-data
 
 # with yarn
 $ yarn create nextron-app my-app --example store-data
@@ -346,8 +346,8 @@ $ pnpx create-nextron-app my-app --example store-data
 <p align="center"><img src="https://i.imgur.com/mq6qMPk.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example web-worker
+# with npm
+$ npm init nextron-app my-app --example web-worker
 
 # with yarn
 $ yarn create nextron-app my-app --example web-worker
@@ -361,8 +361,8 @@ $ pnpx create-nextron-app my-app --example web-worker
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript
+# with npm
+$ npm init nextron-app my-app --example with-javascript
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript
@@ -376,8 +376,8 @@ $ pnpx create-nextron-app my-app --example with-javascript
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-ant-design
+# with npm
+$ npm init nextron-app my-app --example with-javascript-ant-design
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-ant-design
@@ -391,8 +391,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-ant-design
 <p align="center"><img src="https://i.imgur.com/FDRVPr8.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-emotion
+# with npm
+$ npm init nextron-app my-app --example with-javascript-emotion
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-emotion
@@ -406,8 +406,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-emotion
 <p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-material-ui
+# with npm
+$ npm init nextron-app my-app --example with-javascript-material-ui
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-material-ui
@@ -421,8 +421,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript
+# with npm
+$ npm init nextron-app my-app --example with-typescript
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript
@@ -436,8 +436,8 @@ $ pnpx create-nextron-app my-app --example with-typescript
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript-emotion
+# with npm
+$ npm init nextron-app my-app --example with-typescript-emotion
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-emotion
@@ -451,8 +451,8 @@ $ pnpx create-nextron-app my-app --example with-typescript-emotion
 <p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
 
 ```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript-material-ui
+# with npm
+$ npm init nextron-app my-app --example with-typescript-material-ui
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-material-ui
