@@ -194,6 +194,20 @@ module.exports = {
 };
 ```
 
+## Custom Babel Config
+
+We can extends the default babel config of main process by putting `.babelrc` in our project root like this:
+
+**`.babelrc`**:
+
+```json
+{
+  "presets": [
+    "nextron/babel"
+  ]
+}
+```
+
 ## Tips
 
 ### Next.js' Webpack Processes

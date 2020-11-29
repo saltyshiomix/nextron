@@ -1,8 +1,25 @@
+import fs from 'fs';
 import path from 'path';
 import webpack from 'webpack';
 
 const cwd = process.cwd();
 const externals = require(path.join(cwd, 'package.json')).dependencies;
+
+const existsSync = (f: string): boolean => {
+  try {
+    fs.accessSync(f, fs.constants.F_OK);
+    return true;
+  } catch (_) {
+    return false;
+  }
+};
+
+const getBabelrc = (): string | undefined => {
+  if (existsSync(path.join(cwd, '.babelrc'))) return path.join(cwd, '.babelrc');
+  if (existsSync(path.join(cwd, '.babelrc.js'))) return path.join(cwd, '.babelrc.js');
+  if (existsSync(path.join(cwd, 'babel.config.js'))) return path.join(cwd, 'babel.config.js');
+  return path.join(__dirname, '../babel.js');
+};
 
 export default (env: 'development' | 'production'): webpack.Configuration => ({
   mode: env,
@@ -25,14 +42,10 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
       {
         test: /\.(js|ts)x?$/,
         use: {
-          loader: 'babel-loader',
+          loader: require.resolve('babel-loader'),
           options: {
             cacheDirectory: true,
-            presets: ['@babel/preset-typescript'],
-            plugins: [
-              '@babel/plugin-proposal-class-properties',
-              '@babel/plugin-proposal-optional-chaining',
-            ],
+            extends: getBabelrc(),
           },
         },
         exclude: [
