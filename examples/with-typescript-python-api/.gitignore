@@ -1,8 +1,0 @@
-node_modules
-*.log
-.next
-next-env.d.ts
-app
-dist
-api.spec
-pythondist

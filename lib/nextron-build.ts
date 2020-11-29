@@ -75,7 +75,7 @@ async function build() {
     await execa('next', ['export', '-o', appdir, path.join(cwd, rendererSrcDir)], execaOptions);
 
     log('Building main process');
-    await execa('node', [path.join(__dirname, 'webpack/build.production.js')], execaOptions);
+    await execa('node', [path.join(__dirname, 'webpack.config.js')], execaOptions);
 
     log('Packaging - please wait a moment');
     await execa('electron-builder', createBuilderArgs(), execaOptions);

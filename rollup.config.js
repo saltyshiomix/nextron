@@ -14,6 +14,7 @@ const coreConfig = {
     }),
     babel({
       extensions,
+      babelHelpers: 'inline',
       exclude: /node_modules/,
     }),
     commonjs(),
@@ -46,5 +47,5 @@ export default [
   cliConfig('lib/nextron-dev.ts'),
   cliConfig('lib/nextron-build.ts'),
   cliConfig('lib/nextron-list.ts'),
-  config('lib/webpack/build.production.ts', 'bin/webpack/build.production.js'),
+  config('lib/webpack/build.production.ts', 'bin/webpack.config.js'),
 ];
