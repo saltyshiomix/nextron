@@ -39,7 +39,7 @@
   - [szwacz/electron-boilerplate](https://github.com/szwacz/electron-boilerplate)
   - [chentsulin/electron-react-boilerplate](https://github.com/chentsulin/electron-react-boilerplate)
 - If you want to use Nextron as production, please take responsibility for your actions
-- But, if you have any troubles, questions or ideas, I'll support you, I promise
+- But, if you have any troubles, questions or ideas, I'll support you
 
 ## Usage
 
@@ -283,24 +283,6 @@ To list all examples, just type the command below:
 $ nextron list
 ```
 
-### [examples/api-routes](./examples/api-routes)
-
-<p align="center"><img src="https://i.imgur.com/TXLXR6J.png"></p>
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example api-routes
-
-# with npx
-$ npx create-nextron-app my-app --example api-routes
-
-# with yarn
-$ yarn create nextron-app my-app --example api-routes
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example api-routes
-```
-
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
@@ -353,60 +335,6 @@ $ yarn create nextron-app my-app --example custom-renderer-port
 
 # with pnpx
 $ pnpx create-nextron-app my-app --example custom-renderer-port
-```
-
-### [examples/custom-server](./examples/custom-server)
-
-<p align="center"><img src="https://i.imgur.com/SBTLNhq.png"></p>
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example custom-server
-
-# with npx
-$ npx create-nextron-app my-app --example custom-server
-
-# with yarn
-$ yarn create nextron-app my-app --example custom-server
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-server
-```
-
-### [examples/custom-server-nodemon](./examples/custom-server-nodemon)
-
-<p align="center"><img src="https://i.imgur.com/yTvam6R.png"></p>
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example custom-server-nodemon
-
-# with npx
-$ npx create-nextron-app my-app --example custom-server-nodemon
-
-# with yarn
-$ yarn create nextron-app my-app --example custom-server-nodemon
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-server-nodemon
-```
-
-### [examples/custom-server-typescript](./examples/custom-server-typescript)
-
-<p align="center"><img src="https://i.imgur.com/fyjMMmP.png"></p>
-
-```zsh
-# with `nextron`
-$ nextron init my-app --example custom-server-typescript
-
-# with npx
-$ npx create-nextron-app my-app --example custom-server-typescript
-
-# with yarn
-$ yarn create nextron-app my-app --example custom-server-typescript
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-server-typescript
 ```
 
 ### [examples/ipc-communication](./examples/ipc-communication)
