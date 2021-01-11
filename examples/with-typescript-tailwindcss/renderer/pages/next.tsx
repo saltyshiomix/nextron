@@ -4,10 +4,7 @@ import Link from 'next/link'
 
 const Home = () => {
   return (
-    <React.Fragment>
-      <Head>
-        <title>Home - Nextron (with-typescript-tailwindcss)</title>
-      </Head>
+    <>
       <div>
         <div className='grid grid-col-1 text-2xl w-full text-center'>
           <img className='ml-auto mr-auto' src='/images/logo.png' />
@@ -25,7 +22,7 @@ const Home = () => {
           </Link>
         </div>
       </div>
-    </React.Fragment>
+    </>
   )
 }
 
