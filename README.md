@@ -416,7 +416,7 @@ $ yarn create nextron-app my-app --example with-javascript-material-ui
 $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 ```
 
-### [examples/with-javascript](./examples/with-javascript)-tailwindcss
+### [examples/with-javascript-tailwindcss](./examples/with-javascript-tailwindcss)
 
 <p align="center"><img src="https://i.imgur.com/P08L8HO.png"></p>
 
