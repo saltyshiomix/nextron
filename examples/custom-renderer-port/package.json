@@ -15,10 +15,10 @@
     "electron-store": "^6.0.1"
   },
   "devDependencies": {
-    "electron": "^11.0.2",
+    "electron": "^11.1.1",
     "electron-builder": "^22.9.1",
-    "next": "^10.0.3",
-    "nextron": "^6.0.1",
+    "next": "^10.0.5",
+    "nextron": "^6.0.2",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
