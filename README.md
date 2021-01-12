@@ -416,6 +416,21 @@ $ yarn create nextron-app my-app --example with-javascript-material-ui
 $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 ```
 
+### [examples/with-javascript](./examples/with-javascript)-tailwindcss
+
+<p align="center"><img src="https://i.imgur.com/P08L8HO.png"></p>
+
+```
+# with npm
+$ npm init nextron-app my-app --example with-javascript-tailwindcss
+
+# with yarn
+$ yarn create nextron-app my-app --example with-javascript-tailwindcss
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-javascript-tailwindcss
+```
+
 ### [examples/with-typescript](./examples/with-typescript)
 
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
@@ -459,6 +474,21 @@ $ yarn create nextron-app my-app --example with-typescript-material-ui
 
 # with pnpx
 $ pnpx create-nextron-app my-app --example with-typescript-material-ui
+```
+
+### [examples/with-typescript-tailwindcss](./examples/with-typescript-tailwindcss)
+
+<p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
+
+```
+# with npm
+$ npm init nextron-app my-app --example with-typescript-tailwindcss
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-tailwindcss
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
 ```
 
 ## Develop
