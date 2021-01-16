@@ -1,33 +1,30 @@
 import electron from 'electron';
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-// prevent SSR webpacking
 const ipcRenderer = electron.ipcRenderer || false;
 
 const Home = () => {
-  const [message, setMessage] = useState('');
-  const [messages, setMessages] = useState([]);
+  const [message, setMessage] = React.useState('');
+  const [messages, setMessages] = React.useState([]);
 
   const onChange = (e) => setMessage(e.target.value);
+
   const onSubmit = (e) => {
     e.preventDefault();
-    if (ipcRenderer) {
-      ipcRenderer.send('add-message', message);
-      setMessages([...messages, message]);
-      setMessage(''); // clear the input value
-    }
+
+    ipcRenderer.send('add-message', message);
+    setMessages([...messages, message]);
+    setMessage('');
   };
 
-  useEffect(() => {
-    // componentDidMount()
-    if (ipcRenderer) {
-      setMessages(ipcRenderer.sendSync('get-messages'));
-    }
+  React.useEffect(() => {
+    // like componentDidMount()
+    setMessages(ipcRenderer.sendSync('get-messages'));
 
     return () => {
-      // componentWillUnmount()
+      // like componentWillUnmount()
     };
   }, []);
 

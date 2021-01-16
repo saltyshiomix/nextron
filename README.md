@@ -112,7 +112,7 @@ files:
     filter:
       - package.json
       - app
-publish: null
+publish: null # see https://www.electron.build/configuration/publish
 ```
 
 For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration).
@@ -134,22 +134,7 @@ module.exports = {
 };
 ```
 
-### Additional Entries
-
-```js
-module.exports = {
-  webpack: (defaultConfig, env) => Object.assign(defaultConfig, {
-    entry: {
-      // electron main process
-      background: './main/background.js',
-      // we can require `config.js` by using `require('electron').remote.require('./config')`
-      config: './main/config.js',
-    },
-  }),
-};
-```
-
-## Custom Babel Config
+## Custom Babel Config for the Main Process
 
 We can extends the default babel config of main process by putting `.babelrc` in our project root like this:
 
@@ -167,9 +152,9 @@ We can extends the default babel config of main process by putting `.babelrc` in
 
 ### Next.js' Webpack Processes
 
-There are two webpack processes: a server process and client one.
+There are two webpack processes: server process and client one.
 
-If we want to use some libraries that don't support SSR(Server Side Rendering), we should check if the current process is whether a server or client:
+If we want to use some libraries that don't support SSR, we should check if the current process is whether server or client:
 
 ```jsx
 // pages/home.jsx
@@ -177,13 +162,13 @@ If we want to use some libraries that don't support SSR(Server Side Rendering), 
 import electron from 'electron';
 
 const Home = () => {
-  // we can't use `electron.remote` directly!
-  const remote = electron.remote;
+  // we can't use `electron.ipcRenderer` directly!
+  const ipcRenderer = electron.ipcRenderer;
 
   // we should check it like this
-  const remote = electron.remote || false;
-  if (remote) {
-    // we can use `electron.remote`
+  const ipcRenderer = electron.ipcRenderer || false;
+  if (ipcRenderer) {
+    // we can use `electron.ipcRenderer`
     // because this scope is the client webpack process
   }
 };
@@ -193,40 +178,30 @@ export default Home;
 
 ### The Basic of React Hooks :)
 
-As mentioned above, we should check if the webpack process is a client because the renderer process is a web client.
-
-So we must use react `state` as follows:
+As mentioned above, we should check if the webpack process is a client because the renderer process is a web client:
 
 ```jsx
 // pages/home.jsx
 
 import electron from 'electron';
-import React, { useState, useEffect } from 'react';
-
-// prevent SSR webpacking
-const remote = electron.remote || false;
+import React from 'react';
 
 const Home = () => {
-  const [config, setConfig] = useState({});
+  // In this scope, both of server and client processes are running
+  // So if the process is server, `window` object is undefined
 
-  useEffect(() => {
-    // componentDidMount()
-    if (remote) {
-      // require `./main/config.js` from `./main/background.js`
-      // and set the config
-      setConfig(remote.require('./config').default);
-    }
+  React.useEffect(() => {
+    // componentDidMount() like
+
+    // In this scope, only the client process is running
+    window.alert('wow');
 
     return () => {
-      // componentWillUnmount()
+      // componentWillUnmount() like
     };
   }, []);
 
-  return (
-    <React.Fragment>
-      <p>Message: {config.message}</p>
-    </React.Fragment>
-  );
+  return <p>Hello Nextron</p>;
 };
 
 export default Home;
@@ -296,36 +271,6 @@ $ yarn create nextron-app my-app --example ipc-communication
 $ pnpx create-nextron-app my-app --example ipc-communication
 ```
 
-### [examples/parameterized-routing](./examples/parameterized-routing)
-
-<p align="center"><img src="https://i.imgur.com/ICrzX0V.png"></p>
-
-```
-# with npm
-$ npm init nextron-app my-app --example parameterized-routing
-
-# with yarn
-$ yarn create nextron-app my-app --example parameterized-routing
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example parameterized-routing
-```
-
-### [examples/remote-require](./examples/remote-require)
-
-<p align="center"><img src="https://i.imgur.com/9fdMREj.png"></p>
-
-```
-# with npm
-$ npm init nextron-app my-app --example remote-require
-
-# with yarn
-$ yarn create nextron-app my-app --example remote-require
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example remote-require
-```
-
 ### [examples/store-data](./examples/store-data)
 
 <p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
@@ -339,21 +284,6 @@ $ yarn create nextron-app my-app --example store-data
 
 # with pnpx
 $ pnpx create-nextron-app my-app --example store-data
-```
-
-### [examples/web-worker](./examples/web-worker)
-
-<p align="center"><img src="https://i.imgur.com/mq6qMPk.png"></p>
-
-```
-# with npm
-$ npm init nextron-app my-app --example web-worker
-
-# with yarn
-$ yarn create nextron-app my-app --example web-worker
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example web-worker
 ```
 
 ### [examples/with-javascript](./examples/with-javascript)
