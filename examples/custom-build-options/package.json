@@ -23,7 +23,7 @@
     "electron": "^11.3.0",
     "electron-builder": "^22.9.1",
     "next": "^10.0.7",
-    "nextron": "^6.0.3",
+    "nextron": "^6.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }
