@@ -16,14 +16,14 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-serve": "^1.0.0",
-    "electron-store": "^6.0.1"
+    "electron-serve": "^1.1.0",
+    "electron-store": "^7.0.2"
   },
   "devDependencies": {
-    "electron": "^11.1.1",
+    "electron": "^11.3.0",
     "electron-builder": "^22.9.1",
-    "next": "^10.0.5",
-    "nextron": "^6.0.3",
+    "next": "^10.0.7",
+    "nextron": "^6.0.4",
     "react": "^17.0.1",
     "react-dom": "^17.0.1"
   }

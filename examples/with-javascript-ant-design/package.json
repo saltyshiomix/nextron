@@ -11,8 +11,8 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-serve": "^1.0.0",
-    "electron-store": "^6.0.1"
+    "electron-serve": "^1.1.0",
+    "electron-store": "^7.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.12.9",
@@ -20,10 +20,10 @@
     "antd": "^4.8.6",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
-    "electron": "^11.1.1",
+    "electron": "^11.3.0",
     "electron-builder": "^22.9.1",
-    "next": "^10.0.5",
-    "nextron": "^6.0.3",
+    "next": "^10.0.7",
+    "nextron": "^6.0.4",
     "null-loader": "^4.0.1",
     "react": "^17.0.1",
     "react-dom": "^17.0.1",

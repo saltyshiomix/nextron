@@ -17,12 +17,10 @@ const args = arg({
   '--remote-debugging-port': Number,
   '--inspect': Number,
   '--run-only': Boolean,
-  '--custom-server': String,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
   '-r': '--run-only',
-  '-c': '--custom-server',
 });
 
 if (args['--help']) {
@@ -77,20 +75,11 @@ async function dev() {
   };
 
   const startRendererProcess = () => {
-    let child: ChildProcess;
-    if (args['--custom-server']) {
-      if (fs.existsSync('nodemon.json')) {
-        child = execa('nodemon', [args['--custom-server']], execaOptions);
-      } else {
-        child = execa('node', [args['--custom-server']], execaOptions);
-      }
-    } else {
-      child = execa(
-        'next',
-        ['-p', rendererPort, rendererSrcDir || 'renderer'],
-        execaOptions,
-      );
-    }
+    const child = execa(
+      'next',
+      ['-p', rendererPort, rendererSrcDir || 'renderer'],
+      execaOptions,
+    );
     child.on('close', () => {
       process.exit(0);
     });

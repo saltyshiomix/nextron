@@ -2,7 +2,7 @@ import {
   screen,
   BrowserWindow,
 } from 'electron';
-import * as Store from 'electron-store';
+import Store from 'electron-store';
 
 export default function createWindow(windowName, options) {
   const key = 'window-state';
