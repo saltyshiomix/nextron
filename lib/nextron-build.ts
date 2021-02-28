@@ -18,12 +18,14 @@ const args = arg({
   '--armv7l': Boolean,
   '--arm64': Boolean,
   '--config': String,
+  '--publish': String,
   '-h': '--help',
   '-v': '--version',
   '-w': '--win',
   '-m': '--mac',
   '-l': '--linux',
   '-c': '--config',
+  '-p': '--publish',
 });
 
 if (args['--help']) {
@@ -47,6 +49,9 @@ if (args['--help']) {
       --ia32         builds for ia32
       --armv7l       builds for armv7l
       --arm64        builds for arm64
+      --publish  -p  Publish artifacts (see https://goo.gl/tSFycD)
+                     [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
+
   `);
   process.exit(0);
 }
@@ -96,6 +101,10 @@ function createBuilderArgs() {
   if (args['--config']) {
     results.push('--config');
     results.push(args['--config'] || 'electron-builder.yml');
+  }
+  if (args['--publish']) {
+    results.push('--publish');
+    results.push(args['--publish']);
   }
   if (args['--all']) {
     results.push('-wml');
