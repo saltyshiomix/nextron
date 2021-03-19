@@ -376,6 +376,21 @@ $ yarn create nextron-app my-app --example with-typescript
 $ pnpx create-nextron-app my-app --example with-typescript
 ```
 
+### [examples/with-typescript-ant-design](./examples/with-typescript-ant-design)
+
+<p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
+
+```
+# with npm
+$ npm init nextron-app my-app --example with-typescript-ant-design
+
+# with yarn
+$ yarn create nextron-app my-app --example with-typescript-ant-design
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example with-typescript-ant-design
+```
+
 ### [examples/with-typescript-emotion](./examples/with-typescript-emotion)
 
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
