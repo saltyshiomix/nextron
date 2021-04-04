@@ -5,7 +5,7 @@ import Link from 'next/link';
 
 const ipcRenderer = electron.ipcRenderer || false;
 
-const Home = () => {
+function Home() {
   const [message, setMessage] = React.useState('');
   const [messages, setMessages] = React.useState([]);
 

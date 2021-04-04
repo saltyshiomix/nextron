@@ -1,15 +1,13 @@
-import type { AppProps } from 'next/app'
-import '../styles/index.css'
-import Head from 'next/head'
+import React from 'react';
+import type { AppProps } from 'next/app';
 
-const MyApp = ({ Component, pageProps }: AppProps) => {
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <>
-      <Head>
-        <title>Home - Nextron (with-typescript-tailwindcss)</title>
-      </Head>
+    <React.Fragment>
       <Component {...pageProps} />
-    </>
+    </React.Fragment>
   )
 }
 

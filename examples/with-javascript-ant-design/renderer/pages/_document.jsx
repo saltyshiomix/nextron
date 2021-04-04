@@ -5,8 +5,8 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head>
-          <meta name='viewport' content='width=device-width, initial-scale=1' />
           <meta charSet='utf-8' />
+          <title>Home - Nextron (with-typescript-ant-design)</title>
         </Head>
         <body>
           <Main />

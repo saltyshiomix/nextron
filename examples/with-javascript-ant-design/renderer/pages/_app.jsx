@@ -1,10 +1,9 @@
 import React from 'react';
-import type { AppProps } from 'next/app';
 import Head from 'next/head';
 
 import 'antd/dist/antd.css';
 
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({ Component, pageProps }) {
   return (
     <React.Fragment>
       <Head>
