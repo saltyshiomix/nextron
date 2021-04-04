@@ -15,7 +15,7 @@
     "electron-store": "^7.0.2"
   },
   "devDependencies": {
-    "@babel/core": "^7.12.9",
+    "@babel/core": "^7.13.14",
     "@zeit/next-css": "^1.0.1",
     "antd": "^4.8.6",
     "babel-loader": "^8.2.2",
