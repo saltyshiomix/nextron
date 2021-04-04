@@ -5,7 +5,7 @@ import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { bounce, AnimatedCard } from '../components/AnimatedCard';
 
-const Next = () => {
+function Next() {
   return (
     <React.Fragment>
       <Head>

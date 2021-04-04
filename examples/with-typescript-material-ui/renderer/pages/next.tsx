@@ -14,7 +14,7 @@ const useStyles = makeStyles((theme: Theme) =>
   })
 );
 
-const Next = () => {
+function Next() {
   const classes = useStyles({});
 
   return (

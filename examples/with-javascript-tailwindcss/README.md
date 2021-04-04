@@ -5,8 +5,8 @@
 ### Create an App
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript-tailwindcss
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-tailwindcss
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-tailwindcss

@@ -8,6 +8,7 @@ export default class MyDocument extends Document {
     return (
       <Html lang="en" dir="ltr">
         <Head>
+          <meta charSet="utf-8" />
           <meta name="theme-color" content={theme.palette.primary.main} />
           <link
             rel="stylesheet"

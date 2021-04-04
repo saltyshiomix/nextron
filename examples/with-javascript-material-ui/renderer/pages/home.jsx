@@ -19,7 +19,7 @@ const useStyles = makeStyles((theme) =>
   })
 );
 
-const Home = () => {
+function Home() {
   const classes = useStyles({});
   const [open, setOpen] = React.useState(false);
   const handleClose = () => setOpen(false);

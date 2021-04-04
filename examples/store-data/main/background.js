@@ -1,6 +1,6 @@
 import { app, ipcMain } from 'electron';
 import serve from 'electron-serve';
-import * as Store from 'electron-store';
+import Store from 'electron-store';
 import { createWindow } from './helpers';
 
 const isProd = process.env.NODE_ENV === 'production';

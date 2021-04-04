@@ -2,7 +2,7 @@ import React from 'react';
 import Head from 'next/head';
 import Link from 'next/link';
 
-const Next = () => {
+function Next() {
   return (
     <React.Fragment>
       <Head>

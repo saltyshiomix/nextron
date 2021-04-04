@@ -1,14 +1,10 @@
 module.exports = {
-  //   darkMode: 'media', // 'media' or 'class' to enable dark mode support
+  darkMode: false, // or 'media' or 'class'
   theme: {
-    extend: {
-      colors: {
-        'accent-1': '#333',
-      },
-    },
+    extend: {},
   },
   variants: {
     extend: {},
   },
   plugins: [],
-}
+};

@@ -5,7 +5,7 @@ import { BasicCard } from '../components/BasicCard';
 import { TitleCard } from '../components/TitleCard';
 import { HoverableCard } from '../components/HoverableCard';
 
-const Home = () => {
+function Home() {
   return (
     <React.Fragment>
       <Head>
