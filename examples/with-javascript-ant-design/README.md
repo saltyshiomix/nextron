@@ -5,8 +5,8 @@
 ### Create an App
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript-ant-design
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-ant-design
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-ant-design

@@ -5,8 +5,8 @@
 ### Create an App
 
 ```
-# with npm
-$ npm init nextron-app my-app --example store-data
+# with npx
+$ npx create-nextron-app my-app --example store-data
 
 # with yarn
 $ yarn create nextron-app my-app --example store-data
