@@ -6,20 +6,17 @@ import {
   Result,
 } from 'antd';
 
-import 'antd/dist/antd.css';
-
 const {
   Header,
   Content,
 } = Layout;
 
-const Next = () => {
+function Next() {
   return (
     <React.Fragment>
       <Head>
         <title>Next - Nextron (with-javascript-ant-design)</title>
       </Head>
-  
       <Header>
         <Link href="/home">
           <a>Go to home page</a>

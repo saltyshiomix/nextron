@@ -1,14 +1,13 @@
-import '../styles/index.css'
-import Head from 'next/head'
-const MyApp = ({ Component, pageProps }) => {
+import React from 'react';
+
+import '../styles/globals.css';
+
+function MyApp({ Component, pageProps }) {
   return (
-    <>
-      <Head>
-        <title>Home - Nextron (with-javascript-tailwindcss)</title>
-      </Head>
+    <React.Fragment>
       <Component {...pageProps} />
-    </>
-  )
+    </React.Fragment>
+  );
 }
 
-export default MyApp
+export default MyApp;

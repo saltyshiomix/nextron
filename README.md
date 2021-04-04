@@ -43,8 +43,8 @@ We can use `examples/*` as a template.
 To create the `examples/with-typescript-material-ui`, run the command below:
 
 ```
-# with npm
-$ npm init nextron-app MY_APP --example with-typescript-material-ui
+# with npx
+$ npx create-nextron-app MY_APP --example with-typescript-material-ui
 
 # with yarn
 $ yarn create nextron-app MY_APP --example with-typescript-material-ui
@@ -216,8 +216,8 @@ See [examples](./examples) folder for more information.
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example custom-build-options
+# with npx
+$ npx create-nextron-app my-app --example custom-build-options
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-build-options
@@ -231,8 +231,8 @@ $ pnpx create-nextron-app my-app --example custom-build-options
 <p align="center"><img src="https://i.imgur.com/nqpLJI0.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example custom-main-entry
+# with npx
+$ npx create-nextron-app my-app --example custom-main-entry
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-main-entry
@@ -246,8 +246,8 @@ $ pnpx create-nextron-app my-app --example custom-main-entry
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example custom-renderer-port
+# with npx
+$ npx create-nextron-app my-app --example custom-renderer-port
 
 # with yarn
 $ yarn create nextron-app my-app --example custom-renderer-port
@@ -261,8 +261,8 @@ $ pnpx create-nextron-app my-app --example custom-renderer-port
 <p align="center"><img src="https://i.imgur.com/kIDlAFT.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example ipc-communication
+# with npx
+$ npx create-nextron-app my-app --example ipc-communication
 
 # with yarn
 $ yarn create nextron-app my-app --example ipc-communication
@@ -276,8 +276,8 @@ $ pnpx create-nextron-app my-app --example ipc-communication
 <p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example store-data
+# with npx
+$ npx create-nextron-app my-app --example store-data
 
 # with yarn
 $ yarn create nextron-app my-app --example store-data
@@ -291,8 +291,8 @@ $ pnpx create-nextron-app my-app --example store-data
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript
+# with npx
+$ npx create-nextron-app my-app --example with-javascript
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript
@@ -306,8 +306,8 @@ $ pnpx create-nextron-app my-app --example with-javascript
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript-ant-design
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-ant-design
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-ant-design
@@ -321,8 +321,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-ant-design
 <p align="center"><img src="https://i.imgur.com/FDRVPr8.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript-emotion
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-emotion
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-emotion
@@ -336,8 +336,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-emotion
 <p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript-material-ui
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-material-ui
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-material-ui
@@ -351,8 +351,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-material-ui
 <p align="center"><img src="https://i.imgur.com/P08L8HO.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-javascript-tailwindcss
+# with npx
+$ npx create-nextron-app my-app --example with-javascript-tailwindcss
 
 # with yarn
 $ yarn create nextron-app my-app --example with-javascript-tailwindcss
@@ -366,8 +366,8 @@ $ pnpx create-nextron-app my-app --example with-javascript-tailwindcss
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-typescript
+# with npx
+$ npx create-nextron-app my-app --example with-typescript
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript
@@ -381,8 +381,8 @@ $ pnpx create-nextron-app my-app --example with-typescript
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-typescript-ant-design
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-ant-design
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-ant-design
@@ -396,8 +396,8 @@ $ pnpx create-nextron-app my-app --example with-typescript-ant-design
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-typescript-emotion
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-emotion
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-emotion
@@ -411,8 +411,8 @@ $ pnpx create-nextron-app my-app --example with-typescript-emotion
 <p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-typescript-material-ui
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-material-ui
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-material-ui
@@ -426,8 +426,8 @@ $ pnpx create-nextron-app my-app --example with-typescript-material-ui
 <p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
 
 ```
-# with npm
-$ npm init nextron-app my-app --example with-typescript-tailwindcss
+# with npx
+$ npx create-nextron-app my-app --example with-typescript-tailwindcss
 
 # with yarn
 $ yarn create nextron-app my-app --example with-typescript-tailwindcss
