@@ -55,16 +55,16 @@
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^5.3.0",
-    "@rollup/plugin-commonjs": "^18.0.0",
-    "@rollup/plugin-node-resolve": "^11.2.1",
-    "@types/fs-extra": "^9.0.4",
-    "@types/node": "^14.14.10",
-    "@types/webpack": "^4.41.25",
+    "@rollup/plugin-commonjs": "^19.0.1",
+    "@rollup/plugin-node-resolve": "^13.0.2",
+    "@types/fs-extra": "^9.0.12",
+    "@types/node": "^14.14.31",
+    "@types/webpack": "^4.41.30",
     "@types/webpack-merge": "^4.1.5",
     "rimraf": "^3.0.2",
-    "rollup": "^2.44.0",
+    "rollup": "^2.53.3",
     "rollup-plugin-auto-external": "^2.0.0",
     "rollup-plugin-terser": "^7.0.2",
-    "typescript": "^4.2.3"
+    "typescript": "^4.3.5"
   }
 }
