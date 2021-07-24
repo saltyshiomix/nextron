@@ -15,13 +15,15 @@ function Next() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-javascript-ant-design)</title>
+        <title>Next - Nextron (with-typescript-ant-design)</title>
       </Head>
+
       <Header>
         <Link href="/home">
           <a>Go to home page</a>
         </Link>
       </Header>
+
       <Content style={{ padding: 48 }}>
         <Result
           status="success"
