@@ -12,7 +12,7 @@
   },
   "dependencies": {
     "electron-serve": "^1.1.0",
-    "electron-store": "^7.0.2"
+    "electron-store": "^8.0.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.5",
