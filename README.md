@@ -18,6 +18,7 @@
 
 | nextron | next |
 | --- | --- |
+| `v7.x` | `v11.x` |
 | `v6.x` | `v10.x` |
 | `v5.x` | `v9.x` |
 | `v4.x` | `v8.x` |
@@ -127,9 +128,9 @@ module.exports = {
   rendererSrcDir: 'renderer',
 
   // main process' webpack config
-  webpack: (defaultConfig, env) => {
+  webpack: (config, env) => {
     // do some stuff here
-    return defaultConfig;
+    return config;
   },
 };
 ```
