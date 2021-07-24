@@ -17,7 +17,7 @@
   "devDependencies": {
     "@babel/core": "^7.13.14",
     "@zeit/next-css": "^1.0.1",
-    "@types/node": "^14.6.4",
+    "@types/node": "^14.14.31",
     "@types/react": "^16.9.49",
     "@babel/preset-typescript": "^7.13.0",
     "antd": "^4.15.0",
