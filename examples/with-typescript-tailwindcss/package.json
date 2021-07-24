@@ -17,7 +17,7 @@
   "devDependencies": {
     "@types/node": "^14.14.31",
     "@types/react": "^17.0.0",
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.3.1",
     "electron": "^13.1.7",
     "electron-builder": "^22.11.7",
     "next": "^10.2.3",

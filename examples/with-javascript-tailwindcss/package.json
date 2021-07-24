@@ -15,7 +15,7 @@
     "electron-store": "^8.0.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.2.5",
+    "autoprefixer": "^10.3.1",
     "electron": "^13.1.7",
     "electron-builder": "^22.11.7",
     "next": "^10.2.3",
