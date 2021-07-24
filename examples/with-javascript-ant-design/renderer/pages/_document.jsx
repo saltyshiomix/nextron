@@ -6,7 +6,6 @@ export default class MyDocument extends Document {
       <Html>
         <Head>
           <meta charSet='utf-8' />
-          <title>Home - Nextron (with-typescript-ant-design)</title>
         </Head>
         <body>
           <Main />

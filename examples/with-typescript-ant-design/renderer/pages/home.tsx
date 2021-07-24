@@ -1,4 +1,5 @@
 import React from 'react';
+import Head from 'next/head';
 import Link from 'next/link';
 import {
   Layout,
@@ -21,6 +22,10 @@ const { Option } = Select;
 function Home() {
   return (
     <React.Fragment>
+      <Head>
+        <title>Home - Nextron (with-javascript-ant-design)</title>
+      </Head>
+
       <Header>
         <Link href="/next">
           <a>Go to next page</a>
