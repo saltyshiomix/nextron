@@ -46,7 +46,7 @@
     "@babel/runtime-corejs3": "7.14.8",
     "arg": "5.0.0",
     "babel-loader": "8.2.2",
-    "chalk": "4.1.0",
+    "chalk": "4.1.1",
     "delay": "5.0.0",
     "execa": "5.0.0",
     "fs-extra": "9.1.0",
