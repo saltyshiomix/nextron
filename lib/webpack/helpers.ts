@@ -13,7 +13,7 @@ const existsSync = (f: string): boolean => {
 };
 
 const cwd = process.cwd();
-const ext = existsSync(path.join(cwd, 'tsconfig.json')) ? '.ts' : '.js';
+const ext = existsSync(path.join(cwd, 'background.ts')) ? '.ts' : '.js';
 
 export const getNextronConfig = () => {
   const nextronConfigPath = path.join(cwd, 'nextron.config.js');
