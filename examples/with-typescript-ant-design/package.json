@@ -24,7 +24,7 @@
     "babel-plugin-import": "^1.13.3",
     "electron": "^15.0.0",
     "electron-builder": "^22.11.7",
-    "next": "^11.0.1",
+    "next": "^11.1.2",
     "nextron": "^7.0.0",
     "null-loader": "^4.0.1",
     "react": "^17.0.2",
