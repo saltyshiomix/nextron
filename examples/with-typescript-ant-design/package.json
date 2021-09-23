@@ -19,7 +19,7 @@
     "@types/node": "^14.14.31",
     "@types/react": "^16.9.49",
     "@zeit/next-css": "^1.0.1",
-    "antd": "^4.16.8",
+    "antd": "^4.16.13",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
     "electron": "^15.0.0",
