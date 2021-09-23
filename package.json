@@ -44,7 +44,7 @@
     "@babel/preset-typescript": "7.15.0",
     "@babel/runtime": "7.15.4",
     "@babel/runtime-corejs3": "7.15.4",
-    "arg": "5.0.0",
+    "arg": "5.0.1",
     "babel-loader": "8.2.2",
     "chalk": "4.1.1",
     "delay": "5.0.0",
