@@ -12,18 +12,18 @@
   },
   "dependencies": {
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.0.0"
+    "electron-store": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.14.8",
+    "@babel/core": "^7.15.5",
     "@zeit/next-css": "^1.0.1",
-    "antd": "^4.16.8",
+    "antd": "^4.16.13",
     "babel-loader": "^8.2.2",
     "babel-plugin-import": "^1.13.3",
-    "electron": "^13.1.7",
+    "electron": "^15.0.0",
     "electron-builder": "^22.11.7",
-    "next": "^11.0.1",
-    "nextron": "^7.0.0",
+    "next": "^11.1.2",
+    "nextron": "^7.1.0",
     "null-loader": "^4.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
