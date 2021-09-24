@@ -13,7 +13,7 @@ const existsSync = (f: string): boolean => {
 };
 
 const cwd = process.cwd();
-const ext = existsSync(path.join(cwd, 'background.ts')) ? '.ts' : '.js';
+const { main: background } = require(path.join(cwd, 'package.json'));
 
 export const getNextronConfig = () => {
   const nextronConfigPath = path.join(cwd, 'nextron.config.js');
@@ -28,7 +28,7 @@ export const getWebpackConfig = (env: 'development' | 'production') => {
   const { mainSrcDir, webpack } = getNextronConfig();
   const userConfig = merge(configure(env), {
     entry: {
-      background: path.join(cwd, mainSrcDir || 'main', `background${ext}`),
+      background: path.join(cwd, background),
     },
     output: {
       filename: '[name].js',
