@@ -5,7 +5,9 @@ import chalk from 'chalk';
 const defaultCommand = 'dev';
 const commands = new Set([
   'init',
+  'test',
   'build',
+  'render',
   defaultCommand,
 ]);
 
@@ -44,7 +46,7 @@ if (commands.has(cmd)) {
   args = process.argv.slice(2);
 }
 
-const defaultEnv = cmd === 'dev' ? 'development' : 'production';
+const defaultEnv = ['dev', 'test'].includes(cmd) ? 'development' : 'production';
 process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv;
 
 const cli = path.join(__dirname, `nextron-${cmd}`);
@@ -74,7 +76,9 @@ const proc = startProcess();
 
 const wrapper = () => {
   if (proc) {
-    proc.kill();
+    if (cmd !== 'test') {
+      proc.kill();
+    }
   }
 }
 process.on('SIGINT', wrapper);

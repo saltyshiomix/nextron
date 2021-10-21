@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { ChildProcess } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
@@ -55,7 +54,6 @@ async function dev() {
   let firstCompile = true;
   let watching: any;
   let mainProcess: ChildProcess;
-  let rendererProcess: ChildProcess;
 
   const startMainProcess = () => {
     mainProcess = execa(
@@ -66,24 +64,8 @@ async function dev() {
         `--remote-debugging-port=${remoteDebuggingPort}`,
         `--inspect=${inspectPort}`,
       ],
-      {
-        detached: true,
-        ...execaOptions,
-      }
-    );
-    mainProcess.unref();
-  };
-
-  const startRendererProcess = () => {
-    const child = execa(
-      'next',
-      ['-p', rendererPort, rendererSrcDir || 'renderer'],
       execaOptions,
     );
-    child.on('close', () => {
-      process.exit(0);
-    });
-    return child;
   };
 
   const killWholeProcess = () => {
@@ -92,9 +74,6 @@ async function dev() {
     }
     if (mainProcess) {
       mainProcess.kill();
-    }
-    if (rendererProcess) {
-      rendererProcess.kill();
     }
   };
 
@@ -122,8 +101,7 @@ async function dev() {
   process.on('SIGTERM', killWholeProcess);
   process.on('exit', killWholeProcess);
 
-  rendererProcess = startRendererProcess();
-
+  require('./nextron-render').startRendererProcess(rendererSrcDir, rendererPort);
   // wait until renderer process is ready
   await delay(8000);
 

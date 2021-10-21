@@ -43,8 +43,11 @@ const config = (src, dist) => ({
 
 export default [
   cliConfig('lib/nextron.ts'),
-  cliConfig('lib/nextron-init.ts'),
   cliConfig('lib/nextron-dev.ts'),
+  cliConfig('lib/nextron-init.ts'),
+  cliConfig('lib/nextron-test.ts'),
   cliConfig('lib/nextron-build.ts'),
+  cliConfig('lib/nextron-render.ts'),
+  cliConfig('lib/render-script.ts'),
   config('lib/webpack/build.production.ts', 'bin/webpack.config.js'),
 ];
