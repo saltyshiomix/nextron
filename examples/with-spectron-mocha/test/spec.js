@@ -17,7 +17,6 @@ describe('With Spectron Mocha', function() {
     before(async function() {
         this.timeout(TIMEOUT);
         await app.start();
-        return true;
     });
 
     it('Should have a visible window', async function() {
@@ -25,12 +24,10 @@ describe('With Spectron Mocha', function() {
         await app.client.waitUntilWindowLoaded(TIMEOUT);
         const isVisible = await app.browserWindow.isVisible();
         assert.strictEqual(isVisible, true);
-        return true;
     });
 
     after(async function() {
         this.timeout(TIMEOUT);
         await app.stop();
-        return true;
     });
 });
