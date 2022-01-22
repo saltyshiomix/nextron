@@ -50,7 +50,7 @@
     "delay": "5.0.0",
     "execa": "6.0.0",
     "fs-extra": "10.0.0",
-    "webpack": "5.53.0",
+    "webpack": "5.67.0",
     "webpack-merge": "5.8.0"
   },
   "devDependencies": {
