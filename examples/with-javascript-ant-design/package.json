@@ -15,10 +15,10 @@
     "electron-store": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.15.5",
+    "@babel/core": "^7.16.12",
     "@zeit/next-css": "^1.0.1",
     "antd": "^4.16.13",
-    "babel-loader": "^8.2.2",
+    "babel-loader": "^8.2.3",
     "babel-plugin-import": "^1.13.3",
     "electron": "^15.0.0",
     "electron-builder": "^22.11.7",
