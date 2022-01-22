@@ -48,7 +48,7 @@
     "babel-loader": "8.2.3",
     "chalk": "5.0.0",
     "delay": "5.0.0",
-    "execa": "5.1.1",
+    "execa": "6.0.0",
     "fs-extra": "10.0.0",
     "webpack": "5.53.0",
     "webpack-merge": "5.8.0"
