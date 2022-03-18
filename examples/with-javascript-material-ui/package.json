@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@material-ui/core": "^4.12.3",
-    "electron": "^16.0.7",
+    "electron": "^17.1.2",
     "electron-builder": "23.0.2",
     "next": "^12.1.0",
     "nextron": "^7.3.0",
