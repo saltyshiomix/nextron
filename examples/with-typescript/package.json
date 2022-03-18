@@ -18,7 +18,7 @@
     "@types/node": "^14.14.31",
     "@types/react": "^16.9.49",
     "electron": "^16.0.7",
-    "electron-builder": "^22.14.5",
+    "electron-builder": "23.0.2",
     "next": "^11.1.4",
     "nextron": "^7.3.0",
     "react": "^17.0.2",
