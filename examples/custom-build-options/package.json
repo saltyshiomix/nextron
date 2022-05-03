@@ -21,7 +21,7 @@
   },
   "devDependencies": {
     "electron": "^18.2.0",
-    "electron-builder": "23.0.2",
+    "electron-builder": "^23.0.3",
     "next": "^12.1.0",
     "nextron": "^8.0.0",
     "react": "^17.0.2",
