@@ -18,7 +18,7 @@
     "@emotion/babel-plugin": "^11.9.2",
     "@emotion/react": "^11.9.0",
     "@emotion/styled": "^11.8.1",
-    "@types/node": "^14.14.31",
+    "@types/node": "^16.11.7",
     "@types/react": "^18.0.8",
     "electron": "^18.2.0",
     "electron-builder": "^23.0.3",

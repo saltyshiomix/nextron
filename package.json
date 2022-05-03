@@ -58,7 +58,7 @@
     "@rollup/plugin-commonjs": "^22.0.0",
     "@rollup/plugin-node-resolve": "^13.3.0",
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^14.14.31",
+    "@types/node": "^16.11.7",
     "rimraf": "^3.0.2",
     "rollup": "^2.71.1",
     "rollup-plugin-auto-external": "^2.0.0",
