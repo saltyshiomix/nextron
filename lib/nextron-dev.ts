@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { ChildProcess } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
