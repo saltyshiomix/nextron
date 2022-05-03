@@ -98,7 +98,7 @@ async function dev() {
     }
   };
 
-  const webpackCallback = async (err: Error | undefined) => {
+  const webpackCallback = async (err?: Error | null) => {
     if (err) {
       console.error(err.stack || err);
       if (err.stack) {
