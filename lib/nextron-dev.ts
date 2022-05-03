@@ -1,4 +1,3 @@
-import fs from 'fs';
 import { ChildProcess } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
@@ -98,7 +97,7 @@ async function dev() {
     }
   };
 
-  const webpackCallback = async (err: Error | undefined) => {
+  const webpackCallback = async (err?: Error | null) => {
     if (err) {
       console.error(err.stack || err);
       if (err.stack) {

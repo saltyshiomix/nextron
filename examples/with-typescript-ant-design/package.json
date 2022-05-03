@@ -16,20 +16,20 @@
   },
   "devDependencies": {
     "@babel/core": "^7.17.8",
-    "@types/node": "^14.14.31",
-    "@types/react": "^16.9.49",
+    "@types/node": "^16.11.7",
+    "@types/react": "^18.0.8",
     "@zeit/next-css": "^1.0.1",
-    "antd": "^4.18.4",
+    "antd": "^4.20.2",
     "babel-loader": "^8.2.3",
     "babel-plugin-import": "^1.13.3",
-    "electron": "^17.1.2",
-    "electron-builder": "23.0.2",
-    "next": "^12.1.0",
-    "nextron": "^8.0.0",
+    "electron": "^18.2.0",
+    "electron-builder": "^23.0.3",
+    "next": "^12.1.6",
+    "nextron": "^8.1.0",
     "null-loader": "^4.0.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "typescript": "^4.6.2",
-    "webpack": "webpack-4"
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0",
+    "typescript": "^4.6.4",
+    "webpack": "^5.72.0"
   }
 }

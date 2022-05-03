@@ -20,11 +20,11 @@
     "electron-store": "^8.0.1"
   },
   "devDependencies": {
-    "electron": "^17.1.2",
-    "electron-builder": "23.0.2",
-    "next": "^12.1.0",
-    "nextron": "^8.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "electron": "^18.2.0",
+    "electron-builder": "^23.0.3",
+    "next": "^12.1.6",
+    "nextron": "^8.1.0",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
   }
 }
