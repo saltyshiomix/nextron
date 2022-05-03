@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "autoprefixer": "^10.3.5",
-    "electron": "^17.1.2",
+    "electron": "^18.2.0",
     "electron-builder": "23.0.2",
     "next": "^12.1.0",
     "nextron": "^8.0.0",
