@@ -15,18 +15,13 @@
     "electron-store": "^8.0.1"
   },
   "devDependencies": {
-    "@babel/core": "^7.17.8",
-    "@zeit/next-css": "^1.0.1",
+    "@ant-design/icons": "^4.7.0",
     "antd": "^4.20.2",
-    "babel-loader": "^8.2.3",
-    "babel-plugin-import": "^1.13.3",
     "electron": "^18.2.0",
     "electron-builder": "^23.0.3",
     "next": "^12.1.6",
     "nextron": "^8.1.0",
-    "null-loader": "^4.0.1",
     "react": "^18.1.0",
-    "react-dom": "^18.1.0",
-    "webpack": "^5.72.0"
+    "react-dom": "^18.1.0"
   }
 }
