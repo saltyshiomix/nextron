@@ -4,11 +4,7 @@ import type { AppProps } from 'next/app';
 import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (
-    <React.Fragment>
-      <Component {...pageProps} />
-    </React.Fragment>
-  )
+  return <Component {...pageProps} />;
 }
 
 export default MyApp
