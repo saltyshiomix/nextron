@@ -457,6 +457,15 @@ $ yarn dev # default is examples/with-javascript
 $ yarn dev <EXAMPLE-FOLDER-NAME>
 ```
 
+## Maintainers ⚡
+
+- [saltyshiomix (Shiono Yoshihide)](https://github.com/saltyshiomix)
+- [lacymorrow (Lacy Morrow)](https://github.com/lacymorrow)
+- [Psycokwet](https://github.com/Psycokwet)
+- [m5x5](https://github.com/m5x5)
+
+For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
+
 ## Related
 
 - [create-nextron-app](https://github.com/saltyshiomix/create-nextron-app) - Create Nextron (Electron + Next.js) apps in one command ⚡
