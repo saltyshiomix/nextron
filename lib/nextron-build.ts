@@ -19,7 +19,7 @@ const args = arg({
   '--arm64': Boolean,
   '--config': String,
   '--publish': String,
-  '--nopack': Boolean,
+  '--no-pack': Boolean,
   '-h': '--help',
   '-v': '--version',
   '-w': '--win',
@@ -50,6 +50,7 @@ if (args['--help']) {
       --ia32         builds for ia32
       --armv7l       builds for armv7l
       --arm64        builds for arm64
+      --no-pack      skip electron-builder pack command
       --publish  -p  Publish artifacts (see https://goo.gl/tSFycD)
                      [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
 
@@ -83,7 +84,7 @@ async function build() {
     log('Building main process');
     await execa('node', [path.join(__dirname, 'webpack.config.js')], execaOptions);
 
-    if (args['--nopack']) {
+    if (args['--no-pack']) {
       log('Skip Packaging...');
     } else{
       log('Packaging - please wait a moment');
