@@ -19,6 +19,7 @@ const args = arg({
   '--arm64': Boolean,
   '--config': String,
   '--publish': String,
+  '--nopack': Boolean,
   '-h': '--help',
   '-v': '--version',
   '-w': '--win',
@@ -82,8 +83,12 @@ async function build() {
     log('Building main process');
     await execa('node', [path.join(__dirname, 'webpack.config.js')], execaOptions);
 
-    log('Packaging - please wait a moment');
-    await execa('electron-builder', createBuilderArgs(), execaOptions);
+    if (args['--nopack']) {
+      log('Skip Packaging...');
+    } else{
+      log('Packaging - please wait a moment');
+      await execa('electron-builder', createBuilderArgs(), execaOptions);
+    }
 
     log('See `dist` directory');
   } catch (err) {
