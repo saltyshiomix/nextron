@@ -17,6 +17,7 @@ const args = arg({
   '--ia32': Boolean,
   '--armv7l': Boolean,
   '--arm64': Boolean,
+  '--universal': Boolean,
   '--config': String,
   '--publish': String,
   '-h': '--help',
@@ -49,6 +50,7 @@ if (args['--help']) {
       --ia32         builds for ia32
       --armv7l       builds for armv7l
       --arm64        builds for arm64
+      --universal    builds for mac universal binary
       --publish  -p  Publish artifacts (see https://goo.gl/tSFycD)
                      [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
 
@@ -124,6 +126,7 @@ function createArchArgs() {
   args['--ia32'] && archArgs.push('--ia32');
   args['--armv7l'] && archArgs.push('--armv7l');
   args['--arm64'] && archArgs.push('--arm64');
+  args['--universal'] && archArgs.push('--universal');
   return archArgs;
 }
 
