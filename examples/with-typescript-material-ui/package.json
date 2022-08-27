@@ -18,7 +18,7 @@
     "@material-ui/core": "^4.12.4",
     "@types/node": "^16.11.7",
     "@types/react": "^18.0.8",
-    "electron": "^18.2.0",
+    "electron": "^20.1.0",
     "electron-builder": "^23.0.3",
     "next": "^12.1.6",
     "nextron": "^8.1.0",
