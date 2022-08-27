@@ -16,7 +16,7 @@
   },
   "devDependencies": {
     "@ant-design/icons": "^4.7.0",
-    "antd": "^4.20.2",
+    "antd": "^4.22.8",
     "electron": "^20.1.0",
     "electron-builder": "^23.3.3",
     "next": "^12.2.5",
