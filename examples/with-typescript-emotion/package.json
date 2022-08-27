@@ -15,9 +15,9 @@
     "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.9.2",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
+    "@emotion/babel-plugin": "^11.10.2",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
     "@types/node": "^16.11.7",
     "@types/react": "^18.0.8",
     "electron": "^20.1.0",
