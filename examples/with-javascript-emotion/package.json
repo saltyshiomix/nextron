@@ -12,17 +12,17 @@
   },
   "dependencies": {
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.0.1"
+    "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "@emotion/babel-plugin": "^11.9.2",
-    "@emotion/react": "^11.9.0",
-    "@emotion/styled": "^11.8.1",
-    "electron": "^18.2.0",
-    "electron-builder": "^23.0.3",
-    "next": "^12.1.6",
-    "nextron": "^8.1.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "@emotion/babel-plugin": "^11.10.2",
+    "@emotion/react": "^11.10.0",
+    "@emotion/styled": "^11.10.0",
+    "electron": "^20.1.0",
+    "electron-builder": "^23.3.3",
+    "next": "^12.2.5",
+    "nextron": "^8.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

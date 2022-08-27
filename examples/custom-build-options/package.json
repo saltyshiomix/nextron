@@ -10,21 +10,22 @@
     "build": "nextron build",
     "build:prod": "nextron build --config electron-builder.prod.yml",
     "build:all": "nextron build --all",
-    "build:win": "nextron build --win --ia32",
     "build:mac": "nextron build --mac --x64",
+    "build:mac:universal": "nextron build --mac --universal",
+    "build:win": "nextron build --win --ia32",
     "build:linux": "nextron build --linux",
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.0.1"
+    "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "electron": "^18.2.0",
-    "electron-builder": "^23.0.3",
-    "next": "^12.1.6",
-    "nextron": "^8.1.0",
-    "react": "^18.1.0",
-    "react-dom": "^18.1.0"
+    "electron": "^20.1.0",
+    "electron-builder": "^23.3.3",
+    "next": "^12.2.5",
+    "nextron": "^8.2.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }
