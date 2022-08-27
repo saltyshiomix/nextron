@@ -18,7 +18,7 @@
     "@ant-design/icons": "^4.7.0",
     "antd": "^4.20.2",
     "electron": "^20.1.0",
-    "electron-builder": "^23.0.3",
+    "electron-builder": "^23.3.3",
     "next": "^12.1.6",
     "nextron": "^8.1.0",
     "react": "^18.1.0",
