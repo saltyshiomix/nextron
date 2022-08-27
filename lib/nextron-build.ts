@@ -20,6 +20,7 @@ const args = arg({
   '--universal': Boolean,
   '--config': String,
   '--publish': String,
+  '--no-pack': Boolean,
   '-h': '--help',
   '-v': '--version',
   '-w': '--win',
@@ -51,6 +52,7 @@ if (args['--help']) {
       --armv7l       builds for armv7l
       --arm64        builds for arm64
       --universal    builds for mac universal binary
+      --no-pack      skip electron-builder pack command
       --publish  -p  Publish artifacts (see https://goo.gl/tSFycD)
                      [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
 
@@ -84,8 +86,12 @@ async function build() {
     log('Building main process');
     await execa('node', [path.join(__dirname, 'webpack.config.js')], execaOptions);
 
-    log('Packaging - please wait a moment');
-    await execa('electron-builder', createBuilderArgs(), execaOptions);
+    if (args['--no-pack']) {
+      log('Skip Packaging...');
+    } else{
+      log('Packaging - please wait a moment');
+      await execa('electron-builder', createBuilderArgs(), execaOptions);
+    }
 
     log('See `dist` directory');
   } catch (err) {
