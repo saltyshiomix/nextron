@@ -67,8 +67,8 @@ export default function createWindow(windowName, options) {
   state = ensureVisibleOnSomeDisplay(restore());
 
   win = new BrowserWindow({
-    ...options,
     ...state,
+    ...options,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
