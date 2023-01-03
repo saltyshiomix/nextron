@@ -2,3 +2,5 @@ node_modules
 bin
 workspace
 examples/**/yarn.lock
+.idea
+.DS_Store
