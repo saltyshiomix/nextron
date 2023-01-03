@@ -16,10 +16,12 @@ const args = arg({
   '--remote-debugging-port': Number,
   '--inspect': Number,
   '--run-only': Boolean,
+  '--startup-delay': Number,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
   '-r': '--run-only',
+  '-d': '--startup-delay',
 });
 
 if (args['--help']) {
@@ -42,6 +44,7 @@ if (args['--help']) {
 const rendererPort = args['--port'] || 8888;
 const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
 const inspectPort = args['--inspect'] || 9292;
+const startupDelay = getNextronConfig().startupDelay || args['--startup-delay']  || '8000';
 
 const execaOptions: execa.Options = {
   cwd: process.cwd(),
@@ -124,7 +127,7 @@ async function dev() {
   rendererProcess = startRendererProcess();
 
   // wait until renderer process is ready
-  await delay(8000);
+  await delay(startupDelay);
 
   const compiler = webpack(getWebpackConfig('development'));
   if (args['--run-only']) {
