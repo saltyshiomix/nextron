@@ -310,66 +310,6 @@ $ yarn create nextron-app my-app --example with-javascript
 $ pnpx create-nextron-app my-app --example with-javascript
 ```
 
-### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
-
-<p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-ant-design
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-ant-design
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-ant-design
-```
-
-### [examples/with-javascript-emotion](./examples/with-javascript-emotion)
-
-<p align="center"><img src="https://i.imgur.com/FDRVPr8.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-emotion
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-emotion
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-emotion
-```
-
-### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
-
-<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-material-ui
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-material-ui
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-material-ui
-```
-
-### [examples/with-javascript-tailwindcss](./examples/with-javascript-tailwindcss)
-
-<p align="center"><img src="https://i.imgur.com/P08L8HO.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-tailwindcss
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-tailwindcss
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-tailwindcss
-```
-
 ### [examples/with-typescript](./examples/with-typescript)
 
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
