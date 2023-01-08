@@ -452,16 +452,14 @@ $ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
 ```
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
-$ yarn
-$ yarn dev # default is examples/with-javascript
+$ pnpm install
+$ pnpm dev # default is examples/with-javascript
 ```
-
-`pnpm` or `npm` are also supported.
 
 ### Developing `examples/*`
 
 ```
-$ yarn dev <EXAMPLE-FOLDER-NAME>
+$ pnpm dev <EXAMPLE-FOLDER-NAME>
 ```
 
 ## Maintainers ⚡
