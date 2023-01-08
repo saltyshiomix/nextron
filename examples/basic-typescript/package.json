@@ -17,8 +17,8 @@
   "devDependencies": {
     "@types/node": "^16.11.7",
     "@types/react": "^18.0.8",
-    "electron": "^20.1.0",
-    "electron-builder": "^23.3.3",
+    "electron": "^21.3.3",
+    "electron-builder": "^23.6.0",
     "next": "^12.2.5",
     "nextron": "^8.3.0",
     "react": "^18.2.0",
