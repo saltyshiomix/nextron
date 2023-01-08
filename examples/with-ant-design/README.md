@@ -6,13 +6,13 @@
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-ant-design
+$ npx create-nextron-app my-app --example with-ant-design
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-ant-design
+$ yarn create nextron-app my-app --example with-ant-design
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-ant-design
+$ pnpx create-nextron-app my-app --example with-ant-design
 ```
 
 ### Install Dependencies

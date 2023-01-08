@@ -43,23 +43,23 @@
 
 We can use `examples/*` as a template.
 
-To create the `examples/with-typescript-material-ui`, run the command below:
+To create the `examples/with-material-ui`, run the command below:
 
 ```
 # with npx
-$ npx create-nextron-app MY_APP --example with-typescript-material-ui
+$ npx create-nextron-app MY_APP --example with-material-ui
 
 # with yarn
-$ yarn create nextron-app MY_APP --example with-typescript-material-ui
+$ yarn create nextron-app MY_APP --example with-material-ui
 
 # with pnpx
-$ pnpx create-nextron-app MY_APP --example with-typescript-material-ui
+$ pnpx create-nextron-app MY_APP --example with-material-ui
 ```
 
 For nextron v8 or below, please specify `--branch` option:
 
 ```
-npx create-nextron-app MY_APP --example with-typescript-material-ui --branch release/v8
+npx create-nextron-app MY_APP --example with-material-ui --branch release/v8
 ```
 
 ### Run Electron with Development Mode
@@ -220,6 +220,36 @@ export default Home;
 
 See [examples](./examples) folder for more information.
 
+### [examples/basic-javascript](./examples/basic-javascript)
+
+<p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-javascript
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-javascript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example basic-javascript
+```
+
+### [examples/basic-typescript](./examples/basic-typescript)
+
+<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-typescript
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-typescript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example basic-typescript
+```
+
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
@@ -295,94 +325,64 @@ $ yarn create nextron-app my-app --example store-data
 $ pnpx create-nextron-app my-app --example store-data
 ```
 
-### [examples/with-javascript](./examples/with-javascript)
-
-<p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript
-```
-
-### [examples/with-typescript](./examples/with-typescript)
-
-<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript
-
-# with yarn
-$ yarn create nextron-app my-app --example with-typescript
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript
-```
-
-### [examples/with-typescript-ant-design](./examples/with-typescript-ant-design)
+### [examples/with-ant-design](./examples/with-ant-design)
 
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-ant-design
+$ npx create-nextron-app my-app --example with-ant-design
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-ant-design
+$ yarn create nextron-app my-app --example with-ant-design
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-ant-design
+$ pnpx create-nextron-app my-app --example with-ant-design
 ```
 
-### [examples/with-typescript-emotion](./examples/with-typescript-emotion)
+### [examples/with-emotion](./examples/with-emotion)
 
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-emotion
+$ npx create-nextron-app my-app --example with-emotion
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-emotion
+$ yarn create nextron-app my-app --example with-emotion
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-emotion
+$ pnpx create-nextron-app my-app --example with-emotion
 ```
 
-### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
+### [examples/with-material-ui](./examples/with-material-ui)
 
 <p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-material-ui
+$ npx create-nextron-app my-app --example with-material-ui
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-material-ui
+$ yarn create nextron-app my-app --example with-material-ui
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-material-ui
+$ pnpx create-nextron-app my-app --example with-material-ui
 ```
 
-### [examples/with-typescript-tailwindcss](./examples/with-typescript-tailwindcss)
+### [examples/with-tailwindcss](./examples/with-tailwindcss)
 
 <p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-tailwindcss
+$ npx create-nextron-app my-app --example with-tailwindcss
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-tailwindcss
+$ yarn create nextron-app my-app --example with-tailwindcss
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
+$ pnpx create-nextron-app my-app --example with-tailwindcss
 ```
 
 ## Develop
@@ -393,7 +393,7 @@ $ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
 $ pnpm install
-$ pnpm dev # default is examples/with-javascript
+$ pnpm dev # default is examples/basic-javascript
 ```
 
 ### Developing `examples/*`
