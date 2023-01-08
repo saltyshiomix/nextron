@@ -463,6 +463,7 @@ $ yarn dev <EXAMPLE-FOLDER-NAME>
 - [lacymorrow (Lacy Morrow)](https://github.com/lacymorrow)
 - [Psycokwet](https://github.com/Psycokwet)
 - [m5x5](https://github.com/m5x5)
+- [andirsun (Anderson Laverde)](https://github.com/andirsun)
 
 For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
 
