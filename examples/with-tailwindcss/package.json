@@ -15,8 +15,8 @@
     "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "@types/node": "^16.11.7",
-    "@types/react": "^18.0.8",
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
     "autoprefixer": "^10.4.7",
     "electron": "^21.3.3",
     "electron-builder": "^23.6.0",

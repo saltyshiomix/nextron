@@ -15,7 +15,7 @@ specifiers:
   '@rollup/plugin-node-resolve': ^15.0.1
   '@rollup/plugin-terser': ^0.3.0
   '@types/fs-extra': ^9.0.13
-  '@types/node': ^16.11.7
+  '@types/node': ^18.11.18
   arg: 5.0.1
   babel-loader: 8.2.5
   chalk: 4.1.2
@@ -52,7 +52,7 @@ devDependencies:
   '@rollup/plugin-node-resolve': 15.0.1_rollup@3.9.1
   '@rollup/plugin-terser': 0.3.0_rollup@3.9.1
   '@types/fs-extra': 9.0.13
-  '@types/node': 16.18.11
+  '@types/node': 18.11.18
   rimraf: 3.0.2
   rollup: 3.9.1
   rollup-plugin-auto-external: 2.0.0_rollup@3.9.1
@@ -1410,15 +1410,15 @@ packages:
   /@types/fs-extra/9.0.13:
     resolution: {integrity: sha512-nEnwB++1u5lVDM2UI4c1+5R+FYaKfaAzS4OococimjVm3nQw3TuzH5UNsocrcTBbhnerblyHj4A49qXbIiZdpA==}
     dependencies:
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
     dev: true
 
   /@types/json-schema/7.0.11:
     resolution: {integrity: sha512-wOuvG1SN4Us4rez+tylwwwCV1psiNVOkJeM3AUWUNWg/jDQY2+HE/444y5gc+jBmRqASOm2Oeh5c1axHobwRKQ==}
     dev: false
 
-  /@types/node/16.18.11:
-    resolution: {integrity: sha512-3oJbGBUWuS6ahSnEq1eN2XrCyf4YsWI8OyCvo7c64zQJNplk3mO84t53o8lfTk+2ji59g5ycfc6qQ3fdHliHuA==}
+  /@types/node/18.11.18:
+    resolution: {integrity: sha512-DHQpWGjyQKSHj3ebjFI/wRKcqQcdR+MoFBygntYOZytCqNfkd2ZC4ARDJ2DQqhjH5p85Nnd3jhUJIXrszFX/JA==}
 
   /@types/resolve/1.20.2:
     resolution: {integrity: sha512-60BCwRFOZCQhDncwQdxxeOEEkbc5dIMccYLwbxsS4TUNeVECQ/pBJ0j09mrHOl/JJvpRPGwO9SvE4nR2Nb/a4Q==}
@@ -2047,7 +2047,7 @@ packages:
     resolution: {integrity: sha512-7vuh85V5cdDofPyxn58nrPjBktZo0u9x1g8WtjQol+jZDaE+fhN+cIvTj11GndBnMnyfrUOG1sZQxCdjKh+DKg==}
     engines: {node: '>= 10.13.0'}
     dependencies:
-      '@types/node': 16.18.11
+      '@types/node': 18.11.18
       merge-stream: 2.0.0
       supports-color: 8.1.1
     dev: false

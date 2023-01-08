@@ -58,7 +58,7 @@
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.3.0",
     "@types/fs-extra": "^9.0.13",
-    "@types/node": "^16.11.7",
+    "@types/node": "^18.11.18",
     "rimraf": "^3.0.2",
     "rollup": "^3.9.1",
     "rollup-plugin-auto-external": "^2.0.0",
