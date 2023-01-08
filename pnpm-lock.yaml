@@ -20,7 +20,7 @@ specifiers:
   babel-loader: 9.1.2
   chalk: 4.1.2
   execa: 5.1.1
-  fs-extra: 10.1.0
+  fs-extra: 11.1.0
   rimraf: ^3.0.2
   rollup: ^3.9.1
   rollup-plugin-auto-external: ^2.0.0
@@ -42,7 +42,7 @@ dependencies:
   babel-loader: 9.1.2_fzlwazi7nboub3int6sfk7gbca
   chalk: 4.1.2
   execa: 5.1.1
-  fs-extra: 10.1.0
+  fs-extra: 11.1.0
   webpack: 5.74.0
   webpack-merge: 5.8.0
 
@@ -1899,9 +1899,9 @@ packages:
       path-exists: 4.0.0
     dev: false
 
-  /fs-extra/10.1.0:
-    resolution: {integrity: sha512-oRXApq54ETRj4eMiFzGnHWGy+zo5raudjuxN0b8H7s/RU2oW0Wvsx9O0ACRN/kRq9E8Vu/ReskGB5o3ji+FzHQ==}
-    engines: {node: '>=12'}
+  /fs-extra/11.1.0:
+    resolution: {integrity: sha512-0rcTq621PD5jM/e0a3EJoGC/1TC5ZBCERW82LQuwfGnCa1V8w7dpYH1yNu+SLb6E5dkeCBzKEyLGlFrnr+dUyw==}
+    engines: {node: '>=14.14'}
     dependencies:
       graceful-fs: 4.2.10
       jsonfile: 6.1.0
