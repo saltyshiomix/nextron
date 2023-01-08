@@ -1,29 +1,30 @@
 import React from 'react';
 import Head from 'next/head';
-import { ThemeProvider } from '@material-ui/core/styles';
-import CssBaseline from '@material-ui/core/CssBaseline';
-import { theme } from '../lib/theme';
-import type { AppProps } from 'next/app';
+import type {AppProps} from 'next/app';
+import {CssBaseline, ThemeProvider} from '@mui/material';
+import theme from '../lib/theme';
+import type {EmotionCache} from "@emotion/cache";
+import createEmotionCache from '../lib/create-emotion-cache';
+import {CacheProvider} from '@emotion/react';
 
-export default function(props: AppProps) {
-  const { Component, pageProps } = props;
+const clientSideEmotionCache = createEmotionCache();
 
-  React.useEffect(() => {
-    const jssStyles = document.querySelector('#jss-server-side');
-    if (jssStyles) {
-      jssStyles.parentElement.removeChild(jssStyles);
-    }
-  }, []);
+type MyAppProps = AppProps & {
+    emotionCache?: EmotionCache;
+}
 
-  return (
-    <React.Fragment>
-      <Head>
-        <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width" />
-      </Head>
-      <ThemeProvider theme={theme}>
-        <CssBaseline />
-        <Component {...pageProps} />
-      </ThemeProvider>
-    </React.Fragment>
-  );
+export default function MyApp(props: MyAppProps) {
+    const {Component, pageProps, emotionCache = clientSideEmotionCache} = props;
+
+    return (
+        <CacheProvider value={emotionCache}>
+            <Head>
+                <meta name="viewport" content="minimum-scale=1, initial-scale=1, width=device-width"/>
+            </Head>
+            <ThemeProvider theme={theme}>
+                <CssBaseline/>
+                <Component {...pageProps} />
+            </ThemeProvider>
+        </CacheProvider>
+    )
 }
