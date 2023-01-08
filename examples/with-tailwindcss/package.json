@@ -20,7 +20,7 @@
     "autoprefixer": "^10.4.7",
     "electron": "^21.3.3",
     "electron-builder": "^23.6.0",
-    "next": "^12.2.5",
+    "next": "^12.3.4",
     "nextron": "^8.3.0",
     "postcss": "^8.4.13",
     "react": "^18.2.0",
