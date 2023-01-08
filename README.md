@@ -18,6 +18,7 @@
 
 | nextron | next |
 | --- | --- |
+| `v9.x` | `v13.x` (upcomming) |
 | `v8.x` | `v12.x` |
 | `v7.x` | `v11.x` |
 | `v6.x` | `v10.x` |
@@ -28,7 +29,7 @@
 
 ### Package Manager
 
-`npm`, `yarn` and `pnpm >= v4` are supported.
+`npm`, `yarn` and `pnpm` are supported.
 
 ## My Belief for Nextron
 
@@ -53,6 +54,12 @@ $ yarn create nextron-app MY_APP --example with-typescript-material-ui
 
 # with pnpx
 $ pnpx create-nextron-app MY_APP --example with-typescript-material-ui
+```
+
+For nextron v8 or below, please specify `--branch` option:
+
+```
+npx create-nextron-app MY_APP --example with-typescript-material-ui --branch release/v8
 ```
 
 ### Run Electron with Development Mode
