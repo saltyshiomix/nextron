@@ -8,15 +8,15 @@ const cwd = process.cwd();
 async function detectPackageManager() {
   let pm = 'yarn';
   try {
-    await execa(pm, '-v');
+    await execa(pm, ['-v']);
   } catch (_) {
     pm = 'pnpm';
     try {
-      await execa(pm, '-v');
+      await execa(pm, ['-v']);
     } catch (_ignore) {
       pm = 'npm';
       try {
-        await execa(pm, '-v');
+        await execa(pm, ['-v']);
       } catch (_) {
         pm = undefined;
       }

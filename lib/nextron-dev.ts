@@ -2,7 +2,6 @@ import { ChildProcess } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
 import execa from 'execa';
-import delay from 'delay';
 import webpack from 'webpack';
 import {
   getNextronConfig,
@@ -44,7 +43,7 @@ if (args['--help']) {
 const rendererPort = args['--port'] || 8888;
 const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
 const inspectPort = args['--inspect'] || 9292;
-const startupDelay = getNextronConfig().startupDelay || args['--startup-delay']  || '8000';
+const startupDelay = getNextronConfig().startupDelay || args['--startup-delay'] || 0;
 
 const execaOptions: execa.Options = {
   cwd: process.cwd(),
@@ -127,7 +126,7 @@ async function dev() {
   rendererProcess = startRendererProcess();
 
   // wait until renderer process is ready
-  await delay(startupDelay);
+  await new Promise<void>(resolve => setTimeout(() => resolve(), startupDelay));
 
   const compiler = webpack(getWebpackConfig('development'));
   if (args['--run-only']) {
