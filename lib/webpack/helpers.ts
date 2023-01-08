@@ -1,6 +1,6 @@
 import fs from 'fs';
 import path from 'path';
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import configure from './webpack.config';
 
 const existsSync = (f: string): boolean => {
