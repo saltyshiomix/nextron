@@ -70,9 +70,14 @@ async function build() {
   // Ignore missing dependencies
   process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
 
-  const appdir = path.join(cwd, 'app');
-  const distdir = path.join(cwd, 'dist');
-  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
+  const nextronConfig = getNextronConfig();
+
+  const distDir = nextronConfig.distDir || 'dist';
+  const appSrcDir = nextronConfig.appSrcDir || 'app';
+  const rendererSrcDir = nextronConfig.rendererSrcDir || 'renderer';
+
+  const appdir = path.join(cwd, appSrcDir);
+  const distdir = path.join(cwd, distDir);
 
   try {
     log('Clearing previous builds');
