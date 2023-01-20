@@ -134,6 +134,10 @@ module.exports = {
   mainSrcDir: 'main',
   // specify an alternate renderer src directory, defaults to 'renderer'
   rendererSrcDir: 'renderer',
+  
+  // specify an alternate app build directory, defaults to 'app'. 
+  // Next.js 13 reserves 'app', so you can change this to e.g. 'app-build'
+  appSrcDir: 'app'
 
   // main process' webpack config
   webpack: (config, env) => {
