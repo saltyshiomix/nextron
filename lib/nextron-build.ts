@@ -41,19 +41,19 @@ if (args['--help']) {
 
     {bold OPTIONS}
 
-      --help,    -h  shows this help message
-      --version, -v  displays the current version of nextron
-      --all          builds for Windows, macOS and Linux
-      --win,     -w  builds for Windows, accepts target list (see https://goo.gl/jYsTEJ)
-      --mac,     -m  builds for macOS, accepts target list (see https://goo.gl/5uHuzj)
-      --linux,   -l  builds for Linux, accepts target list (see https://goo.gl/4vwQad) 
-      --x64          builds for x64
-      --ia32         builds for ia32
-      --armv7l       builds for armv7l
-      --arm64        builds for arm64
-      --universal    builds for mac universal binary
+      --help,    -h  show this help message
+      --version, -v  display the current version of nextron
+      --all          build for Windows, macOS and Linux
+      --win,     -w  build for Windows, accepts target list (see https://goo.gl/jYsTEJ)
+      --mac,     -m  build for macOS, accepts target list (see https://goo.gl/5uHuzj)
+      --linux,   -l  build for Linux, accepts target list (see https://goo.gl/4vwQad) 
+      --x64          build for x64
+      --ia32         build for ia32
+      --armv7l       build for armv7l
+      --arm64        build for arm64
+      --universal    build for mac universal binary
       --no-pack      skip electron-builder pack command
-      --publish  -p  Publish artifacts (see https://goo.gl/tSFycD)
+      --publish, -p  publish artifacts (see https://goo.gl/tSFycD)
                      [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
 
   `);

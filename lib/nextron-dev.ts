@@ -30,12 +30,17 @@ if (args['--help']) {
     {bold USAGE}
 
       {bold $} {cyan nextron dev} --help
-      {bold $} {cyan nextron dev}
+      {bold $} {cyan nextron dev} [options]
 
     {bold OPTIONS}
 
-      --help,    -h  shows this help message
-      --version, -v  displays the current version of nextron
+      --help,                 -h  show this help message
+      --version,              -v  display the current version of nextron
+      --port,                 -p  renderer port number for development mode
+      --remote-debugging-port
+      --inspect
+      --run-only,             -r  ignore webpack watching of main process
+      --startup-delay,        -d  wait milliseconds until renderer process is ready to use
   `);
   process.exit(0);
 }
