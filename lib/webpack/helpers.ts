@@ -3,21 +3,12 @@ import path from 'path';
 import { merge } from 'webpack-merge';
 import configure from './webpack.config';
 
-const existsSync = (f: string): boolean => {
-  try {
-    fs.accessSync(f, fs.constants.F_OK);
-    return true;
-  } catch (_) {
-    return false;
-  }
-};
-
 const cwd = process.cwd();
-const ext = existsSync(path.join(cwd, 'tsconfig.json')) ? '.ts' : '.js';
+const ext = fs.existsSync(path.join(cwd, 'tsconfig.json')) ? '.ts' : '.js';
 
 export const getNextronConfig = () => {
   const nextronConfigPath = path.join(cwd, 'nextron.config.js');
-  if (existsSync(nextronConfigPath)) {
+  if (fs.existsSync(nextronConfigPath)) {
     return require(nextronConfigPath);
   } else {
     return {};
