@@ -5,8 +5,6 @@ import { createWindow } from './helpers';
 const isProd = process.env.NODE_ENV === 'production';
 
 if (isProd) {
-  // if you set `appSrcDir` in `nextron.config.js`
-  // Remember to change directory here to match `appSrcDir`
   serve({ directory: 'app' });
 } else {
   app.setPath('userData', `${app.getPath('userData')} (development)`);

@@ -21,13 +21,12 @@ if (new Set(['--version', '-v']).has(cmd)) {
 
 if (new Set(['--help', '-h']).has(cmd)) {
   console.log(chalk`
-    {bold.cyan nextron} - ⚡ Electron + NEXT.js ⚡
+    {bold.cyan nextron} - ⚡ NEXT.js + Electron ⚡
 
     {bold USAGE}
 
-      {bold $} {cyan nextron init} --help
-      {bold $} {cyan nextron init} {underline my-app}
-      {bold $} {cyan nextron init} {underline my-app} [--example {underline example_folder_name}]
+      {bold $} {cyan nextron dev}
+      {bold $} {cyan nextron build}
   `);
   process.exit(0);
 }

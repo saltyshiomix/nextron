@@ -39,7 +39,7 @@ if (args['--help'] || (!args._[0])) {
   process.exit(0);
 }
 
-const example = args['--template'] || args['--example'] || 'with-javascript-material-ui';
+const example = args['--template'] || args['--example'] || 'basic-javascript';
 
 execa.sync(
   'npx',

@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "8.4.0",
+  "version": "8.5.0",
   "description": "⚡ NEXT.js + Electron ⚡",
   "repository": "git@github.com:saltyshiomix/nextron.git",
   "author": "Shiono Yoshihide <shiono.yoshihide@gmail.com>",
@@ -42,8 +42,8 @@
     "@babel/plugin-transform-runtime": "7.19.6",
     "@babel/preset-env": "7.20.2",
     "@babel/preset-typescript": "7.18.6",
-    "@babel/runtime": "7.20.7",
-    "@babel/runtime-corejs3": "7.20.7",
+    "@babel/runtime": "7.20.13",
+    "@babel/runtime-corejs3": "7.20.13",
     "arg": "5.0.2",
     "babel-loader": "9.1.2",
     "chalk": "4.1.2",
@@ -54,13 +54,13 @@
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.3",
-    "@rollup/plugin-commonjs": "^24.0.0",
+    "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-node-resolve": "^15.0.1",
     "@rollup/plugin-terser": "^0.3.0",
     "@types/fs-extra": "^9.0.13",
     "@types/node": "^18.11.18",
     "rimraf": "^3.0.2",
-    "rollup": "^3.9.1",
+    "rollup": "^3.10.1",
     "rollup-plugin-auto-external": "^2.0.0",
     "typescript": "^4.9.4"
   }
