@@ -3,6 +3,15 @@ import path from 'path';
 import { merge } from 'webpack-merge';
 import configure from './webpack.config';
 
+interface NextronConfig {
+  rendererSrcDir?: string;
+  appSrcDir?: string;
+  mainSrcDir?: string;
+  distDir?: string;
+  startupDelay?: number;
+  webpack?: (config: any, options: any) => any;
+}
+
 const existsSync = (f: string): boolean => {
   try {
     fs.accessSync(f, fs.constants.F_OK);
@@ -15,7 +24,7 @@ const existsSync = (f: string): boolean => {
 const cwd = process.cwd();
 const ext = existsSync(path.join(cwd, 'tsconfig.json')) ? '.ts' : '.js';
 
-export const getNextronConfig = () => {
+export const getNextronConfig = (): NextronConfig => {
   const nextronConfigPath = path.join(cwd, 'nextron.config.js');
   if (existsSync(nextronConfigPath)) {
     return require(nextronConfigPath);
@@ -25,14 +34,14 @@ export const getNextronConfig = () => {
 };
 
 export const getWebpackConfig = (env: 'development' | 'production') => {
-  const { mainSrcDir, webpack } = getNextronConfig();
+  const { mainSrcDir, webpack, appSrcDir } = getNextronConfig();
   const userConfig = merge(configure(env), {
     entry: {
       background: path.join(cwd, mainSrcDir || 'main', `background${ext}`),
     },
     output: {
       filename: '[name].js',
-      path: path.join(cwd, 'app'),
+      path: path.join(cwd, appSrcDir || 'app'),
     },
   });
 
