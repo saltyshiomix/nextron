@@ -18,7 +18,7 @@
 
 | nextron | next |
 | --- | --- |
-| `v9.x` | `v13.x` (upcomming) |
+| `v9.x` | `v13.x` (upcoming) |
 | `v8.x` | `v12.x` |
 | `v7.x` | `v11.x` |
 | `v6.x` | `v10.x` |
