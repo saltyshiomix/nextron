@@ -402,6 +402,23 @@ $ pnpm dev # default is examples/basic-javascript
 $ pnpm dev <EXAMPLE-FOLDER-NAME>
 ```
 
+### Developing for your own project
+
+1. Install development version of nextron
+```
+$ cd nextron
+$ npm install
+$ npm run build
+$ npm link 
+```
+2. Install linked nextron in your project
+```
+$ cd your-project
+$ npm install -D @babel/runtime-corejs3 # required for nextron
+$ npm link nextron
+```
+4. On every change in nextron, run `npm run build` in nextron folder and restart your project
+
 ## Maintainers ⚡
 
 - [saltyshiomix (Shiono Yoshihide)](https://github.com/saltyshiomix)
