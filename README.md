@@ -417,7 +417,7 @@ $ cd your-project
 $ npm install -D @babel/runtime-corejs3 # required for nextron
 $ npm link nextron
 ```
-4. On every change in nextron, run `npm run build` in nextron folder and restart your project
+3. On every change in nextron, run `npm run build` in nextron folder and restart your project
 
 ## Maintainers ⚡
 
