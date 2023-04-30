@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example with-emotion
 # with yarn
 $ yarn create nextron-app my-app --example with-emotion
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-emotion
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-emotion
 ```
 
 ### Install Dependencies

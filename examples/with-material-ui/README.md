@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example with-material-ui
 # with yarn
 $ yarn create nextron-app my-app --example with-material-ui
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-material-ui
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-material-ui
 ```
 
 ### Install Dependencies

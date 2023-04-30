@@ -16,16 +16,16 @@
 
 ### Nextron vs Next.js
 
-| nextron | next |
-| --- | --- |
-| `v9.x` | `v13.x` (upcoming) |
-| `v8.x` | `v12.x` |
-| `v7.x` | `v11.x` |
-| `v6.x` | `v10.x` |
-| `v5.x` | `v9.x` |
-| `v4.x` | `v8.x` |
-| `v2.x` / `v3.x` | `v7.x` |
-| `v1.x` | `v6.x` |
+| nextron         | next               |
+| --------------- | ------------------ |
+| `v9.x`          | `v13.x` (upcoming) |
+| `v8.x`          | `v12.x`            |
+| `v7.x`          | `v11.x`            |
+| `v6.x`          | `v10.x`            |
+| `v5.x`          | `v9.x`             |
+| `v4.x`          | `v8.x`             |
+| `v2.x` / `v3.x` | `v7.x`             |
+| `v1.x`          | `v6.x`             |
 
 ### Package Manager
 
@@ -52,8 +52,8 @@ $ npx create-nextron-app MY_APP --example with-material-ui
 # with yarn
 $ yarn create nextron-app MY_APP --example with-material-ui
 
-# with pnpx
-$ pnpx create-nextron-app MY_APP --example with-material-ui
+# with pnpm
+$ pnpm dlx create-nextron-app MY_APP --example with-material-ui
 ```
 
 For nextron v8 or below, please specify `--branch` option:
@@ -151,9 +151,7 @@ We can extends the default babel config of main process by putting `.babelrc` in
 
 ```json
 {
-  "presets": [
-    "nextron/babel"
-  ]
+  "presets": ["nextron/babel"]
 }
 ```
 
@@ -231,8 +229,8 @@ $ npx create-nextron-app my-app --example basic-javascript
 # with yarn
 $ yarn create nextron-app my-app --example basic-javascript
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example basic-javascript
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-javascript
 ```
 
 ### [examples/basic-typescript](./examples/basic-typescript)
@@ -246,8 +244,8 @@ $ npx create-nextron-app my-app --example basic-typescript
 # with yarn
 $ yarn create nextron-app my-app --example basic-typescript
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example basic-typescript
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-typescript
 ```
 
 ### [examples/custom-build-options](./examples/custom-build-options)
@@ -261,8 +259,8 @@ $ npx create-nextron-app my-app --example custom-build-options
 # with yarn
 $ yarn create nextron-app my-app --example custom-build-options
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-build-options
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example custom-build-options
 ```
 
 ### [examples/custom-main-entry](./examples/custom-main-entry)
@@ -276,8 +274,8 @@ $ npx create-nextron-app my-app --example custom-main-entry
 # with yarn
 $ yarn create nextron-app my-app --example custom-main-entry
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-main-entry
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example custom-main-entry
 ```
 
 ### [examples/custom-renderer-port](./examples/custom-renderer-port)
@@ -291,8 +289,8 @@ $ npx create-nextron-app my-app --example custom-renderer-port
 # with yarn
 $ yarn create nextron-app my-app --example custom-renderer-port
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-renderer-port
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example custom-renderer-port
 ```
 
 ### [examples/ipc-communication](./examples/ipc-communication)
@@ -306,8 +304,8 @@ $ npx create-nextron-app my-app --example ipc-communication
 # with yarn
 $ yarn create nextron-app my-app --example ipc-communication
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example ipc-communication
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example ipc-communication
 ```
 
 ### [examples/store-data](./examples/store-data)
@@ -321,8 +319,8 @@ $ npx create-nextron-app my-app --example store-data
 # with yarn
 $ yarn create nextron-app my-app --example store-data
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example store-data
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example store-data
 ```
 
 ### [examples/with-ant-design](./examples/with-ant-design)
@@ -336,8 +334,8 @@ $ npx create-nextron-app my-app --example with-ant-design
 # with yarn
 $ yarn create nextron-app my-app --example with-ant-design
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-ant-design
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-ant-design
 ```
 
 ### [examples/with-emotion](./examples/with-emotion)
@@ -351,8 +349,8 @@ $ npx create-nextron-app my-app --example with-emotion
 # with yarn
 $ yarn create nextron-app my-app --example with-emotion
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-emotion
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-emotion
 ```
 
 ### [examples/with-material-ui](./examples/with-material-ui)
@@ -366,8 +364,8 @@ $ npx create-nextron-app my-app --example with-material-ui
 # with yarn
 $ yarn create nextron-app my-app --example with-material-ui
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-material-ui
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-material-ui
 ```
 
 ### [examples/with-tailwindcss](./examples/with-tailwindcss)
@@ -381,8 +379,8 @@ $ npx create-nextron-app my-app --example with-tailwindcss
 # with yarn
 $ yarn create nextron-app my-app --example with-tailwindcss
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-tailwindcss
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-tailwindcss
 ```
 
 ## Develop
