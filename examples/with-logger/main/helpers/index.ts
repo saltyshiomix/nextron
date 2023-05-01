@@ -1,5 +1,4 @@
-import createWindow from './create-window';
+import createWindow from "./create-window";
+import { Logger } from "./Logger";
 
-export {
-  createWindow,
-};
+export { createWindow, Logger };
