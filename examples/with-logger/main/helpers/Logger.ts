@@ -145,17 +145,9 @@ export class Logger {
     const hh = currentDate.getHours();
     const currentTime = `${hh}:${mm}:${ss}`;
 
-    content =
-      "[" +
-      this.todayCode +
-      "]:[" +
-      currentTime +
-      "]:[" +
-      getNameFromCode(source, LOGGER_SOURCE) +
-      "]:[" +
-      getNameFromCode(code, LOGGER_CODES) +
-      "]: " +
-      content;
+    const sourceName = getNameFromCode(source, LOGGER_SOURCE);
+    const codeName = getNameFromCode(code, LOGGER_CODES);
+    content =`[${this.todayCode}]:[${currentTime}]:[${sourceName)}]:[${codeName}]:${content}`;
     const logFolder = this.logFolder;
     if (!fs.existsSync(logFolder)) {
       fs.mkdirSync(logFolder);
