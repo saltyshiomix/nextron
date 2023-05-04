@@ -72,11 +72,10 @@ export class Logger {
   }
 
   deletePastLogFiles() {
-    var lastlogFiles = this.getAllLogsFiles();
-    lastlogFiles.sort((a, b) => a.date.localeCompare(b.date));
+    const lastlogFiles = this.getAllLogsFiles().sort((a, b) => a.date.localeCompare(b.date));
 
     while (lastlogFiles.length >= this.numberOfLogFilesAccepted) {
-      var currentPath = lastlogFiles.shift().path;
+      const currentPath = lastlogFiles.shift().path;
       if (fs.existsSync(currentPath)) {
         fs.unlink(currentPath, (err) => {
           if (err) {
