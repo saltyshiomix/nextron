@@ -46,10 +46,10 @@ export class Logger {
 
   constructor(opts) {
     this.isDev = opts.isDev || false;
-    var currentDate = new Date();
-    var dd = String(currentDate.getDate()).padStart(2, "0");
-    var mm = String(currentDate.getMonth() + 1).padStart(2, "0"); //January is 0!
-    var yyyy = currentDate.getFullYear();
+    const currentDate = new Date();
+    const dd = String(currentDate.getDate()).padStart(2, "0");
+    const mm = String(currentDate.getMonth() + 1).padStart(2, "0"); //January is 0!
+    const yyyy = currentDate.getFullYear();
 
     this.todayCode = `${yyyy}-${mm}-${dd}`;
     this.fileExtension = opts.fileExtension || "txt";
