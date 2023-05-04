@@ -51,7 +51,7 @@ export class Logger {
     var mm = String(currentDate.getMonth() + 1).padStart(2, "0"); //January is 0!
     var yyyy = currentDate.getFullYear();
 
-    this.todayCode = yyyy + "-" + mm + "-" + dd;
+    this.todayCode = `${yyyy}-${mm}-${dd}`;
     this.fileExtension = opts.fileExtension || "txt";
     this.fileIdentifier = opts.fileIdentifier || test.name;
     this.logFolder =
