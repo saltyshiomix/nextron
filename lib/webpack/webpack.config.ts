@@ -5,19 +5,10 @@ import webpack from 'webpack';
 const cwd = process.cwd();
 const externals = require(path.join(cwd, 'package.json')).dependencies;
 
-const existsSync = (f: string): boolean => {
-  try {
-    fs.accessSync(f, fs.constants.F_OK);
-    return true;
-  } catch (_) {
-    return false;
-  }
-};
-
 const getBabelrc = (): string | undefined => {
-  if (existsSync(path.join(cwd, '.babelrc'))) return path.join(cwd, '.babelrc');
-  if (existsSync(path.join(cwd, '.babelrc.js'))) return path.join(cwd, '.babelrc.js');
-  if (existsSync(path.join(cwd, 'babel.config.js'))) return path.join(cwd, 'babel.config.js');
+  if (fs.existsSync(path.join(cwd, '.babelrc'))) return path.join(cwd, '.babelrc');
+  if (fs.existsSync(path.join(cwd, '.babelrc.js'))) return path.join(cwd, '.babelrc.js');
+  if (fs.existsSync(path.join(cwd, 'babel.config.js'))) return path.join(cwd, 'babel.config.js');
   return path.join(__dirname, '../babel.js');
 };
 

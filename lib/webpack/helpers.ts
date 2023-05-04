@@ -1,23 +1,14 @@
 import fs from 'fs';
 import path from 'path';
-import merge from 'webpack-merge';
+import { merge } from 'webpack-merge';
 import configure from './webpack.config';
 
-const existsSync = (f: string): boolean => {
-  try {
-    fs.accessSync(f, fs.constants.F_OK);
-    return true;
-  } catch (_) {
-    return false;
-  }
-};
-
 const cwd = process.cwd();
-const { main: background } = require(path.join(cwd, 'package.json'));
+const { main: background } = JSON.parse(fs.readFileSync(path.join(cwd, 'package.json'), { encoding: 'utf8' }));
 
 export const getNextronConfig = () => {
   const nextronConfigPath = path.join(cwd, 'nextron.config.js');
-  if (existsSync(nextronConfigPath)) {
+  if (fs.existsSync(nextronConfigPath)) {
     return require(nextronConfigPath);
   } else {
     return {};

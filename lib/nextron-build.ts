@@ -17,8 +17,10 @@ const args = arg({
   '--ia32': Boolean,
   '--armv7l': Boolean,
   '--arm64': Boolean,
+  '--universal': Boolean,
   '--config': String,
   '--publish': String,
+  '--no-pack': Boolean,
   '-h': '--help',
   '-v': '--version',
   '-w': '--win',
@@ -39,17 +41,19 @@ if (args['--help']) {
 
     {bold OPTIONS}
 
-      --help,    -h  shows this help message
-      --version, -v  displays the current version of nextron
-      --all          builds for Windows, macOS and Linux
-      --win,     -w  builds for Windows, accepts target list (see https://goo.gl/jYsTEJ)
-      --mac,     -m  builds for macOS, accepts target list (see https://goo.gl/5uHuzj)
-      --linux,   -l  builds for Linux, accepts target list (see https://goo.gl/4vwQad) 
-      --x64          builds for x64
-      --ia32         builds for ia32
-      --armv7l       builds for armv7l
-      --arm64        builds for arm64
-      --publish  -p  Publish artifacts (see https://goo.gl/tSFycD)
+      --help,    -h  show this help message
+      --version, -v  display the current version of nextron
+      --all          build for Windows, macOS and Linux
+      --win,     -w  build for Windows, accepts target list (see https://goo.gl/jYsTEJ)
+      --mac,     -m  build for macOS, accepts target list (see https://goo.gl/5uHuzj)
+      --linux,   -l  build for Linux, accepts target list (see https://goo.gl/4vwQad) 
+      --x64          build for x64
+      --ia32         build for ia32
+      --armv7l       build for armv7l
+      --arm64        build for arm64
+      --universal    build for mac universal binary
+      --no-pack      skip electron-builder pack command
+      --publish, -p  publish artifacts (see https://goo.gl/tSFycD)
                      [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
 
   `);
@@ -82,8 +86,12 @@ async function build() {
     log('Building main process');
     await execa('node', [path.join(__dirname, 'webpack.config.js')], execaOptions);
 
-    log('Packaging - please wait a moment');
-    await execa('electron-builder', createBuilderArgs(), execaOptions);
+    if (args['--no-pack']) {
+      log('Skip Packaging...');
+    } else{
+      log('Packaging - please wait a moment');
+      await execa('electron-builder', createBuilderArgs(), execaOptions);
+    }
 
     log('See `dist` directory');
   } catch (err) {
@@ -124,6 +132,7 @@ function createArchArgs() {
   args['--ia32'] && archArgs.push('--ia32');
   args['--armv7l'] && archArgs.push('--armv7l');
   args['--arm64'] && archArgs.push('--arm64');
+  args['--universal'] && archArgs.push('--universal');
   return archArgs;
 }
 

@@ -8,15 +8,15 @@ const cwd = process.cwd();
 async function detectPackageManager() {
   let pm = 'yarn';
   try {
-    await execa(pm, '-v');
+    await execa(pm, ['-v']);
   } catch (_) {
     pm = 'pnpm';
     try {
-      await execa(pm, '-v');
+      await execa(pm, ['-v']);
     } catch (_ignore) {
       pm = 'npm';
       try {
-        await execa(pm, '-v');
+        await execa(pm, ['-v']);
       } catch (_) {
         pm = undefined;
       }
@@ -30,7 +30,7 @@ async function detectPackageManager() {
 }
 
 (async () => {
-  let example = 'with-javascript';
+  let example = 'basic-javascript';
   if (3 <= process.argv.length) {
     const newExample = process.argv[2];
     if (!fs.existsSync(path.join(cwd, `examples/${newExample}`))) {

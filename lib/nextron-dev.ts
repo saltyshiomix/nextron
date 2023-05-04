@@ -1,9 +1,7 @@
-import fs from 'fs';
 import { ChildProcess } from 'child_process';
 import arg from 'arg';
 import chalk from 'chalk';
 import execa from 'execa';
-import delay from 'delay';
 import webpack from 'webpack';
 import {
   getNextronConfig,
@@ -17,10 +15,12 @@ const args = arg({
   '--remote-debugging-port': Number,
   '--inspect': Number,
   '--run-only': Boolean,
+  '--startup-delay': Number,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
   '-r': '--run-only',
+  '-d': '--startup-delay',
 });
 
 if (args['--help']) {
@@ -30,12 +30,17 @@ if (args['--help']) {
     {bold USAGE}
 
       {bold $} {cyan nextron dev} --help
-      {bold $} {cyan nextron dev}
+      {bold $} {cyan nextron dev} [options]
 
     {bold OPTIONS}
 
-      --help,    -h  shows this help message
-      --version, -v  displays the current version of nextron
+      --help,                 -h  show this help message
+      --version,              -v  display the current version of nextron
+      --port,                 -p  renderer port number for development mode
+      --remote-debugging-port
+      --inspect
+      --run-only,             -r  ignore webpack watching of main process
+      --startup-delay,        -d  wait milliseconds until renderer process is ready to use
   `);
   process.exit(0);
 }
@@ -43,6 +48,7 @@ if (args['--help']) {
 const rendererPort = args['--port'] || 8888;
 const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
 const inspectPort = args['--inspect'] || 9292;
+const startupDelay = getNextronConfig().startupDelay || args['--startup-delay'] || 0;
 
 const execaOptions: execa.Options = {
   cwd: process.cwd(),
@@ -98,7 +104,7 @@ async function dev() {
     }
   };
 
-  const webpackCallback = async (err: Error | undefined) => {
+  const webpackCallback = async (err?: Error | null) => {
     if (err) {
       console.error(err.stack || err);
       if (err.stack) {
@@ -125,7 +131,7 @@ async function dev() {
   rendererProcess = startRendererProcess();
 
   // wait until renderer process is ready
-  await delay(8000);
+  await new Promise<void>(resolve => setTimeout(() => resolve(), startupDelay));
 
   const compiler = webpack(getWebpackConfig('development'));
   if (args['--run-only']) {

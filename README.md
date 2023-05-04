@@ -18,6 +18,8 @@
 
 | nextron | next |
 | --- | --- |
+| `v9.x` | `v13.x` (upcoming) |
+| `v8.x` | `v12.x` |
 | `v7.x` | `v11.x` |
 | `v6.x` | `v10.x` |
 | `v5.x` | `v9.x` |
@@ -27,11 +29,11 @@
 
 ### Package Manager
 
-`npm`, `yarn` and `pnpm >= v4` are supported.
+`npm`, `yarn` and `pnpm` are supported.
 
 ## My Belief for Nextron
 
-1. Show a way of developing desktop apps only web knowledge
+1. Show a way of developing desktop apps with only web knowledge
 1. Easy to use
 1. Be transparent and open to OSS developers
 
@@ -41,17 +43,23 @@
 
 We can use `examples/*` as a template.
 
-To create the `examples/with-typescript-material-ui`, run the command below:
+To create the `examples/with-material-ui`, run the command below:
 
 ```
 # with npx
-$ npx create-nextron-app MY_APP --example with-typescript-material-ui
+$ npx create-nextron-app MY_APP --example with-material-ui
 
 # with yarn
-$ yarn create nextron-app MY_APP --example with-typescript-material-ui
+$ yarn create nextron-app MY_APP --example with-material-ui
 
 # with pnpx
-$ pnpx create-nextron-app MY_APP --example with-typescript-material-ui
+$ pnpx create-nextron-app MY_APP --example with-material-ui
+```
+
+For nextron v8 or below, please specify `--branch` option:
+
+```
+npx create-nextron-app MY_APP --example with-material-ui --branch release/v8
 ```
 
 ### Run Electron with Development Mode
@@ -212,6 +220,36 @@ export default Home;
 
 See [examples](./examples) folder for more information.
 
+### [examples/basic-javascript](./examples/basic-javascript)
+
+<p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-javascript
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-javascript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example basic-javascript
+```
+
+### [examples/basic-typescript](./examples/basic-typescript)
+
+<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-typescript
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-typescript
+
+# with pnpx
+$ pnpx create-nextron-app my-app --example basic-typescript
+```
+
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
@@ -287,154 +325,64 @@ $ yarn create nextron-app my-app --example store-data
 $ pnpx create-nextron-app my-app --example store-data
 ```
 
-### [examples/with-javascript](./examples/with-javascript)
-
-<p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript
-```
-
-### [examples/with-javascript-ant-design](./examples/with-javascript-ant-design)
+### [examples/with-ant-design](./examples/with-ant-design)
 
 <p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-javascript-ant-design
+$ npx create-nextron-app my-app --example with-ant-design
 
 # with yarn
-$ yarn create nextron-app my-app --example with-javascript-ant-design
+$ yarn create nextron-app my-app --example with-ant-design
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-ant-design
+$ pnpx create-nextron-app my-app --example with-ant-design
 ```
 
-### [examples/with-javascript-emotion](./examples/with-javascript-emotion)
-
-<p align="center"><img src="https://i.imgur.com/FDRVPr8.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-emotion
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-emotion
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-emotion
-```
-
-### [examples/with-javascript-material-ui](./examples/with-javascript-material-ui)
-
-<p align="center"><img src="https://i.imgur.com/0vkxIMN.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-material-ui
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-material-ui
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-material-ui
-```
-
-### [examples/with-javascript-tailwindcss](./examples/with-javascript-tailwindcss)
-
-<p align="center"><img src="https://i.imgur.com/P08L8HO.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-javascript-tailwindcss
-
-# with yarn
-$ yarn create nextron-app my-app --example with-javascript-tailwindcss
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-javascript-tailwindcss
-```
-
-### [examples/with-typescript](./examples/with-typescript)
-
-<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript
-
-# with yarn
-$ yarn create nextron-app my-app --example with-typescript
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript
-```
-
-### [examples/with-typescript-ant-design](./examples/with-typescript-ant-design)
-
-<p align="center"><img src="https://i.imgur.com/NrkTPe9.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example with-typescript-ant-design
-
-# with yarn
-$ yarn create nextron-app my-app --example with-typescript-ant-design
-
-# with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-ant-design
-```
-
-### [examples/with-typescript-emotion](./examples/with-typescript-emotion)
+### [examples/with-emotion](./examples/with-emotion)
 
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-emotion
+$ npx create-nextron-app my-app --example with-emotion
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-emotion
+$ yarn create nextron-app my-app --example with-emotion
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-emotion
+$ pnpx create-nextron-app my-app --example with-emotion
 ```
 
-### [examples/with-typescript-material-ui](./examples/with-typescript-material-ui)
+### [examples/with-material-ui](./examples/with-material-ui)
 
 <p align="center"><img src="https://i.imgur.com/flcMvDC.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-material-ui
+$ npx create-nextron-app my-app --example with-material-ui
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-material-ui
+$ yarn create nextron-app my-app --example with-material-ui
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-material-ui
+$ pnpx create-nextron-app my-app --example with-material-ui
 ```
 
-### [examples/with-typescript-tailwindcss](./examples/with-typescript-tailwindcss)
+### [examples/with-tailwindcss](./examples/with-tailwindcss)
 
 <p align="center"><img src="https://i.imgur.com/a9QWW0v.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example with-typescript-tailwindcss
+$ npx create-nextron-app my-app --example with-tailwindcss
 
 # with yarn
-$ yarn create nextron-app my-app --example with-typescript-tailwindcss
+$ yarn create nextron-app my-app --example with-tailwindcss
 
 # with pnpx
-$ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
+$ pnpx create-nextron-app my-app --example with-tailwindcss
 ```
 
 ## Develop
@@ -444,17 +392,25 @@ $ pnpx create-nextron-app my-app --example with-typescript-tailwindcss
 ```
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
-$ yarn
-$ yarn dev # default is examples/with-javascript
+$ pnpm install
+$ pnpm dev # default is examples/basic-javascript
 ```
-
-`pnpm` or `npm` are also supported.
 
 ### Developing `examples/*`
 
 ```
-$ yarn dev <EXAMPLE-FOLDER-NAME>
+$ pnpm dev <EXAMPLE-FOLDER-NAME>
 ```
+
+## Maintainers ⚡
+
+- [saltyshiomix (Shiono Yoshihide)](https://github.com/saltyshiomix)
+- [lacymorrow (Lacy Morrow)](https://github.com/lacymorrow)
+- [Psycokwet](https://github.com/Psycokwet)
+- [m5x5](https://github.com/m5x5)
+- [andirsun (Anderson Laverde)](https://github.com/andirsun)
+
+For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
 
 ## Related
 

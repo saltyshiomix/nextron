@@ -2,3 +2,8 @@ node_modules
 bin
 workspace
 examples/**/yarn.lock
+examples/**/package-lock.json
+examples/**/pnpm-lock.yaml
+examples/**/renderer/next-env.d.ts
+.idea
+.DS_Store

@@ -12,14 +12,14 @@
   },
   "dependencies": {
     "electron-serve": "^1.1.0",
-    "electron-store": "^8.0.0"
+    "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "electron": "^13.1.7",
-    "electron-builder": "^22.11.7",
-    "next": "^11.0.1",
-    "nextron": "^7.0.0",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "electron": "^21.3.3",
+    "electron-builder": "^23.6.0",
+    "next": "^12.3.4",
+    "nextron": "^8.5.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

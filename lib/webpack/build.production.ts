@@ -3,7 +3,7 @@ import { getWebpackConfig } from './helpers';
 
 const compiler = webpack(getWebpackConfig('production'));
 
-compiler.run((err: Error | undefined, stats: webpack.Stats | undefined) => {
+compiler.run((err, stats) => {
   if (err) {
     console.error(err.stack || err);
   }

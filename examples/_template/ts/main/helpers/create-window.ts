@@ -68,8 +68,8 @@ export default (windowName: string, options: BrowserWindowConstructorOptions): B
   state = ensureVisibleOnSomeDisplay(restore());
 
   const browserOptions: BrowserWindowConstructorOptions = {
-    ...options,
     ...state,
+    ...options,
     webPreferences: {
       nodeIntegration: true,
       contextIsolation: false,
