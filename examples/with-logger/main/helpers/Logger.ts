@@ -83,7 +83,7 @@ export class Logger {
             this.writeLog(
               LOGGER_SOURCE.LOGGER,
               LOGGER_CODES.ERROR,
-              "An error ocurred deleting the file" + err.message
+              `An error ocurred deleting the file ${err.message}`
             );
             return;
           }
