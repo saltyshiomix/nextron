@@ -139,12 +139,11 @@ export class Logger {
   }
 
   writeLog(source, code, content) {
-    var currentDate = new Date();
-    var ss = currentDate.getSeconds();
-    var mm = currentDate.getMinutes();
-    var hh = currentDate.getHours();
-
-    var currentTime = hh + ":" + mm + ":" + ss;
+    const currentDate = new Date();
+    const ss = currentDate.getSeconds();
+    const mm = currentDate.getMinutes();
+    const hh = currentDate.getHours();
+    const currentTime = `${hh}:${mm}:${ss}`;
 
     content =
       "[" +
