@@ -156,7 +156,7 @@ export class Logger {
       getNameFromCode(code, LOGGER_CODES) +
       "]: " +
       content;
-    let logFolder = this.logFolder;
+    const logFolder = this.logFolder;
     if (!fs.existsSync(logFolder)) {
       fs.mkdirSync(logFolder);
     }
