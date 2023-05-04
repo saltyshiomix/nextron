@@ -154,7 +154,7 @@ export class Logger {
     }
     fs.writeFileSync(
       path.join(logFolder, this.logFileName),
-      content + "\n",
+      `${content}\n`,
       { flag: "a+" },
       function (err) {
         if (err) throw err;
