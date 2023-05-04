@@ -110,7 +110,7 @@ export class Logger {
       fs.mkdirSync(logFolder);
     }
 
-    var allFiles = fs.readdirSync(logFolder);
+    const allFiles = fs.readdirSync(logFolder);
     let lastlogFiles = [];
     if (allFiles.length >= this.numberOfLogFilesAccepted)
       for (let i = 0; i < allFiles.length; i++) {
