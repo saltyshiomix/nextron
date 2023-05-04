@@ -125,7 +125,7 @@ export class Logger {
         )
           continue;
 
-        let currentFileDate = allFiles[i].substring(
+        const currentFileDate = allFiles[i].substring(
           this.fileIdentifier.length,
           this.fileIdentifier.length + this.todayCode.length
         );
