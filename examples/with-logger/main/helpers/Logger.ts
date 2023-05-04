@@ -63,7 +63,7 @@ export class Logger {
     this.writeLog(
       LOGGER_SOURCE.LOGGER,
       LOGGER_CODES.INFO,
-      "Oppening application :" + this.fileIdentifier
+      `Oppening application :${this.fileIdentifier}`,
     );
 
     this.setLogListener();
