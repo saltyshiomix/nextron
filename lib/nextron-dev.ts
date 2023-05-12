@@ -16,6 +16,7 @@ const args = arg({
   '--inspect': Number,
   '--run-only': Boolean,
   '--startup-delay': Number,
+  '--no-sandbox': Boolean,
   '-h': '--help',
   '-v': '--version',
   '-p': '--port',
