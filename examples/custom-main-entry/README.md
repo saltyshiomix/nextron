@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example custom-main-entry
 # with yarn
 $ yarn create nextron-app my-app --example custom-main-entry
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-main-entry
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example custom-main-entry
 ```
 
 ### Install Dependencies

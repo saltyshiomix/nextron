@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example custom-renderer-port
 # with yarn
 $ yarn create nextron-app my-app --example custom-renderer-port
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-renderer-port
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example custom-renderer-port
 ```
 
 ### Install Dependencies

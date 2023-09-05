@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example ipc-communication
 # with yarn
 $ yarn create nextron-app my-app --example ipc-communication
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example ipc-communication
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example ipc-communication
 ```
 
 ### Install Dependencies

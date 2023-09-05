@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example custom-build-options
 # with yarn
 $ yarn create nextron-app my-app --example custom-build-options
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example custom-build-options
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example custom-build-options
 ```
 
 ### Install Dependencies

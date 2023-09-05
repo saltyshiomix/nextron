@@ -11,8 +11,8 @@ $ npx create-nextron-app my-app --example store-data
 # with yarn
 $ yarn create nextron-app my-app --example store-data
 
-# with pnpx
-$ pnpx create-nextron-app my-app --example store-data
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example store-data
 ```
 
 ### Install Dependencies
