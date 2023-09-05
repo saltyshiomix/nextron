@@ -45,10 +45,12 @@ if (args['--help']) {
   process.exit(0);
 }
 
+const nextronConfig = getNextronConfig()
+
 const rendererPort = args['--port'] || 8888;
 const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
 const inspectPort = args['--inspect'] || 9292;
-const startupDelay = getNextronConfig().startupDelay || args['--startup-delay'] || 0;
+const startupDelay = nextronConfig.startupDelay || args['--startup-delay'] || 0;
 
 const execaOptions: execa.Options = {
   cwd: process.cwd(),
@@ -56,8 +58,6 @@ const execaOptions: execa.Options = {
 };
 
 async function dev() {
-  const { rendererSrcDir } = getNextronConfig();
-
   let firstCompile = true;
   let watching: any;
   let mainProcess: ChildProcess;
@@ -83,7 +83,7 @@ async function dev() {
   const startRendererProcess = () => {
     const child = execa(
       'next',
-      ['-p', rendererPort, rendererSrcDir || 'renderer'],
+      ['-p', rendererPort, nextronConfig.rendererSrcDir || 'renderer'],
       execaOptions,
     );
     child.on('close', () => {
