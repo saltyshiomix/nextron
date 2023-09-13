@@ -11,7 +11,7 @@ module.exports = (api) => {
     ],
     plugins: [
       require('@babel/plugin-transform-class-properties'),
-      [require('@babel/plugin-proposal-object-rest-spread'), {
+      [require('@babel/plugin-transform-object-rest-spread'), {
         useBuiltIns: true,
       }],
       [require('@babel/plugin-transform-runtime'), {
