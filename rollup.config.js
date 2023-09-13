@@ -1,10 +1,10 @@
-import external from 'rollup-plugin-auto-external';
-import resolve from '@rollup/plugin-node-resolve';
-import babel from '@rollup/plugin-babel';
-import commonjs from '@rollup/plugin-commonjs';
-import terser from '@rollup/plugin-terser';
+import external from 'rollup-plugin-auto-external'
+import resolve from '@rollup/plugin-node-resolve'
+import babel from '@rollup/plugin-babel'
+import commonjs from '@rollup/plugin-commonjs'
+import terser from '@rollup/plugin-terser'
 
-const extensions = ['.js', '.jsx', '.ts'];
+const extensions = ['.js', '.jsx', '.ts']
 
 const coreConfig = {
   plugins: [
@@ -18,9 +18,9 @@ const coreConfig = {
       exclude: /node_modules/,
     }),
     commonjs(),
-    (process.env.NODE_ENV === 'production' && terser()),
+    process.env.NODE_ENV === 'production' && terser(),
   ],
-};
+}
 
 const cliConfig = (src) => ({
   input: src,
@@ -30,7 +30,7 @@ const cliConfig = (src) => ({
     banner: '#!/usr/bin/env node',
   },
   ...coreConfig,
-});
+})
 
 const config = (src, dist) => ({
   input: src,
@@ -39,12 +39,13 @@ const config = (src, dist) => ({
     format: 'cjs',
   },
   ...coreConfig,
-});
+})
 
+// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   cliConfig('lib/nextron.ts'),
   cliConfig('lib/nextron-init.ts'),
   cliConfig('lib/nextron-dev.ts'),
   cliConfig('lib/nextron-build.ts'),
   config('lib/webpack/build.production.ts', 'bin/webpack.config.js'),
-];
+]

@@ -1,21 +1,25 @@
-import electron from 'electron';
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import electron from 'electron'
+import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
-const ipcRenderer = electron.ipcRenderer || false;
+const ipcRenderer = electron.ipcRenderer || false
 
 function Home() {
-  const [message, setMessage] = React.useState('no ipc message');
+  const [message, setMessage] = React.useState('no ipc message')
 
   const onClickWithIpc = () => {
-    ipcRenderer.send('ping-pong', 'some data from ipcRenderer');
-  };
+    ipcRenderer.send('ping-pong', 'some data from ipcRenderer')
+  }
 
   const onClickWithIpcSync = () => {
-    const message = ipcRenderer.sendSync('ping-pong-sync', 'some data from ipcRenderer');
-    setMessage(message);
-  };
+    const message = ipcRenderer.sendSync(
+      'ping-pong-sync',
+      'some data from ipcRenderer'
+    )
+    setMessage(message)
+  }
 
   // If we use ipcRenderer in this scope, we must check the instance exists
   if (ipcRenderer) {
@@ -27,16 +31,16 @@ function Home() {
 
     // register `ping-pong` event
     ipcRenderer.on('ping-pong', (event, data) => {
-      setMessage(data);
-    });
+      setMessage(data)
+    })
 
     return () => {
       // like componentWillUnmount()
 
       // unregister it
-      ipcRenderer.removeAllListeners('ping-pong');
-    };
-  }, []);
+      ipcRenderer.removeAllListeners('ping-pong')
+    }
+  }, [])
 
   return (
     <React.Fragment>
@@ -50,14 +54,14 @@ function Home() {
             <a>Go to next page</a>
           </Link>
         </p>
-        <img src="/images/logo.png" />
+        <Image src="/images/logo.png" alt="Logo image" />
         <hr />
         <button onClick={onClickWithIpc}>IPC messaging</button>
         <button onClick={onClickWithIpcSync}>IPC messaging (sync)</button>
         <p>{message}</p>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

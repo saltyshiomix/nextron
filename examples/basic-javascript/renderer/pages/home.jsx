@@ -1,6 +1,7 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
 function Home() {
   return (
@@ -15,10 +16,10 @@ function Home() {
             <a>Go to next page</a>
           </Link>
         </p>
-        <img src="/images/logo.png" />
+        <Image src="/images/logo.png" alt="Logo image" />
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

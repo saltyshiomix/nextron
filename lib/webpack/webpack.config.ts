@@ -1,18 +1,24 @@
-import fs from 'fs';
-import path from 'path';
-import webpack from 'webpack';
+import fs from 'fs'
+import path from 'path'
+import webpack from 'webpack'
 
-const cwd = process.cwd();
-const externals = require(path.join(cwd, 'package.json')).dependencies;
+const cwd = process.cwd()
+// eslint-disable-next-line @typescript-eslint/no-var-requires
+const externals = require(path.join(cwd, 'package.json')).dependencies
 
 const getBabelrc = (): string | undefined => {
-  if (fs.existsSync(path.join(cwd, '.babelrc'))) return path.join(cwd, '.babelrc');
-  if (fs.existsSync(path.join(cwd, '.babelrc.js'))) return path.join(cwd, '.babelrc.js');
-  if (fs.existsSync(path.join(cwd, 'babel.config.js'))) return path.join(cwd, 'babel.config.js');
-  return path.join(__dirname, '../babel.js');
-};
+  if (fs.existsSync(path.join(cwd, '.babelrc')))
+    return path.join(cwd, '.babelrc')
+  if (fs.existsSync(path.join(cwd, '.babelrc.js')))
+    return path.join(cwd, '.babelrc.js')
+  if (fs.existsSync(path.join(cwd, 'babel.config.js')))
+    return path.join(cwd, 'babel.config.js')
+  return path.join(__dirname, '../babel.js')
+}
 
-export default (env: 'development' | 'production'): webpack.Configuration => ({
+export const configure = (
+  env: 'development' | 'production'
+): webpack.Configuration => ({
   mode: env,
   target: 'electron-main',
   node: {
@@ -39,10 +45,7 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
             extends: getBabelrc(),
           },
         },
-        exclude: [
-          /node_modules/,
-          path.join(cwd, 'renderer'),
-        ],
+        exclude: [/node_modules/, path.join(cwd, 'renderer')],
       },
     ],
   },
@@ -51,4 +54,4 @@ export default (env: 'development' | 'production'): webpack.Configuration => ({
       NODE_ENV: env,
     }),
   ],
-});
+})
