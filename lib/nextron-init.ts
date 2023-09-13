@@ -1,7 +1,7 @@
-import path from 'path';
-import execa from 'execa';
-import arg from 'arg';
-import chalk from 'chalk';
+import path from 'path'
+import execa from 'execa'
+import arg from 'arg'
+import chalk from 'chalk'
 
 const args = arg({
   '--help': Boolean,
@@ -12,15 +12,16 @@ const args = arg({
   '-v': '--version',
   '-t': '--template',
   '-e': '--template',
-});
+})
 
 if (args['--version']) {
-  const pkg = require(path.resolve(__dirname, '../package.json'));
-  console.log(`nextron v${pkg.version}`);
-  process.exit(0);
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const pkg = require(path.resolve(__dirname, '../package.json'))
+  console.log(`nextron v${pkg.version}`)
+  process.exit(0)
 }
 
-if (args['--help'] || (!args._[0])) {
+if (args['--help'] || !args._[0]) {
   console.log(chalk`
     {bold.cyan nextron} - ⚡ Electron + NEXT.js ⚡
 
@@ -35,21 +36,12 @@ if (args['--help'] || (!args._[0])) {
       --help,    -h                      shows this help message
       --version, -v                      displays the current version of nextron
       --example, -e {underline example_folder_name}  sets the example as a template
-  `);
-  process.exit(0);
+  `)
+  process.exit(0)
 }
 
-const example = args['--template'] || args['--example'] || 'basic-javascript';
+const example = args['--template'] || args['--example'] || 'basic-javascript'
 
-execa.sync(
-  'npx',
-  [
-    'create-nextron-app',
-    args._[0],
-    '--example',
-    example,
-  ],
-  {
-    stdio: 'inherit',
-  },
-);
+execa.sync('npx', ['create-nextron-app', args._[0], '--example', example], {
+  stdio: 'inherit',
+})

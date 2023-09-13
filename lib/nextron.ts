@@ -1,22 +1,19 @@
-import path from 'path';
-import execa from 'execa';
-import chalk from 'chalk';
+import path from 'path'
+import execa from 'execa'
+import chalk from 'chalk'
 
-const defaultCommand = 'dev';
-const commands = new Set([
-  'init',
-  'build',
-  defaultCommand,
-]);
+const defaultCommand = 'dev'
+const commands = new Set(['init', 'build', defaultCommand])
 
-let cmd = process.argv[2];
-let args: string[] = [];
-let nodeArgs: string[] = [];
+let cmd = process.argv[2]
+let args: string[] = []
+const nodeArgs: string[] = []
 
 if (new Set(['--version', '-v']).has(cmd)) {
-  const pkg = require(path.resolve(__dirname, '../package.json'));
-  console.log(`nextron v${pkg.version}`);
-  process.exit(0);
+  // eslint-disable-next-line @typescript-eslint/no-var-requires
+  const pkg = require(path.resolve(__dirname, '../package.json'))
+  console.log(`nextron v${pkg.version}`)
+  process.exit(0)
 }
 
 if (new Set(['--help', '-h']).has(cmd)) {
@@ -27,55 +24,55 @@ if (new Set(['--help', '-h']).has(cmd)) {
 
       {bold $} {cyan nextron dev}
       {bold $} {cyan nextron build}
-  `);
-  process.exit(0);
+  `)
+  process.exit(0)
 }
 
-const inspectArg = process.argv.find(arg => arg.includes('--inspect'));
+const inspectArg = process.argv.find((arg) => arg.includes('--inspect'))
 if (inspectArg) {
-  nodeArgs.push(inspectArg);
+  nodeArgs.push(inspectArg)
 }
 
 if (commands.has(cmd)) {
-  args = process.argv.slice(3);
+  args = process.argv.slice(3)
 } else {
-  cmd = defaultCommand;
-  args = process.argv.slice(2);
+  cmd = defaultCommand
+  args = process.argv.slice(2)
 }
 
-const defaultEnv = cmd === 'dev' ? 'development' : 'production';
-process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv;
+const defaultEnv = cmd === 'dev' ? 'development' : 'production'
+process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv
 
-const cli = path.join(__dirname, `nextron-${cmd}`);
+const cli = path.join(__dirname, `nextron-${cmd}`)
 
 const startProcess = () => {
-  const proc = execa('node', [...nodeArgs, cli, ...args], { stdio: 'inherit' });
+  const proc = execa('node', [...nodeArgs, cli, ...args], { stdio: 'inherit' })
   proc.on('close', (code: number, signal: string) => {
     if (code !== null) {
-      process.exit(code);
+      process.exit(code)
     }
     if (signal) {
       if (signal === 'SIGKILL') {
-        process.exit(137);
+        process.exit(137)
       }
-      process.exit(1);
+      process.exit(1)
     }
-    process.exit(0);
-  });
+    process.exit(0)
+  })
   proc.on('error', (err) => {
-    console.error(err);
-    process.exit(1);
-  });
-  return proc;
+    console.error(err)
+    process.exit(1)
+  })
+  return proc
 }
 
-const proc = startProcess();
+const proc = startProcess()
 
 const wrapper = () => {
   if (proc) {
-    proc.kill();
+    proc.kill()
   }
 }
-process.on('SIGINT', wrapper);
-process.on('SIGTERM', wrapper);
-process.on('exit', wrapper);
+process.on('SIGINT', wrapper)
+process.on('SIGTERM', wrapper)
+process.on('exit', wrapper)

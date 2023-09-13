@@ -138,9 +138,9 @@ module.exports = {
   // main process' webpack config
   webpack: (config, env) => {
     // do some stuff here
-    return config;
+    return config
   },
-};
+}
 ```
 
 ## Custom Babel Config for the Main Process
@@ -166,21 +166,21 @@ If we want to use some libraries that don't support SSR, we should check if the 
 ```jsx
 // pages/home.jsx
 
-import electron from 'electron';
+import electron from 'electron'
 
 const Home = () => {
   // we can't use `electron.ipcRenderer` directly!
-  const ipcRenderer = electron.ipcRenderer;
+  const ipcRenderer = electron.ipcRenderer
 
   // we should check it like this
-  const ipcRenderer = electron.ipcRenderer || false;
+  const ipcRenderer = electron.ipcRenderer || false
   if (ipcRenderer) {
     // we can use `electron.ipcRenderer`
     // because this scope is the client webpack process
   }
-};
+}
 
-export default Home;
+export default Home
 ```
 
 ### The Basic of React Hooks :)
@@ -190,8 +190,8 @@ As mentioned above, we should check if the webpack process is a client because t
 ```jsx
 // pages/home.jsx
 
-import electron from 'electron';
-import React from 'react';
+import electron from 'electron'
+import React from 'react'
 
 const Home = () => {
   // In this scope, both of server and client processes are running
@@ -201,17 +201,17 @@ const Home = () => {
     // componentDidMount() like
 
     // In this scope, only the client process is running
-    window.alert('wow');
+    window.alert('wow')
 
     return () => {
       // componentWillUnmount() like
-    };
-  }, []);
+    }
+  }, [])
 
-  return <p>Hello Nextron</p>;
-};
+  return <p>Hello Nextron</p>
+}
 
-export default Home;
+export default Home
 ```
 
 ## Examples
@@ -403,18 +403,22 @@ $ pnpm dev <EXAMPLE-FOLDER-NAME>
 ### Developing for your own project
 
 1. Install development version of nextron
+
 ```
 $ cd nextron
 $ npm install
 $ npm run build
-$ npm link 
+$ npm link
 ```
+
 2. Install linked nextron in your project
+
 ```
 $ cd your-project
 $ npm install -D @babel/runtime-corejs3 # required for nextron
 $ npm link nextron
 ```
+
 3. On every change in nextron, run `npm run build` in nextron folder and restart your project
 
 ## Maintainers ⚡

@@ -1,9 +1,9 @@
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
-import { BasicCard } from '../components/BasicCard';
-import { TitleCard } from '../components/TitleCard';
-import { bounce, AnimatedCard } from '../components/AnimatedCard';
+import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import { BasicCard } from '../components/BasicCard'
+import { TitleCard } from '../components/TitleCard'
+import { bounce, AnimatedCard } from '../components/AnimatedCard'
 
 function Next() {
   return (
@@ -21,7 +21,7 @@ function Next() {
         <AnimatedCard animation={bounce}>Let's bounce.</AnimatedCard>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Next;
+export default Next

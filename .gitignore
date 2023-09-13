@@ -1,9 +1,15 @@
 node_modules
+
+# nextron
 bin
 workspace
+
+# examples
 examples/**/yarn.lock
 examples/**/package-lock.json
 examples/**/pnpm-lock.yaml
 examples/**/renderer/next-env.d.ts
+
+# misc
 .idea
 .DS_Store

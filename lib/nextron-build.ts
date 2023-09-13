@@ -1,10 +1,10 @@
-import fs from 'fs-extra';
-import path from 'path';
-import arg from 'arg';
-import chalk from 'chalk';
-import execa from 'execa';
-import { getNextronConfig } from './webpack/helpers';
-import log from './logger';
+import fs from 'fs-extra'
+import path from 'path'
+import arg from 'arg'
+import chalk from 'chalk'
+import execa from 'execa'
+import { getNextronConfig } from './webpack/helpers'
+import log from './logger'
 
 const args = arg({
   '--help': Boolean,
@@ -28,7 +28,7 @@ const args = arg({
   '-l': '--linux',
   '-c': '--config',
   '-p': '--publish',
-});
+})
 
 if (args['--help']) {
   console.log(chalk`
@@ -56,84 +56,92 @@ if (args['--help']) {
       --publish, -p  publish artifacts (see https://goo.gl/tSFycD)
                      [choices: "onTag", "onTagOrDraft", "always", "never", undefined]
 
-  `);
-  process.exit(0);
+  `)
+  process.exit(0)
 }
 
-const cwd = process.cwd();
+const cwd = process.cwd()
 const execaOptions: execa.Options = {
   cwd,
   stdio: 'inherit',
-};
+}
 
 async function build() {
   // Ignore missing dependencies
-  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true';
+  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
 
-  const appdir = path.join(cwd, 'app');
-  const distdir = path.join(cwd, 'dist');
-  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer';
+  const appdir = path.join(cwd, 'app')
+  const distdir = path.join(cwd, 'dist')
+  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer'
 
   try {
-    log('Clearing previous builds');
-    fs.removeSync(appdir);
-    fs.removeSync(distdir);
+    log('Clearing previous builds')
+    fs.removeSync(appdir)
+    fs.removeSync(distdir)
 
-    log('Building renderer process');
-    await execa('next', ['build', path.join(cwd, rendererSrcDir)], execaOptions);
-    await execa('next', ['export', '-o', appdir, path.join(cwd, rendererSrcDir)], execaOptions);
+    log('Building renderer process')
+    await execa('next', ['build', path.join(cwd, rendererSrcDir)], execaOptions)
+    await execa(
+      'next',
+      ['export', '-o', appdir, path.join(cwd, rendererSrcDir)],
+      execaOptions
+    )
 
-    log('Building main process');
-    await execa('node', [path.join(__dirname, 'webpack.config.js')], execaOptions);
+    log('Building main process')
+    await execa(
+      'node',
+      [path.join(__dirname, 'webpack.config.js')],
+      execaOptions
+    )
 
     if (args['--no-pack']) {
-      log('Skip Packaging...');
-    } else{
-      log('Packaging - please wait a moment');
-      await execa('electron-builder', createBuilderArgs(), execaOptions);
+      log('Skip Packaging...')
+    } else {
+      log('Packaging - please wait a moment')
+      await execa('electron-builder', createBuilderArgs(), execaOptions)
     }
 
-    log('See `dist` directory');
+    log('See `dist` directory')
   } catch (err) {
     console.log(chalk`
 
 {bold.red Cannot build electron packages:}
 {bold.yellow ${err}}
-`);
-    process.exit(1);
+`)
+    process.exit(1)
   }
 }
 
 function createBuilderArgs() {
-  let results = [];
+  const results = []
   if (args['--config']) {
-    results.push('--config');
-    results.push(args['--config'] || 'electron-builder.yml');
+    results.push('--config')
+    results.push(args['--config'] || 'electron-builder.yml')
   }
   if (args['--publish']) {
-    results.push('--publish');
-    results.push(args['--publish']);
+    results.push('--publish')
+    results.push(args['--publish'])
   }
   if (args['--all']) {
-    results.push('-wml');
-    results.push(...createArchArgs());
+    results.push('-wml')
+    results.push(...createArchArgs())
   } else {
-    args['--win'] && results.push('--win');
-    args['--mac'] && results.push('--mac');
-    args['--linux'] && results.push('--linux');
-    results.push(...createArchArgs());
+    args['--win'] && results.push('--win')
+    args['--mac'] && results.push('--mac')
+    args['--linux'] && results.push('--linux')
+    results.push(...createArchArgs())
   }
-  return results;
+  return results
 }
 
 function createArchArgs() {
-  let archArgs = [];
-  args['--x64'] && archArgs.push('--x64');
-  args['--ia32'] && archArgs.push('--ia32');
-  args['--armv7l'] && archArgs.push('--armv7l');
-  args['--arm64'] && archArgs.push('--arm64');
-  args['--universal'] && archArgs.push('--universal');
-  return archArgs;
+  const archArgs = []
+  args['--x64'] && archArgs.push('--x64')
+  args['--ia32'] && archArgs.push('--ia32')
+  args['--armv7l'] && archArgs.push('--armv7l')
+  args['--arm64'] && archArgs.push('--arm64')
+  args['--universal'] && archArgs.push('--universal')
+  return archArgs
 }
 
-build();
+build()

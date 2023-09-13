@@ -1,32 +1,33 @@
-import electron from 'electron';
-import React from 'react';
-import Head from 'next/head';
-import Link from 'next/link';
+import electron from 'electron'
+import React from 'react'
+import Head from 'next/head'
+import Link from 'next/link'
+import Image from 'next/image'
 
-const ipcRenderer = electron.ipcRenderer || false;
+const ipcRenderer = electron.ipcRenderer || false
 
 function Home() {
-  const [message, setMessage] = React.useState('');
-  const [messages, setMessages] = React.useState([]);
+  const [message, setMessage] = React.useState('')
+  const [messages, setMessages] = React.useState([])
 
-  const onChange = (e) => setMessage(e.target.value);
+  const onChange = (e) => setMessage(e.target.value)
 
   const onSubmit = (e) => {
-    e.preventDefault();
+    e.preventDefault()
 
-    ipcRenderer.send('add-message', message);
-    setMessages([...messages, message]);
-    setMessage('');
-  };
+    ipcRenderer.send('add-message', message)
+    setMessages([...messages, message])
+    setMessage('')
+  }
 
   React.useEffect(() => {
     // like componentDidMount()
-    setMessages(ipcRenderer.sendSync('get-messages'));
+    setMessages(ipcRenderer.sendSync('get-messages'))
 
     return () => {
       // like componentWillUnmount()
-    };
-  }, []);
+    }
+  }, [])
 
   return (
     <React.Fragment>
@@ -40,18 +41,20 @@ function Home() {
             <a>Go to next page</a>
           </Link>
         </p>
-        <img src="/images/logo.png" />
+        <Image src="/images/logo.png" alt="Logo image" />
         <hr />
         <h2>Enter your message:</h2>
         <form onSubmit={onSubmit}>
           <input type="text" value={message} onChange={onChange} />
         </form>
         <ul>
-          {messages.map((m, i) => <li key={i}>{m}</li>)}
+          {messages.map((m, i) => (
+            <li key={i}>{m}</li>
+          ))}
         </ul>
       </div>
     </React.Fragment>
-  );
-};
+  )
+}
 
-export default Home;
+export default Home

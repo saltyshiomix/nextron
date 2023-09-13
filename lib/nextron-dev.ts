@@ -1,12 +1,9 @@
-import { ChildProcess } from 'child_process';
-import arg from 'arg';
-import chalk from 'chalk';
-import execa from 'execa';
-import webpack from 'webpack';
-import {
-  getNextronConfig,
-  getWebpackConfig,
-} from './webpack/helpers';
+import { ChildProcess } from 'child_process'
+import arg from 'arg'
+import chalk from 'chalk'
+import execa from 'execa'
+import webpack from 'webpack'
+import { getNextronConfig, getWebpackConfig } from './webpack/helpers'
 
 const args = arg({
   '--help': Boolean,
@@ -21,7 +18,7 @@ const args = arg({
   '-p': '--port',
   '-r': '--run-only',
   '-d': '--startup-delay',
-});
+})
 
 if (args['--help']) {
   console.log(chalk`
@@ -41,27 +38,27 @@ if (args['--help']) {
       --inspect
       --run-only,             -r  ignore webpack watching of main process
       --startup-delay,        -d  wait milliseconds until renderer process is ready to use
-  `);
-  process.exit(0);
+  `)
+  process.exit(0)
 }
 
 const nextronConfig = getNextronConfig()
 
-const rendererPort = args['--port'] || 8888;
-const remoteDebuggingPort = args['--remote-debugging-port'] || 5858;
-const inspectPort = args['--inspect'] || 9292;
-const startupDelay = nextronConfig.startupDelay || args['--startup-delay'] || 0;
+const rendererPort = args['--port'] || 8888
+const remoteDebuggingPort = args['--remote-debugging-port'] || 5858
+const inspectPort = args['--inspect'] || 9292
+const startupDelay = nextronConfig.startupDelay || args['--startup-delay'] || 0
 
 const execaOptions: execa.Options = {
   cwd: process.cwd(),
   stdio: 'inherit',
-};
+}
 
 async function dev() {
-  let firstCompile = true;
-  let watching: any;
-  let mainProcess: ChildProcess;
-  let rendererProcess: ChildProcess;
+  let firstCompile = true
+  let watching: webpack.Watching
+  let mainProcess: ChildProcess
+  let rendererProcess: ChildProcess // eslint-disable-line prefer-const
 
   const startMainProcess = () => {
     mainProcess = execa(
@@ -76,69 +73,71 @@ async function dev() {
         detached: true,
         ...execaOptions,
       }
-    );
-    mainProcess.unref();
-  };
+    )
+    mainProcess.unref()
+  }
 
   const startRendererProcess = () => {
     const child = execa(
       'next',
       ['-p', rendererPort, nextronConfig.rendererSrcDir || 'renderer'],
-      execaOptions,
-    );
+      execaOptions
+    )
     child.on('close', () => {
-      process.exit(0);
-    });
-    return child;
-  };
+      process.exit(0)
+    })
+    return child
+  }
 
   const killWholeProcess = () => {
     if (watching) {
-      watching.close(() => {});
+      watching.close(() => {})
     }
     if (mainProcess) {
-      mainProcess.kill();
+      mainProcess.kill()
     }
     if (rendererProcess) {
-      rendererProcess.kill();
+      rendererProcess.kill()
     }
-  };
+  }
 
   const webpackCallback = async (err?: Error | null) => {
     if (err) {
-      console.error(err.stack || err);
+      console.error(err.stack || err)
       if (err.stack) {
-        console.error(err.stack);
+        console.error(err.stack)
       }
     }
 
     if (firstCompile) {
-      firstCompile = false;
+      firstCompile = false
     }
 
     if (!err) {
       if (!firstCompile && mainProcess) {
-        mainProcess.kill();
+        mainProcess.kill()
       }
-      startMainProcess();
+      startMainProcess()
     }
   }
 
-  process.on('SIGINT', killWholeProcess);
-  process.on('SIGTERM', killWholeProcess);
-  process.on('exit', killWholeProcess);
+  process.on('SIGINT', killWholeProcess)
+  process.on('SIGTERM', killWholeProcess)
+  process.on('exit', killWholeProcess)
 
-  rendererProcess = startRendererProcess();
+  rendererProcess = startRendererProcess()
 
   // wait until renderer process is ready
-  await new Promise<void>(resolve => setTimeout(() => resolve(), startupDelay));
+  await new Promise<void>((resolve) =>
+    setTimeout(() => resolve(), startupDelay)
+  )
 
-  const compiler = webpack(getWebpackConfig('development'));
+  const compiler = webpack(getWebpackConfig('development'))
   if (args['--run-only']) {
-    compiler.run(webpackCallback);
+    compiler.run(webpackCallback)
   } else {
-    watching = compiler.watch({}, webpackCallback);
+    watching = compiler.watch({}, webpackCallback)
   }
 }
 
-dev();
+dev()
