@@ -22,7 +22,7 @@
     "electron": "^21.3.3",
     "electron-builder": "^23.6.0",
     "next": "^12.3.4",
-    "nextron": "^8.6.0",
+    "nextron": "^8.7.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "typescript": "^4.9.4"
