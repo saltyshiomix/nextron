@@ -1,5 +1,6 @@
 import React from 'react'
 import Head from 'next/head'
+import Image from 'next/image'
 import Button from '@mui/material/Button'
 import Dialog from '@mui/material/Dialog'
 import DialogTitle from '@mui/material/DialogTitle'
@@ -45,7 +46,12 @@ function Home() {
         <Typography variant="subtitle1" gutterBottom>
           with Nextron
         </Typography>
-        <img src="/images/logo.png" />
+        <Image
+          src="/images/logo.png"
+          alt="Logo image"
+          width="256px"
+          height="256px"
+        />
         <Typography gutterBottom>
           <Link href="/next">Go to the next page</Link>
         </Typography>

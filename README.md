@@ -344,6 +344,24 @@ $ yarn create nextron-app my-app --example with-ant-design
 $ pnpm dlx create-nextron-app my-app --example with-ant-design
 ```
 
+### [examples/with-chakra-ui](./examples/with-chakra-ui)
+
+<p align="center">
+  <img src="https://i.imgur.com/oahHuxG.png">
+  <img src="https://i.imgur.com/sZ01Nyl.png">
+</p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example with-chakra-ui
+
+# with yarn
+$ yarn create nextron-app my-app --example with-chakra-ui
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-chakra-ui
+```
+
 ### [examples/with-emotion](./examples/with-emotion)
 
 <p align="center"><img src="https://i.imgur.com/3UKgyH7.png"></p>

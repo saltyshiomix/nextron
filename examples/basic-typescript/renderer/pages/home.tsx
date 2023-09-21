@@ -16,7 +16,12 @@ function Home() {
             <a>Go to next page</a>
           </Link>
         </p>
-        <Image src="/images/logo.png" alt="Logo image" />
+        <Image
+          src="/images/logo.png"
+          alt="Logo image"
+          width="256px"
+          height="256px"
+        />
       </div>
     </React.Fragment>
   )

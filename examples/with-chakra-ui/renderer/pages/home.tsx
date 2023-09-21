@@ -1,12 +1,12 @@
-import React from "react"
+import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
-import { Button, Link as ChakraLink } from "@chakra-ui/react"
+import { Button, Link as ChakraLink } from '@chakra-ui/react'
 
 import { Container } from '../components/Container'
 import { DarkModeSwitch } from '../components/DarkModeSwitch'
 import { Footer } from '../components/Footer'
-import { Hero } from "../components/Hero"
+import { Hero } from '../components/Hero'
 
 const Home = () => (
   <React.Fragment>
@@ -18,8 +18,8 @@ const Home = () => (
       <Image
         src="/images/logo.png"
         alt="Logo image"
-        height='200px'
-        width='200px'
+        width="200px"
+        height="200px"
       />
       <Hero title={`⚡Electron⚡ + Next.js + Chakra UI = 🔥`} />
       <Footer>
@@ -34,7 +34,6 @@ const Home = () => (
           Go to next page
         </Button>
       </Footer>
-
     </Container>
   </React.Fragment>
 )
