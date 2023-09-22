@@ -15,11 +15,11 @@
     "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "@emotion/cache": "^11.10.3",
-    "@emotion/react": "^11.10.4",
-    "@emotion/server": "^11.10.0",
-    "@emotion/styled": "^11.10.4",
-    "@mui/material": "^5.10.8",
+    "@emotion/cache": "^11.11.0",
+    "@emotion/react": "^11.11.1",
+    "@emotion/server": "^11.11.0",
+    "@emotion/styled": "^11.11.0",
+    "@mui/material": "^5.14.10",
     "@types/node": "^18.11.18",
     "@types/react": "^18.0.26",
     "electron": "^26.2.2",
