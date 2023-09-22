@@ -19,7 +19,7 @@
     "@types/react": "^18.0.26",
     "autoprefixer": "^10.4.7",
     "electron": "^26.2.2",
-    "electron-builder": "^23.6.0",
+    "electron-builder": "^24.6.4",
     "next": "^12.3.4",
     "nextron": "^8.8.0",
     "postcss": "^8.4.13",

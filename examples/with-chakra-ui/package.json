@@ -24,7 +24,7 @@
     "@types/react": "^18.0.0",
     "@types/react-dom": "^18.0.0",
     "electron": "^26.2.2",
-    "electron-builder": "^23.6.0",
+    "electron-builder": "^24.6.4",
     "framer-motion": "^6.5.1",
     "next": "^12.3.4",
     "nextron": "^8.8.0",
