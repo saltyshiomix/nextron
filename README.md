@@ -161,65 +161,6 @@ We can extends the default babel config of main process by putting `.babelrc` in
 }
 ```
 
-## Tips
-
-### Next.js' Webpack Processes
-
-There are two webpack processes: server process and client one.
-
-If we want to use some libraries that don't support SSR, we should check if the current process is whether server or client:
-
-```jsx
-// pages/home.jsx
-
-import electron from 'electron'
-
-const Home = () => {
-  // we can't use `electron.ipcRenderer` directly!
-  const ipcRenderer = electron.ipcRenderer
-
-  // we should check it like this
-  const ipcRenderer = electron.ipcRenderer || false
-  if (ipcRenderer) {
-    // we can use `electron.ipcRenderer`
-    // because this scope is the client webpack process
-  }
-}
-
-export default Home
-```
-
-### The Basic of React Hooks :)
-
-As mentioned above, we should check if the webpack process is a client because the renderer process is a web client:
-
-```jsx
-// pages/home.jsx
-
-import electron from 'electron'
-import React from 'react'
-
-const Home = () => {
-  // In this scope, both of server and client processes are running
-  // So if the process is server, `window` object is undefined
-
-  React.useEffect(() => {
-    // componentDidMount() like
-
-    // In this scope, only the client process is running
-    window.alert('wow')
-
-    return () => {
-      // componentWillUnmount() like
-    }
-  }, [])
-
-  return <p>Hello Nextron</p>
-}
-
-export default Home
-```
-
 ## Examples
 
 See [examples](./examples) folder for more information.
@@ -439,7 +380,6 @@ $ npm link
 
 ```
 $ cd your-project
-$ npm install -D @babel/runtime-corejs3 # required for nextron
 $ npm link nextron
 ```
 
