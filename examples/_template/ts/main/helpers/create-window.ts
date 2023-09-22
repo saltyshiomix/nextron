@@ -70,16 +70,15 @@ export const createWindow = (
 
   state = ensureVisibleOnSomeDisplay(restore())
 
-  const browserOptions: BrowserWindowConstructorOptions = {
+  const win = new BrowserWindow({
     ...state,
     ...options,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
       ...options.webPreferences,
+      nodeIntegration: false,
+      contextIsolation: true,
     },
-  }
-  const win = new BrowserWindow(browserOptions)
+  })
 
   win.on('close', saveState)
 

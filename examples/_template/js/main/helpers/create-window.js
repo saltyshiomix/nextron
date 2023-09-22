@@ -66,9 +66,9 @@ export const createWindow = (windowName, options) => {
     ...state,
     ...options,
     webPreferences: {
-      nodeIntegration: true,
-      contextIsolation: false,
       ...options.webPreferences,
+      nodeIntegration: false,
+      contextIsolation: true,
     },
   })
 
