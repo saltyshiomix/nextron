@@ -1,46 +1,19 @@
 import arg from 'arg'
-import chalk from 'chalk'
 import execa from 'execa'
 import webpack from 'webpack'
 import { getNextronConfig, getWebpackConfig } from './helpers'
 import type { ChildProcess } from 'child_process'
 
 const args = arg({
-  '--help': Boolean,
-  '--version': Boolean,
   '--port': Number,
   '--remote-debugging-port': Number,
   '--inspect': Number,
   '--run-only': Boolean,
   '--startup-delay': Number,
-  '-h': '--help',
-  '-v': '--version',
   '-p': '--port',
   '-r': '--run-only',
   '-d': '--startup-delay',
 })
-
-if (args['--help']) {
-  console.log(chalk`
-    {bold.cyan nextron dev} - Starts the nextron application in development mode
-
-    {bold USAGE}
-
-      {bold $} {cyan nextron dev} --help
-      {bold $} {cyan nextron dev} [options]
-
-    {bold OPTIONS}
-
-      --help,                 -h  show this help message
-      --version,              -v  display the current version of nextron
-      --port,                 -p  renderer port number for development mode
-      --remote-debugging-port
-      --inspect
-      --run-only,             -r  ignore webpack watching of main process
-      --startup-delay,        -d  wait milliseconds until renderer process is ready to use
-  `)
-  process.exit(0)
-}
 
 const nextronConfig = getNextronConfig()
 
