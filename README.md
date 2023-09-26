@@ -165,19 +165,34 @@ We can extends the default babel config of main process by putting `.babelrc` in
 
 See [examples](./examples) folder for more information.
 
-### [examples/basic-javascript](./examples/basic-javascript)
+### [examples/basic-lang-javascript](./examples/basic-lang-javascript)
 
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example basic-javascript
+$ npx create-nextron-app my-app --example basic-lang-javascript
 
 # with yarn
-$ yarn create nextron-app my-app --example basic-javascript
+$ yarn create nextron-app my-app --example basic-lang-javascript
 
 # with pnpm
-$ pnpm dlx create-nextron-app my-app --example basic-javascript
+$ pnpm dlx create-nextron-app my-app --example basic-lang-javascript
+```
+
+### [examples/basic-typescript](./examples/basic-typescript)
+
+<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-typescript
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-typescript
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-typescript
 ```
 
 ### [examples/basic-launch-app-from-url](./examples/basic-launch-app-from-url)
@@ -215,21 +230,6 @@ protocols:
 ```
 
 Then, you can see the app from URL: `your-custom-protocol-scheme-edited://any-uri-here-include-any-data`.
-
-### [examples/basic-typescript](./examples/basic-typescript)
-
-<p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example basic-typescript
-
-# with yarn
-$ yarn create nextron-app my-app --example basic-typescript
-
-# with pnpm
-$ pnpm dlx create-nextron-app my-app --example basic-typescript
-```
 
 ### [examples/custom-build-options](./examples/custom-build-options)
 
@@ -392,7 +392,7 @@ $ pnpm dlx create-nextron-app my-app --example with-tailwindcss
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
 $ pnpm install
-$ pnpm dev # default is examples/basic-javascript
+$ pnpm dev # default is examples/basic-lang-javascript
 ```
 
 ### Developing `examples/*`
