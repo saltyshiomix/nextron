@@ -1,22 +1,12 @@
-import fs from 'fs'
 import path from 'path'
 import webpack from 'webpack'
+import { getBabelConfig } from './getBabelConfig'
 
 const cwd = process.cwd()
 // eslint-disable-next-line @typescript-eslint/no-var-requires
 const externals = require(path.join(cwd, 'package.json')).dependencies
 
-const getBabelrc = (): string | undefined => {
-  if (fs.existsSync(path.join(cwd, '.babelrc')))
-    return path.join(cwd, '.babelrc')
-  if (fs.existsSync(path.join(cwd, '.babelrc.js')))
-    return path.join(cwd, '.babelrc.js')
-  if (fs.existsSync(path.join(cwd, 'babel.config.js')))
-    return path.join(cwd, 'babel.config.js')
-  return path.join(__dirname, '../babel.js')
-}
-
-export const configure = (
+export const configureWebpack = (
   env: 'development' | 'production'
 ): webpack.Configuration => ({
   mode: env,
@@ -42,7 +32,7 @@ export const configure = (
           loader: require.resolve('babel-loader'),
           options: {
             cacheDirectory: true,
-            extends: getBabelrc(),
+            extends: getBabelConfig(),
           },
         },
         exclude: [/node_modules/, path.join(cwd, 'renderer')],

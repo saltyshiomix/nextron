@@ -3,8 +3,7 @@ import path from 'path'
 import arg from 'arg'
 import chalk from 'chalk'
 import execa from 'execa'
-import { getNextronConfig } from './webpack/helpers'
-import log from './logger'
+import { getNextronConfig, log } from './helpers'
 
 const args = arg({
   '--help': Boolean,

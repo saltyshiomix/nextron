@@ -18,7 +18,7 @@ function Next() {
             <a>Go to home page</a>
           </Link>
         </BasicCard>
-        <AnimatedCard animation={bounce}>Let's bounce.</AnimatedCard>
+        <AnimatedCard animation={bounce}>Let&apos;s bounce.</AnimatedCard>
       </div>
     </React.Fragment>
   )

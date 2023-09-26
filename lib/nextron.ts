@@ -3,7 +3,7 @@ import execa from 'execa'
 import chalk from 'chalk'
 
 const defaultCommand = 'dev'
-const commands = new Set(['init', 'build', defaultCommand])
+const commands = new Set(['build', defaultCommand])
 
 let cmd = process.argv[2]
 let args: string[] = []
