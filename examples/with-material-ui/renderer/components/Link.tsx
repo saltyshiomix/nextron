@@ -39,6 +39,7 @@ function Link(props: LinkProps) {
   } = props
 
   const router = useRouter()
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const pathname = typeof href === 'string' ? href : (href as any).pathname
   const className = clsx(classNameProps, {
     [activeClassName]: router.pathname === pathname && activeClassName,
@@ -66,6 +67,7 @@ function Link(props: LinkProps) {
   )
 }
 
+// eslint-disable-next-line react/display-name
 export default React.forwardRef<HTMLAnchorElement, LinkProps>((props, ref) => (
   <Link {...props} innerRef={ref} />
 ))
