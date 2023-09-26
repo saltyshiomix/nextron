@@ -42,7 +42,7 @@ $ yarn build (or `npm run build` or `pnpm run build`)
 
 Click [your-custom-protocol-scheme://open](your-custom-protocol-scheme://open) or open it in your browser, then the app will be shown like a magic!
 
-If you want to change URL, please edit `electron-builder.yml#protocols`:
+If you want to change schema URL, please edit `electron-builder.yml#protocols`:
 
 ```yml
 protocols:
@@ -50,7 +50,7 @@ protocols:
   schemes: [your-custom-protocol-scheme-edited]
 ```
 
-Then, you can see the app from `your-custom-protocol-scheme-edited://any-uri-here-include-any-data`.
+Then, you can see the app from URL: `your-custom-protocol-scheme-edited://any-uri-here-include-any-data`.
 
 ### Useful References
 

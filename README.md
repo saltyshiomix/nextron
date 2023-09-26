@@ -180,6 +180,42 @@ $ yarn create nextron-app my-app --example basic-javascript
 $ pnpm dlx create-nextron-app my-app --example basic-javascript
 ```
 
+### [examples/basic-launch-app-from-url](./examples/basic-launch-app-from-url)
+
+This example shows how to open your app from browser URL.
+
+Note: this example works **only production build**!
+
+<p align="center"><img src="https://i.imgur.com/WRuTxf8.gifv"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-launch-app-from-url
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-launch-app-from-url
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-launch-app-from-url
+
+# --------------------------------------------------------------
+
+# Production build
+$ yarn build (or `npm run build` or `pnpm run build`)
+```
+
+After production build, click [your-custom-protocol-scheme://open](your-custom-protocol-scheme://open) or open it in your browser, then the app will be shown like a magic!
+
+If you want to change schema URL, please edit `electron-builder.yml#protocols`:
+
+```yml
+protocols:
+  name: Your App Name
+  schemes: [your-custom-protocol-scheme-edited]
+```
+
+Then, you can see the app from URL: `your-custom-protocol-scheme-edited://any-uri-here-include-any-data`.
+
 ### [examples/basic-typescript](./examples/basic-typescript)
 
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
@@ -394,6 +430,10 @@ $ npm link nextron
 - [andirsun (Anderson Laverde)](https://github.com/andirsun)
 
 For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
+
+## Community
+
+You already create apps with nextron? Feel free to share your apps or services: https://github.com/saltyshiomix/nextron/discussions/406
 
 ## Related
 
