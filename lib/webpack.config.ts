@@ -7,7 +7,11 @@ compiler.run((err, stats) => {
   if (err) {
     console.error(err.stack || err)
   }
-  if (stats && stats.hasErrors()) {
-    console.error(stats.toString())
+  if (stats) {
+    if (stats.hasErrors()) {
+      console.error(stats.toString())
+    } else {
+      console.log(stats.toString())
+    }
   }
 })

@@ -1,9 +1,9 @@
-import { ChildProcess } from 'child_process'
 import arg from 'arg'
 import chalk from 'chalk'
 import execa from 'execa'
 import webpack from 'webpack'
-import { getNextronConfig, getWebpackConfig } from './webpack/helpers'
+import { getNextronConfig, getWebpackConfig } from './helpers'
+import type { ChildProcess } from 'child_process'
 
 const args = arg({
   '--help': Boolean,

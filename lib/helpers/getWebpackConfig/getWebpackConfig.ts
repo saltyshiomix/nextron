@@ -1,23 +1,15 @@
 import fs from 'fs'
 import path from 'path'
 import { merge } from 'webpack-merge'
-import { configure } from './webpack.config'
+import { configureWebpack } from './configureWebpack'
+import { getNextronConfig } from '../getNextronConfig'
 
 const cwd = process.cwd()
 const ext = fs.existsSync(path.join(cwd, 'tsconfig.json')) ? '.ts' : '.js'
 
-export const getNextronConfig = () => {
-  const nextronConfigPath = path.join(cwd, 'nextron.config.js')
-  if (fs.existsSync(nextronConfigPath)) {
-    return require(nextronConfigPath)
-  } else {
-    return {}
-  }
-}
-
 export const getWebpackConfig = (env: 'development' | 'production') => {
   const { mainSrcDir, webpack } = getNextronConfig()
-  const userConfig = merge(configure(env), {
+  const userConfig = merge(configureWebpack(env), {
     entry: {
       background: path.join(cwd, mainSrcDir || 'main', `background${ext}`),
     },
