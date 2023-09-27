@@ -9,7 +9,6 @@
     "dev": "nextron",
     "build": "nextron build",
     "build:prod": "nextron build --config electron-builder.prod.yml",
-    "build:all": "nextron build --all",
     "build:mac": "nextron build --mac --x64",
     "build:mac:universal": "nextron build --mac --universal",
     "build:win": "nextron build --win --ia32",
