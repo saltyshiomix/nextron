@@ -308,7 +308,7 @@ This example shows how to open your app from browser URL.
 
 Note: this example works **only production build**!
 
-<p align="center"><img src="https://i.imgur.com/WRuTxf8.gifv"></p>
+<p align="center"><img src="./docs/examples/basic-launch-app-from-url/nextron.gif"></p>
 
 ```
 # with npx

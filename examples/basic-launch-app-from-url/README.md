@@ -1,4 +1,4 @@
-<p align="center"><img src="https://i.imgur.com/WRuTxf8.gifv"></p>
+<p align="center"><img src="../../docs/examples/basic-launch-app-from-url/nextron.gif"></p>
 
 ## Usage
 
