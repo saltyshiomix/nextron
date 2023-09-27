@@ -1,26 +1,56 @@
 import arg from 'arg'
 import execa from 'execa'
 import webpack from 'webpack'
+import * as logger from './logger'
 import { getNextronConfig, getWebpackConfig } from './helpers'
 import type { ChildProcess } from 'child_process'
 
 const args = arg({
+  '--renderer-port': Number,
+  '--run-only': Boolean,
+  '--startup-delay': Number,
+  '--electron-options': String,
+
+  // removed since v8.11.0
   '--port': Number,
   '--remote-debugging-port': Number,
   '--inspect': Number,
-  '--run-only': Boolean,
-  '--startup-delay': Number,
-  '-p': '--port',
-  '-r': '--run-only',
-  '-d': '--startup-delay',
 })
+
+if (args['--port']) {
+  logger.error(
+    `The option \`--port\` has been removed. Please use \`--renderer-port ${args['--port']}\` instead.`
+  )
+  process.exit(1)
+}
+
+if (args['--remote-debugging-port']) {
+  logger.error(
+    `The option \`--remote-debugging-port\` has been removed. Please use \`--electron-options="--remote-debugging-port=${args['--remote-debugging-port']}"\` instead.`
+  )
+  process.exit(1)
+}
+
+if (args['--inspect']) {
+  logger.error(
+    `The option \`--inspect\` has been removed. Please use \`--electron-options="--inspect=${args['--inspect']}"\` instead.`
+  )
+  process.exit(1)
+}
 
 const nextronConfig = getNextronConfig()
 
-const rendererPort = args['--port'] || 8888
-const remoteDebuggingPort = args['--remote-debugging-port'] || 5858
-const inspectPort = args['--inspect'] || 9292
+const rendererPort = args['--renderer-port'] || 8888
 const startupDelay = nextronConfig.startupDelay || args['--startup-delay'] || 0
+
+let electronOptions = args['--electron-options'] || ''
+if (!electronOptions.includes('--remote-debugging-port')) {
+  electronOptions += ' --remote-debugging-port=5858'
+}
+if (!electronOptions.includes('--inspect')) {
+  electronOptions += ' --inspect=9292'
+}
+electronOptions = electronOptions.trim()
 
 const execaOptions: execa.Options = {
   cwd: process.cwd(),
@@ -34,14 +64,12 @@ async function dev() {
   let rendererProcess: ChildProcess // eslint-disable-line prefer-const
 
   const startMainProcess = () => {
+    logger.info(
+      `Run main process: electron . ${rendererPort} ${electronOptions}`
+    )
     mainProcess = execa(
       'electron',
-      [
-        '.',
-        `${rendererPort}`,
-        `--remote-debugging-port=${remoteDebuggingPort}`,
-        `--inspect=${inspectPort}`,
-      ],
+      ['.', `${rendererPort}`, `${electronOptions}`],
       {
         detached: true,
         ...execaOptions,
@@ -51,6 +79,11 @@ async function dev() {
   }
 
   const startRendererProcess = () => {
+    logger.info(
+      `Run renderer process: next -p ${rendererPort} ${
+        nextronConfig.rendererSrcDir || 'renderer'
+      }`
+    )
     const child = execa(
       'next',
       ['-p', rendererPort, nextronConfig.rendererSrcDir || 'renderer'],
