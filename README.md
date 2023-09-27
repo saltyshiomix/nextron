@@ -326,7 +326,7 @@ $ pnpm dlx create-nextron-app my-app --example basic-launch-app-from-url
 $ yarn build (or `npm run build` or `pnpm run build`)
 ```
 
-After production build, click [your-custom-protocol-scheme://open](your-custom-protocol-scheme://open) or open it in your browser, then the app will be shown like a magic!
+After production build, open `your-custom-protocol-scheme://open` in your browser, then the app will be shown like a magic!
 
 If you want to change schema URL, please edit `electron-builder.yml#protocols`:
 
