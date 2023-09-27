@@ -36,7 +36,7 @@ async function detectPackageManager() {
 }
 
 ;(async () => {
-  let example = 'basic-javascript'
+  let example = 'basic-lang-javascript'
   if (3 <= process.argv.length) {
     const newExample = process.argv[2]
     if (!fs.existsSync(path.join(cwd, `examples/${newExample}`))) {

@@ -92,7 +92,64 @@ Run `npm run build`, and nextron outputs packaged bundles under the `dist` folde
 }
 ```
 
-### Build Options
+## `nextron` or `nextron dev` Options
+
+### `--renderer-port` (default: `8888`)
+
+It specifies `next` dev server port:
+
+```json
+{
+  "scripts": {
+    "dev": "nextron --renderer-port 7777"
+  }
+}
+```
+
+### `--run-only` (default: `undefined`)
+
+It suppresses hot reloading of the main process:
+
+```json
+{
+  "scripts": {
+    "dev": "nextron --run-only"
+  }
+}
+```
+
+### `--startup-delay` (default: `0`)
+
+It waits until renderer process is ready (milliseconds):
+
+```json
+{
+  "scripts": {
+    "dev": "nextron --startup-delay 3000"
+  }
+}
+```
+
+### `--electron-options` (default: `undefined`)
+
+We can pass electron args via `--electron-options`:
+
+```json
+{
+  "scripts": {
+    "dev": "nextron --electron-options=\"--no-sandbox\""
+  }
+}
+```
+
+## `nextron build` Options
+
+**NOTE**:
+
+- To build macOS binary, your host machine must be macOS!
+- Please consider to use `electron-builder.yml` instead of these CLI options.
+  - [Command Line Interface (CLI) - electron-builder](https://www.electron.build/cli)
+  - [Common Configuration - electron-builder](https://www.electron.build/configuration/configuration)
 
 To build Windows 32 bit version, run `npm run build:win32` like below:
 
@@ -100,20 +157,70 @@ To build Windows 32 bit version, run `npm run build:win32` like below:
 {
   "scripts": {
     "build": "nextron build",
-    "build:all": "nextron build --all",
+    "build:mac": "nextron build --mac",
+    "build:mac:universal": "nextron build --mac --universal",
+    "build:linux": "nextron build --linux",
     "build:win32": "nextron build --win --ia32",
-    "build:win64": "nextron build --win --x64",
-    "build:mac": "nextron build --mac --x64",
-    "build:linux": "nextron build --linux"
+    "build:win64": "nextron build --win --x64"
   }
 }
 ```
 
-**CAUTION**: To build macOS binary, your host machine must be macOS!
+### `--electron-builder-options` (default: `undefined`)
 
-### Build Configuration
+An example below builds NSIS 32-bit installer for Windows:
 
-Edit `electron-builder.yml` properties for custom build configuration.
+```json
+{
+  "scripts": {
+    "build": "nextron build --electron-builder-options=\"--windows nsis:ia32\""
+  }
+}
+```
+
+Next example builds deb and tar.xz for Linux:
+
+```json
+{
+  "scripts": {
+    "build": "nextron build --electron-builder-options=\"--linux deb tar.xz\""
+  }
+}
+```
+
+### `--config` (default: `./electron-builder.yml`)
+
+```json
+{
+  "scripts": {
+    "build": "nextron build --config ./configs/electron-builder.prod.yml"
+  }
+}
+```
+
+### `--publish` (default: `undefined`)
+
+**Note**
+
+Highly recommend to use `electron-builder.yml`:
+
+https://www.electron.build/configuration/publish
+
+### `--no-pack` (default: `undefined`)
+
+This option skips packaging by electron-builder:
+
+```json
+{
+  "scripts": {
+    "build": "nextron build --no-pack"
+  }
+}
+```
+
+### Build Configuration: `electron-builder.yml`
+
+Edit `electron-builder.yml` for custom build configurations:
 
 ```yml
 appId: com.example.nextron
@@ -132,7 +239,7 @@ publish: null # see https://www.electron.build/configuration/publish
 
 For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration).
 
-## nextron.config.js
+## Custom Config: `nextron.config.js`
 
 ```js
 module.exports = {
@@ -149,7 +256,7 @@ module.exports = {
 }
 ```
 
-## Custom Babel Config for the Main Process
+## Custom Babel Config for Main Process
 
 We can extends the default babel config of main process by putting `.babelrc` in our project root like this:
 
@@ -165,35 +272,71 @@ We can extends the default babel config of main process by putting `.babelrc` in
 
 See [examples](./examples) folder for more information.
 
-### [examples/basic-javascript](./examples/basic-javascript)
+### [examples/basic-lang-javascript](./examples/basic-lang-javascript)
 
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example basic-javascript
+$ npx create-nextron-app my-app --example basic-lang-javascript
 
 # with yarn
-$ yarn create nextron-app my-app --example basic-javascript
+$ yarn create nextron-app my-app --example basic-lang-javascript
 
 # with pnpm
-$ pnpm dlx create-nextron-app my-app --example basic-javascript
+$ pnpm dlx create-nextron-app my-app --example basic-lang-javascript
 ```
 
-### [examples/basic-typescript](./examples/basic-typescript)
+### [examples/basic-lang-typescript](./examples/basic-lang-typescript)
 
 <p align="center"><img src="https://i.imgur.com/NZfsD1p.png"></p>
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example basic-typescript
+$ npx create-nextron-app my-app --example basic-lang-typescript
 
 # with yarn
-$ yarn create nextron-app my-app --example basic-typescript
+$ yarn create nextron-app my-app --example basic-lang-typescript
 
 # with pnpm
-$ pnpm dlx create-nextron-app my-app --example basic-typescript
+$ pnpm dlx create-nextron-app my-app --example basic-lang-typescript
 ```
+
+### [examples/basic-launch-app-from-url](./examples/basic-launch-app-from-url)
+
+This example shows how to open your app from browser URL.
+
+Note: this example works **only production build**!
+
+<p align="center"><img src="https://i.imgur.com/WRuTxf8.gifv"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-launch-app-from-url
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-launch-app-from-url
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-launch-app-from-url
+
+# --------------------------------------------------------------
+
+# Production build
+$ yarn build (or `npm run build` or `pnpm run build`)
+```
+
+After production build, click [your-custom-protocol-scheme://open](your-custom-protocol-scheme://open) or open it in your browser, then the app will be shown like a magic!
+
+If you want to change schema URL, please edit `electron-builder.yml#protocols`:
+
+```yml
+protocols:
+  name: Your App Name
+  schemes: [your-custom-protocol-scheme-edited]
+```
+
+Then, you can see the app from URL: `your-custom-protocol-scheme-edited://any-uri-here-include-any-data`.
 
 ### [examples/custom-build-options](./examples/custom-build-options)
 
@@ -356,7 +499,7 @@ $ pnpm dlx create-nextron-app my-app --example with-tailwindcss
 $ git clone https://github.com/saltyshiomix/nextron.git
 $ cd nextron
 $ pnpm install
-$ pnpm dev # default is examples/basic-javascript
+$ pnpm dev # default is examples/basic-lang-javascript
 ```
 
 ### Developing `examples/*`
@@ -394,6 +537,10 @@ $ npm link nextron
 - [andirsun (Anderson Laverde)](https://github.com/andirsun)
 
 For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
+
+## Community
+
+You already create apps with nextron? Feel free to share your apps or services: https://github.com/saltyshiomix/nextron/discussions/406
 
 ## Related
 

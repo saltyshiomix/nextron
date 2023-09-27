@@ -1,6 +1,5 @@
 import path from 'path'
 import execa from 'execa'
-import chalk from 'chalk'
 
 const defaultCommand = 'dev'
 const commands = new Set(['build', defaultCommand])
@@ -8,27 +7,8 @@ const commands = new Set(['build', defaultCommand])
 let cmd = process.argv[2]
 let args: string[] = []
 const nodeArgs: string[] = []
-
-if (new Set(['--version', '-v']).has(cmd)) {
-  // eslint-disable-next-line @typescript-eslint/no-var-requires
-  const pkg = require(path.resolve(__dirname, '../package.json'))
-  console.log(`nextron v${pkg.version}`)
-  process.exit(0)
-}
-
-if (new Set(['--help', '-h']).has(cmd)) {
-  console.log(chalk`
-    {bold.cyan nextron} - ⚡ NEXT.js + Electron ⚡
-
-    {bold USAGE}
-
-      {bold $} {cyan nextron dev}
-      {bold $} {cyan nextron build}
-  `)
-  process.exit(0)
-}
-
 const inspectArg = process.argv.find((arg) => arg.includes('--inspect'))
+
 if (inspectArg) {
   nodeArgs.push(inspectArg)
 }
