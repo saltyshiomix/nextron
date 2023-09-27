@@ -9,7 +9,6 @@
     "dev": "nextron",
     "build": "nextron build",
     "build:prod": "nextron build --config electron-builder.prod.yml",
-    "build:all": "nextron build --all",
     "build:mac": "nextron build --mac --x64",
     "build:mac:universal": "nextron build --mac --universal",
     "build:win": "nextron build --win --ia32",
@@ -24,7 +23,7 @@
     "electron": "^26.2.2",
     "electron-builder": "^24.6.4",
     "next": "^12.3.4",
-    "nextron": "^8.11.1",
+    "nextron": "^8.11.2",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   }
