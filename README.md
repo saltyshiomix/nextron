@@ -540,7 +540,7 @@ For more information, please see [Looking for maintainers ⚡ #244](https://gith
 
 ## Community
 
-You already create apps with nextron? Feel free to share your apps or services: https://github.com/saltyshiomix/nextron/discussions/406
+You already create apps with nextron? Feel free to share your apps or services: [Made by nextron? #406](https://github.com/saltyshiomix/nextron/discussions/406)
 
 ## Related
 
