@@ -11,5 +11,5 @@ files:
       - app
 protocols:
   name: My Nextron App
-  schemes: [your-custom-protocol-scheme]
+  schemes: [your-custom-protocol]
 publish: null
