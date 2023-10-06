@@ -535,6 +535,8 @@ $ npm link nextron
 - [Psycokwet](https://github.com/Psycokwet)
 - [m5x5](https://github.com/m5x5)
 - [andirsun (Anderson Laverde)](https://github.com/andirsun)
+- [bm777 (Bayang)](https://github.com/bm777)
+- [FranciscoJBrito (Francisco Brito)](https://github.com/FranciscoJBrito)
 
 For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
 
