@@ -16,11 +16,11 @@ const { Header, Content } = Layout
 const { Item: FormItem } = Form
 const { Option } = Select
 
-function Home() {
+export default function HomePage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-javascript-ant-design)</title>
+        <title>Home - Nextron (with-ant-design)</title>
       </Head>
 
       <Header>
@@ -101,5 +101,3 @@ function Home() {
     </React.Fragment>
   )
 }
-
-export default Home

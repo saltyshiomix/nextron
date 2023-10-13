@@ -3,7 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function Home() {
+export default function HomePage() {
   const [launcherUrl, setLauncherUrl] = React.useState('')
 
   React.useEffect(() => {
@@ -22,7 +22,7 @@ function Home() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-typescript)</title>
+        <title>Home - Nextron (basic-launch-app-from-url)</title>
       </Head>
       <div>
         <p>
@@ -42,5 +42,3 @@ function Home() {
     </React.Fragment>
   )
 }
-
-export default Home

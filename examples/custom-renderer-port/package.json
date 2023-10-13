@@ -6,7 +6,7 @@
   "author": "Yoshihide Shiono <shiono.yoshihide@gmail.com>",
   "main": "app/background.js",
   "scripts": {
-    "dev": "nextron --port 1234",
+    "dev": "nextron --renderer-port 1234",
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
@@ -15,11 +15,14 @@
     "electron-store": "^8.1.0"
   },
   "devDependencies": {
+    "@types/node": "^18.11.18",
+    "@types/react": "^18.0.26",
     "electron": "^26.2.2",
     "electron-builder": "^24.6.4",
     "next": "^12.3.4",
     "nextron": "^8.11.3",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "typescript": "^5.2.2"
   }
 }

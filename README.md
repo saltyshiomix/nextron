@@ -338,6 +338,21 @@ protocols:
 
 Then, you can see the app from URL: `your-custom-protocol-edited://any-uri-here?data=include-any-data`.
 
+### [examples/basic-store-data](./examples/basic-store-data)
+
+<p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-store-data
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-store-data
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-store-data
+```
+
 ### [examples/custom-build-options](./examples/custom-build-options)
 
 <p align="center"><img src="https://i.imgur.com/QqQekRJ.png"></p>
@@ -353,21 +368,6 @@ $ yarn create nextron-app my-app --example custom-build-options
 $ pnpm dlx create-nextron-app my-app --example custom-build-options
 ```
 
-### [examples/custom-main-entry](./examples/custom-main-entry)
-
-<p align="center"><img src="https://i.imgur.com/nqpLJI0.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example custom-main-entry
-
-# with yarn
-$ yarn create nextron-app my-app --example custom-main-entry
-
-# with pnpm
-$ pnpm dlx create-nextron-app my-app --example custom-main-entry
-```
-
 ### [examples/custom-renderer-port](./examples/custom-renderer-port)
 
 <p align="center"><img src="https://i.imgur.com/X7dSE68.png"></p>
@@ -381,36 +381,6 @@ $ yarn create nextron-app my-app --example custom-renderer-port
 
 # with pnpm
 $ pnpm dlx create-nextron-app my-app --example custom-renderer-port
-```
-
-### [examples/ipc-communication](./examples/ipc-communication)
-
-<p align="center"><img src="https://i.imgur.com/kIDlAFT.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example ipc-communication
-
-# with yarn
-$ yarn create nextron-app my-app --example ipc-communication
-
-# with pnpm
-$ pnpm dlx create-nextron-app my-app --example ipc-communication
-```
-
-### [examples/store-data](./examples/store-data)
-
-<p align="center"><img src="https://i.imgur.com/BgFze6G.png"></p>
-
-```
-# with npx
-$ npx create-nextron-app my-app --example store-data
-
-# with yarn
-$ yarn create nextron-app my-app --example store-data
-
-# with pnpm
-$ pnpm dlx create-nextron-app my-app --example store-data
 ```
 
 ### [examples/with-ant-design](./examples/with-ant-design)
@@ -547,7 +517,6 @@ You already create apps with nextron? Feel free to share your apps or services: 
 ## Related
 
 - [create-nextron-app](https://github.com/saltyshiomix/create-nextron-app) - Create Nextron (Electron + Next.js) apps in one command ⚡
-- [Nuxtron](https://github.com/saltyshiomix/nuxtron) - ⚡ Electron + Nuxt.js ⚡
 
 ## License
 

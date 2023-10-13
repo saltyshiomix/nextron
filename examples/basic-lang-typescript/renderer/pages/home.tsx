@@ -3,11 +3,19 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function Home() {
+export default function HomePage() {
+  const [message, setMessage] = React.useState('No message found')
+
+  React.useEffect(() => {
+    window.ipc.on('message', (message: string) => {
+      setMessage(message)
+    })
+  }, [])
+
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-typescript)</title>
+        <title>Home - Nextron (basic-lang-typescript)</title>
       </Head>
       <div>
         <p>
@@ -23,8 +31,16 @@ function Home() {
           height="256px"
         />
       </div>
+      <div>
+        <button
+          onClick={() => {
+            window.ipc.send('message', 'Hello')
+          }}
+        >
+          Test IPC
+        </button>
+        <p>{message}</p>
+      </div>
     </React.Fragment>
   )
 }
-
-export default Home

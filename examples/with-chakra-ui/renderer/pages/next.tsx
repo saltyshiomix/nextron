@@ -8,11 +8,11 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch'
 import { Footer } from '../components/Footer'
 import { Hero } from '../components/Hero'
 
-const Next = () => {
+export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-chakra-ui)</title>
+        <title>Next - Nextron (with-chakra-ui)</title>
       </Head>
       <Container minHeight="100vh">
         <DarkModeSwitch />
@@ -39,5 +39,3 @@ const Next = () => {
     </React.Fragment>
   )
 }
-
-export default Next

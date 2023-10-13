@@ -5,11 +5,11 @@ import { Layout, Result } from 'antd'
 
 const { Header, Content } = Layout
 
-function Next() {
+export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-ant-design)</title>
+        <title>Next - Nextron (with-ant-design)</title>
       </Head>
 
       <Header>
@@ -24,5 +24,3 @@ function Next() {
     </React.Fragment>
   )
 }
-
-export default Next

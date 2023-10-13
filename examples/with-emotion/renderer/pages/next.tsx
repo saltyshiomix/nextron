@@ -5,11 +5,11 @@ import { BasicCard } from '../components/BasicCard'
 import { TitleCard } from '../components/TitleCard'
 import { bounce, AnimatedCard } from '../components/AnimatedCard'
 
-function Next() {
+export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-emotion)</title>
+        <title>Next - Nextron (with-emotion)</title>
       </Head>
       <div>
         <TitleCard>Nextron with Emotion</TitleCard>
@@ -23,5 +23,3 @@ function Next() {
     </React.Fragment>
   )
 }
-
-export default Next

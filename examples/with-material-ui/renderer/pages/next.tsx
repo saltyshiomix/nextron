@@ -12,11 +12,11 @@ const Root = styled('div')(({ theme }) => {
   }
 })
 
-function Next() {
+export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-material-ui)</title>
+        <title>Next - Nextron (with-material-ui)</title>
       </Head>
       <Root>
         <Typography variant="h4" gutterBottom>
@@ -35,5 +35,3 @@ function Next() {
     </React.Fragment>
   )
 }
-
-export default Next

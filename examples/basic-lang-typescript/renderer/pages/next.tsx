@@ -2,11 +2,11 @@ import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
 
-function Next() {
+export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript)</title>
+        <title>Next - Nextron (basic-lang-typescript)</title>
       </Head>
       <div>
         <p>
@@ -19,5 +19,3 @@ function Next() {
     </React.Fragment>
   )
 }
-
-export default Next

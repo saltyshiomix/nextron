@@ -4,7 +4,7 @@ import arg from 'arg'
 import chalk from 'chalk'
 import execa from 'execa'
 import * as logger from './logger'
-import { getNextronConfig } from './helpers'
+import { getNextronConfig } from './configs/getNextronConfig'
 
 const args = arg({
   '--mac': Boolean,
@@ -18,33 +18,30 @@ const args = arg({
   '--config': String,
   '--publish': String,
   '--no-pack': Boolean,
-  // '--electron-builder-options': String,
 })
 
 const cwd = process.cwd()
+const appDir = path.join(cwd, 'app')
+const distDir = path.join(cwd, 'dist')
+const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer'
 const execaOptions: execa.Options = {
   cwd,
   stdio: 'inherit',
 }
 
-// Ignore missing dependencies
-process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
-
-async function build() {
-  const appdir = path.join(cwd, 'app')
-  const distdir = path.join(cwd, 'dist')
-  const rendererSrcDir = getNextronConfig().rendererSrcDir || 'renderer'
+;(async () => {
+  // Ignore missing dependencies
+  process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
 
   try {
     logger.info('Clearing previous builds')
-    fs.removeSync(appdir)
-    fs.removeSync(distdir)
+    await Promise.all([fs.remove(appDir), fs.remove(distDir)])
 
     logger.info('Building renderer process')
     await execa('next', ['build', path.join(cwd, rendererSrcDir)], execaOptions)
     await execa(
       'next',
-      ['export', '-o', appdir, path.join(cwd, rendererSrcDir)],
+      ['export', '-o', appDir, path.join(cwd, rendererSrcDir)],
       execaOptions
     )
 
@@ -56,7 +53,7 @@ async function build() {
     )
 
     if (args['--no-pack']) {
-      logger.info('Skip Packaging...')
+      logger.info('Skip packaging...')
     } else {
       logger.info('Packaging - please wait a moment')
       await execa('electron-builder', createBuilderArgs(), execaOptions)
@@ -71,7 +68,7 @@ async function build() {
 `)
     process.exit(1)
   }
-}
+})()
 
 function createBuilderArgs() {
   const results = []
@@ -97,5 +94,3 @@ function createBuilderArgs() {
 
   return results
 }
-
-build()
