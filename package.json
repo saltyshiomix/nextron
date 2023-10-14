@@ -59,7 +59,7 @@
     "fs-extra": "11.1.1",
     "terser-webpack-plugin": "5.3.9",
     "tsconfig-paths-webpack-plugin": "4.1.0",
-    "webpack": "5.88.2",
+    "webpack": "5.89.0",
     "webpack-merge": "5.9.0"
   },
   "devDependencies": {
