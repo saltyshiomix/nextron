@@ -49,23 +49,17 @@
 
 We can use `examples/*` as a template.
 
-To create the `examples/with-material-ui`, run the command below:
+To create the `examples/with-tailwindcss`, run the command below:
 
 ```
 # with npx
-$ npx create-nextron-app MY_APP --example with-material-ui
+$ npx create-nextron-app MY_APP --example with-tailwindcss
 
 # with yarn
-$ yarn create nextron-app MY_APP --example with-material-ui
+$ yarn create nextron-app MY_APP --example with-tailwindcss
 
 # with pnpm
-$ pnpm dlx create-nextron-app MY_APP --example with-material-ui
-```
-
-For nextron v8 or below, please specify `--branch` option:
-
-```
-npx create-nextron-app MY_APP --example with-material-ui --branch release/v8
+$ pnpm dlx create-nextron-app MY_APP --example with-tailwindcss
 ```
 
 ### Run Electron with Development Mode
@@ -162,28 +156,6 @@ To build Windows 32 bit version, run `npm run build:win32` like below:
     "build:linux": "nextron build --linux",
     "build:win32": "nextron build --win --ia32",
     "build:win64": "nextron build --win --x64"
-  }
-}
-```
-
-### `--electron-builder-options` (default: `undefined`)
-
-An example below builds NSIS 32-bit installer for Windows:
-
-```json
-{
-  "scripts": {
-    "build": "nextron build --electron-builder-options=\"--windows nsis:ia32\""
-  }
-}
-```
-
-Next example builds deb and tar.xz for Linux:
-
-```json
-{
-  "scripts": {
-    "build": "nextron build --electron-builder-options=\"--linux deb tar.xz\""
   }
 }
 ```
