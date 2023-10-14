@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function Home() {
+export default function HomePage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-typescript-tailwindcss)</title>
+        <title>Home - Nextron (with-tailwindcss)</title>
       </Head>
       <div className="grid grid-col-1 text-2xl w-full text-center">
         <div>
@@ -35,5 +35,3 @@ function Home() {
     </React.Fragment>
   )
 }
-
-export default Home

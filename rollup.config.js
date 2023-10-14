@@ -46,5 +46,5 @@ export default [
   cliConfig('lib/nextron.ts'),
   cliConfig('lib/nextron-dev.ts'),
   cliConfig('lib/nextron-build.ts'),
-  config('lib/webpack.config.ts', 'bin/webpack.config.js'),
+  config('lib/configs/webpack.config.production.ts', 'bin/webpack.config.js'),
 ]

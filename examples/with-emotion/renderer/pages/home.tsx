@@ -5,11 +5,11 @@ import { BasicCard } from '../components/BasicCard'
 import { TitleCard } from '../components/TitleCard'
 import { HoverableCard } from '../components/HoverableCard'
 
-function Home() {
+export default function HomePage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-typescript-emotion)</title>
+        <title>Home - Nextron (with-emotion)</title>
       </Head>
       <div>
         <TitleCard>Nextron with Emotion</TitleCard>
@@ -25,5 +25,3 @@ function Home() {
     </React.Fragment>
   )
 }
-
-export default Home

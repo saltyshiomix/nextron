@@ -3,11 +3,11 @@ import Head from 'next/head'
 import Link from 'next/link'
 import Image from 'next/image'
 
-function Next() {
+export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (with-typescript-tailwindcss)</title>
+        <title>Next - Nextron (with-tailwindcss)</title>
       </Head>
       <div className="grid grid-col-1 text-2xl w-full text-center">
         <div>
@@ -29,5 +29,3 @@ function Next() {
     </React.Fragment>
   )
 }
-
-export default Next

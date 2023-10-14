@@ -2,7 +2,8 @@ import arg from 'arg'
 import execa from 'execa'
 import webpack from 'webpack'
 import * as logger from './logger'
-import { getNextronConfig, getWebpackConfig } from './helpers'
+import { getNextronConfig } from './configs/getNextronConfig'
+import { config } from './configs/webpack.config.development'
 import type { ChildProcess } from 'child_process'
 
 const args = arg({
@@ -57,7 +58,7 @@ const execaOptions: execa.Options = {
   stdio: 'inherit',
 }
 
-async function dev() {
+;(async () => {
   let firstCompile = true
   let watching: webpack.Watching
   let mainProcess: ChildProcess
@@ -107,26 +108,6 @@ async function dev() {
     }
   }
 
-  const webpackCallback = async (err?: Error | null) => {
-    if (err) {
-      console.error(err.stack || err)
-      if (err.stack) {
-        console.error(err.stack)
-      }
-    }
-
-    if (firstCompile) {
-      firstCompile = false
-    }
-
-    if (!err) {
-      if (!firstCompile && mainProcess) {
-        mainProcess.kill()
-      }
-      startMainProcess()
-    }
-  }
-
   process.on('SIGINT', killWholeProcess)
   process.on('SIGTERM', killWholeProcess)
   process.on('exit', killWholeProcess)
@@ -138,12 +119,30 @@ async function dev() {
     setTimeout(() => resolve(), startupDelay)
   )
 
-  const compiler = webpack(getWebpackConfig('development'))
-  if (args['--run-only']) {
-    compiler.run(webpackCallback)
-  } else {
-    watching = compiler.watch({}, webpackCallback)
-  }
-}
+  // wait until main process is ready
+  await new Promise<void>((resolve) => {
+    const compiler = webpack(config)
+    watching = compiler.watch({}, (error) => {
+      if (error) {
+        console.error(error.stack || error)
+      }
 
-dev()
+      if (!args['--run-only']) {
+        if (!firstCompile && mainProcess) {
+          mainProcess.kill()
+        }
+        startMainProcess()
+
+        if (firstCompile) {
+          firstCompile = false
+        }
+      }
+
+      resolve()
+    })
+  })
+
+  if (args['--run-only']) {
+    startMainProcess()
+  }
+})()

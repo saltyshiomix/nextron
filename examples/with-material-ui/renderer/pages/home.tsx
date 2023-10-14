@@ -18,7 +18,7 @@ const Root = styled('div')(({ theme }) => {
   }
 })
 
-function Home() {
+export default function HomePage() {
   const [open, setOpen] = React.useState(false)
   const handleClose = () => setOpen(false)
   const handleClick = () => setOpen(true)
@@ -26,7 +26,7 @@ function Home() {
   return (
     <React.Fragment>
       <Head>
-        <title>Home - Nextron (with-typescript-material-ui)</title>
+        <title>Home - Nextron (with-material-ui)</title>
       </Head>
       <Root>
         <Dialog open={open} onClose={handleClose}>
@@ -62,5 +62,3 @@ function Home() {
     </React.Fragment>
   )
 }
-
-export default Home

@@ -1,4 +1,5 @@
-import { app } from 'electron'
+import path from 'path'
+import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
 import { createWindow } from './helpers'
 
@@ -16,6 +17,9 @@ if (isProd) {
   const mainWindow = createWindow('main', {
     width: 1000,
     height: 600,
+    webPreferences: {
+      preload: path.join(__dirname, 'preload.js'),
+    },
   })
 
   if (isProd) {
@@ -29,4 +33,8 @@ if (isProd) {
 
 app.on('window-all-closed', () => {
   app.quit()
+})
+
+ipcMain.on('message', async (event, arg) => {
+  event.reply('message', `${arg} World!`)
 })

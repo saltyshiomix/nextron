@@ -8,34 +8,34 @@ import { DarkModeSwitch } from '../components/DarkModeSwitch'
 import { Footer } from '../components/Footer'
 import { Hero } from '../components/Hero'
 
-const Home = () => (
-  <React.Fragment>
-    <Head>
-      <title>Home - Nextron (with-typescript-chakra-ui)</title>
-    </Head>
-    <Container minHeight="100vh">
-      <DarkModeSwitch />
-      <Image
-        src="/images/logo.png"
-        alt="Logo image"
-        width="200px"
-        height="200px"
-      />
-      <Hero title={`⚡Electron⚡ + Next.js + Chakra UI = 🔥`} />
-      <Footer>
-        <Button
-          as={ChakraLink}
-          href="/next"
-          variant="solid"
-          colorScheme="teal"
-          rounded="button"
-          width="full"
-        >
-          Go to next page
-        </Button>
-      </Footer>
-    </Container>
-  </React.Fragment>
-)
-
-export default Home
+export default function HomePage() {
+  return (
+    <React.Fragment>
+      <Head>
+        <title>Home - Nextron (with-chakra-ui)</title>
+      </Head>
+      <Container minHeight="100vh">
+        <DarkModeSwitch />
+        <Image
+          src="/images/logo.png"
+          alt="Logo image"
+          width="200px"
+          height="200px"
+        />
+        <Hero title={`⚡Electron⚡ + Next.js + Chakra UI = 🔥`} />
+        <Footer>
+          <Button
+            as={ChakraLink}
+            href="/next"
+            variant="solid"
+            colorScheme="teal"
+            rounded="button"
+            width="full"
+          >
+            Go to next page
+          </Button>
+        </Footer>
+      </Container>
+    </React.Fragment>
+  )
+}
