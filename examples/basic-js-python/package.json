@@ -10,6 +10,15 @@
     "build": "nextron build",
     "postinstall": "electron-builder install-app-deps"
   },
+  "build": {
+    "extraFiles": [
+      {
+        "from": "scripts/",
+        "to": "scripts/",
+        "filter": "**/*"
+      }
+    ]
+  },
   "dependencies": {
     "electron-serve": "^1.1.0",
     "electron-store": "^8.1.0"
