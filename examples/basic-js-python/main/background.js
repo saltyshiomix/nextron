@@ -30,8 +30,9 @@ async function startProcess(event, value) {
     scriptPath = path.join(__dirname, '../scripts/runner.sh');
     }
     // console.log(`DEBUG: scriptPath: ${scriptPath}`)
+    const cmd = `sh ${scriptPath} ${value}`
 
-    exec(`sh ${scriptPath} ${value}`, (error, stdout, stderr) => {
+    exec(cmd, (error, stdout, stderr) => {
       if (error) {
         console.error(`ERROR: Error executing post-install script: ${error}`);  // will be seen only dev mode, not in prod mode
         event.sender.send("log", error.message);                      // will be seen in both dev and prod mode (in the frontend)
