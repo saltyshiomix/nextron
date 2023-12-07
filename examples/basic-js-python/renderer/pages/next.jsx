@@ -6,7 +6,7 @@ export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>Next - Nextron (basic-lang-javascript)</title>
+        <title>Next - Nextron (basic-js-python)</title>
       </Head>
       <div>
         <p>
