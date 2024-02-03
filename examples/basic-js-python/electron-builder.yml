@@ -9,4 +9,6 @@ files:
     filter:
       - package.json
       - app
+extraFiles:
+  - scripts
 publish: null
