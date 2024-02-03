@@ -20,8 +20,8 @@
     "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.52",
     "electron": "^28.2.1",
     "electron-builder": "^24.9.1",
     "next": "^12.3.4",
