@@ -81,6 +81,6 @@
     "rimraf": "^5.0.1",
     "rollup": "^3.29.2",
     "rollup-plugin-auto-external": "^2.0.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   }
 }
