@@ -11,18 +11,18 @@
     "postinstall": "electron-builder install-app-deps"
   },
   "dependencies": {
-    "electron-serve": "^1.1.0",
+    "electron-serve": "^1.3.0",
     "electron-store": "^8.1.0"
   },
   "devDependencies": {
-    "@types/node": "^18.11.18",
-    "@types/react": "^18.0.26",
-    "electron": "^26.2.2",
-    "electron-builder": "^24.6.4",
+    "@types/node": "^20.11.16",
+    "@types/react": "^18.2.52",
+    "electron": "^28.2.1",
+    "electron-builder": "^24.9.1",
     "next": "^12.3.4",
-    "nextron": "^8.12.0",
+    "nextron": "^8.13.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.2.2"
+    "typescript": "^5.3.3"
   }
 }
