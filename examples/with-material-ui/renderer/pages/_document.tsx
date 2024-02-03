@@ -15,6 +15,8 @@ export default class MyDocument extends Document {
             rel="stylesheet"
             href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
           />
+          {/* eslint-disable-next-line @typescript-eslint/no-explicit-any */}
+          {(this.props as any).emotionStyleTags}
         </Head>
         <body>
           <Main />
