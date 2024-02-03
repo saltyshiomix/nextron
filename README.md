@@ -13,8 +13,8 @@
 </p>
 
 <h2 align="center">
-  <a aria-label="2023 Roadmaps - I'm back!" href="https://github.com/saltyshiomix/nextron/issues/398">
-    2023 Roadmaps - I'm back!
+  <a aria-label="2024 Roadmaps - I'm back!" href="https://github.com/saltyshiomix/nextron/issues/442">
+    2024 Roadmaps - I'm back!
   </a>
 </h2>
 
@@ -257,6 +257,21 @@ $ yarn create nextron-app my-app --example basic-lang-javascript
 
 # with pnpm
 $ pnpm dlx create-nextron-app my-app --example basic-lang-javascript
+```
+
+### [examples/basic-lang-javascript-python](./examples/basic-lang-javascript-python)
+
+<p align="center"><img src="https://i.imgur.com/RzAykrU.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example basic-lang-javascript-python
+
+# with yarn
+$ yarn create nextron-app my-app --example basic-lang-javascript-python
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example basic-lang-javascript-python
 ```
 
 ### [examples/basic-lang-typescript](./examples/basic-lang-typescript)
