@@ -6,11 +6,11 @@ import Image from 'next/image'
 export default function HomePage() {
   const [log, setLog] = React.useState('')
   const [value, setValue] = React.useState('5')
-  const [message, setMessage] = React.useState("")
+  const [message, setMessage] = React.useState('')
 
   const handleChange = (event) => {
     setValue(event.target.value)
-    setMessage("")
+    setMessage('')
   }
 
   React.useEffect(() => {
@@ -42,10 +42,9 @@ export default function HomePage() {
         />
       </div>
       <div>
-        
-        <p> 
+        <p>
           Calculate the sqaure of your number:
-          <input type='number' value={value} onChange={handleChange} />
+          <input type="number" value={value} onChange={handleChange} />
         </p>
         <button
           onClick={() => {
@@ -55,8 +54,9 @@ export default function HomePage() {
           Test running the Python script via IPC
         </button>
         <p>{log}</p>
-        <p>the square of {value} is {"-> "} {message}</p>
-        
+        <p>
+          the square of {value} is {'-> '} {message}
+        </p>
       </div>
     </React.Fragment>
   )
