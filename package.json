@@ -60,7 +60,7 @@
     "terser-webpack-plugin": "5.3.10",
     "tsconfig-paths-webpack-plugin": "4.1.0",
     "webpack": "5.90.1",
-    "webpack-merge": "5.9.0"
+    "webpack-merge": "5.10.0"
   },
   "devDependencies": {
     "@rollup/plugin-babel": "^6.0.3",
