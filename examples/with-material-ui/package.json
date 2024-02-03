@@ -19,7 +19,7 @@
     "@emotion/react": "^11.11.1",
     "@emotion/server": "^11.11.0",
     "@emotion/styled": "^11.11.0",
-    "@mui/material": "^5.14.10",
+    "@mui/material": "^5.15.7",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
     "electron": "^28.2.1",
