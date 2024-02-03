@@ -22,7 +22,7 @@ async function startProcess(event, value) {
       scriptPath = path.join(__dirname, '../scripts/runner.sh')
     }
     // console.log(`DEBUG: scriptPath: ${scriptPath}`)
-    const cmd = `sh ${scriptPath} ${value}`
+    const cmd = `sh "${scriptPath}" ${value}`
 
     exec(cmd, (error, stdout) => {
       if (error) {
