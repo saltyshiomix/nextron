@@ -1,9 +1,9 @@
-import {serverSideTranslations} from "next-i18next/serverSideTranslations"
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations'
 
-import i18next from "../../next-i18next.config.js"
+import i18next from '../../next-i18next.config.js'
 
 export function getI18nPaths() {
-  return ["en", "de"].map(locale => ({
+  return ['en', 'de'].map((locale) => ({
     params: {
       locale,
     },
@@ -12,12 +12,13 @@ export function getI18nPaths() {
 
 export function getStaticPaths() {
   return {
-    fallback: false, paths: getI18nPaths(),
+    fallback: false,
+    paths: getI18nPaths(),
   }
 }
 
-export async function getI18nProperties(context, namespaces = ["common"]) {
-  const locale = context?.params?.locale ?? i18next.i18n.defaultLocale;
+export async function getI18nProperties(context, namespaces = ['common']) {
+  const locale = context?.params?.locale ?? i18next.i18n.defaultLocale
   return {
     ...(await serverSideTranslations(locale, namespaces)),
   }
@@ -27,6 +28,6 @@ export function makeStaticProperties(namespaces = []) {
   return async function (context) {
     return {
       props: await getI18nProperties(context, namespaces),
-    };
-  };
+    }
+  }
 }

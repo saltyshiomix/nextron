@@ -2,8 +2,8 @@ import path from 'path'
 import { app, ipcMain } from 'electron'
 import serve from 'electron-serve'
 
-import i18next from "../next-i18next.config.js"
-import { userStore } from "./helpers/user-store"
+import i18next from '../next-i18next.config.js'
+import { userStore } from './helpers/user-store'
 import { createWindow } from './helpers'
 
 const isProd = process.env.NODE_ENV === 'production'
@@ -25,8 +25,8 @@ if (isProd) {
     },
   })
 
-  const locale = userStore.get("locale",  i18next.i18n.defaultLocale)
-  console.log("Using locale:", locale)
+  const locale = userStore.get('locale', i18next.i18n.defaultLocale)
+  console.log('Using locale:', locale)
 
   if (isProd) {
     await mainWindow.loadURL(`app://./${locale}/home`)

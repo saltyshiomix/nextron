@@ -13,9 +13,7 @@ export default function NextPage() {
       </Head>
 
       <Header>
-        <Link href="/home">
-          <a>Go to home page</a>
-        </Link>
+        <Link href="/home">Go to home page</Link>
       </Header>
 
       <Content style={{ padding: 48 }}>

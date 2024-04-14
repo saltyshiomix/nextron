@@ -15,8 +15,8 @@ export default function HomePage() {
             className="ml-auto mr-auto"
             src="/images/logo.png"
             alt="Logo image"
-            width="256px"
-            height="256px"
+            width={256}
+            height={256}
           />
         </div>
         <span>⚡ Electron ⚡</span>
@@ -28,9 +28,7 @@ export default function HomePage() {
         <span>💕 </span>
       </div>
       <div className="mt-1 w-full flex-wrap flex justify-center">
-        <Link href="/next">
-          <a className="btn-blue">Go to next page</a>
-        </Link>
+        <Link href="/next">Go to next page</Link>
       </div>
     </React.Fragment>
   )

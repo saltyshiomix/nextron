@@ -20,18 +20,18 @@
 
 ## Support
 
-### Nextron vs Next.js
+### Next.js vs Nextron
 
-| nextron         | next               |
-| --------------- | ------------------ |
-| `v9.x`          | `v13.x` (upcoming) |
-| `v8.x`          | `v12.x`            |
-| `v7.x`          | `v11.x`            |
-| `v6.x`          | `v10.x`            |
-| `v5.x`          | `v9.x`             |
-| `v4.x`          | `v8.x`             |
-| `v2.x` / `v3.x` | `v7.x`             |
-| `v1.x`          | `v6.x`             |
+| next              | nextron           |
+| ----------------- | ----------------- |
+| `v14.x`           | `v9.x` (upcoming) |
+| `v12.x` / `v13.x` | `v8.x`            |
+| `v11.x`           | `v7.x`            |
+| `v10.x`           | `v6.x`            |
+| `v9.x`            | `v5.x`            |
+| `v8.x`            | `v4.x`            |
+| `v7.x`            | `v2.x` / `v3.x`   |
+| `v6.x`            | `v1.x`            |
 
 ### Package Manager
 

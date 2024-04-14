@@ -14,9 +14,7 @@ export default function NextPage() {
       <div>
         <TitleCard>Nextron with Emotion</TitleCard>
         <BasicCard>
-          <Link href="/home">
-            <a>Go to home page</a>
-          </Link>
+          <Link href="/home">Go to home page</Link>
         </BasicCard>
         <AnimatedCard animation={bounce}>Let&apos;s bounce.</AnimatedCard>
       </div>

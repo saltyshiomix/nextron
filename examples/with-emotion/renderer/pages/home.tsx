@@ -14,9 +14,7 @@ export default function HomePage() {
       <div>
         <TitleCard>Nextron with Emotion</TitleCard>
         <BasicCard>
-          <Link href="/next">
-            <a>Go to next page</a>
-          </Link>
+          <Link href="/next">Go to next page</Link>
         </BasicCard>
         <HoverableCard>
           With <code>:hover</code>.

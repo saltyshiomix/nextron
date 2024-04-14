@@ -10,10 +10,7 @@ export default function NextPage() {
       </Head>
       <div>
         <p>
-          ⚡ Electron + Next.js ⚡ -
-          <Link href="/home">
-            <a>Go to home page</a>
-          </Link>
+          ⚡ Electron + Next.js ⚡ - <Link href="/home">Go to home page</Link>
         </p>
       </div>
     </React.Fragment>
