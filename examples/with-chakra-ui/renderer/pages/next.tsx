@@ -19,8 +19,8 @@ export default function NextPage() {
         <Image
           src="/images/logo.png"
           alt="Logo image"
-          width="200px"
-          height="200px"
+          width={200}
+          height={200}
         />
         <Hero title={`⚡ Nextron ⚡`} />
         <Footer>

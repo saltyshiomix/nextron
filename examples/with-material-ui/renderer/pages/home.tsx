@@ -49,8 +49,8 @@ export default function HomePage() {
         <Image
           src="/images/logo.png"
           alt="Logo image"
-          width="256px"
-          height="256px"
+          width={256}
+          height={256}
         />
         <Typography gutterBottom>
           <Link href="/next">Go to the next page</Link>

@@ -15,14 +15,12 @@ export default function NextPage() {
   return (
     <React.Fragment>
       <Head>
-        <title>{`${t('next')} - Nextron (with nexti18next)`}</title>
+        <title>{`${t('next')} - Nextron (with-next-i18next)`}</title>
       </Head>
       <div>
         <p>
           ⚡ Electron + Next.js ⚡ -
-          <Link legacyBehavior passHref href={`/${locale}/home`}>
-            <a>{t('goToHome')}</a>
-          </Link>
+          <Link href={`/${locale}/home`}>{t('goToHome')}</Link>
         </p>
         <LanguageSwitcher />
       </div>

@@ -19,8 +19,8 @@ export default function HomePage() {
         <Image
           src="/images/logo.png"
           alt="Logo image"
-          width="200px"
-          height="200px"
+          width={200}
+          height={200}
         />
         <Hero title={`⚡Electron⚡ + Next.js + Chakra UI = 🔥`} />
         <Footer>

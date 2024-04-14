@@ -1,6 +1,7 @@
 import React from 'react'
 import Head from 'next/head'
 import Link from 'next/link'
+import Image from 'next/image'
 import { useTranslation } from 'next-i18next'
 
 import LanguageSwitcher from '../../components/LanguageSwitcher'
@@ -23,20 +24,18 @@ export default function HomePage() {
   return (
     <React.Fragment>
       <Head>
-        <title>{`${t('common:home')} - Nextron (with nexti18next)`}</title>
+        <title>{`${t('common:home')} - Nextron (with-next-i18next)`}</title>
       </Head>
       <div>
         <p>
           ⚡ Electron + Next.js ⚡ -
-          <Link legacyBehavior passHref href={`/${locale}/next`}>
-            <a>{t('common:goToNext')}</a>
-          </Link>
+          <Link href={`/${locale}/next`}>{t('common:goToNext')}</Link>
         </p>
-        <img
+        <Image
           src="/images/logo.png"
           alt="Logo image"
-          width="256px"
-          height="256px"
+          width={256}
+          height={256}
         />
       </div>
       <div>
