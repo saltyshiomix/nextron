@@ -79,7 +79,7 @@
     "lint-staged": "^15.2.1",
     "prettier": "^3.2.4",
     "rimraf": "^5.0.5",
-    "rollup": "^4.9.6",
+    "rollup": "^4.14.2",
     "rollup-plugin-auto-external": "^2.0.0",
     "typescript": "^5.3.3"
   }
