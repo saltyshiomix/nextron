@@ -86,6 +86,33 @@ Run `npm run build`, and nextron outputs packaged bundles under the `dist` folde
 }
 ```
 
+## Basic Directory Structures
+
+```
+.
+├── main
+│   ├── background.ts
+│   └── preload.ts
+├── renderer
+│   ├── next.config.js
+│   ├── pages
+│   │   ├── home.tsx
+│   │   └── next.tsx
+│   ├── preload.d.ts
+│   ├── public
+│   │   └── images
+│   │       └── logo.png
+│   └── tsconfig.json
+├── resources
+│   ├── icon.icns
+│   └── icon.ico
+├── nextron.config.js
+├── electron-builder.yml
+├── package.json
+├── tsconfig.json
+└── README.md
+```
+
 ## `nextron` or `nextron dev` Options
 
 ### `--renderer-port` (default: `8888`)
@@ -241,8 +268,6 @@ We can extends the default babel config of main process by putting `.babelrc` in
 ```
 
 ## Examples
-
-See [examples](./examples) folder for more information.
 
 ### [examples/basic-lang-javascript](./examples/basic-lang-javascript)
 
@@ -431,6 +456,21 @@ $ yarn create nextron-app my-app --example with-material-ui
 
 # with pnpm
 $ pnpm dlx create-nextron-app my-app --example with-material-ui
+```
+
+### [examples/with-next-i18next](./examples/with-next-i18next)
+
+<p align="center"><img src="https://i.imgur.com/uhXCr6v.png"></p>
+
+```
+# with npx
+$ npx create-nextron-app my-app --example with-next-i18next
+
+# with yarn
+$ yarn create nextron-app my-app --example with-next-i18next
+
+# with pnpm
+$ pnpm dlx create-nextron-app my-app --example with-next-i18next
 ```
 
 ### [examples/with-tailwindcss](./examples/with-tailwindcss)

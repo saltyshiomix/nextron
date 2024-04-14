@@ -12,23 +12,23 @@
   },
   "dependencies": {
     "electron-serve": "^1.3.0",
-    "electron-store": "^8.1.0"
+    "electron-store": "^8.2.0"
   },
   "devDependencies": {
     "@chakra-ui/icons": "^2.1.1",
-    "@chakra-ui/react": "^2.8.1",
-    "@chakra-ui/theme-tools": "^2.1.1",
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@chakra-ui/react": "^2.8.2",
+    "@chakra-ui/theme-tools": "^2.1.2",
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.5",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
-    "electron": "^28.2.1",
-    "electron-builder": "^24.9.1",
-    "framer-motion": "^6.5.1",
+    "electron": "^29.3.0",
+    "electron-builder": "^24.13.3",
+    "framer-motion": "^11.0.28",
     "next": "^13.5.6",
-    "nextron": "^8.14.0",
+    "nextron": "^8.15.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "typescript": "^5.3.3"
+    "typescript": "^5.4.5"
   }
 }
