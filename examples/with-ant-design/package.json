@@ -15,10 +15,10 @@
     "electron-store": "^8.2.0"
   },
   "devDependencies": {
-    "@ant-design/icons": "^4.7.0",
+    "@ant-design/icons": "^5.3.6",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
-    "antd": "^4.22.8",
+    "antd": "^5.16.1",
     "electron": "^29.3.0",
     "electron-builder": "^24.13.3",
     "next": "^13.5.6",

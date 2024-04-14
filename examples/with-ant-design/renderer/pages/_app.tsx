@@ -2,7 +2,7 @@ import React from 'react'
 import Head from 'next/head'
 import type { AppProps } from 'next/app'
 
-import 'antd/dist/antd.css'
+import 'antd/dist/reset.css'
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
