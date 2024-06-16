@@ -2,7 +2,10 @@
   "name": "nextron",
   "version": "9.0.0",
   "description": "⚡ NEXT.js + Electron ⚡",
-  "repository": "git@github.com:saltyshiomix/nextron.git",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/saltyshiomix/nextron.git"
+  },
   "author": {
     "name": "Shiono Yoshihide",
     "email": "shiono.yoshihide@gmail.com",
