@@ -33,6 +33,8 @@ export const useExportCommand = async (): Promise<boolean> => {
   const majorVersion = ~~nextronVersion
     .split('.')
     .filter((v) => v.trim() !== '')[0]
+    .replace('^', '')
+    .replace('~', '')
   if (majorVersion < 13) {
     return true
   }
@@ -40,7 +42,7 @@ export const useExportCommand = async (): Promise<boolean> => {
     const { output } = await fs.readJSON(nextConfigPath)
     return output !== 'export'
   }
-  if (majorVersion > 13) {
+  if (majorVersion > 13 || majorVersion === 0) {
     const { output } = await fs.readJSON(nextConfigPath)
     if (output !== 'export') {
       logger.error(
