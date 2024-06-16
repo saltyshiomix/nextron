@@ -534,6 +534,7 @@ $ npm link nextron
 - [andirsun (Anderson Laverde)](https://github.com/andirsun)
 - [bm777 (Bayang)](https://github.com/bm777)
 - [FranciscoJBrito (Francisco Brito)](https://github.com/FranciscoJBrito)
+- [pixelass (Gregor Adams)](https://github.com/pixelass)
 
 For more information, please see [Looking for maintainers ⚡ #244](https://github.com/saltyshiomix/nextron/discussions/244).
 
