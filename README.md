@@ -24,7 +24,7 @@
 
 | next              | nextron         |
 | ----------------- | --------------- |
-| `v14.x`           | `v8.x`          |
+| `v14.x`           | `v9.x`          |
 | `v12.x` / `v13.x` | `v8.x`          |
 | `v11.x`           | `v7.x`          |
 | `v10.x`           | `v6.x`          |
@@ -543,8 +543,8 @@ You already create apps with nextron? Feel free to share your apps or services: 
 
 ## Related
 
-- [create-nextron-app](https://github.com/saltyshiomix/create-nextron-app) - Create Nextron (Electron + Next.js) apps in one command ⚡
+- [create-nextron-app](https://github.com/saltyshiomix/create-nextron-app) - Create Nextron (Next.js + Electron) apps in one command ⚡
 
 ## License
 
-This project is licensed under the terms of the [MIT license](https://github.com/saltyshiomix/nextron/blob/master/LICENSE).
+This project is licensed under the terms of the [MIT license](https://github.com/saltyshiomix/nextron/blob/main/LICENSE).
