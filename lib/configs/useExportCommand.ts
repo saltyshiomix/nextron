@@ -8,6 +8,7 @@ import * as logger from '../logger'
 const cwd = process.cwd()
 const pkgPath = path.join(cwd, 'package.json')
 const nextConfigPath = path.join(
+  cwd,
   getNextronConfig().rendererSrcDir || 'renderer',
   'next.config.js'
 )
