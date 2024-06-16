@@ -1,3 +1,5 @@
+/* eslint-disable @typescript-eslint/no-var-requires */
+
 import fs from 'fs-extra'
 import path from 'path'
 import { getNextronConfig } from './getNextronConfig'
@@ -39,11 +41,11 @@ export const useExportCommand = async (): Promise<boolean> => {
     return true
   }
   if (majorVersion === 13) {
-    const { output } = await fs.readJSON(nextConfigPath)
+    const { output } = require(nextConfigPath)
     return output !== 'export'
   }
-  if (majorVersion > 13 || majorVersion === 0) {
-    const { output } = await fs.readJSON(nextConfigPath)
+  if (majorVersion > 13) {
+    const { output } = require(nextConfigPath)
     if (output !== 'export') {
       logger.error(
         'We must export static files so as Electron can handle them. Please set next.config.js#output to "export".'
