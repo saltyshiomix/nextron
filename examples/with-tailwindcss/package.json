@@ -21,7 +21,7 @@
     "electron": "^29.3.0",
     "electron-builder": "^24.13.3",
     "next": "^13.5.6",
-    "nextron": "^8.17.0",
+    "nextron": "^8.23.0",
     "postcss": "^8.4.38",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
