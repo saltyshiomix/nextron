@@ -13,32 +13,28 @@ const nextConfigPath = path.join(
 export const useExportCommand = async (): Promise<boolean> => {
   const { dependencies, devDependencies } = await fs.readJSON(pkgPath)
 
-  let nextronVersion: string
-  nextronVersion = dependencies.nextron
-  if (nextronVersion) {
+  let nextVersion: string
+  nextVersion = dependencies.next
+  if (nextVersion) {
     logger.info(
-      'To reduce the bundle size of the electron app, we recommend placing nextron in devDependencies instead of dependencies.'
+      'To reduce the bundle size of the electron app, we recommend placing next and nextron in devDependencies instead of dependencies.'
     )
   }
-  if (!nextronVersion) {
-    nextronVersion = devDependencies.nextron
-    if (!nextronVersion) {
-      logger.error(
-        'Nextron not found in both dependencies and devDependencies.'
-      )
+  if (!nextVersion) {
+    nextVersion = devDependencies.next
+    if (!nextVersion) {
+      logger.error('Next not found in both dependencies and devDependencies.')
       process.exit(1)
     }
   }
 
-  logger.info(`nextronVersion ${nextronVersion}`)
-
-  const majorVersion = ~~nextronVersion
+  const majorVersion = ~~nextVersion
     .split('.')
     .filter((v) => v.trim() !== '')[0]
     .replace('^', '')
     .replace('~', '')
 
-  logger.info(`majorVersion ${majorVersion}`)
+  logger.info(`next's majorVersion: v${majorVersion}`)
   if (majorVersion < 13) {
     return true
   }
