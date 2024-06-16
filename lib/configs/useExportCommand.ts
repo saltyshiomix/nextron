@@ -30,11 +30,15 @@ export const useExportCommand = async (): Promise<boolean> => {
     }
   }
 
+  logger.info(`nextronVersion ${nextronVersion}`)
+
   const majorVersion = ~~nextronVersion
     .split('.')
     .filter((v) => v.trim() !== '')[0]
     .replace('^', '')
     .replace('~', '')
+
+  logger.info(`majorVersion ${majorVersion}`)
   if (majorVersion < 13) {
     return true
   }
