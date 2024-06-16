@@ -36,20 +36,33 @@ export const useExportCommand = async (): Promise<boolean> => {
     .filter((v) => v.trim() !== '')[0]
     .replace('^', '')
     .replace('~', '')
-
-  logger.info(`next's majorVersion: v${majorVersion}`)
   if (majorVersion < 13) {
     return true
   }
   if (majorVersion === 13) {
-    const { output } = require(nextConfigPath)
-    return output !== 'export'
+    const { output, distDir } = require(nextConfigPath)
+    if (output === 'export') {
+      if (distDir !== '../app') {
+        logger.error(
+          'Nextron export the build results to "app" directory, so please set "distDir" to "../app".'
+        )
+        process.exit(1)
+      }
+      return false
+    }
+    return true
   }
   if (majorVersion > 13) {
-    const { output } = require(nextConfigPath)
+    const { output, distDir } = require(nextConfigPath)
     if (output !== 'export') {
       logger.error(
         'We must export static files so as Electron can handle them. Please set next.config.js#output to "export".'
+      )
+      process.exit(1)
+    }
+    if (distDir !== '../app') {
+      logger.error(
+        'Nextron export the build results to "app" directory, so please set "distDir" to "../app".'
       )
       process.exit(1)
     }
