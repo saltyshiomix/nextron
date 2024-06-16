@@ -23,7 +23,7 @@
     "i18next": "^23.11.5",
     "next": "^14.2.4",
     "next-i18next": "^15.2.0",
-    "nextron": "^9.0.0",
+    "nextron": "^9.1.0",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-i18next": "^14.1.2"
