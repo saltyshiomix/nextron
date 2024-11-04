@@ -50,6 +50,9 @@ importers:
       fs-extra:
         specifier: 11.2.0
         version: 11.2.0
+      get-port-please:
+        specifier: ^3.1.2
+        version: 3.1.2
       terser-webpack-plugin:
         specifier: 5.3.10
         version: 5.3.10(webpack@5.92.0)
@@ -1796,6 +1799,9 @@ packages:
 
   get-intrinsic@1.2.1:
     resolution: {integrity: sha512-2DcsyfABl+gVHEfCOaTrWgyt+tb6MSEGmKq+kI5HwLbIYgjgmMcV8KQ41uaKz1xxUcn9tJtgFbQUEVcEbd0FYw==}
+
+  get-port-please@3.1.2:
+    resolution: {integrity: sha512-Gxc29eLs1fbn6LQ4jSU4vXjlwyZhF5HsGuMAa7gqBP4Rw4yxxltyDUuF5MBclFzDTXO+ACchGQoeela4DSfzdQ==}
 
   get-stream@6.0.1:
     resolution: {integrity: sha512-ts6Wi+2j3jQjqi70w5AlN8DFnkSwC+MqmxEzdEALB2qXZYV3X/b1CTfgPLGJNMeAWxdPfU8FO1ms3NUfaHCPYg==}
@@ -4705,7 +4711,7 @@ snapshots:
       debug: 4.3.4
       enhanced-resolve: 5.17.0
       eslint: 9.5.0
-      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.20.0(eslint@9.5.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.20.0(eslint@9.5.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.28.1)(eslint@9.5.0))(eslint@9.5.0)
+      eslint-module-utils: 2.8.0(@typescript-eslint/parser@6.20.0(eslint@9.5.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@9.5.0)
       eslint-plugin-import: 2.28.1(@typescript-eslint/parser@7.13.0(eslint@9.5.0)(typescript@5.4.5))(eslint@9.5.0)
       fast-glob: 3.3.1
       get-tsconfig: 4.7.3
@@ -4717,7 +4723,7 @@ snapshots:
       - eslint-import-resolver-webpack
       - supports-color
 
-  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.20.0(eslint@9.5.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1(@typescript-eslint/parser@6.20.0(eslint@9.5.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-plugin-import@2.28.1)(eslint@9.5.0))(eslint@9.5.0):
+  eslint-module-utils@2.8.0(@typescript-eslint/parser@6.20.0(eslint@9.5.0)(typescript@5.4.5))(eslint-import-resolver-node@0.3.9)(eslint-import-resolver-typescript@3.6.1)(eslint@9.5.0):
     dependencies:
       debug: 3.2.7
     optionalDependencies:
@@ -5007,6 +5013,8 @@ snapshots:
       has: 1.0.3
       has-proto: 1.0.1
       has-symbols: 1.0.3
+
+  get-port-please@3.1.2: {}
 
   get-stream@6.0.1: {}
 
