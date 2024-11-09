@@ -12,13 +12,7 @@ import configPrettier from 'eslint-config-prettier'
  */
 const config = [
   {
-    ignores: [
-      '**/node_modules',
-      'pnpm-lock.yaml',
-      '**/bin',
-      '**/workspace',
-      'examples',
-    ],
+    ignores: ['**/node_modules', 'pnpm-lock.yaml', '**/bin', '**/workspace'],
   },
   {
     languageOptions: {

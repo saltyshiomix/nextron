@@ -8,7 +8,6 @@ module.exports = {
   reloadOnPrerender: process.env.NODE_ENV === 'development',
   localePath:
     typeof window === 'undefined'
-      ? // eslint-disable-next-line @typescript-eslint/no-var-requires
-        require('path').resolve('./renderer/public/locales')
+      ? require('path').resolve('./renderer/public/locales')
       : '/locales',
 }
