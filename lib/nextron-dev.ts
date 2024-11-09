@@ -4,6 +4,7 @@ import webpack from 'webpack'
 import * as logger from './logger'
 import { getNextronConfig } from './configs/getNextronConfig'
 import { config } from './configs/webpack.config.development'
+import { waitForPort } from 'get-port-please'
 import type { ChildProcess } from 'child_process'
 
 const args = arg({
@@ -42,7 +43,8 @@ if (args['--inspect']) {
 const nextronConfig = getNextronConfig()
 
 const rendererPort = args['--renderer-port'] || 8888
-const startupDelay = nextronConfig.startupDelay || args['--startup-delay'] || 0
+const startupDelay =
+  nextronConfig.startupDelay || args['--startup-delay'] || 10_000
 
 let electronOptions = args['--electron-options'] || ''
 if (!electronOptions.includes('--remote-debugging-port')) {
@@ -115,9 +117,16 @@ const execaOptions: execa.Options = {
   rendererProcess = startRendererProcess()
 
   // wait until renderer process is ready
-  await new Promise<void>((resolve) =>
-    setTimeout(() => resolve(), startupDelay)
-  )
+  await waitForPort(rendererPort, {
+    delay: 500,
+    retries: startupDelay / 500,
+  }).catch(() => {
+    logger.error(
+      `Failed to start renderer process with port ${rendererPort} in ${startupDelay}ms`
+    )
+    killWholeProcess()
+    process.exit(1)
+  })
 
   // wait until main process is ready
   await new Promise<void>((resolve) => {
