@@ -1,5 +1,3 @@
-/* eslint-disable import/no-anonymous-default-export */
-
 export default {
   '**/*.(ts|tsx|js)': (filenames) => [
     `npx eslint --fix ${filenames.join(' ')}`,
