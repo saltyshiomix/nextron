@@ -62,7 +62,7 @@ const execaOptions: execa.Options = {
   let firstCompile = true
   let watching: webpack.Watching
   let mainProcess: ChildProcess
-  let rendererProcess: ChildProcess // eslint-disable-line prefer-const
+  let rendererProcess: ChildProcess
 
   const startMainProcess = () => {
     logger.info(

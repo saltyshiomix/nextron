@@ -41,7 +41,6 @@ const config = (src, dist) => ({
   ...coreConfig,
 })
 
-// eslint-disable-next-line import/no-anonymous-default-export
 export default [
   cliConfig('lib/nextron.ts'),
   cliConfig('lib/nextron-dev.ts'),
