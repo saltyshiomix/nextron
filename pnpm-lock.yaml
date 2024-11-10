@@ -51,7 +51,7 @@ importers:
         specifier: 11.2.0
         version: 11.2.0
       get-port-please:
-        specifier: ^3.1.2
+        specifier: 3.1.2
         version: 3.1.2
       terser-webpack-plugin:
         specifier: 5.3.10
