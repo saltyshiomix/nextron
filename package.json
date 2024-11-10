@@ -64,7 +64,7 @@
     "terser-webpack-plugin": "5.3.10",
     "tsconfig-paths-webpack-plugin": "4.1.0",
     "webpack": "5.96.1",
-    "webpack-merge": "5.10.0"
+    "webpack-merge": "6.0.1"
   },
   "devDependencies": {
     "@next/eslint-plugin-next": "^15.0.2",
