@@ -72,7 +72,7 @@ const execaOptions: execa.Options = {
     )
     mainProcess = execa(
       'electron',
-      ['.', `${rendererPort}`, `${electronOptions}`],
+      ['.', `${rendererPort}`, ...electronOptions.split(' ')],
       {
         detached: true,
         ...execaOptions,
