@@ -22,7 +22,7 @@
     "@emotion/styled": "^11.11.5",
     "@types/node": "^20.11.16",
     "@types/react": "^18.2.52",
-    "electron": "^31.0.1",
+    "electron": "^34.0.0",
     "electron-builder": "^24.13.3",
     "framer-motion": "^11.0.28",
     "next": "^14.2.4",
