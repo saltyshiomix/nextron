@@ -26,7 +26,7 @@ process.env.NODE_ENV = process.env.NODE_ENV || defaultEnv
 const cli = path.join(__dirname, `nextron-${cmd}`)
 
 const startProcess = () => {
-  const proc = execa('node', [...nodeArgs, cli, ...args], { stdio: 'inherit' })
+  const proc = execa('node', [cli, ...nodeArgs, ...args], { stdio: 'inherit' })
   proc.on('close', (code: number, signal: string) => {
     if (code !== null) {
       process.exit(code)
