@@ -5,36 +5,28 @@
   "version": "0.2.0",
   "configurations": [
     {
-      "name": "Nextron: Main",
+      "name": "nextron:main",
       "type": "node",
       "request": "attach",
-      "protocol": "inspector",
       "port": 9292,
       "skipFiles": ["<node_internals>/**"],
-      "sourceMapPathOverrides": {
-        "webpack:///./~/*": "${workspaceFolder}/node_modules/*",
-        "webpack:///./*": "${workspaceFolder}/*",
-        "webpack:///*": "*"
-      }
+      "localRoot": "${workspaceFolder}",
+      "sourceMaps": true
     },
     {
-      "name": "Nextron: Renderer",
+      "name": "nextron:renderer",
       "type": "chrome",
       "request": "attach",
       "port": 5858,
-      "timeout": 10000,
       "urlFilter": "http://localhost:*",
-      "webRoot": "${workspaceFolder}/app",
-      "sourceMapPathOverrides": {
-        "webpack:///./src/*": "${webRoot}/*"
-      }
+      "webRoot": "${workspaceFolder}/renderer",
+      "sourceMaps": true
     }
   ],
   "compounds": [
     {
-      "name": "Nextron: All",
-      "preLaunchTask": "dev",
-      "configurations": ["Nextron: Main", "Nextron: Renderer"]
+      "name": "all",
+      "configurations": ["nextron:main", "nextron:renderer"]
     }
   ]
 }
