@@ -50,7 +50,7 @@
     "fs-extra": "11.4.0",
     "get-port-please": "3.2.0",
     "jiti": "2.7.0",
-    "terser-webpack-plugin": "5.4.0",
+    "terser-webpack-plugin": "5.6.1",
     "ts-loader": "9.6.2",
     "tsconfig-paths-webpack-plugin": "4.2.0",
     "typescript6": "npm:@typescript/typescript6@^6.0.2",
