@@ -70,15 +70,15 @@
     "@eslint/js": "^10.0.1",
     "@types/fs-extra": "^11.0.4",
     "@types/node": "^20.14.2",
-    "eslint": "^10.1.0",
+    "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
     "lefthook": "^2.1.4",
     "lerna": "^9.0.3",
-    "prettier": "^3.8.1",
+    "prettier": "^3.9.6",
     "rimraf": "^6.1.2",
     "tsdown": "^0.21.4",
     "tsx": "^4.21.0",
     "typescript": "^7.0.2",
-    "typescript-eslint": "^8.57.2"
+    "typescript-eslint": "^8.66.0"
   }
 }
