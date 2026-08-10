@@ -41,9 +41,7 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
             options: {
               logLevel: 'error',
               compiler: 'typescript6',
-              compilerOptions: {
-                noEmit: false,
-              },
+              transpileOnly: true,
             },
           },
         },

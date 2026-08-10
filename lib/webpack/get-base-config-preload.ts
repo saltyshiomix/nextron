@@ -42,9 +42,7 @@ export const getBaseConfigPreload =
               options: {
                 logLevel: 'error',
                 compiler: 'typescript6',
-                compilerOptions: {
-                  noEmit: false,
-                },
+                transpileOnly: true,
               },
             },
           },
