@@ -49,7 +49,7 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
     },
     resolve: {
       extensions: ['.ts', '.js', '.json'],
-      modules: ['node_modules'],
+      modules: ['node_modules', path.join(cwd, 'app')],
       plugins: [isTs ? new TsconfigPathsPlugins() : null].filter(Boolean),
       symlinks: false, // support pnpm
     },
