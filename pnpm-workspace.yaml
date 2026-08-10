@@ -1,5 +1,10 @@
 packages:
   - .
+allowBuilds:
+  core-js-pure: true
+  esbuild: true
+  lefthook: true
+  nx: true
 onlyBuiltDependencies:
   - core-js-pure
   - esbuild
