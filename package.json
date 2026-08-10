@@ -74,7 +74,7 @@
     "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
     "lefthook": "^2.1.10",
-    "lerna": "^9.0.3",
+    "lerna": "^10.0.0",
     "prettier": "^3.9.6",
     "rimraf": "^6.1.2",
     "tsdown": "^0.21.4",
