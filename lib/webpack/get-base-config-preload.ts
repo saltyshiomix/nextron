@@ -9,7 +9,7 @@ const cwd = process.cwd()
 
 export const getBaseConfigPreload =
   async (): Promise<webpack.Configuration> => {
-    const { mainSrcDir, rendererSrcDir } = await getNextronConfig()
+    const { mainSrcDir } = await getNextronConfig()
 
     const preloadPath = path.join(cwd, mainSrcDir || 'main', `preload${ext}`)
     if (!fs.existsSync(preloadPath)) {
@@ -33,10 +33,7 @@ export const getBaseConfigPreload =
         rules: [
           {
             test: /\.[jt]sx?$/,
-            exclude: [
-              /node_modules/,
-              path.join(cwd, rendererSrcDir || 'renderer'),
-            ],
+            include: path.join(cwd, mainSrcDir || 'main'),
             use: {
               loader: 'ts-loader',
               options: {
