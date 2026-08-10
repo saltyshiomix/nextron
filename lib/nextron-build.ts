@@ -9,11 +9,6 @@ import * as logger from './logger'
 import { checkNextConfig } from './helpers/check-next-config'
 import { getNextronConfig } from './helpers/get-nextron-config'
 
-const cwd = process.cwd()
-const appDir = path.join(cwd, 'app')
-const distDir = path.join(cwd, 'dist')
-const $$ = $({ cwd: process.cwd(), stdio: 'inherit' })
-
 type BuildCommandOptions = {
   mac: boolean
   linux: boolean
@@ -43,6 +38,11 @@ buildCommand
   .option('--publish <string>')
   .option('--no-pack')
   .action(async (options: BuildCommandOptions) => {
+    const cwd = process.cwd()
+    const appDir = path.join(cwd, 'app')
+    const distDir = path.join(cwd, 'dist')
+    const $$ = $({ cwd, stdio: 'inherit' })
+
     function createBuilderArgs() {
       const results = []
 
@@ -71,8 +71,10 @@ buildCommand
     // Ignore missing dependencies
     process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
 
-    const rendererSrcDir =
+    const rendererSrcDir = path.join(
+      cwd,
       (await getNextronConfig()).rendererSrcDir || 'renderer'
+    )
 
     try {
       logger.info('Checking next config')
@@ -82,7 +84,7 @@ buildCommand
       await Promise.all([fs.remove(appDir), fs.remove(distDir)])
 
       logger.info('Building renderer process')
-      await $$('next', ['build', path.join(cwd, rendererSrcDir)])
+      await $$('next', ['build', rendererSrcDir])
 
       logger.info('Building main process')
       await $$('node', [path.join(import.meta.dirname, 'webpack.config.cjs')])
