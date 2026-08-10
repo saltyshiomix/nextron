@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.2.0](https://github.com/saltyshiomix/nextron/compare/v10.1.0..v10.2.0) - 2026-08-10
+
+### What's New
+
+- Bump `nextron` from v10.0.0 to 10.2.0
+
 ## [10.1.0](https://github.com/saltyshiomix/nextron/compare/v10.0.0..v10.1.0) - 2026-08-10
 
 ### What's New
