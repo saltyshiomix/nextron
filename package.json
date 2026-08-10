@@ -44,16 +44,6 @@
     "prepublishOnly": "NODE_ENV=production tsdown"
   },
   "dependencies": {
-    "@babel/core": "7.29.6",
-    "@babel/plugin-transform-class-properties": "7.28.6",
-    "@babel/plugin-transform-object-rest-spread": "7.28.6",
-    "@babel/plugin-transform-optional-chaining": "7.28.6",
-    "@babel/plugin-transform-runtime": "7.29.0",
-    "@babel/preset-env": "7.29.2",
-    "@babel/preset-typescript": "7.28.5",
-    "@babel/runtime": "7.29.2",
-    "@babel/runtime-corejs3": "7.29.2",
-    "babel-loader": "10.1.1",
     "chalk": "5.6.2",
     "commander": "14.0.2",
     "execa": "9.6.1",
