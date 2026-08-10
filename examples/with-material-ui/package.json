@@ -23,7 +23,7 @@
     "@mui/icons-material": "^7.3.9",
     "@mui/material": "^7.3.9",
     "@mui/material-nextjs": "^7.3.9",
-    "@types/node": "^20.11.16",
+    "@types/node": "^24.13.3",
     "@types/react": "^19.2.14",
     "electron": "^43.3.0",
     "electron-builder": "^26.15.3",
