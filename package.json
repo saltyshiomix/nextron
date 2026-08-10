@@ -69,7 +69,7 @@
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.2",
+    "@types/node": "^24.13.3",
     "@typescript/native": "npm:typescript@^7.0.2",
     "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
