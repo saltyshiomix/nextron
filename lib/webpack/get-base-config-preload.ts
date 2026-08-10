@@ -38,11 +38,8 @@ export const getBaseConfigPreload =
               loader: require.resolve('ts-loader'),
               options: {
                 logLevel: 'error',
-                transpileOnly: true,
                 compiler: 'typescript6',
-                // compilerOptions: {
-                //   noEmit: false,
-                // },
+                transpileOnly: true,
               },
             },
           },

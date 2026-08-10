@@ -37,11 +37,8 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
             loader: require.resolve('ts-loader'),
             options: {
               logLevel: 'error',
-              transpileOnly: true,
               compiler: 'typescript6',
-              // compilerOptions: {
-              //   noEmit: false,
-              // },
+              transpileOnly: true,
             },
           },
         },
