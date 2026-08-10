@@ -20,19 +20,22 @@ $ pnpm dlx create-nextron-app my-app --example basic-lang-javascript
 ```
 $ cd my-app
 
-# using yarn or npm
-$ yarn (or `npm install`)
+# with npm
+$ npm install
 
-# using pnpm
-$ pnpm install --shamefully-hoist
+# with yarn
+$ yarn install
+
+# with pnpm
+$ pnpm install
 ```
 
 ### Use it
 
 ```
 # development mode
-$ yarn dev (or `npm run dev` or `pnpm run dev`)
+$ npm run dev (or `yarn dev` or `pnpm run dev`)
 
 # production build
-$ yarn build (or `npm run build` or `pnpm run build`)
+$ npm run build (or `yarn build` or `pnpm run build`)
 ```
