@@ -5,6 +5,8 @@ allowBuilds:
   esbuild: true
   lefthook: true
   nx: true
+minimumReleaseAgeExclude:
+  - tsx@4.23.12
 onlyBuiltDependencies:
   - core-js-pure
   - esbuild

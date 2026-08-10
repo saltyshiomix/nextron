@@ -78,7 +78,7 @@
     "prettier": "^3.9.6",
     "rimraf": "^6.1.2",
     "tsdown": "^0.22.14",
-    "tsx": "^4.21.0",
+    "tsx": "^4.23.12",
     "typescript": "npm:@typescript/typescript6@^6.0.2",
     "typescript-eslint": "^8.66.0"
   }
