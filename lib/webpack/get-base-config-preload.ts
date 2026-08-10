@@ -50,9 +50,9 @@ export const getBaseConfigPreload =
       },
       resolve: {
         extensions: ['.ts', '.js', '.json'],
-        modules: ['node_modules', path.join(cwd, 'app')],
+        modules: ['node_modules'],
         plugins: [isTs ? new TsconfigPathsPlugins() : null].filter(Boolean),
-        symlinks: false, // support pnpm
+        // symlinks: false, // support pnpm
       },
       stats: 'errors-only',
       node: {
