@@ -32,11 +32,11 @@
 | `v7.x`            | `v2.x` ~ `v3.x` |
 | `v6.x`            | `v1.x`          |
 
-## Nextron v10
+## Nextron v10 - [CHANGELOG](https://github.com/saltyshiomix/nextron/blob/main/CHANGELOG.md)
 
 ### Migration Guide (Breaking Changes)
 
-- Upgrade `nextron` to v10
+- Upgrade `nextron` from v9 to v10
 - Rename `main/background.ts` to `main/main.ts`
 - Rename `package.json#main` field to `app/main.js`
 
