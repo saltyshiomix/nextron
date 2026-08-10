@@ -54,7 +54,7 @@
     "ts-loader": "9.6.2",
     "tsconfig-paths-webpack-plugin": "4.2.0",
     "typescript6": "npm:@typescript/typescript6@^6.0.2",
-    "webpack": "5.105.4",
+    "webpack": "5.109.2",
     "webpack-merge": "6.0.1"
   },
   "devDependencies": {
