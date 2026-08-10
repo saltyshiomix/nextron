@@ -4,5 +4,5 @@
     "target": "esnext",
     "module": "esnext"
   },
-  "include": ["lib", "eslint.config.ts", "tsdown.config.ts"]
+  "include": ["lib", "eslint.config.ts", "tsdown.config.mts"]
 }
