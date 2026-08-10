@@ -54,6 +54,9 @@ export const getBaseConfigPreload =
         plugins: [isTs ? new TsconfigPathsPlugins() : null].filter(Boolean),
         // symlinks: false, // support pnpm
       },
+      resolveLoader: {
+        modules: ['node_modules'],
+      },
       stats: 'errors-only',
       node: {
         __dirname: false,
