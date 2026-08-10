@@ -16,17 +16,17 @@
     "electron-store": "^11.0.2"
   },
   "devDependencies": {
-    "@tailwindcss/postcss": "^4.2.2",
+    "@tailwindcss/postcss": "^4.3.3",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.14",
     "electron": "^43.3.0",
     "electron-builder": "^26.15.3",
     "next": "^16.3.0",
     "nextron": "^10.0.0",
-    "postcss": "^8.5.8",
+    "postcss": "^8.5.26",
     "react": "^19.2.8",
     "react-dom": "^19.2.8",
-    "tailwindcss": "^4.2.2",
+    "tailwindcss": "^4.3.3",
     "typescript": "^5.7.3"
   }
 }
