@@ -41,8 +41,11 @@ export const getBaseConfigPreload =
               loader: 'ts-loader',
               options: {
                 logLevel: 'error',
-                compiler: 'typescript6',
                 transpileOnly: true,
+                compiler: 'typescript6',
+                compilerOptions: {
+                  noEmit: false,
+                },
               },
             },
           },
