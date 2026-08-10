@@ -3,7 +3,6 @@ import webpack from 'webpack'
 import TsconfigPathsPlugins from 'tsconfig-paths-webpack-plugin'
 import { isTs, ext, isEsm, externals } from '../helpers/get-project-settings'
 import { getNextronConfig } from '../helpers/get-nextron-config'
-import { getBabelPath } from '../helpers/get-babel-path'
 
 const cwd = process.cwd()
 
@@ -32,15 +31,18 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
     module: {
       rules: [
         {
-          test: /\.(js|ts)x?$/,
+          test: /\.[jt]sx?$/,
+          exclude: [/node_modules/, path.join(cwd, 'renderer')],
           use: {
-            loader: require.resolve('babel-loader'),
+            loader: 'ts-loader',
             options: {
-              cacheDirectory: true,
-              extends: getBabelPath(),
+              logLevel: 'error',
+              compiler: 'typescript6',
+              compilerOptions: {
+                noEmit: false,
+              },
             },
           },
-          exclude: [/node_modules/, path.join(cwd, 'renderer')],
         },
       ],
     },
