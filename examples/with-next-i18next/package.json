@@ -19,7 +19,7 @@
     "electron-store": "^11.0.2"
   },
   "devDependencies": {
-    "electron": "^41.0.3",
+    "electron": "^43.3.0",
     "electron-builder": "^26.8.1",
     "i18next": "^25.10.5",
     "next": "^16.2.1",

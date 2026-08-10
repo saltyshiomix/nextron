@@ -19,7 +19,7 @@
     "@tailwindcss/postcss": "^4.2.2",
     "@types/node": "^20.11.16",
     "@types/react": "^19.2.14",
-    "electron": "^41.0.3",
+    "electron": "^43.3.0",
     "electron-builder": "^26.8.1",
     "next": "^16.2.1",
     "nextron": "^10.0.0",
