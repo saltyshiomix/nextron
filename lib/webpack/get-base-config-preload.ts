@@ -40,9 +40,9 @@ export const getBaseConfigPreload =
                 logLevel: 'error',
                 transpileOnly: true,
                 compiler: 'typescript6',
-                compilerOptions: {
-                  noEmit: false,
-                },
+                // compilerOptions: {
+                //   noEmit: false,
+                // },
               },
             },
           },
@@ -52,11 +52,7 @@ export const getBaseConfigPreload =
         extensions: ['.ts', '.js', '.json'],
         modules: ['node_modules'],
         plugins: [isTs ? new TsconfigPathsPlugins() : null].filter(Boolean),
-        // symlinks: false, // support pnpm
       },
-      // resolveLoader: {
-      //   modules: ['node_modules'],
-      // },
       stats: 'errors-only',
       node: {
         __dirname: false,
