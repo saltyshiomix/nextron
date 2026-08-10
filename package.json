@@ -29,7 +29,6 @@
   },
   "files": [
     "bin",
-    "babel.js",
     "types.d.ts"
   ],
   "bin": {
