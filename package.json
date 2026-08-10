@@ -47,7 +47,7 @@
     "chalk": "6.0.0",
     "commander": "15.0.0",
     "execa": "10.0.1",
-    "fs-extra": "11.3.2",
+    "fs-extra": "11.4.0",
     "get-port-please": "3.2.0",
     "jiti": "2.6.1",
     "terser-webpack-plugin": "5.4.0",
