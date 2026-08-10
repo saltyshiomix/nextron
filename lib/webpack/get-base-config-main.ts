@@ -7,7 +7,7 @@ import { getNextronConfig } from '../helpers/get-nextron-config'
 const cwd = process.cwd()
 
 export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
-  const { mainSrcDir } = await getNextronConfig()
+  const { mainSrcDir, rendererSrcDir } = await getNextronConfig()
 
   const mainPath = path.join(cwd, mainSrcDir || 'main', `main${ext}`)
 
@@ -32,7 +32,10 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
       rules: [
         {
           test: /\.[jt]sx?$/,
-          exclude: [/node_modules/, path.join(cwd, 'renderer')],
+          exclude: [
+            /node_modules/,
+            path.join(cwd, rendererSrcDir || 'renderer'),
+          ],
           use: {
             loader: 'ts-loader',
             options: {

@@ -7,6 +7,7 @@ import chalk from 'chalk'
 import { $ } from 'execa'
 import * as logger from './logger'
 import { checkNextConfig } from './helpers/check-next-config'
+import { getNextConfig } from './helpers/get-next-config'
 import { getNextronConfig } from './helpers/get-nextron-config'
 
 type BuildCommandOptions = {
@@ -43,6 +44,9 @@ buildCommand
     const distDir = path.join(cwd, 'dist')
     const $$ = $({ cwd, stdio: 'inherit' })
 
+    const nextConfig = await getNextConfig()
+    const nextronConfig = await getNextronConfig()
+
     function createBuilderArgs() {
       const results = []
 
@@ -73,7 +77,7 @@ buildCommand
 
     const rendererSrcDir = path.join(
       cwd,
-      (await getNextronConfig()).rendererSrcDir || 'renderer'
+      nextronConfig.rendererSrcDir || 'renderer'
     )
 
     try {
@@ -81,7 +85,11 @@ buildCommand
       await checkNextConfig()
 
       logger.info('Clearing previous builds')
-      await Promise.all([fs.remove(appDir), fs.remove(distDir)])
+      await Promise.all([
+        fs.remove(appDir),
+        fs.remove(distDir),
+        fs.remove(path.join(rendererSrcDir, nextConfig.distDir || '.next')),
+      ])
 
       logger.info('Building renderer process')
       await $$('next', ['build', rendererSrcDir])
