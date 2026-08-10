@@ -61,13 +61,13 @@ To create the `examples/with-tailwindcss`, run the command below:
 
 ```sh
 # with npx
-npx create-nextron-app MY_APP --example with-tailwindcss
+npx create-nextron-app my-app --example with-tailwindcss
 
 # with yarn
-yarn create nextron-app MY_APP --example with-tailwindcss
+yarn create nextron-app my-app --example with-tailwindcss
 
 # with pnpm
-pnpm dlx create-nextron-app MY_APP --example with-tailwindcss
+pnpm dlx create-nextron-app my-app --example with-tailwindcss
 ```
 
 ### Run Electron with Development Mode
