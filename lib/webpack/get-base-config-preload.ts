@@ -35,7 +35,7 @@ export const getBaseConfigPreload =
             test: /\.[jt]sx?$/,
             include: path.join(cwd, mainSrcDir || 'main'),
             use: {
-              loader: 'ts-loader',
+              loader: require.resolve('ts-loader'),
               options: {
                 logLevel: 'error',
                 transpileOnly: true,
@@ -54,9 +54,9 @@ export const getBaseConfigPreload =
         plugins: [isTs ? new TsconfigPathsPlugins() : null].filter(Boolean),
         // symlinks: false, // support pnpm
       },
-      resolveLoader: {
-        modules: ['node_modules'],
-      },
+      // resolveLoader: {
+      //   modules: ['node_modules'],
+      // },
       stats: 'errors-only',
       node: {
         __dirname: false,
