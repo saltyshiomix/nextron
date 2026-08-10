@@ -54,6 +54,7 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
       extensions: ['.ts', '.js', '.json'],
       modules: ['node_modules'],
       plugins: [isTs ? new TsconfigPathsPlugins() : null].filter(Boolean),
+      symlinks: false, // support pnpm
     },
     stats: 'errors-only',
     node: {
