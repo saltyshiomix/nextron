@@ -16,8 +16,8 @@
     "electron-store": "^11.0.2"
   },
   "devDependencies": {
-    "@emotion/react": "^11.11.1",
-    "@emotion/styled": "^11.11.0",
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
     "@types/node": "^24.13.3",
     "@types/react": "^19.2.14",
     "electron": "^43.3.0",
