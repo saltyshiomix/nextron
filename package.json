@@ -1,6 +1,6 @@
 {
   "name": "nextron",
-  "version": "10.0.0",
+  "version": "10.1.0",
   "description": "⚡ Next.js + Electron ⚡",
   "repository": {
     "type": "git",
@@ -29,7 +29,6 @@
   },
   "files": [
     "bin",
-    "babel.js",
     "types.d.ts"
   ],
   "bin": {
@@ -45,40 +44,33 @@
     "prepublishOnly": "NODE_ENV=production tsdown"
   },
   "dependencies": {
-    "@babel/core": "7.29.6",
-    "@babel/plugin-transform-class-properties": "7.28.6",
-    "@babel/plugin-transform-object-rest-spread": "7.28.6",
-    "@babel/plugin-transform-optional-chaining": "7.28.6",
-    "@babel/plugin-transform-runtime": "7.29.0",
-    "@babel/preset-env": "7.29.2",
-    "@babel/preset-typescript": "7.28.5",
-    "@babel/runtime": "7.29.2",
-    "@babel/runtime-corejs3": "7.29.2",
-    "babel-loader": "10.1.1",
-    "chalk": "5.6.2",
-    "commander": "14.0.2",
+    "chalk": "6.0.0",
+    "commander": "15.0.0",
     "execa": "9.6.1",
-    "fs-extra": "11.3.2",
+    "fs-extra": "11.4.0",
     "get-port-please": "3.2.0",
-    "jiti": "2.6.1",
-    "terser-webpack-plugin": "5.4.0",
+    "jiti": "2.7.0",
+    "terser-webpack-plugin": "5.6.1",
+    "ts-loader": "9.6.2",
     "tsconfig-paths-webpack-plugin": "4.2.0",
-    "webpack": "5.105.4",
+    "typescript6": "npm:@typescript/typescript6@^6.0.2",
+    "webpack": "5.109.2",
     "webpack-merge": "6.0.1"
   },
   "devDependencies": {
     "@eslint/js": "^10.0.1",
     "@types/fs-extra": "^11.0.4",
-    "@types/node": "^20.14.2",
-    "eslint": "^10.1.0",
+    "@types/node": "^24.13.3",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "eslint": "^10.8.1",
     "eslint-config-prettier": "^10.1.8",
-    "lefthook": "^2.1.4",
-    "lerna": "^9.0.3",
-    "prettier": "^3.8.1",
+    "lefthook": "^2.1.10",
+    "lerna": "^10.0.0",
+    "prettier": "^3.9.6",
     "rimraf": "^6.1.2",
-    "tsdown": "^0.21.4",
-    "tsx": "^4.21.0",
-    "typescript": "^5.9.3",
-    "typescript-eslint": "^8.57.2"
+    "tsdown": "^0.22.14",
+    "tsx": "^4.23.12",
+    "typescript": "npm:@typescript/typescript6@^6.0.2",
+    "typescript-eslint": "^8.66.0"
   }
 }

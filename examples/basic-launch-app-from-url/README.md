@@ -10,29 +10,38 @@ Note: this example works **only production build**!
 
 ```
 # with npx
-$ npx create-nextron-app my-app --example basic-typescript
+$ npx create-nextron-app my-app --example basic-launch-app-from-url
 
 # with yarn
-$ yarn create nextron-app my-app --example basic-typescript
+$ yarn create nextron-app my-app --example basic-launch-app-from-url
 
 # with pnpm
-$ pnpm dlx create-nextron-app my-app --example basic-typescript
+$ pnpm dlx create-nextron-app my-app --example basic-launch-app-from-url
 ```
 
 ### Install Dependencies
 
 ```
-# using yarn or npm
-$ yarn (or `npm install`)
+$ cd my-app
 
-# using pnpm
-$ pnpm install --shamefully-hoist
+# with npm
+$ npm install
+
+# with yarn
+$ yarn install
+
+# with pnpm
+$ pnpm install
 ```
 
-### Production Build
+### Use it
 
 ```
-$ yarn build (or `npm run build` or `pnpm run build`)
+# development mode
+$ npm run dev (or `yarn dev` or `pnpm run dev`)
+
+# production build
+$ npm run build (or `yarn build` or `pnpm run build`)
 ```
 
 ### Open your App

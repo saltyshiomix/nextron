@@ -7,12 +7,8 @@ import chalk from 'chalk'
 import { $ } from 'execa'
 import * as logger from './logger'
 import { checkNextConfig } from './helpers/check-next-config'
+import { getNextConfig } from './helpers/get-next-config'
 import { getNextronConfig } from './helpers/get-nextron-config'
-
-const cwd = process.cwd()
-const appDir = path.join(cwd, 'app')
-const distDir = path.join(cwd, 'dist')
-const $$ = $({ cwd: process.cwd(), stdio: 'inherit' })
 
 type BuildCommandOptions = {
   mac: boolean
@@ -43,6 +39,14 @@ buildCommand
   .option('--publish <string>')
   .option('--no-pack')
   .action(async (options: BuildCommandOptions) => {
+    const cwd = process.cwd()
+    const appDir = path.join(cwd, 'app')
+    const distDir = path.join(cwd, 'dist')
+    const $$ = $({ cwd, stdio: 'inherit' })
+
+    const nextConfig = await getNextConfig()
+    const nextronConfig = await getNextronConfig()
+
     function createBuilderArgs() {
       const results = []
 
@@ -71,18 +75,24 @@ buildCommand
     // Ignore missing dependencies
     process.env.ELECTRON_BUILDER_ALLOW_UNRESOLVED_DEPENDENCIES = 'true'
 
-    const rendererSrcDir =
-      (await getNextronConfig()).rendererSrcDir || 'renderer'
+    const rendererSrcDir = path.join(
+      cwd,
+      nextronConfig.rendererSrcDir || 'renderer'
+    )
 
     try {
       logger.info('Checking next config')
       await checkNextConfig()
 
       logger.info('Clearing previous builds')
-      await Promise.all([fs.remove(appDir), fs.remove(distDir)])
+      await Promise.all([
+        fs.remove(appDir),
+        fs.remove(distDir),
+        fs.remove(path.join(rendererSrcDir, nextConfig.distDir || '.next')),
+      ])
 
       logger.info('Building renderer process')
-      await $$('next', ['build', path.join(cwd, rendererSrcDir)])
+      await $$('next', ['build', rendererSrcDir])
 
       logger.info('Building main process')
       await $$('node', [path.join(import.meta.dirname, 'webpack.config.cjs')])

@@ -15,7 +15,7 @@ async function pathExists(p: string) {
 
 const cache = new Map()
 
-function hasGlobalInstallation(pm: PM): Promise<boolean> {
+async function hasGlobalInstallation(pm: PM): Promise<boolean> {
   const key = `has_global_${pm}`
   if (cache.has(key)) {
     return Promise.resolve(cache.get(key))
@@ -32,7 +32,7 @@ function hasGlobalInstallation(pm: PM): Promise<boolean> {
     .catch(() => false)
 }
 
-function getTypeofLockFile(cwd = '.'): Promise<PM | null> {
+async function getTypeofLockFile(cwd = '.'): Promise<PM | null> {
   const key = `lockfile_${cwd}`
   if (cache.has(key)) {
     return Promise.resolve(cache.get(key))

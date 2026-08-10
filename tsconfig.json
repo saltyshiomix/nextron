@@ -2,8 +2,7 @@
   "extends": "./tsconfig.base.json",
   "compilerOptions": {
     "target": "esnext",
-    "module": "esnext",
-    "moduleResolution": "node"
+    "module": "esnext"
   },
-  "include": ["lib"]
+  "include": ["lib", "eslint.config.ts", "tsdown.config.mts"]
 }
