@@ -294,18 +294,6 @@ const config: NextronConfig = {
 export default config
 ```
 
-## Custom Babel Config for Main Process
-
-We can extends the default babel config of main process by putting `.babelrc` in our project root like this:
-
-**`.babelrc`**:
-
-```json
-{
-  "presets": ["nextron/babel"]
-}
-```
-
 ## Examples
 
 ### [examples/basic-lang-javascript](./examples/basic-lang-javascript)
