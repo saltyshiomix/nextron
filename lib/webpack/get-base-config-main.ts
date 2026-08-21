@@ -31,7 +31,7 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
     experiments: {
       outputModule: isEsm,
     },
-    externals: [...Object.keys(externals || {})],
+    externals,
     module: {
       rules: [
         {

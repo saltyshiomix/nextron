@@ -26,7 +26,7 @@ export const getBaseConfigPreload =
           type: 'umd',
         },
       },
-      externals: [...Object.keys(externals || {})],
+      externals,
       module: {
         rules: [
           {

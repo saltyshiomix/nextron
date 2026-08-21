@@ -11,4 +11,4 @@ export const ext = isTs ? '.ts' : '.js'
 
 export const isEsm = pkg.type === 'module'
 
-export const externals = pkg.dependencies
+export const externals = [...Object.keys(pkg.dependencies || {})]
