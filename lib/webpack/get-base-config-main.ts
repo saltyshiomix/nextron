@@ -1,10 +1,14 @@
 import path from 'path'
 import webpack from 'webpack'
 import TsconfigPathsPlugins from 'tsconfig-paths-webpack-plugin'
-import { isTs, ext, isEsm, externals } from '../helpers/get-project-settings'
+import {
+  cwd,
+  isTs,
+  ext,
+  isEsm,
+  externals,
+} from '../helpers/get-project-settings'
 import { getNextronConfig } from '../helpers/get-nextron-config'
-
-const cwd = process.cwd()
 
 export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
   const { mainSrcDir } = await getNextronConfig()
