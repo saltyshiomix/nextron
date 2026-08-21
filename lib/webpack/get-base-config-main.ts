@@ -42,6 +42,9 @@ export const getBaseConfigMain = async (): Promise<webpack.Configuration> => {
             options: {
               logLevel: 'error',
               compiler: 'typescript6',
+              configFile: isTs
+                ? 'tsconfig.json'
+                : path.join(import.meta.dirname, '../tsconfig.nextron.json'),
               transpileOnly: true,
             },
           },

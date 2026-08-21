@@ -29,6 +29,7 @@
   },
   "files": [
     "bin",
+    "tsconfig.nextron.json",
     "types.d.ts"
   ],
   "bin": {
