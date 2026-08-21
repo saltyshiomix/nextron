@@ -2,10 +2,8 @@ import fs from 'fs'
 import path from 'path'
 import webpack from 'webpack'
 import TsconfigPathsPlugins from 'tsconfig-paths-webpack-plugin'
-import { isTs, ext, externals } from '../helpers/get-project-settings'
+import { cwd, isTs, ext, externals } from '../helpers/get-project-settings'
 import { getNextronConfig } from '../helpers/get-nextron-config'
-
-const cwd = process.cwd()
 
 export const getBaseConfigPreload =
   async (): Promise<webpack.Configuration> => {
@@ -28,7 +26,7 @@ export const getBaseConfigPreload =
           type: 'umd',
         },
       },
-      externals: [...Object.keys(externals || {})],
+      externals,
       module: {
         rules: [
           {
@@ -39,6 +37,9 @@ export const getBaseConfigPreload =
               options: {
                 logLevel: 'error',
                 compiler: 'typescript6',
+                configFile: isTs
+                  ? 'tsconfig.json'
+                  : path.join(import.meta.dirname, '../tsconfig.nextron.json'),
                 transpileOnly: true,
               },
             },
