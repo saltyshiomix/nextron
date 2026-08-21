@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.2.1](https://github.com/saltyshiomix/nextron/compare/v10.2.0..v10.2.1) - 2026-08-21
+
+### What's New
+
+- docs: Remove deprecated sections (README)
+
 ## [10.2.0](https://github.com/saltyshiomix/nextron/compare/v10.1.0..v10.2.0) - 2026-08-10
 
 ### What's New
