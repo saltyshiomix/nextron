@@ -1,5 +1,11 @@
 # Changelog
 
+## [10.3.0](https://github.com/saltyshiomix/nextron/compare/v10.2.1..v10.3.0) - 2026-08-21
+
+### Bug Fixes
+
+- fix: Add missing tsconfig.json for ts-loader when using basic-lang-javascript example ( 51d3996c )
+
 ## [10.2.1](https://github.com/saltyshiomix/nextron/compare/v10.2.0..v10.2.1) - 2026-08-21
 
 ### What's New
