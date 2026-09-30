@@ -6,7 +6,7 @@ import * as logger from './logger'
 import { getNextronConfig } from './helpers/get-nextron-config'
 import { getMainConfig } from './webpack/development/get-main-config'
 import { getPreloadConfig } from './webpack/development/get-preload-config'
-import type { ChildProcess } from 'child_process'
+import { terminateProcess } from './helpers/terminate-process'
 
 const $$ = $({ cwd: process.cwd(), stdio: 'inherit' })
 
@@ -38,22 +38,88 @@ devCommand
     const nextronConfig = await getNextronConfig()
     const startupDelay = nextronConfig.startupDelay || options.startupDelay || 0
 
-    let firstCompile = true
     let watchingMain: webpack.Watching | undefined
     let watchingPreload: webpack.Watching | undefined
-    let mainProcess: ChildProcess
-    let rendererProcess: ChildProcess // eslint-disable-line prefer-const
+    let mainProcess: ReturnType<typeof $$> | undefined
+    let rendererProcess: ReturnType<typeof $$> | undefined // eslint-disable-line prefer-const
+    const expectedExits = new WeakSet<ReturnType<typeof $$>>()
+    let shuttingDown = false
+    let shutdownTask: Promise<void> | undefined
+    let restartTask = Promise.resolve()
+
+    const stopProcess = async (child: ReturnType<typeof $$> | undefined) => {
+      if (!child) {
+        return
+      }
+      expectedExits.add(child)
+      terminateProcess(child)
+      await child.catch(() => {})
+    }
+
+    const shutdown = (exitCode: number) => {
+      if (shutdownTask) {
+        return shutdownTask
+      }
+      shuttingDown = true
+      shutdownTask = (async () => {
+        const closeWatchers = [watchingMain, watchingPreload].map(
+          (watcher) =>
+            new Promise<void>((resolve) => {
+              if (watcher) {
+                watcher.close(() => resolve())
+              } else {
+                resolve()
+              }
+            })
+        )
+        await stopProcess(mainProcess)
+        await stopProcess(rendererProcess)
+        await Promise.all(closeWatchers)
+        process.exit(exitCode)
+      })()
+      return shutdownTask
+    }
+
+    const fail = (error: unknown) => {
+      console.error(error)
+      void shutdown(1).catch((shutdownError) => {
+        console.error(shutdownError)
+        process.exit(1)
+      })
+    }
 
     const startMainProcess = () => {
+      if (shuttingDown) {
+        return
+      }
       logger.info(
         `Run main process: electron . ${rendererPort} ${electronOptions}`
       )
-      mainProcess = $$(
+      const child = $$(
         'electron',
         ['.', `${rendererPort}`, ...electronOptions.split(' ')],
-        { detached: true }
+        { detached: process.platform !== 'win32', windowsHide: true }
       )
-      mainProcess.unref()
+      mainProcess = child
+      child.catch((error) => {
+        if (!expectedExits.has(child) && !shuttingDown) {
+          fail(error)
+        }
+      })
+      child.unref()
+    }
+
+    const restartMainProcess = () => {
+      restartTask = restartTask.then(async () => {
+        if (shuttingDown) {
+          return
+        }
+        await stopProcess(mainProcess)
+        if (!shuttingDown) {
+          startMainProcess()
+        }
+      })
+      return restartTask
     }
 
     const startRendererProcess = () => {
@@ -62,36 +128,46 @@ devCommand
           nextronConfig.rendererSrcDir || 'renderer'
         }`
       )
-      const child = $$('next', [
-        'dev',
-        '-p',
-        String(rendererPort),
-        nextronConfig.rendererSrcDir || 'renderer',
-      ])
-      child.on('close', () => {
-        process.exit(0)
-      })
+      const child = $$(
+        'next',
+        [
+          'dev',
+          '-p',
+          String(rendererPort),
+          nextronConfig.rendererSrcDir || 'renderer',
+        ],
+        { windowsHide: true }
+      )
+      child.then(
+        () => {
+          if (!shuttingDown) {
+            void shutdown(0).catch(fail)
+          }
+        },
+        (error) => {
+          if (!expectedExits.has(child) && !shuttingDown) {
+            fail(error)
+          }
+        }
+      )
       return child
     }
 
-    const killWholeProcess = () => {
-      if (watchingMain) {
-        watchingMain.close(() => {})
+    process.on('SIGINT', () => void shutdown(0).catch(fail))
+    process.on('SIGTERM', () => void shutdown(0).catch(fail))
+    process.on('exit', () => {
+      // Exit listeners cannot await promises, but still release owned trees.
+      for (const child of [mainProcess, rendererProcess]) {
+        if (child) {
+          expectedExits.add(child)
+          try {
+            terminateProcess(child)
+          } catch (error) {
+            console.error(error)
+          }
+        }
       }
-      if (watchingPreload) {
-        watchingPreload.close(() => {})
-      }
-      if (mainProcess) {
-        mainProcess.kill()
-      }
-      if (rendererProcess) {
-        rendererProcess.kill()
-      }
-    }
-
-    process.on('SIGINT', killWholeProcess)
-    process.on('SIGTERM', killWholeProcess)
-    process.on('exit', killWholeProcess)
+    })
 
     rendererProcess = startRendererProcess()
 
@@ -103,42 +179,56 @@ devCommand
       logger.error(
         `Failed to start renderer process with port ${rendererPort} in ${startupDelay}ms`
       )
-      killWholeProcess()
-      process.exit(1)
+      return shutdown(1)
     })
+
+    if (shuttingDown) {
+      return
+    }
 
     const mainConfig = await getMainConfig()
     const preloadConfig = await getPreloadConfig()
 
+    if (shuttingDown) {
+      return
+    }
+
     // build preload script before starting main process
     await new Promise<void>((resolve) => {
       watchingPreload = webpack(preloadConfig).watch({}, (error) => {
+        if (shuttingDown) {
+          resolve()
+          return
+        }
         if (error) {
-          console.error(error.stack || error)
+          fail(error)
+          return
         }
         resolve()
       })
     })
 
+    if (shuttingDown) {
+      return
+    }
+
     // wait until main process is ready
     await new Promise<void>((resolve) => {
       watchingMain = webpack(mainConfig).watch({}, (error) => {
+        if (shuttingDown) {
+          resolve()
+          return
+        }
         if (error) {
-          console.error(error.stack || error)
+          fail(error)
+          return
         }
 
         if (!options.runOnly) {
-          if (!firstCompile && mainProcess) {
-            mainProcess.kill()
-          }
-          startMainProcess()
-
-          if (firstCompile) {
-            firstCompile = false
-          }
+          void restartMainProcess().then(resolve, fail)
+        } else {
+          resolve()
         }
-
-        resolve()
       })
     })
 
