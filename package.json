@@ -37,6 +37,7 @@
   },
   "types": "types.d.ts",
   "scripts": {
+    "test": "pnpm build && node --import tsx --test tests/dev-restart.test.ts",
     "dev": "tsx scripts/dev",
     "lint:eslint": "eslint .",
     "lint:prettier": "prettier --check .",
