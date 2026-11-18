@@ -207,7 +207,7 @@ We can pass electron args via `--electron-options`:
 - To build macOS binary, your host machine must be macOS!
 - Please consider to use `electron-builder.yml` instead of these CLI options.
   - [Command Line Interface (CLI) - electron-builder](https://www.electron.build/cli)
-  - [Common Configuration - electron-builder](https://www.electron.build/configuration/configuration)
+  - [Common Configuration - electron-builder](https://www.electron.build/configuration/)
 
 ```json
 {
@@ -238,7 +238,7 @@ We can pass electron args via `--electron-options`:
 
 Highly recommend to use `electron-builder.yml`:
 
-https://www.electron.build/configuration/publish
+https://www.electron.build/publish/
 
 ### `--no-pack` (default: `undefined`)
 
@@ -268,10 +268,10 @@ files:
     filter:
       - package.json
       - app
-publish: null # see https://www.electron.build/configuration/publish
+publish: null # see https://www.electron.build/publish/
 ```
 
-For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/configuration).
+For more information, please check out [electron-builder official configuration documents](https://www.electron.build/configuration/).
 
 ## Custom Webpack Config for Main Process: `nextron.config.ts`
 
